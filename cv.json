@@ -7,11 +7,11 @@
     "phone": "0643834695",
     "url": "https://adrienrusso.fr",
     "summary": "Développeur Full Stack avec 6 ans d'expérience, passionné par la création d'applications web innovantes. Je suis à la recherche de nouvelles opportunités pour approfondir mes compétences et contribuer à des projets stimulants au sein d'une équipe dynamique.",
-    "theme": "default",
+    "theme": "blue",
     "location": {
       "address": "",
-      "postalCode": "33150",
-      "city": "Cenon",
+      "postalCode": "33000",
+      "city": "Bordeaux",
       "countryCode": "FR",
       "region": "France"
     },
@@ -37,7 +37,7 @@
       "url": "https://appro-auto.com",
       "startDate": "2022-01-01",
       "endDate": null,
-      "summary": "Développement et maintenance d'applications web en utilisant Symfony pour le back-end et Vue.js pour le front-end. Collaboration avec l'équipe pour concevoir des solutions scalables et performantes, tout en intégrant des conteneurs Docker et des orchestrateurs Kubernetes.",
+      "summary": "Responsable du développement et de la maintenance d'applications web performantes, utilisant Symfony pour le back-end et Vue.js pour le front-end. Conception et mise en œuvre de solutions scalables, avec un accent sur l'optimisation des performances et de l'expérience utilisateur.\n\nIntégration de conteneurs Docker pour faciliter le déploiement et la gestion des applications, ainsi que l'utilisation d'orchestrateurs Kubernetes pour assurer une orchestration efficace des services. Capacité à résoudre des problèmes complexes et attention aux détails ayant contribué à la création d'applications robustes et fiables.",
       "highlights": [
         "Amélioration des performances du site web en optimisant le code",
         "Mise en œuvre de nouvelles fonctionnalités basées sur les retours des utilisateurs"
