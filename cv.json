@@ -84,7 +84,6 @@
         "PHP",
         "Git"
       ]
-
     }
   ],
   "volunteer": [
@@ -293,46 +292,38 @@
   ],
   "projects": [
     {
-      "name": "Personal Portfolio",
+      "name": "CRM Appro Automobiles",
       "isActive": false,
-      "description": "A personal portfolio website to showcase my projects and skills.",
-      "highlights": [
-        "Built with React and Tailwind CSS",
-        "Includes a blog and contact form"
-      ],
-      "url": "https://johndoe.dev",
-      "github": "https://github.com"
+      "description": "CRM destiné à piloter l'activité commerciale des employés d'Appro Automobiles",
+      "highlights": []
     },
     {
-      "name": "Weather App",
+      "name": "Appro Automobiles",
       "isActive": true,
-      "description": "A web application that provides weather information for any location.",
-      "highlights": [
-        "Built with JavaScript and OpenWeatherMap API",
-        "Responsive design"
-      ],
-      "url": "https://weatherapp.com"
+      "description": "Site web de vente de véhicules d'occasion",
+      "highlights": [],
+      "url": "https://appro-auto.com"
     },
     {
-      "name": "Task Manager",
+      "name": "AD Occasion",
       "isActive": true,
-      "description": "A simple task management app to keep track of daily tasks.",
-      "highlights": [
-        "Built with Node.js and MongoDB",
-        "User authentication and CRUD operations"
-      ],
-      "url": "https://taskmanager.com",
-      "github": "https://github.com"
+      "description": "Site web de vente de véhicules d'occasion à destination des membres du réseau AutoDistribution",
+      "highlights": [],
+      "url": "https://ad-occasion.fr"
     },
     {
-      "name": "E-commerce Site",
+      "name": "LCPO - Organic Polymer Chemistry Laboratory",
+      "isActive": true,
+      "description": "Site web du laboratoire de chimie des polymères organiques de l'Université de Bordeaux",
+      "highlights": [],
+      "url": "https://lcpo.fr"
+    },
+    {
+      "name": "Programme TV Le Parisien",
       "isActive": false,
-      "description": "An online store built with Next.js and Stripe for payment processing.",
-      "highlights": [
-        "Product management and shopping cart functionality",
-        "Secure payment integration"
-      ],
-      "url": "https://ecommerce.com"
+      "description": "Site web de programme TV",
+      "highlights": [],
+      "url": "https://programme-tv.leparisien.fr/"
     }
   ]
 }
