@@ -68,8 +68,23 @@
       "position": "Développeur Backend",
       "location_type": "Remote",
       "location": "Bordeaux, France",
+      "url": "https://www.ideveloppement.fr/",
       "startDate": "2020-01-01",
-      "endDate": "2022-01-01"
+      "endDate": "2022-01-01",
+      "summary": "Développement et maintenance d'applications web en TMA pour les clients de l'agence.",
+      "responsibilities": [
+        "Analyse et spécification des besoins métier",
+        "Développement de nouvelles fonctionnalités",
+        "Optimisation des performances et de la sécurité",
+        "Maintenance corrective et évolutive"
+      ],
+      "skills": [
+        "Symfony",
+        "CodeIgniter",
+        "PHP",
+        "Git"
+      ]
+
     }
   ],
   "volunteer": [
