@@ -84,6 +84,32 @@
         "PHP",
         "Git"
       ]
+    },
+    {
+      "name": "Rozardi",
+      "position": "Développeur Web",
+      "location_type": "Remote",
+      "location": "Bordeaux, France",
+      "startDate": "2018-07-01",
+      "endDate": "2020-01-01",
+      "summary": "Développement et maintenance de sites web pour les clients de l'agence, avec une spécialisation sur le backend et la gestion des serveurs. Utilisation de WordPress avec Elementor pour la création de sites performants et optimisés pour le SEO. Participation à l'intégration des maquettes fournies par les designers via Figma et optimisation technique des sites pour garantir une expérience utilisateur fluide.",
+      "responsibilities": [
+        "Développement et personnalisation de sites WordPress avec Elementor.",
+        "Gestion des serveurs, installation et maintenance des environnements d'hébergement.",
+        "Optimisation du référencement naturel (SEO) à la fois technique (performances, structure, balises) et stratégique (contenu, maillage interne).",
+        "Intégration des maquettes graphiques fournies via Figma.",
+        "Maintenance corrective et évolutive des sites clients."
+      ],
+      "skills": [
+        "PHP",
+        "WordPress",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Elementor",
+        "Figma",
+        "Gestion des serveurs"
+      ]
     }
   ],
   "volunteer": [
