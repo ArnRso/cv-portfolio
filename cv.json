@@ -161,6 +161,15 @@
       ]
     },
     {
+      "name": "SelfHosting",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "DevOps",
+        "Containers"
+      ]
+    },
+    {
       "name": "MySQL",
       "level": "Intermediate",
       "keywords": [
