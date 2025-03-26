@@ -132,10 +132,23 @@
       "studyType": "Associate Degree",
       "startDate": "2019",
       "endDate": "2019",
-      "courses": [
-        "IT101 - Networking Fundamentals",
-        "IT102 - Database Management Systems"
-      ]
+      "courses": []
+    },
+    {
+      "institution": "Master 1",
+      "area": "MEEF Anglais",
+      "studyType": "Université",
+      "startDate": "2016",
+      "endDate": "2017",
+      "courses": []
+    },
+    {
+      "institution": "Licence Langue, Literature et Civilisation Étrangère",
+      "area": "Anglais",
+      "studyType": "Bachelor",
+      "startDate": "2013",
+      "endDate": "2016",
+      "courses": []
     }
   ],
   "certificates": [],
