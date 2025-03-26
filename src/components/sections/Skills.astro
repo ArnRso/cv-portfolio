@@ -27,6 +27,9 @@ import SelfHosting from "@/icons/SelfHosting.astro";
 import Elementor from "@/icons/Elementor.astro";
 import Linux from "@/icons/Linux.astro";
 import CodeIgniter from "@/icons/CodeIgniter.astro";
+import Anglais from "@/icons/Anglais.astro";
+import Ansible from "@/icons/Ansible.astro";
+import Angular from "@/icons/Angular.astro";
 
 const SKILLS_ICONS: Record<string, any> = {
 	HTML,
@@ -55,14 +58,17 @@ const SKILLS_ICONS: Record<string, any> = {
 	Linux,
 	CodeIgniter,
 	Elementor,
+	Anglais,
+	Ansible,
+	Angular
 };
 ---
 
 <Section className={Astro.props.className} title="Skills">
 	<ul class="[&>li>svg]:text-skin-hue inline-flex flex-wrap gap-6 [&>li>svg]:size-5 [&>li]:text-sm">
 		{
-			skills.map(({ name }) => {
-				const iconName = name === "Next.js" ? "Next" : name;
+			skills.map(({ name, customIcon }) => {
+				const iconName = customIcon || name;
 				const Icon = SKILLS_ICONS[iconName];
 
 				return (

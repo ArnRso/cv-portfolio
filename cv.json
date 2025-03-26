@@ -176,6 +176,16 @@
       ]
     },
     {
+      "name": "Anglais - C1",
+      "customIcon": "Anglais",
+      "level": "Expert",
+      "keywords": [
+        "Langue",
+        "Communication",
+        "Traduction"
+      ]
+    },
+    {
       "name": "Docker",
       "level": "Intermediate",
       "keywords": [
@@ -194,12 +204,22 @@
       ]
     },
     {
-      "name": "SelfHosting",
+      "name": "Self Hosting",
+      "customIcon": "SelfHosting",
       "level": "Intermediate",
       "keywords": [
         "Web Development",
         "DevOps",
         "Containers"
+      ]
+    },
+    {
+      "name": "Ansible",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "DevOps",
+        "Automation"
       ]
     },
     {
@@ -241,6 +261,15 @@
       ]
     },
     {
+      "name": "CodeIgniter",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Backend",
+        "PHP Framework"
+      ]
+    },
+    {
       "name": "TypeScript",
       "level": "Intermediate",
       "keywords": [
@@ -252,6 +281,15 @@
     },
     {
       "name": "React",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "JavaScript Framework"
+      ]
+    },
+    {
+      "name": "Angular",
       "level": "Intermediate",
       "keywords": [
         "Web Development",
