@@ -52,7 +52,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
 								<svg x-show="copyNotification" class="h-4 w-4 stroke-current text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" x-cloak>
 									<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
 								</svg>
-								<span x-show="!copyNotification">
+								<span x-show="!copyNotification" title={email}>
 									<Mail />
 								</span>
 							</button>
