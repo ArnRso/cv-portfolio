@@ -32,7 +32,7 @@
       "url": "https://appro-auto.com",
       "startDate": "2022-01-01",
       "endDate": null,
-      "summary": "Responsable du développement et de la maintenance d'applications web performantes, utilisant Symfony pour le back-end et Vue.js pour le front-end. Conception et mise en œuvre de solutions scalables, avec un accent sur l'optimisation des performances et de l'expérience utilisateur.\n\nIntégration de conteneurs Docker pour faciliter le déploiement et la gestion des applications, ainsi que l'utilisation d'orchestrateurs Kubernetes pour assurer une orchestration efficace des services. Capacité à résoudre des problèmes complexes et attention aux détails ayant contribué à la création d'applications robustes et fiables.",
+      "summary": "Responsable du développement et de la maintenance d'applications web performantes, utilisant Symfony pour le back-end et Vue.js pour le front-end. Conception et mise en œuvre de solutions scalables, avec un accent sur l'optimisation des performances et de l'expérience utilisateur.\n\nIntégration de conteneurs Docker pour faciliter le déploiement et la gestion des applications, avec orchestration efficace des services via Kubernetes. Capacité à résoudre des problèmes complexes et attention aux détails ayant contribué à la création d'applications robustes et fiables.",
       "highlights": [
         "Amélioration des performances du site web en optimisant le code",
         "Mise en œuvre de nouvelles fonctionnalités basées sur les retours des utilisateurs"
