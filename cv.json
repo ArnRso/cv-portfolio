@@ -59,6 +59,25 @@
       ]
     },
     {
+      "name": "Campus du Lac",
+      "position": "Formateur Symfony",
+      "location": "Bordeaux, France",
+      "url": "https://www.campusdulac.com/",
+      "startDate": "2022-04-01",
+      "endDate": "2022-05-31",
+      "summary": "Formation intensive en Symfony pour les étudiants du Campus du Lac préparant le diplôme de Développeur Web et Web Mobile (DWWM). Initiation et approfondissement du framework PHP avec des cas pratiques avancés.",
+      "responsibilities": [
+        "Introduction au framework Symfony et à son écosystème.",
+        "Mise en pratique des concepts avancés de Symfony à travers des exercices et des projets concrets.",
+        "Encadrement des étudiants dans le développement d'une application web complète, en respectant les bonnes pratiques du framework."
+      ],
+      "skills": [
+        "Symfony",
+        "PHP",
+        "Enseignement"
+      ]
+    },
+    {
       "name": "Ideveloppement",
       "position": "Développeur Backend",
       "location_type": "Remote",
@@ -78,6 +97,26 @@
         "CodeIgniter",
         "PHP",
         "Git"
+      ]
+    },
+    {
+      "name": "MJM Graphic Design",
+      "position": "Intervenant - Workshop HTML & CSS",
+      "location": "Bordeaux, France",
+      "url": "https://www.mjm-design.com/",
+      "startDate": "2020-04-01",
+      "endDate": "2020-04-30",
+      "summary": "Animation d'un workshop pour les élèves designers de MJM Graphic Design, leur permettant d'acquérir des bases solides en HTML et CSS pour réaliser leur premier portfolio professionnel.",
+      "responsibilities": [
+        "Introduction aux concepts fondamentaux du HTML et du CSS.",
+        "Démonstration des meilleures pratiques pour structurer et styliser un site web.",
+        "Accompagnement des étudiants dans la conception et la réalisation de leur propre portfolio en ligne."
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "Enseignement",
+        "UXUI"
       ]
     },
     {
