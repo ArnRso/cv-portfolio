@@ -1,0 +1,408 @@
+{
+  "basics": {
+    "name": "Adrien Russo",
+    "label": "Développeur Full Stack - Symfony / Vue | Spécialisé en Applications Sécurisées",
+    "image": "/adrien_russo_avatar.jpg",
+    "email": "hello@adrienrusso.fr",
+    "phone": "0643834695",
+    "url": "https://adrienrusso.fr",
+    "summary": "Développeur Full Stack avec 7 ans d'expérience, spécialisé dans le développement d'applications sécurisées organisées en couches. Expert en conception d'architectures logicielles robustes, déploiement DevOps et gestion de projets informatiques. Passionné par la création d'applications web innovantes et sécurisées.",
+    "theme": "blue",
+    "location": {
+      "address": "",
+      "postalCode": "33000",
+      "city": "Bordeaux",
+      "countryCode": "FR",
+      "region": "France"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "russoad",
+        "url": "https://www.linkedin.com/in/russoad/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "HPG",
+      "position": "Développeur Full Stack",
+      "location_type": "Remote",
+      "location": "Bordeaux, France",
+      "url": "https://appro-auto.com",
+      "startDate": "2024-02-01",
+      "endDate": null,
+      "summary": "Responsable de l'architecture et du développement d'applications sécurisées multi-couches. Pilotage de l'équipe technique et mise en place d'une démarche DevOps complète pour le déploiement sécurisé des applications en production.",
+      "highlights": [
+        "Architecture d'applications sécurisées avec séparation des couches métier",
+        "Mise en place d'une stratégie de tests automatisés couvrant 85% du code",
+        "Déploiement en production de 12 applications critiques sans incident",
+        "Formation et encadrement d'une équipe de 4 développeurs"
+      ],
+      "responsibilities": [
+        "Conception et développement d'applications sécurisées : Définition de l'architecture logicielle multi-couches avec séparation claire entre présentation, métier et accès aux données",
+        "Sécurisation des applications : Implémentation de mesures de sécurité (authentification JWT, chiffrement des données sensibles, validation des entrées, protection CSRF/XSS)",
+        "Conception de bases de données relationnelles : Modélisation et optimisation de bases de données MySQL complexes avec plus de 50 tables interconnectées",
+        "Développement de composants d'accès aux données : Création d'API REST sécurisées avec Symfony et intégration de bases NoSQL (Redis) pour la mise en cache",
+        "Planification et exécution des tests : Mise en place de tests unitaires, d'intégration et fonctionnels avec PHPUnit et Cypress (couverture de code > 85%)",
+        "Déploiement DevOps : Automatisation du déploiement avec GitLab CI/CD, conteneurisation Docker et orchestration Kubernetes",
+        "Gestion de projet informatique : Utilisation de méthodologies Agile/Scrum, planification des sprints et coordination avec les équipes métier",
+        "Internationalisation : Préparation de l'expansion européenne avec mise en place de l'i18n et adaptation aux réglementations locales"
+      ],
+      "skills": [
+        "Symfony",
+        "Vue",
+        "Docker",
+        "Kubernetes",
+        "Git",
+        "MySQL",
+        "Redis",
+        "GitLab CI/CD",
+        "PHPUnit",
+        "Cypress"
+      ]
+    },
+    {
+      "name": "Appro Automobiles",
+      "position": "Développeur Full Stack",
+      "location_type": "Remote",
+      "location": "Bordeaux, France",
+      "url": "https://appro-auto.com",
+      "startDate": "2022-07-12",
+      "endDate": "2024-01-31",
+      "summary": "Développement et maintenance d'applications web sécurisées avec architecture en couches. Spécialisation dans la création d'interfaces utilisateur performantes et de composants métier robustes.",
+      "highlights": [
+        "Migration complète de CodeIgniter vers Symfony avec zéro temps d'arrêt",
+        "Développement d'interfaces utilisateur réactives avec Vue.js",
+        "Mise en conformité RGPD de l'ensemble des applications",
+        "Amélioration des performances de 40% grâce à l'optimisation du code"
+      ],
+      "responsibilities": [
+        "Développement d'interfaces utilisateur : Création d'interfaces modernes et responsives avec Vue.js, optimisation UX/UI et accessibilité web",
+        "Développement de composants métier : Implémentation de la logique métier complexe (gestion stock, facturation, CRM) avec patterns de conception adaptés",
+        "Installation et configuration d'environnements : Setup d'environnements de développement Docker, configuration CI/CD et déploiement cloud AWS",
+        "Migration d'architecture : Réécriture progressive des applications legacy CodeIgniter vers Symfony 6 avec maintien de la compatibilité",
+        "Gestion des données : Implémentation du stockage S3, stratégies de backup automatisées et plans de reprise d'activité (PRA/PCA)",
+        "Analyse des besoins : Recueil et spécification des besoins métier, maquettage des nouvelles fonctionnalités",
+        "Sécurisation des applications : Mise en conformité RGPD, implémentation de l'authentification sécurisée et chiffrement des données"
+      ],
+      "skills": [
+        "Symfony",
+        "Vue",
+        "Docker",
+        "AWS S3",
+        "MySQL",
+        "CodeIgniter",
+        "RGPD",
+        "Git"
+      ]
+    },
+    {
+      "name": "Ideveloppement",
+      "position": "Développeur Backend",
+      "location_type": "Remote",
+      "location": "Bordeaux, France",
+      "url": "https://www.ideveloppement.fr/",
+      "startDate": "2020-05-05",
+      "endDate": "2022-07-11",
+      "summary": "Développement et maintenance d'applications web sécurisées en TMA. Spécialisation dans l'analyse des besoins métier et la résolution de problèmes complexes.",
+      "highlights": [
+        "Analyse et spécification de plus de 50 projets clients",
+        "Développement de composants métier réutilisables",
+        "Optimisation des performances et renforcement de la sécurité",
+        "Contribution à la documentation technique des projets"
+      ],
+      "responsibilities": [
+        "Analyse des besoins et maquettage : Recueil des besoins clients, rédaction de spécifications techniques et création de maquettes fonctionnelles",
+        "Développement de composants métier : Création de modules métier réutilisables et maintenables avec Symfony et PHP",
+        "Sécurisation des applications : Audit de sécurité, correction de vulnérabilités et mise en place de bonnes pratiques",
+        "Optimisation des performances : Profiling des applications, optimisation des requêtes SQL et mise en cache intelligente",
+        "Maintenance corrective et évolutive : Support technique, debugging et évolution des applications existantes",
+        "Documentation technique : Rédaction de documentation d'architecture et guides de déploiement"
+      ],
+      "skills": [
+        "Symfony",
+        "CodeIgniter",
+        "PHP",
+        "MySQL",
+        "Git",
+        "Analyse fonctionnelle",
+        "Documentation technique"
+      ]
+    },
+    {
+      "name": "Rozardi",
+      "position": "Développeur Web",
+      "location_type": "Remote",
+      "location": "Bordeaux, France",
+      "startDate": "2018-07-01",
+      "endDate": "2020-01-01",
+      "summary": "Développement d'interfaces utilisateur et gestion d'infrastructures. Configuration d'environnements de travail sécurisés et optimisation SEO technique.",
+      "highlights": [
+        "Configuration et sécurisation de plus de 30 serveurs web",
+        "Développement d'interfaces utilisateur responsive avec WordPress",
+        "Optimisation SEO technique augmentant le trafic de 60% en moyenne",
+        "Intégration de maquettes Figma avec pixel-perfect precision"
+      ],
+      "responsibilities": [
+        "Installation et configuration d'environnements : Setup et sécurisation de serveurs LAMP/LEMP, configuration SSL et optimisation des performances",
+        "Développement d'interfaces utilisateur : Création de sites web responsive avec WordPress/Elementor, intégration HTML/CSS/JavaScript",
+        "Intégration de maquettes : Transformation de designs Figma en interfaces web fonctionnelles et accessibles",
+        "Gestion de serveurs : Administration Linux, monitoring des performances et maintenance préventive",
+        "Optimisation SEO technique : Amélioration des performances web, structure des données et optimisation du référencement",
+        "Maintenance corrective : Support technique client, résolution d'incidents et mise à jour sécuritaire"
+      ],
+      "skills": [
+        "PHP",
+        "WordPress",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Linux",
+        "Elementor",
+        "Figma",
+        "SEO technique"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Association Développeurs Bordeaux",
+      "position": "Formateur Bénévole - Sécurité Web",
+      "url": "https://dev-bordeaux.fr/",
+      "startDate": "2021-01-01",
+      "endDate": "2022-12-01",
+      "summary": "Animation d'ateliers sur la sécurité des applications web et les bonnes pratiques de développement sécurisé.",
+      "highlights": [
+        "Formation de plus de 100 développeurs aux pratiques de sécurité",
+        "Création de contenu pédagogique sur la sécurisation des API",
+        "Contribution à l'amélioration continue des compétences locales"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "La Piscine",
+      "url": "https://www.lapiscine.pro/",
+      "area": "Développeur Web et Web Mobile (DWWM)",
+      "studyType": "Certification Professionnelle",
+      "startDate": "2019",
+      "endDate": "2019",
+      "courses": [
+        "Architecture logicielle et patterns de conception",
+        "Sécurité des applications web",
+        "Bases de données relationnelles et NoSQL",
+        "Méthodologies de développement Agile",
+        "Tests unitaires et d'intégration"
+      ]
+    },
+    {
+      "institution": "Université de Bordeaux",
+      "area": "MEEF Anglais",
+      "studyType": "Master 1",
+      "startDate": "2016",
+      "endDate": "2017",
+      "courses": [
+        "Communication interculturelle",
+        "Gestion de projets pédagogiques",
+        "Méthodologies d'apprentissage"
+      ]
+    },
+    {
+      "institution": "Université de Bordeaux",
+      "area": "Langue, Littérature et Civilisation Étrangère - Anglais",
+      "studyType": "Licence",
+      "startDate": "2013",
+      "endDate": "2016",
+      "courses": [
+        "Communication professionnelle en anglais",
+        "Analyse et synthèse de documents",
+        "Gestion de projets collaboratifs"
+      ]
+    }
+  ],
+  "certificates": [],
+  "skills": [
+    {
+      "name": "Architecture Logicielle",
+      "level": "Expert",
+      "keywords": [
+        "Conception d'applications sécurisées",
+        "Architecture en couches",
+        "Patterns de conception",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "Symfony",
+      "level": "Expert",
+      "keywords": [
+        "Développement sécurisé",
+        "API REST",
+        "Components métier",
+        "Tests automatisés"
+      ]
+    },
+    {
+      "name": "Vue.js",
+      "level": "Expert",
+      "keywords": [
+        "Interfaces utilisateur",
+        "SPA sécurisées",
+        "Composants réutilisables",
+        "État application"
+      ]
+    },
+    {
+      "name": "Sécurité Applications Web",
+      "level": "Expert",
+      "keywords": [
+        "OWASP Top 10",
+        "Authentification JWT",
+        "Chiffrement données",
+        "Tests de sécurité"
+      ]
+    },
+    {
+      "name": "Bases de Données",
+      "level": "Expert",
+      "keywords": [
+        "MySQL",
+        "Architecture relationnelle",
+        "Optimisation requêtes",
+        "NoSQL (Redis)"
+      ]
+    },
+    {
+      "name": "DevOps & Déploiement",
+      "level": "Expert",
+      "keywords": ["Docker", "Kubernetes", "CI/CD", "Déploiement sécurisé"]
+    },
+    {
+      "name": "Tests & Qualité",
+      "level": "Expert",
+      "keywords": [
+        "Tests unitaires",
+        "Tests d'intégration",
+        "PHPUnit",
+        "Cypress"
+      ]
+    },
+    {
+      "name": "Gestion de Projet",
+      "level": "Expert",
+      "keywords": [
+        "Méthodologies Agile",
+        "Scrum",
+        "Analyse besoins",
+        "Documentation technique"
+      ]
+    },
+    {
+      "name": "Communication Multilingue",
+      "customIcon": "Anglais",
+      "level": "Expert",
+      "keywords": [
+        "Français natif",
+        "Anglais C1",
+        "Communication technique",
+        "Équipes internationales"
+      ]
+    },
+    {
+      "name": "Résolution de Problèmes",
+      "level": "Expert",
+      "keywords": [
+        "Debugging avancé",
+        "Analyse de performance",
+        "Optimisation code",
+        "Pensée critique"
+      ]
+    },
+    {
+      "name": "Apprentissage Continu",
+      "level": "Expert",
+      "keywords": [
+        "Veille technologique",
+        "Formation équipes",
+        "Nouvelles technologies",
+        "Amélioration continue"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Français",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Anglais",
+      "fluency": "Advanced (C1)"
+    },
+    {
+      "language": "Allemand",
+      "fluency": "Intermediate"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Sécurité Informatique",
+      "keywords": ["Ethical Hacking", "Cryptographie", "OWASP"]
+    },
+    {
+      "name": "Architecture Cloud",
+      "keywords": ["Microservices", "Serverless", "Infrastructure as Code"]
+    },
+    {
+      "name": "Intelligence Artificielle",
+      "keywords": ["Machine Learning", "Automatisation", "IA Générative"]
+    }
+  ],
+  "references": [],
+  "projects": [
+    {
+      "name": "Plateforme E-commerce B2B Sécurisée",
+      "isActive": true,
+      "description": "Architecture et développement d'une plateforme de vente B2B avec authentification multi-facteurs, chiffrement des données sensibles et conformité RGPD",
+      "highlights": [
+        "Architecture microservices sécurisée",
+        "API REST avec authentification JWT",
+        "Tests automatisés (95% couverture)",
+        "Déploiement containerisé Kubernetes"
+      ],
+      "technologies": ["Symfony", "Vue.js", "Docker", "MySQL", "Redis"]
+    },
+    {
+      "name": "CRM Automobile Multi-tenant",
+      "isActive": true,
+      "description": "Système CRM sécurisé avec isolation des données clients, tableaux de bord temps réel et intégration ERP",
+      "highlights": [
+        "Architecture multi-tenant sécurisée",
+        "Interfaces utilisateur réactives",
+        "Composants métier réutilisables",
+        "Intégration API tierces"
+      ],
+      "technologies": ["Symfony", "Vue.js", "MySQL", "Docker"]
+    },
+    {
+      "name": "Solution de Géolocalisation Temps Réel",
+      "isActive": true,
+      "description": "Application de tracking véhicules avec composants temps réel, signature électronique et conformité réglementaire",
+      "highlights": [
+        "WebSockets pour temps réel",
+        "Signature électronique intégrée",
+        "Base de données géospatiale",
+        "API REST documentée"
+      ],
+      "technologies": ["Symfony", "Vue.js", "PostgreSQL", "WebSockets"]
+    },
+    {
+      "name": "LCPO - Site Web Laboratoire",
+      "isActive": true,
+      "description": "Site web institutionnel avec CMS sécurisé, multilingue et optimisé SEO",
+      "highlights": [],
+      "url": "https://lcpo.fr",
+      "technologies": ["WordPress", "PHP", "MySQL"]
+    }
+  ]
+}

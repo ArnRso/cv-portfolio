@@ -30,7 +30,7 @@
       "location_type": "Remote",
       "location": "Bordeaux, France",
       "url": "https://appro-auto.com",
-      "startDate": "2022-01-01",
+      "startDate": "2022-07-12",
       "endDate": null,
       "summary": "Responsable du développement et de la maintenance d'applications web performantes, utilisant Symfony pour le back-end et Vue.js pour le front-end. Conception et mise en œuvre de solutions scalables, avec un accent sur l'optimisation des performances et de l'expérience utilisateur.\n\nIntégration de conteneurs Docker pour faciliter le déploiement et la gestion des applications, avec orchestration efficace des services via Kubernetes. Capacité à résoudre des problèmes complexes et attention aux détails ayant contribué à la création d'applications robustes et fiables.",
       "highlights": [
@@ -83,8 +83,8 @@
       "location_type": "Remote",
       "location": "Bordeaux, France",
       "url": "https://www.ideveloppement.fr/",
-      "startDate": "2020-01-01",
-      "endDate": "2022-01-01",
+      "startDate": "2020-05-05",
+      "endDate": "2022-07-11",
       "summary": "Développement et maintenance d'applications web en TMA pour les clients de l'agence.",
       "responsibilities": [
         "Analyse et spécification des besoins métier",
