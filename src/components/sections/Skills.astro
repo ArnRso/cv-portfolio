@@ -18,6 +18,12 @@ import Kotlin from "@/icons/kotlin.astro";
 import Flutter from "@/icons/flutter.astro";
 import Figma from "@/icons/Figma.astro";
 import Gitlab from "@/icons/Gitlab.astro";
+import GitlabCI from "@/icons/GitlabCI.astro";
+import PHPUnit from "@/icons/PHPUnit.astro";
+import Cypress from "@/icons/Cypress.astro";
+import AWSS3 from "@/icons/AWSS3.astro";
+import Redis from "@/icons/Redis.astro";
+import WordPress from "@/icons/WordPress.astro";
 import Symfony from "@/icons/Symfony.astro";
 import Vue from "@/icons/Vue.astro";
 import PHP from "@/icons/PHP.astro";
@@ -30,53 +36,71 @@ import CodeIgniter from "@/icons/CodeIgniter.astro";
 import Anglais from "@/icons/Anglais.astro";
 import Ansible from "@/icons/Ansible.astro";
 import Angular from "@/icons/Angular.astro";
+import SecurityWeb from "@/icons/SecurityWeb.astro";
+import ArchitectureLogicielle from "@/icons/ArchitectureLogicielle.astro";
+import BasesDeDonnees from "@/icons/BasesDeDonnees.astro";
+import DevOpsDeploy from "@/icons/DevOpsDeploy.astro";
+import GestionProjet from "@/icons/GestionProjet.astro";
 
 const SKILLS_ICONS: Record<string, any> = {
-	HTML,
-	CSS,
-	JavaScript,
-	TypeScript,
-	React,
-	Node,
-	MySQL,
-	Git,
-	GitHub,
-	Next,
-	Tailwind,
-	Swift,
-	SwiftUI,
-	Kotlin,
-	Flutter,
-	Figma,
-	Gitlab,
-	Symfony,
-	Vue,
-	PHP,
-	Docker,
-	Kubernetes,
-	SelfHosting,
-	Linux,
-	CodeIgniter,
-	Elementor,
-	Anglais,
-	Ansible,
-	Angular
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  Node,
+  MySQL,
+  Git,
+  GitHub,
+  Next,
+  Tailwind,
+  Swift,
+  SwiftUI,
+  Kotlin,
+  Flutter,
+  Figma,
+  Gitlab,
+  "GitLab CI/CD": GitlabCI,
+  PHPUnit,
+  Cypress,
+  "AWS S3": AWSS3,
+  Redis,
+  WordPress,
+  Symfony,
+  "Vue.js": Vue,
+  PHP,
+  Docker,
+  Kubernetes,
+  SelfHosting,
+  Linux,
+  CodeIgniter,
+  Elementor,
+  Anglais,
+  Ansible,
+  Angular,
+  "Sécurité Applications Web": SecurityWeb,
+  "Architecture Logicielle": ArchitectureLogicielle,
+  "Bases de Données": BasesDeDonnees,
+  "DevOps & Déploiement": DevOpsDeploy,
+  "Gestion de Projet": GestionProjet,
 };
 ---
 
 <Section className={Astro.props.className} title="Skills">
-	<ul class="[&>li>svg]:text-skin-hue inline-flex flex-wrap gap-6 [&>li>svg]:size-5 [&>li]:text-sm">
-		{
-			skills.map(({ name, customIcon }) => {
-				const iconName = customIcon || name;
-				const Icon = SKILLS_ICONS[iconName];
+  <ul
+    class="inline-flex flex-wrap gap-6 [&>li>svg]:size-5 [&>li>svg]:text-skin-hue [&>li]:text-sm"
+  >
+    {
+      skills.map(({ name, customIcon }) => {
+        const iconName = customIcon || name;
+        const Icon = SKILLS_ICONS[iconName] || SKILLS_ICONS[`${iconName}.js`];
 
-				return (
-					<li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids flex items-center gap-1 rounded-md px-2 py-0.5 text-xs text-skin-muted print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
-						{Icon && <Icon />} <span>{name}</span>
-					</li>
-				);
-			})
-		}
-	</ul>
+        return (
+          <li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids flex items-center gap-1 rounded-md px-2 py-0.5 text-xs text-skin-muted print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
+            {Icon && <Icon />} <span>{name}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
 </Section>

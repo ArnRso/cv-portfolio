@@ -26,6 +26,12 @@ import Linux from "../../icons/Linux.astro";
 import CodeIgniter from "../../icons/CodeIgniter.astro";
 import Elementor from "../../icons/Elementor.astro";
 import Figma from "../../icons/Figma.astro";
+import GitlabCI from "../../icons/GitlabCI.astro";
+import PHPUnit from "../../icons/PHPUnit.astro";
+import Cypress from "../../icons/Cypress.astro";
+import AWSS3 from "../../icons/AWSS3.astro";
+import Redis from "../../icons/Redis.astro";
+import WordPress from "../../icons/WordPress.astro";
 import Enseignement from "../../icons/Enseignement.astro";
 import UXUI from "../../icons/UX-UI.astro";
 
@@ -46,7 +52,7 @@ const SKILLS_ICONS: Record<string, any> = {
   Kotlin,
   Flutter,
   Symfony,
-  Vue,
+  "Vue.js": Vue,
   PHP,
   Docker,
   Kubernetes,
@@ -54,6 +60,12 @@ const SKILLS_ICONS: Record<string, any> = {
   CodeIgniter,
   Elementor,
   Figma,
+  "GitLab CI/CD": GitlabCI,
+  PHPUnit,
+  Cypress,
+  "AWS S3": AWSS3,
+  Redis,
+  WordPress,
   Enseignement,
   UXUI
 }
@@ -134,7 +146,7 @@ const SKILLS_ICONS: Record<string, any> = {
                 <ul class="flex print:hidden flex-wrap gap-2" aria-label="Technologies used">
                   {skills && skills.map(skill => {
                     const iconName = skill === "Next.js" ? "Next" : skill
-                    const Icon = SKILLS_ICONS[iconName]
+                    const Icon = SKILLS_ICONS[iconName] || SKILLS_ICONS[`${iconName}.js`];
                     return (
                       <li class="bg-skin-button-accent/20 border-skin-hue/20 text-skin-hue print:p-0 print:bg-transparent print:text-zinc-800 flex gap-1 items-center border-solid print:border-none border rounded-md px-2 py-0.5 text-xs">
                         {Icon && <Icon />} <span>{skill}</span>

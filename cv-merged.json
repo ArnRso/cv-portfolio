@@ -25,19 +25,23 @@
   },
   "work": [
     {
-      "name": "HPG",
+      "name": "Appro Automobiles",
       "position": "Développeur Full Stack",
       "location_type": "Remote",
       "location": "Bordeaux, France",
       "url": "https://appro-auto.com",
-      "startDate": "2024-02-01",
+      "startDate": "2022-07-12",
       "endDate": null,
-      "summary": "Responsable de l'architecture et du développement d'applications sécurisées multi-couches. Pilotage de l'équipe technique et mise en place d'une démarche DevOps complète pour le déploiement sécurisé des applications en production.",
+      "summary": "Responsable de l'architecture et du développement d'applications sécurisées multi-couches. Pilotage de l'équipe technique et mise en place d'une démarche DevOps complète pour le déploiement sécurisé des applications en production. Développement et maintenance d'applications web sécurisées avec architecture en couches, spécialisation dans la création d'interfaces utilisateur performantes et de composants métier robustes.",
       "highlights": [
         "Architecture d'applications sécurisées avec séparation des couches métier",
         "Mise en place d'une stratégie de tests automatisés couvrant 85% du code",
         "Déploiement en production de 12 applications critiques sans incident",
-        "Formation et encadrement d'une équipe de 4 développeurs"
+        "Formation et encadrement d'une équipe de 4 développeurs",
+        "Migration complète de CodeIgniter vers Symfony avec zéro temps d'arrêt",
+        "Développement d'interfaces utilisateur réactives avec Vue.js",
+        "Mise en conformité RGPD de l'ensemble des applications",
+        "Amélioration des performances de 40% grâce à l'optimisation du code"
       ],
       "responsibilities": [
         "Conception et développement d'applications sécurisées : Définition de l'architecture logicielle multi-couches avec séparation claire entre présentation, métier et accès aux données",
@@ -47,7 +51,21 @@
         "Planification et exécution des tests : Mise en place de tests unitaires, d'intégration et fonctionnels avec PHPUnit et Cypress (couverture de code > 85%)",
         "Déploiement DevOps : Automatisation du déploiement avec GitLab CI/CD, conteneurisation Docker et orchestration Kubernetes",
         "Gestion de projet informatique : Utilisation de méthodologies Agile/Scrum, planification des sprints et coordination avec les équipes métier",
-        "Internationalisation : Préparation de l'expansion européenne avec mise en place de l'i18n et adaptation aux réglementations locales"
+        "Internationalisation : Préparation de l'expansion européenne avec mise en place de l'i18n et adaptation aux réglementations locales",
+        "Développement d'interfaces utilisateur : Création d'interfaces modernes et responsives avec Vue.js, optimisation UX/UI et accessibilité web",
+        "Développement de composants métier : Implémentation de la logique métier complexe (gestion stock, facturation, CRM) avec patterns de conception adaptés",
+        "Installation et configuration d'environnements : Setup d'environnements de développement Docker, configuration CI/CD et déploiement cloud AWS",
+        "Migration d'architecture : Réécriture progressive des applications legacy CodeIgniter vers Symfony 6 avec maintien de la compatibilité",
+        "Gestion des données : Implémentation du stockage S3, stratégies de backup automatisées et plans de reprise d'activité (PRA/PCA)",
+        "Analyse des besoins : Recueil et spécification des besoins métier, maquettage des nouvelles fonctionnalités",
+        "Migration de la suite logicielle vers une architecture cloud pour assurer la redondance et la résilience à l'aide de Docker et Kubernetes",
+        "Réflexion et mise en place de Plans de Reprise d'Activité (PRA) et de Plans de Continuité d'Activité (PCA)",
+        "Stockage des données en Bucket S3 et mise en place d'une stratégie de backup des fichiers et bases de données",
+        "Développement d'un site B2B permettant aux garages clients d'explorer le stock en direct, avec des fonctionnalités de ventes privées et enchères",
+        "Module de demande de carte grise avec calcul du malus pour les véhicules importés et suivi des achats avec RFA, fidélité et suivi des commandes",
+        "Intégration d'outils pour la gestion des demandes de carte grise, remplissage automatique des formulaires CERFA et signature électronique",
+        "Développement d'un outil permettant aux garages membres du réseau de se tourner vers la vente de véhicules d'occasion, incluant la création de bons de commande, factures, garanties, et financements",
+        "Intégration d'une entreprise de location de véhicules dans la galaxie logicielle, avec mise à jour de l'outil de suivi de location, géolocalisation des véhicules, et signature électronique des documents"
       ],
       "skills": [
         "Symfony",
@@ -59,43 +77,26 @@
         "Redis",
         "GitLab CI/CD",
         "PHPUnit",
-        "Cypress"
+        "Cypress",
+        "AWS S3",
+        "CodeIgniter",
+        "RGPD"
       ]
     },
     {
-      "name": "Appro Automobiles",
-      "position": "Développeur Full Stack",
-      "location_type": "Remote",
+      "name": "Campus du Lac",
+      "position": "Formateur Symfony",
       "location": "Bordeaux, France",
-      "url": "https://appro-auto.com",
-      "startDate": "2022-07-12",
-      "endDate": "2024-01-31",
-      "summary": "Développement et maintenance d'applications web sécurisées avec architecture en couches. Spécialisation dans la création d'interfaces utilisateur performantes et de composants métier robustes.",
-      "highlights": [
-        "Migration complète de CodeIgniter vers Symfony avec zéro temps d'arrêt",
-        "Développement d'interfaces utilisateur réactives avec Vue.js",
-        "Mise en conformité RGPD de l'ensemble des applications",
-        "Amélioration des performances de 40% grâce à l'optimisation du code"
-      ],
+      "url": "https://www.campusdulac.com/",
+      "startDate": "2022-04-01",
+      "endDate": "2022-05-31",
+      "summary": "Formation intensive en Symfony pour les étudiants du Campus du Lac préparant le diplôme de Développeur Web et Web Mobile (DWWM). Initiation et approfondissement du framework PHP avec des cas pratiques avancés.",
       "responsibilities": [
-        "Développement d'interfaces utilisateur : Création d'interfaces modernes et responsives avec Vue.js, optimisation UX/UI et accessibilité web",
-        "Développement de composants métier : Implémentation de la logique métier complexe (gestion stock, facturation, CRM) avec patterns de conception adaptés",
-        "Installation et configuration d'environnements : Setup d'environnements de développement Docker, configuration CI/CD et déploiement cloud AWS",
-        "Migration d'architecture : Réécriture progressive des applications legacy CodeIgniter vers Symfony 6 avec maintien de la compatibilité",
-        "Gestion des données : Implémentation du stockage S3, stratégies de backup automatisées et plans de reprise d'activité (PRA/PCA)",
-        "Analyse des besoins : Recueil et spécification des besoins métier, maquettage des nouvelles fonctionnalités",
-        "Sécurisation des applications : Mise en conformité RGPD, implémentation de l'authentification sécurisée et chiffrement des données"
+        "Introduction au framework Symfony et à son écosystème.",
+        "Mise en pratique des concepts avancés de Symfony à travers des exercices et des projets concrets.",
+        "Encadrement des étudiants dans le développement d'une application web complète, en respectant les bonnes pratiques du framework."
       ],
-      "skills": [
-        "Symfony",
-        "Vue.js",
-        "Docker",
-        "AWS S3",
-        "MySQL",
-        "CodeIgniter",
-        "RGPD",
-        "Git"
-      ]
+      "skills": ["Symfony", "PHP", "Enseignement"]
     },
     {
       "name": "Ideveloppement",
@@ -129,6 +130,21 @@
         "Analyse fonctionnelle",
         "Documentation technique"
       ]
+    },
+    {
+      "name": "MJM Graphic Design",
+      "position": "Intervenant - Workshop HTML & CSS",
+      "location": "Bordeaux, France",
+      "url": "https://www.mjm-design.com/",
+      "startDate": "2020-04-01",
+      "endDate": "2020-04-30",
+      "summary": "Animation d'un workshop pour les élèves designers de MJM Graphic Design, leur permettant d'acquérir des bases solides en HTML et CSS pour réaliser leur premier portfolio professionnel.",
+      "responsibilities": [
+        "Introduction aux concepts fondamentaux du HTML et du CSS.",
+        "Démonstration des meilleures pratiques pour structurer et styliser un site web.",
+        "Accompagnement des étudiants dans la conception et la réalisation de leur propre portfolio en ligne."
+      ],
+      "skills": ["HTML", "CSS", "Enseignement", "UX-UI"]
     },
     {
       "name": "Rozardi",
@@ -279,6 +295,17 @@
       "keywords": ["Docker", "Kubernetes", "CI/CD", "Déploiement sécurisé"]
     },
     {
+      "name": "GitLab CI/CD",
+      "level": "Expert",
+      "keywords": [
+        "Pipeline automation",
+        "Continuous integration",
+        "Continuous deployment",
+        "DevOps"
+      ]
+    },
+
+    {
       "name": "Gestion de Projet",
       "level": "Expert",
       "keywords": [
@@ -298,6 +325,103 @@
         "Communication technique",
         "Équipes internationales"
       ]
+    },
+
+    {
+      "name": "PHP",
+      "level": "Expert",
+      "keywords": ["Web Development", "Backend", "Fullstack"]
+    },
+    {
+      "name": "Docker",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "DevOps", "Containers"]
+    },
+    {
+      "name": "Kubernetes",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "DevOps", "Containers"]
+    },
+    {
+      "name": "Self Hosting",
+      "customIcon": "SelfHosting",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "DevOps", "Containers"]
+    },
+    {
+      "name": "Ansible",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "DevOps", "Automation"]
+    },
+    {
+      "name": "Linux",
+      "level": "Intermediate",
+      "keywords": ["Operating System", "Command Line", "Shell Scripting"]
+    },
+    {
+      "name": "Git",
+      "level": "Intermediate",
+      "keywords": ["Version Control", "Collaboration", "Source Code"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Intermediate",
+      "keywords": ["Version Control", "Collaboration", "Source Code", "Git"]
+    },
+    {
+      "name": "CodeIgniter",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Backend", "PHP Framework"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "JavaScript Framework"]
+    },
+    {
+      "name": "Angular",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "JavaScript Framework"]
+    },
+    {
+      "name": "HTML",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Responsive Design"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "Tailwind",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "CSS Framework",
+        "Responsive Design"
+      ]
+    },
+    {
+      "name": "Node",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Backend", "JavaScript", "Server"]
     }
   ],
   "languages": [
@@ -365,6 +489,22 @@
         "API REST documentée"
       ],
       "technologies": ["Symfony", "Vue.js", "PostgreSQL", "WebSockets"]
+    },
+    {
+      "name": "Appro Automobiles",
+      "isActive": true,
+      "description": "Site web de vente de véhicules d'occasion",
+      "highlights": [],
+      "url": "https://appro-auto.com",
+      "technologies": ["Symfony", "Vue.js", "MySQL", "Docker"]
+    },
+    {
+      "name": "AD Occasion",
+      "isActive": true,
+      "description": "Site web de vente de véhicules d'occasion à destination des membres du réseau AutoDistribution",
+      "highlights": [],
+      "url": "https://ad-occasion.fr",
+      "technologies": ["Symfony", "Vue.js", "MySQL"]
     },
     {
       "name": "LCPO - Site Web Laboratoire",
