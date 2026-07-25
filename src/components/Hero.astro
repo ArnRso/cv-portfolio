@@ -24,8 +24,8 @@
       </p>
 
       <div class="ctas">
-        <a class="btn btn-solid" href="/contact">Demander un devis gratuit</a>
-        <a class="btn btn-outline" href="/cv">Voir mon parcours</a>
+        <a class="btn btn-accent" href="/contact">Demander un devis gratuit</a>
+        <a class="btn btn-ghost-light" href="/cv">Voir mon parcours</a>
       </div>
     </div>
 
@@ -39,8 +39,11 @@
 </section>
 
 <style>
+  /* Aplat marine : la page démarre sur une masse de couleur, comme le CV. */
   .hero {
-    padding-block: var(--space-xl) var(--space-xl);
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    padding-block: var(--space-2xl);
   }
 
   .xxl {
@@ -56,7 +59,7 @@
 
   .outline {
     color: transparent;
-    -webkit-text-stroke: var(--stroke-hero) var(--color-ink);
+    -webkit-text-stroke: var(--stroke-hero) var(--color-on-inverse);
   }
 
   .line em {
@@ -88,7 +91,7 @@
   }
 
   .lede {
-    color: var(--color-muted);
+    opacity: 0.8;
     max-width: var(--measure);
     font-size: var(--text-md);
   }
@@ -111,7 +114,7 @@
     font-weight: var(--weight-semibold);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
-    color: var(--color-muted);
+    opacity: 0.85;
   }
 
   .badges li {
