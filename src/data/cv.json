@@ -20,6 +20,12 @@
       }
     ]
   },
+  "facts": [
+    { "value": "7", "label": "ans d'expérience" },
+    { "value": "3", "label": "écoles où j'enseigne" },
+    { "value": "85 %", "label": "de couverture de tests" },
+    { "value": "Symfony 8", "label": "version la plus récente en production" }
+  ],
   "skills": [
     {
       "domain": "Back-end",
@@ -43,6 +49,7 @@
       "keywords": [
         "Docker",
         "Kubernetes",
+        "Proxmox",
         "GitLab CI/CD",
         "Ansible",
         "Linux",
@@ -51,8 +58,8 @@
       ]
     },
     {
-      "domain": "Bases de données",
-      "keywords": ["MySQL", "Redis"]
+      "domain": "Bases de données & recherche",
+      "keywords": ["MySQL", "Redis", "Meilisearch"]
     },
     {
       "domain": "Sécurité",
@@ -77,11 +84,21 @@
       "location": "Bordeaux, remote",
       "startDate": "2022",
       "endDate": null,
-      "summary": "Architecture et développement d'applications sécurisées multi-couches, pilotage technique, DevOps.",
+      "summary": "Architecture et développement d'applications sécurisées multi-couches, pilotage technique et démarche DevOps.",
       "highlights": [
         "Migration du legacy (CodeIgniter) vers Symfony, avec montée en version continue jusqu'à Symfony 7 et 8 ; infrastructure cloud (Docker, Kubernetes) pour la résilience.",
         "Plateformes métier : site B2B (stock en direct, ventes privées, enchères) ; module carte grise (malus, CERFA, signature électronique) ; outil VO (bons de commande, factures, garanties, financements) ; intégration location (géolocalisation, signature).",
         "Sécurité (JWT, chiffrement, CSRF/XSS), tests supérieurs à 85 % de couverture, CI/CD GitLab, stockage S3, PRA/PCA."
+      ],
+      "stack": [
+        "Symfony",
+        "Vue.js",
+        "Docker",
+        "Kubernetes",
+        "Proxmox",
+        "MySQL",
+        "Redis",
+        "Meilisearch"
       ]
     },
     {
@@ -91,10 +108,11 @@
       "location": "Bordeaux, remote",
       "startDate": "2020",
       "endDate": "2022",
-      "summary": "Développement et maintenance d'applications web sécurisées, analyse des besoins, résolution de problèmes complexes.",
+      "summary": "Développement et maintenance d'applications web sécurisées en agence, analyse des besoins et résolution de problèmes complexes.",
       "highlights": [
         "Modules métier réutilisables (Symfony, PHP), audits de sécurité, optimisation des performances, documentation technique."
-      ]
+      ],
+      "stack": ["Symfony", "PHP", "CodeIgniter", "MySQL"]
     },
     {
       "position": "Développeur Web",
@@ -105,7 +123,8 @@
       "summary": "Interfaces utilisateur et infrastructure.",
       "highlights": [
         "Sites responsive (WordPress/Elementor), intégration de maquettes Figma, administration Linux (LAMP/LEMP, SSL), SEO technique."
-      ]
+      ],
+      "stack": ["WordPress", "PHP", "JavaScript", "Linux"]
     }
   ],
   "teaching": [
@@ -128,24 +147,6 @@
       "detail": "Bases du HTML/CSS et réalisation d'un premier portfolio en ligne."
     }
   ],
-  "projects": [
-    {
-      "name": "AD Occasion",
-      "url": "https://ad-occasion.fr",
-      "description": "Marketplace de véhicules d'occasion pour le 1er réseau français de réparateurs indépendants : ventes privées, enchères, gestion des stocks, intégrations crédit et assurance."
-    },
-    {
-      "name": "Appro Auto",
-      "url": "https://appro-auto.com",
-      "description": "Écosystème web complet : site vitrine marchand, espace professionnel et outils métier internes."
-    },
-    {
-      "name": "LCPO",
-      "url": "https://lcpo.fr",
-      "description": "Site institutionnel d'un laboratoire de recherche (CNRS / Université de Bordeaux) : refonte, espace membres, outils internes."
-    }
-  ],
-  "projectsNote": "Une partie de ces projets inclut des outils internes non accessibles au public.",
   "education": [
     {
       "area": "Développeur Web et Web Mobile (DWWM)",
