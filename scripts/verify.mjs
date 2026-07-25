@@ -55,6 +55,12 @@ const STEPS = [
       'dist/robots.txt',
       'dist/sitemap-index.xml',
       'dist/og.png',
+      'dist/favicon.svg',
+      'dist/favicon.ico',
+      'dist/apple-touch-icon.png',
+      'dist/icon-192.png',
+      'dist/icon-512.png',
+      'dist/site.webmanifest',
     ].filter((f) => !existsSync(f));
     return missing.length ? `manquant : ${missing.join(', ')}` : null;
   }),
