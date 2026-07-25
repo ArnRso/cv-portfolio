@@ -11,9 +11,8 @@ const year = new Date().getFullYear();
 
     <div class="colophon">
       <p class="legal">
-        © {year}
-        {SITE.name} — Développeur web à {SITE.city}, au service des artisans du
-        bâtiment en {SITE.area}.
+        {`© ${year} ${SITE.name}`} — Développeur web à {SITE.city}, au service
+        des artisans du bâtiment en {SITE.area}.
       </p>
 
       <nav aria-label="Navigation de pied de page">
@@ -25,7 +24,8 @@ const year = new Date().getFullYear();
               </li>
             ))
           }
-          <li><span class="soon">Mentions légales (à venir)</span></li>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/confidentialite">Confidentialité</a></li>
         </ul>
       </nav>
     </div>
@@ -69,10 +69,5 @@ const year = new Date().getFullYear();
 
   nav a:hover {
     text-decoration: underline;
-  }
-
-  .soon {
-    font-size: var(--text-xs);
-    color: var(--color-muted);
   }
 </style>
