@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  label?: string;
+  href?: string;
+}
+
+const {
+  title,
+  text,
+  label = 'Demander un devis gratuit',
+  href = '/contact',
+} = Astro.props;
+---
+
+<section class="band">
+  <div class="container inner">
+    <div>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <a class="cta" href={href}>{label}</a>
+  </div>
+</section>
+
+<style>
+  .band {
+    background: var(--color-ink);
+    color: var(--color-bg);
+    padding-block: var(--space-2xl);
+  }
+
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md) var(--space-lg);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tighter);
+    max-width: 18ch;
+  }
+
+  p {
+    margin-top: var(--space-2xs);
+    color: var(--color-bg);
+    opacity: 0.78;
+    max-width: var(--measure);
+  }
+
+  .cta {
+    background: var(--color-accent);
+    color: var(--color-ink);
+    font-weight: var(--weight-extrabold);
+    font-size: var(--text-sm);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .cta:hover {
+    transform: translateY(-2px);
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+interface Props {
+  title?: string;
+  lede?: string;
+  /** Rend la section sur une surface contrastée. */
+  raised?: boolean;
+  id?: string;
+  headingId?: string;
+}
+
+const { title, lede, raised = false, id, headingId } = Astro.props;
+---
+
+<section
+  class:list={['section', { raised }]}
+  id={id}
+  aria-labelledby={headingId}
+>
+  <div class="container">
+    {title && <h2 id={headingId}>{title}</h2>}
+    {lede && <p class="lede">{lede}</p>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section {
+    padding-block: var(--section-gap);
+  }
+
+  .raised {
+    background: var(--color-surface-raised);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tighter);
+    max-width: 20ch;
+  }
+
+  .lede {
+    margin-top: var(--space-sm);
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    max-width: var(--measure);
+  }
+
+  h2 + :global(*:not(.lede)),
+  .lede + :global(*) {
+    margin-top: var(--space-lg);
+  }
+</style>

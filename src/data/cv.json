@@ -1,0 +1,170 @@
+{
+  "basics": {
+    "name": "Adrien Russo",
+    "label": "Développeur Full Stack · Symfony / Vue.js",
+    "tagline": "Spécialisé dans les applications web sécurisées",
+    "email": "hello@adrienrusso.fr",
+    "url": "https://adrienrusso.fr",
+    "summary": "Développeur full stack avec 7 ans d'expérience, spécialisé dans la conception d'applications web sécurisées et robustes. De l'architecture au déploiement, je conçois des solutions fiables, performantes et pensées pour durer. Également formateur, je transmets mon métier dans plusieurs écoles de développement.",
+    "location": {
+      "city": "Bordeaux",
+      "region": "Nouvelle-Aquitaine",
+      "postalCode": "33000",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "russoad",
+        "url": "https://www.linkedin.com/in/russoad/"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "domain": "Back-end",
+      "keywords": ["PHP", "Symfony", "CodeIgniter", "Node.js", "API REST"]
+    },
+    {
+      "domain": "Front-end",
+      "keywords": [
+        "Vue.js",
+        "React",
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Tailwind"
+      ]
+    },
+    {
+      "domain": "DevOps & infra",
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "GitLab CI/CD",
+        "Ansible",
+        "Linux",
+        "Self-hosting",
+        "AWS S3"
+      ]
+    },
+    {
+      "domain": "Bases de données",
+      "keywords": ["MySQL", "Redis"]
+    },
+    {
+      "domain": "Sécurité",
+      "keywords": ["Applications sécurisées", "JWT", "RGPD"]
+    },
+    {
+      "domain": "Méthode & outils",
+      "keywords": [
+        "Git/GitHub",
+        "Agile/Scrum",
+        "Gestion de projet",
+        "PHPUnit",
+        "Cypress"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "position": "Développeur Full Stack",
+      "company": "Appro Automobiles",
+      "url": "https://appro-auto.com",
+      "location": "Bordeaux, remote",
+      "startDate": "2022",
+      "endDate": null,
+      "summary": "Architecture et développement d'applications sécurisées multi-couches, pilotage technique, DevOps.",
+      "highlights": [
+        "Migration du legacy (CodeIgniter) vers Symfony, avec montée en version continue jusqu'à Symfony 7 et 8 ; infrastructure cloud (Docker, Kubernetes) pour la résilience.",
+        "Plateformes métier : site B2B (stock en direct, ventes privées, enchères) ; module carte grise (malus, CERFA, signature électronique) ; outil VO (bons de commande, factures, garanties, financements) ; intégration location (géolocalisation, signature).",
+        "Sécurité (JWT, chiffrement, CSRF/XSS), tests supérieurs à 85 % de couverture, CI/CD GitLab, stockage S3, PRA/PCA."
+      ]
+    },
+    {
+      "position": "Développeur Backend",
+      "company": "idéveloppement",
+      "url": "https://www.ideveloppement.fr/",
+      "location": "Bordeaux, remote",
+      "startDate": "2020",
+      "endDate": "2022",
+      "summary": "Développement et maintenance d'applications web sécurisées, analyse des besoins, résolution de problèmes complexes.",
+      "highlights": [
+        "Modules métier réutilisables (Symfony, PHP), audits de sécurité, optimisation des performances, documentation technique."
+      ]
+    },
+    {
+      "position": "Développeur Web",
+      "company": "Rozardi",
+      "location": "Bordeaux, remote",
+      "startDate": "2018",
+      "endDate": "2020",
+      "summary": "Interfaces utilisateur et infrastructure.",
+      "highlights": [
+        "Sites responsive (WordPress/Elementor), intégration de maquettes Figma, administration Linux (LAMP/LEMP, SSL), SEO technique."
+      ]
+    }
+  ],
+  "teaching": [
+    {
+      "institution": "MyDigitalSchool",
+      "role": "Workshops B3 Développement web",
+      "period": "2025–2026",
+      "detail": "Crazy Dev, Conception logicielle, Infrastructure, Secure Programming, Conteneurisation, Versionnage & CI."
+    },
+    {
+      "institution": "Campus du Lac",
+      "role": "Formation intensive Symfony (DWWM)",
+      "period": "2022",
+      "detail": "Initiation et approfondissement du framework, encadrement d'un projet d'application complète."
+    },
+    {
+      "institution": "MJM Graphic Design",
+      "role": "Workshop HTML & CSS pour designers",
+      "period": "2020",
+      "detail": "Bases du HTML/CSS et réalisation d'un premier portfolio en ligne."
+    }
+  ],
+  "projects": [
+    {
+      "name": "AD Occasion",
+      "url": "https://ad-occasion.fr",
+      "description": "Marketplace de véhicules d'occasion pour le 1er réseau français de réparateurs indépendants : ventes privées, enchères, gestion des stocks, intégrations crédit et assurance."
+    },
+    {
+      "name": "Appro Auto",
+      "url": "https://appro-auto.com",
+      "description": "Écosystème web complet : site vitrine marchand, espace professionnel et outils métier internes."
+    },
+    {
+      "name": "LCPO",
+      "url": "https://lcpo.fr",
+      "description": "Site institutionnel d'un laboratoire de recherche (CNRS / Université de Bordeaux) : refonte, espace membres, outils internes."
+    }
+  ],
+  "projectsNote": "Une partie de ces projets inclut des outils internes non accessibles au public.",
+  "education": [
+    {
+      "area": "Développeur Web et Web Mobile (DWWM)",
+      "institution": "La Piscine",
+      "period": "2019"
+    },
+    {
+      "area": "Master MEEF Anglais",
+      "institution": "Université de Bordeaux",
+      "period": "2016–2017"
+    },
+    {
+      "area": "Licence LLCE Anglais",
+      "institution": "Université de Bordeaux",
+      "period": "2013–2016"
+    }
+  ],
+  "languages": [
+    { "language": "Français", "fluency": "Natif" },
+    { "language": "Anglais", "fluency": "Courant — cursus universitaire" }
+  ]
+}

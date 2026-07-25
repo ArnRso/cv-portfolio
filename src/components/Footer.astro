@@ -1,0 +1,79 @@
+---
+import Ticket from './Ticket.astro';
+import { NAV, SITE } from '../consts';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <Ticket />
+
+    <div class="colophon">
+      <p class="legal">
+        © {year}
+        {SITE.name} — Développeur web à {SITE.city}, au service des artisans du
+        bâtiment en {SITE.area}.
+      </p>
+
+      <nav aria-label="Navigation de pied de page">
+        <ul>
+          {
+            NAV.map((item) => (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))
+          }
+          <li><span class="soon">Mentions légales (à venir)</span></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: auto;
+    border-top: var(--border-thin) solid var(--color-border);
+    background: var(--color-surface-raised);
+  }
+
+  .colophon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--space-md) var(--space-lg);
+    border-top: var(--border-thin) solid var(--color-border);
+  }
+
+  .legal {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    max-width: var(--measure);
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-sm);
+  }
+
+  nav a {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .soon {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+  }
+</style>

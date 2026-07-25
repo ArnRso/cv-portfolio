@@ -1,0 +1,80 @@
+---
+import { TRADES } from '../consts';
+
+/* La piste est dupliquée : l'animation translate de -50 %, donc la seconde
+   moitié prend exactement la place de la première — boucle sans saut. */
+const track = [...TRADES, ...TRADES];
+---
+
+<div class="marquee">
+  <ul class="track" aria-label="Corps de métier accompagnés">
+    {
+      track.map((trade, i) => (
+        <li
+          class={i >= TRADES.length ? 'dupe' : undefined}
+          aria-hidden={i >= TRADES.length ? 'true' : undefined}
+        >
+          {trade}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .marquee {
+    border-top: var(--border-thick) solid var(--color-ink);
+    border-bottom: var(--border-thick) solid var(--color-ink);
+    padding-block: var(--marquee-pad);
+    overflow: hidden;
+  }
+
+  .track {
+    display: flex;
+    width: max-content;
+    gap: var(--marquee-gap);
+    padding-left: var(--marquee-gap);
+    animation: scroll var(--marquee-duration) linear infinite;
+    font-family: var(--font-display);
+    font-weight: var(--weight-extrabold);
+    text-transform: uppercase;
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .track li {
+    display: flex;
+    align-items: center;
+    gap: var(--marquee-gap);
+    white-space: nowrap;
+  }
+
+  .track li::after {
+    content: '✦';
+    color: var(--color-accent);
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .track {
+      animation: none;
+      flex-wrap: wrap;
+      width: auto;
+      justify-content: center;
+      padding-left: 0;
+    }
+
+    /* Sans défilement, la copie ferait doublon à l'écran. */
+    .track .dupe {
+      display: none;
+    }
+  }
+</style>
