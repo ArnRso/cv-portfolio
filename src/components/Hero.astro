@@ -24,8 +24,8 @@
       </p>
 
       <div class="ctas">
-        <a class="cta-primary" href="/contact">Demander un devis gratuit</a>
-        <a class="cta-secondary" href="/cv">Voir mon parcours</a>
+        <a class="btn btn-solid" href="/contact">Demander un devis gratuit</a>
+        <a class="btn btn-outline" href="/cv">Voir mon parcours</a>
       </div>
     </div>
 
@@ -98,35 +98,6 @@
     flex-wrap: wrap;
     gap: var(--space-2xs) var(--space-sm);
     align-items: center;
-  }
-
-  .cta-primary,
-  .cta-secondary {
-    font-weight: var(--weight-extrabold);
-    font-size: var(--text-sm);
-    padding: var(--space-xs) var(--space-md);
-    border-radius: var(--radius-pill);
-    text-decoration: none;
-    white-space: nowrap;
-    transition:
-      transform var(--duration-fast) var(--ease-out),
-      filter var(--duration-fast) var(--ease-out);
-  }
-
-  .cta-primary {
-    background: var(--color-ink);
-    color: var(--color-bg);
-  }
-
-  .cta-secondary {
-    border: var(--border-thick) solid var(--color-ink);
-    color: var(--color-ink);
-  }
-
-  .cta-primary:hover,
-  .cta-secondary:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.08);
   }
 
   .badges {
