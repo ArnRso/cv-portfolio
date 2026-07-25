@@ -12,6 +12,9 @@
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier --write .",
+    "verify": "node scripts/verify.mjs",
+    "cv:pdf": "node scripts/cv-pdf.mjs",
+    "og": "node scripts/og-image.mjs",
     "astro": "astro"
   },
   "dependencies": {

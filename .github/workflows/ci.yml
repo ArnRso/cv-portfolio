@@ -6,7 +6,7 @@ on:
     branches-ignore: [main]
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -19,14 +19,10 @@ jobs:
       - name: Installer les dépendances
         run: npm ci
 
-      - name: Contrôler les types
-        run: npx astro check
+      - name: Installer Chromium
+        run: npx playwright install --with-deps chromium
 
-      - name: Vérifier le formatage
-        run: npx prettier --check .
-
-      - name: Construire le site
-        run: npm run build
-
-      - name: Vérifier que le CNAME est présent
-        run: test -f dist/CNAME
+      # Mêmes étapes qu'en local (npm run verify) : une seule définition
+      # des vérifications, dans scripts/verify.mjs.
+      - name: Vérifier
+        run: npm run verify
