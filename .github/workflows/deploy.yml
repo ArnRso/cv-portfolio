@@ -41,6 +41,7 @@ jobs:
           PUBLIC_EMAILJS_PUBLIC_KEY: ${{ vars.PUBLIC_EMAILJS_PUBLIC_KEY }}
           PUBLIC_EMAILJS_SERVICE_ID: ${{ vars.PUBLIC_EMAILJS_SERVICE_ID }}
           PUBLIC_EMAILJS_TEMPLATE_ID: ${{ vars.PUBLIC_EMAILJS_TEMPLATE_ID }}
+          PUBLIC_GA_ID: ${{ vars.PUBLIC_GA_ID }}
 
       - uses: actions/upload-pages-artifact@v5
         with:

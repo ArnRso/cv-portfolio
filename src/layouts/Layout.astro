@@ -9,6 +9,7 @@ import '../styles/tokens.css';
 import '../styles/base.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
 import { SITE } from '../consts';
 
 interface Props {
@@ -100,5 +101,6 @@ const business = {
       <slot />
     </main>
     <Footer />
+    <Analytics />
   </body>
 </html>

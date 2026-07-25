@@ -122,6 +122,23 @@ dans [ContactForm.astro](src/components/ContactForm.astro).
 Le template envoie vers `adrien.russo@gmail.com` et positionne `Reply To` sur
 l'email du visiteur.
 
+## Mesure d'audience
+
+Google Analytics 4, **chargé uniquement après consentement** : tant que le
+visiteur n'a pas cliqué « Accepter », aucun cookie n'est déposé et le script de
+Google n'est pas chargé. C'est ce qu'exige la CNIL.
+
+Le bandeau ([Analytics.astro](src/components/Analytics.astro), logique dans
+[consent.ts](src/scripts/consent.ts)) présente « Refuser » et « Accepter » avec
+le même poids visuel, mémorise le choix six mois, et reste révocable via
+« Gérer mes préférences » en pied de page.
+
+Sans `PUBLIC_GA_ID`, ni le script ni le bandeau ne sont rendus — le site
+fonctionne alors sans aucun traceur.
+
+Comptez 40 à 60 % de visites non mesurées : c'est la part de visiteurs qui
+refusent, inhérente à tout outil déposant des cookies.
+
 ## Reste à faire côté Adrien
 
 - [x] Fournir les identifiants EmailJS.

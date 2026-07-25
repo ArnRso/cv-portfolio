@@ -1,0 +1,111 @@
+---
+/**
+ * Google Analytics 4 sous consentement.
+ *
+ * Rien n'est chargé tant que le visiteur n'a pas accepté : ni script, ni
+ * cookie. Le bandeau ci-dessous recueille le choix, le conserve six mois, et
+ * charge gtag.js seulement en cas d'acceptation.
+ *
+ * Sans PUBLIC_GA_ID, ni le script ni le bandeau ne sont rendus — le site
+ * fonctionne alors sans aucun traceur, comme avant.
+ */
+const gaId = import.meta.env.PUBLIC_GA_ID ?? '';
+---
+
+{
+  gaId && (
+    <>
+      <div
+        id="consent"
+        class="consent"
+        role="dialog"
+        aria-live="polite"
+        aria-label="Consentement à la mesure d'audience"
+        data-ga-id={gaId}
+        hidden
+      >
+        <div class="container inner">
+          <p>
+            Ce site utilise un outil de mesure d'audience pour comprendre
+            comment il est consulté. Aucun cookie n'est déposé sans votre
+            accord. <a href="/confidentialite">En savoir plus</a>.
+          </p>
+          <div class="actions">
+            <button type="button" data-consent="refuser">
+              Refuser
+            </button>
+            <button type="button" data-consent="accepter">
+              Accepter
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <script>import '../scripts/consent';</script>
+    </>
+  )
+}
+
+<style>
+  .consent {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: var(--z-overlay);
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    border-top: var(--rule-height) solid var(--color-accent);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm) var(--space-lg);
+    padding-block: var(--space-sm);
+  }
+
+  .consent p {
+    font-size: var(--text-sm);
+    max-width: 68ch;
+  }
+
+  .consent a {
+    color: var(--color-accent);
+  }
+
+  .actions {
+    display: flex;
+    gap: var(--space-2xs);
+    flex: none;
+  }
+
+  /* Les deux boutons ont le même poids visuel : la CNIL impose que refuser
+     soit aussi simple qu'accepter. */
+  .actions button {
+    font-weight: var(--weight-extrabold);
+    font-size: var(--text-sm);
+    padding: var(--space-2xs) var(--space-md);
+    border-radius: var(--radius-pill);
+    border: var(--border-thick) solid var(--color-on-inverse);
+    background: none;
+    color: var(--color-on-inverse);
+    transition: background var(--duration-fast) var(--ease-out);
+  }
+
+  .actions button:hover {
+    background: rgb(255 255 255 / 0.12);
+  }
+
+  @media (max-width: 40em) {
+    .actions {
+      width: 100%;
+    }
+
+    .actions button {
+      flex: 1;
+    }
+  }
+</style>
