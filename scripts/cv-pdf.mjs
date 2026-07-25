@@ -50,16 +50,20 @@ const { port } = server.address();
 const browser = await chromium.launch();
 const page = await browser.newPage();
 
-await page.goto(`http://localhost:${port}/cv`, { waitUntil: 'networkidle' });
-await page.emulateMedia({ media: 'print' });
+/* /cv-print est un gabarit dédié, composé pour tenir sur un A4. La page /cv
+   publique reste optimisée pour l'écran. */
+await page.goto(`http://localhost:${port}/cv-print`, {
+  waitUntil: 'networkidle',
+});
 await page.pdf({
   path: OUT,
   format: 'A4',
   printBackground: true,
-  margin: { top: '12mm', bottom: '12mm', left: '12mm', right: '12mm' },
+  margin: { top: '11mm', bottom: '11mm', left: '12mm', right: '12mm' },
 });
 
 await browser.close();
 server.close();
 
-console.log(`PDF généré : ${OUT}`);
+const { size } = await stat(OUT);
+console.log(`PDF généré : ${OUT} (${Math.round(size / 1024)} Ko)`);
