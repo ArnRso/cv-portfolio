@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layouts créatifs 61–75 — adrienrusso.fr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800;900&family=Barlow+Condensed:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Caveat:wght@600;700&family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Press+Start+2P&family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f4f4f5; color: #18181b; font-family: 'Inter', system-ui, sans-serif; line-height: 1.5; }
+  .page { max-width: 1020px; margin: 0 auto; padding: 32px 20px 80px; }
+  .intro { text-align: center; margin-bottom: 40px; }
+  .intro h1 { font-family: 'Bricolage Grotesque',sans-serif; font-size: clamp(26px, 5vw, 42px); letter-spacing: -0.02em; margin-bottom: 12px; }
+  .intro p { max-width: 660px; margin: 0 auto; color: #52525b; font-size: 16px; }
+  .dir-block { margin-bottom: 44px; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 40px -12px rgba(0,0,0,.22); background: #fff; }
+  .dir-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 15px 22px; background: #111114; color: #fff; }
+  .dir-meta .num { font-family:'Space Grotesk',monospace; font-weight:700; font-size: 13px; opacity:.6; }
+  .dir-meta .name { font-family: 'Bricolage Grotesque',sans-serif; font-weight: 800; font-size: 18px; }
+  .dir-meta .vibe { font-size: 13px; color: #a1a1aa; flex: 1 1 260px; }
+  .foot { text-align:center; color:#71717a; font-size:13px; margin-top:8px; }
+
+  /* 61 DEVANTURE */
+  .c61 .mock { background:linear-gradient(#8fb3c9 0 62%, #6f6a62 62% 66%, #4d4a44 66%); padding:36px 30px 30px; }
+  .c61 .shop { max-width:620px; margin:0 auto; }
+  .c61 .sign { background:#1e3a30; color:#f2ead8; text-align:center; padding:14px 18px 12px; border-radius:8px 8px 0 0; border:3px solid #142a22; border-bottom:none; }
+  .c61 .sign b { font-family:'DM Serif Display',serif; font-size:clamp(19px,2.8vw,26px); letter-spacing:.02em; }
+  .c61 .sign span { display:block; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:#c9a86a; margin-top:2px; }
+  .c61 .awning { height:34px; background:repeating-linear-gradient(90deg,#c1502e 0 34px,#f2ead8 34px 68px); border:3px solid #142a22; border-top:none; position:relative; }
+  .c61 .awning::after { content:""; position:absolute; left:0; right:0; bottom:-12px; height:12px; background:radial-gradient(circle at 17px -3px, #c1502e 14px, transparent 15px); background-size:68px 15px; }
+  .c61 .front { display:grid; grid-template-columns:1.5fr 1fr; gap:0; border:3px solid #142a22; border-top:none; }
+  .c61 .window { background:linear-gradient(115deg,#dcebf2 0 45%, #c6dde9 45% 60%, #dcebf2 60%); padding:20px; position:relative; }
+  .c61 .neon { position:absolute; top:12px; right:14px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; color:#ff5f45; text-shadow:0 0 12px rgba(255,95,69,.9); border:2px solid #ff5f45; border-radius:100px; padding:3px 12px; box-shadow:0 0 14px rgba(255,95,69,.5), inset 0 0 8px rgba(255,95,69,.3); }
+  .c61 .window h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(17px,2.4vw,22px); max-width:16ch; margin-bottom:10px; color:#1e3a30; }
+  .c61 .window .expo { display:flex; gap:8px; }
+  .c61 .window .expo div { flex:1; background:#fff; border-radius:6px; padding:9px 8px; font-size:10.5px; font-weight:700; color:#1e3a30; box-shadow:0 4px 10px -6px rgba(20,42,34,.5); }
+  .c61 .window .expo div span { display:block; font-weight:500; color:#5f7a70; font-size:9.5px; }
+  .c61 .door { background:#1e3a30; padding:20px 16px; display:flex; flex-direction:column; justify-content:flex-end; gap:10px; border-left:3px solid #142a22; }
+  .c61 .door .plate { font-size:10.5px; color:#c9d8d0; text-align:center; }
+  .c61 .door .cta { background:#c9a86a; color:#1e3a30; font-weight:800; font-size:12.5px; text-align:center; border-radius:6px; padding:11px 8px; }
+  @media(max-width:640px){ .c61 .front{grid-template-columns:1fr;} .c61 .door{border-left:none; border-top:3px solid #142a22;} }
+
+  /* 62 ÉCHAFAUDAGE */
+  .c62 .mock { background:#dce3e8; padding:34px 30px; }
+  .c62 .scaf { max-width:640px; margin:0 auto; position:relative; padding:0 26px; }
+  .c62 .scaf::before, .c62 .scaf::after { content:""; position:absolute; top:0; bottom:0; width:10px; background:repeating-linear-gradient(#8d9aa5 0 6px, #a9b6c0 6px 46px); border-radius:4px; }
+  .c62 .scaf::before{ left:0; } .c62 .scaf::after{ right:0; }
+  .c62 .level { background:#c8965a; background-image:repeating-linear-gradient(90deg, rgba(0,0,0,.07) 0 2px, transparent 2px 56px); border-radius:4px; padding:14px 18px; margin-bottom:34px; box-shadow:0 8px 14px -8px rgba(0,0,0,.45); display:flex; align-items:center; gap:14px; }
+  .c62 .level:last-child { margin-bottom:0; }
+  .c62 .level i { font-style:normal; font-size:22px; }
+  .c62 .level b { display:block; font-size:14px; color:#2f2418; }
+  .c62 .level p { font-size:11.5px; color:#5c4a33; }
+  .c62 .level .lvl { margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; color:#7c6446; white-space:nowrap; }
+  .c62 .head62 { text-align:center; margin-bottom:24px; }
+  .c62 .head62 h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(20px,3vw,28px); letter-spacing:-0.02em; }
+  .c62 .ctarow { text-align:center; margin-top:24px; }
+  .c62 .cta { display:inline-block; background:#20262b; color:#fff; font-weight:800; padding:13px 22px; border-radius:8px; font-size:14px; }
+
+  /* 63 SMARTPHONE */
+  .c63 .mock { background:#141821; padding:36px 30px; display:flex; gap:26px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .c63 .phone { width:230px; background:#0b0d12; border:8px solid #262b36; border-radius:34px; padding:12px 10px 16px; box-shadow:0 24px 50px -20px rgba(0,0,0,.8); }
+  .c63 .notch { width:80px; height:16px; background:#262b36; border-radius:100px; margin:0 auto 10px; }
+  .c63 .screen { background:#fff; border-radius:18px; overflow:hidden; }
+  .c63 .screen .apphead { display:flex; justify-content:space-between; align-items:center; padding:9px 11px; font-size:9px; font-weight:800; }
+  .c63 .screen .apphead span:last-child { background:#111; color:#fff; border-radius:100px; padding:3px 8px; }
+  .c63 .screen .hero63 { padding:4px 11px 10px; }
+  .c63 .screen .hero63 h4 { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; line-height:1.15; margin-bottom:5px; }
+  .c63 .screen .hero63 h4 em { font-style:normal; color:#e8590c; }
+  .c63 .screen .hero63 p { font-size:8.5px; color:#666; margin-bottom:7px; }
+  .c63 .screen .hero63 .b { display:inline-block; background:#e8590c; color:#fff; font-size:9px; font-weight:800; padding:6px 10px; border-radius:100px; }
+  .c63 .screen .ph63 { height:64px; background:linear-gradient(120deg,#e9e2d6,#d8cfc0); display:flex; align-items:center; justify-content:center; font-size:8.5px; color:#8a7f6e; }
+  .c63 .screen .call { display:flex; align-items:center; gap:6px; padding:9px 11px; font-size:9px; font-weight:700; color:#0a7b53; }
+  .c63 .stats { max-width:300px; display:flex; flex-direction:column; gap:12px; }
+  .c63 .stats h2 { color:#fff; font-family:'Space Grotesk',sans-serif; font-size:clamp(19px,2.8vw,25px); letter-spacing:-0.01em; }
+  .c63 .stats h2 em { font-style:normal; color:#e8590c; }
+  .c63 .chip { background:#1d232f; border:1px solid #2c3442; color:#c3cad8; font-size:12.5px; border-radius:12px; padding:11px 14px; }
+  .c63 .chip b { color:#fff; }
+  .c63 .cta { align-self:flex-start; background:#e8590c; color:#fff; font-weight:800; font-size:13.5px; padding:12px 20px; border-radius:100px; }
+
+  /* 64 STORIES */
+  .c64 .mock { background:#101014; padding:34px 26px; }
+  .c64 .head64 { text-align:center; color:#fff; margin-bottom:20px; }
+  .c64 .head64 h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(19px,2.8vw,25px); }
+  .c64 .strip { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .c64 .story { width:150px; aspect-ratio:9/15; border-radius:16px; padding:12px 11px; display:flex; flex-direction:column; color:#fff; position:relative; }
+  .c64 .story .prog { display:flex; gap:3px; margin-bottom:8px; }
+  .c64 .story .prog i { flex:1; height:2.5px; border-radius:100px; background:rgba(255,255,255,.35); }
+  .c64 .story .prog i.on { background:#fff; }
+  .c64 .story .who { font-size:8.5px; font-weight:700; opacity:.9; margin-bottom:auto; }
+  .c64 .story i.big { font-style:normal; font-size:34px; margin-bottom:8px; }
+  .c64 .story b { font-size:14px; line-height:1.15; margin-bottom:4px; }
+  .c64 .story span { font-size:9.5px; opacity:.85; }
+  .c64 .s1 { background:linear-gradient(160deg,#e8590c,#b23a12); }
+  .c64 .s2 { background:linear-gradient(160deg,#1f6feb,#123a80); }
+  .c64 .s3 { background:linear-gradient(160deg,#0d9f6e,#075e40); }
+  .c64 .s4 { background:linear-gradient(160deg,#8250df,#4b2495); border:2px dashed rgba(255,255,255,.5); }
+  .c64 .s4 .rep { margin-top:auto; background:#fff; color:#4b2495; font-weight:800; font-size:10.5px; text-align:center; border-radius:100px; padding:8px 6px; }
+
+  /* 65 PERMIS DE CONSTRUIRE */
+  .c65 .mock { background:#cfd6dd; padding:34px 30px; }
+  .c65 .form { background:#fff; max-width:620px; margin:0 auto; border:2px solid #22303c; padding:0 0 22px; box-shadow:0 14px 30px -16px rgba(0,0,0,.4); position:relative; }
+  .c65 .form .bande { display:flex; justify-content:space-between; align-items:center; background:#22303c; color:#fff; padding:10px 18px; }
+  .c65 .form .bande b { font-family:'Barlow Condensed',sans-serif; font-size:17px; letter-spacing:.06em; text-transform:uppercase; }
+  .c65 .form .cerfa { font-family:'IBM Plex Mono',monospace; font-size:10px; background:#fff; color:#22303c; padding:2px 8px; border-radius:3px; }
+  .c65 .form h2 { text-align:center; font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:clamp(19px,2.8vw,25px); margin:18px 20px 4px; }
+  .c65 .form .obj65 { text-align:center; font-size:12px; color:#5c6a76; margin-bottom:16px; }
+  .c65 .sect { margin:0 22px 12px; border:1.5px solid #9fb0be; }
+  .c65 .sect .st { background:#e8eef3; font-size:10.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; padding:5px 10px; color:#374858; }
+  .c65 .sect .rows { padding:10px 12px; display:flex; flex-direction:column; gap:7px; }
+  .c65 .chk { display:flex; gap:9px; font-size:13px; align-items:baseline; }
+  .c65 .chk i { font-style:normal; font-family:'IBM Plex Mono',monospace; color:#0d7a4f; font-weight:700; }
+  .c65 .stamp65 { position:absolute; right:24px; bottom:64px; font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; color:#0d7a4f; border:3.5px solid #0d7a4f; border-radius:6px; padding:5px 14px; transform:rotate(-9deg); font-size:17px; opacity:.85; }
+  .c65 .ctarow { text-align:center; margin-top:16px; }
+  .c65 .cta { display:inline-block; background:#22303c; color:#fff; font-weight:800; font-size:13.5px; padding:12px 20px; border-radius:6px; }
+
+  /* 66 PLAN DE MÉTRO */
+  .c66 .mock { background:#f7f6f2; padding:36px 34px; }
+  .c66 h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(20px,3vw,27px); letter-spacing:-0.02em; margin-bottom:4px; }
+  .c66 .sub66 { font-size:13px; color:#75716a; margin-bottom:26px; }
+  .c66 .line66 { margin-bottom:24px; }
+  .c66 .lab { display:inline-flex; align-items:center; gap:8px; font-weight:800; font-size:12.5px; margin-bottom:12px; }
+  .c66 .lab .badge { width:22px; height:22px; border-radius:100px; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:11px; }
+  .c66 .track66 { position:relative; display:flex; justify-content:space-between; padding:0 6px; }
+  .c66 .track66::before { content:""; position:absolute; left:8px; right:8px; top:7px; height:6px; border-radius:100px; background:var(--lc); }
+  .c66 .stn { position:relative; z-index:1; width:20%; }
+  .c66 .stn::before { content:""; display:block; width:14px; height:14px; margin:0 0 6px 2px; border-radius:100px; background:#fff; border:4px solid var(--lc); }
+  .c66 .stn.term::before { background:var(--lc); box-shadow:0 0 0 3px #fff, 0 0 0 5px var(--lc); }
+  .c66 .stn b { font-size:11.5px; display:block; line-height:1.2; }
+  .c66 .stn span { font-size:10px; color:#8a867e; }
+  .c66 .la { --lc:#e8b500; } .c66 .lb { --lc:#1f6feb; }
+  .c66 .corr { text-align:center; font-size:12px; color:#75716a; margin:8px 0 22px; }
+  .c66 .corr b { background:#191919; color:#fff; border-radius:100px; padding:6px 14px; font-size:12.5px; }
+  .c66 .ctarow { text-align:center; }
+  .c66 .cta { display:inline-block; background:#e8b500; color:#191919; font-weight:800; font-size:14px; padding:13px 22px; border-radius:100px; }
+
+  /* 67 JEU VIDÉO */
+  .c67 .mock { background:#0d0b1e; padding:36px 30px; color:#e8e5ff; }
+  .c67 .hud { max-width:640px; margin:0 auto; }
+  .c67 .lvl67 { font-family:'Press Start 2P',monospace; font-size:10px; color:#ffd23f; margin-bottom:10px; }
+  .c67 h2 { font-family:'Press Start 2P',monospace; font-size:clamp(14px,2.4vw,20px); line-height:1.5; margin-bottom:16px; }
+  .c67 h2 em { font-style:normal; color:#4ade80; }
+  .c67 .xp { margin-bottom:18px; }
+  .c67 .xp .t { display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#8f88c2; margin-bottom:5px; }
+  .c67 .xp .bar67 { height:14px; border:2px solid #4a4380; border-radius:3px; padding:2px; }
+  .c67 .xp .bar67 i { display:block; height:100%; width:12%; background:repeating-linear-gradient(90deg,#4ade80 0 8px, #35b264 8px 16px); }
+  .c67 .quests { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+  .c67 .q67 { border:1.5px solid #2f2a55; background:#141130; border-radius:8px; padding:12px 13px; font-size:12px; }
+  .c67 .q67 b { display:block; color:#fff; font-size:12.5px; margin-bottom:3px; }
+  .c67 .q67 .st67 { font-family:'IBM Plex Mono',monospace; font-size:10px; color:#ffd23f; }
+  .c67 .q67.done .st67 { color:#4ade80; }
+  .c67 .ctarow { text-align:center; }
+  .c67 .cta { display:inline-block; font-family:'Press Start 2P',monospace; background:#4ade80; color:#0d0b1e; font-size:11px; padding:14px 20px; border-radius:4px; box-shadow:0 5px 0 #2c8a52; }
+  @media(max-width:640px){ .c67 .quests{grid-template-columns:1fr;} }
+
+  /* 68 NUANCIER */
+  .c68 .mock { background:#efece6; padding:38px 30px; display:flex; gap:30px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .c68 .fan { position:relative; width:300px; height:250px; flex:0 0 auto; }
+  .c68 .strip68 { position:absolute; bottom:18px; left:20px; width:230px; height:52px; border-radius:8px; transform-origin:26px 26px; box-shadow:0 6px 14px -7px rgba(0,0,0,.35); padding:8px 12px 8px 56px; color:#fff; }
+  .c68 .strip68 b { display:block; font-size:12.5px; }
+  .c68 .strip68 span { font-size:9.5px; opacity:.9; font-family:'IBM Plex Mono',monospace; }
+  .c68 .f1 { background:#e8b500; transform:rotate(0deg); color:#3a3000; }
+  .c68 .f2 { background:#e8590c; transform:rotate(16deg); }
+  .c68 .f3 { background:#1f6feb; transform:rotate(32deg); }
+  .c68 .f4 { background:#0d9f6e; transform:rotate(48deg); }
+  .c68 .rivet { position:absolute; bottom:36px; left:38px; width:16px; height:16px; border-radius:100px; background:#d8d3ca; border:3px solid #8f887c; z-index:5; }
+  .c68 .side68 { max-width:320px; }
+  .c68 .side68 h2 { font-family:'Fraunces',serif; font-weight:600; font-size:clamp(20px,3vw,27px); line-height:1.1; margin-bottom:10px; }
+  .c68 .side68 p { font-size:13.5px; color:#6e675c; margin-bottom:16px; }
+  .c68 .cta { display:inline-block; background:#191612; color:#fff; font-weight:800; font-size:13.5px; padding:12px 20px; border-radius:8px; }
+
+  /* 69 ÉTIQUETTE GRAND CRU */
+  .c69 .mock { background:#3c1220; padding:40px 30px; }
+  .c69 .label { background:#f7f0df; max-width:440px; margin:0 auto; padding:26px 30px; border:2px solid #3c1220; outline:6px solid #f7f0df; outline-offset:0; box-shadow:0 0 0 8px #7a2437, 0 20px 44px -18px rgba(0,0,0,.7); text-align:center; }
+  .c69 .millesime { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.3em; color:#7a2437; margin-bottom:8px; }
+  .c69 .label h2 { font-family:'Playfair Display',serif; font-size:clamp(23px,3.4vw,31px); color:#241014; }
+  .c69 .label .dom { font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:#7a2437; margin:2px 0 12px; }
+  .c69 .filet { height:1.5px; background:#c5b691; margin:12px auto; width:70%; }
+  .c69 .apl { font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:#6e6248; }
+  .c69 .notes69 { font-size:12.5px; color:#4c4232; margin:12px 0; line-height:1.6; }
+  .c69 .notes69 b { color:#241014; }
+  .c69 .medal { display:inline-block; background:#c5a13e; color:#3c2a08; font-weight:800; font-size:11px; border-radius:100px; padding:7px 16px; transform:rotate(-2deg); box-shadow:0 4px 10px -5px rgba(0,0,0,.5); margin-bottom:12px; }
+  .c69 .cta { display:block; background:#7a2437; color:#f7f0df; font-weight:800; font-size:13px; padding:12px; border-radius:4px; }
+
+  /* 70 MÉTÉO */
+  .c70 .mock { background:linear-gradient(160deg,#3d6fb2,#77a5d8); padding:36px 30px; }
+  .c70 .app70 { background:rgba(255,255,255,.14); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.35); border-radius:20px; max-width:560px; margin:0 auto; padding:24px 26px; color:#fff; }
+  .c70 .loc { font-size:12px; letter-spacing:.14em; text-transform:uppercase; opacity:.9; }
+  .c70 .now { display:flex; align-items:center; gap:18px; margin:10px 0 6px; }
+  .c70 .now .ic70 { font-size:52px; }
+  .c70 .now h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(19px,2.8vw,25px); line-height:1.15; }
+  .c70 .desc { font-size:13px; opacity:.92; margin-bottom:18px; }
+  .c70 .days { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; margin-bottom:18px; }
+  .c70 .day70 { background:rgba(255,255,255,.14); border-radius:12px; text-align:center; padding:10px 6px; }
+  .c70 .day70 .d { font-size:10px; font-weight:700; letter-spacing:.08em; opacity:.85; }
+  .c70 .day70 .i { font-size:20px; margin:4px 0; }
+  .c70 .day70 .v { font-size:10.5px; font-weight:700; }
+  .c70 .cta { display:block; text-align:center; background:#ffd23f; color:#1d3least; color:#243a5c; font-weight:800; font-size:14px; padding:13px; border-radius:100px; }
+
+  /* 71 GRUE */
+  .c71 .mock { background:linear-gradient(#1b2745 0 70%, #10182c); padding:38px 30px 0; position:relative; overflow:hidden; min-height:360px; }
+  .c71 .msg { position:relative; z-index:2; max-width:400px; }
+  .c71 .msg h2 { font-family:'Archivo',sans-serif; font-weight:900; color:#fff; font-size:clamp(22px,3.4vw,31px); letter-spacing:-0.02em; line-height:1.05; margin-bottom:10px; }
+  .c71 .msg h2 em { font-style:normal; color:#ffb01f; }
+  .c71 .msg p { color:#aab6d4; font-size:13.5px; margin-bottom:14px; max-width:36ch; }
+  .c71 .cta { display:inline-block; background:#ffb01f; color:#1b2745; font-weight:800; font-size:14px; padding:12px 20px; border-radius:8px; }
+  .c71 .crane { position:absolute; right:70px; top:16px; bottom:0; width:10px; background:repeating-linear-gradient(#e8a200 0 14px, #c78a00 14px 28px); z-index:1; }
+  .c71 .jib { position:absolute; right:24px; top:36px; width:280px; height:8px; background:#e8a200; z-index:1; }
+  .c71 .cable { position:absolute; right:238px; top:44px; width:2px; height:96px; background:#cfd8ea; z-index:1; }
+  .c71 .load { position:absolute; right:196px; top:140px; background:#fff; border-radius:8px; padding:10px 14px; font-weight:800; font-size:12px; color:#1b2745; box-shadow:0 10px 24px -10px rgba(0,0,0,.6); z-index:2; transform:rotate(-2deg); }
+  .c71 .skyline { position:absolute; left:0; right:0; bottom:0; height:74px; display:flex; align-items:flex-end; gap:6px; padding:0 20px; z-index:0; }
+  .c71 .b71 { background:#0c1322; flex:1; border-radius:3px 3px 0 0; }
+  @media(max-width:680px){ .c71 .crane,.c71 .jib,.c71 .cable,.c71 .load{ display:none; } }
+
+  /* 72 FICHE PRODUIT */
+  .c72 .mock { background:#f5f5f3; padding:34px; }
+  .c72 .sheet { background:#fff; border-radius:16px; max-width:720px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:24px; padding:24px; box-shadow:0 12px 30px -18px rgba(0,0,0,.3); }
+  .c72 .visu { background:linear-gradient(135deg,#e7e3da,#d6d0c2); border-radius:12px; min-height:220px; display:flex; align-items:center; justify-content:center; color:#8a8172; font-size:12px; position:relative; }
+  .c72 .visu .tag72 { position:absolute; top:12px; left:12px; background:#d1490f; color:#fff; font-size:10.5px; font-weight:800; border-radius:100px; padding:4px 10px; }
+  .c72 .info h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(18px,2.6vw,23px); letter-spacing:-0.01em; margin-bottom:4px; }
+  .c72 .stars { color:#f5a623; font-size:13px; margin-bottom:10px; }
+  .c72 .stars span { color:#8a8a84; font-size:11.5px; }
+  .c72 .price { display:flex; align-items:baseline; gap:10px; margin-bottom:12px; }
+  .c72 .price b { font-size:24px; color:#d1490f; font-family:'Archivo',sans-serif; }
+  .c72 .price s { color:#a3a39c; font-size:13px; }
+  .c72 .opts72 { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:14px; }
+  .c72 .opts72 i { font-style:normal; font-size:11.5px; font-weight:700; border:1.5px solid #dcdcd4; border-radius:100px; padding:6px 12px; cursor:pointer; }
+  .c72 .opts72 i.on { border-color:#d1490f; background:#fdeee6; color:#a13708; }
+  .c72 .bullets { font-size:12.5px; color:#5c5c54; display:flex; flex-direction:column; gap:5px; margin-bottom:16px; }
+  .c72 .cta { display:block; text-align:center; background:#191919; color:#fff; font-weight:800; font-size:14px; padding:13px; border-radius:10px; }
+  @media(max-width:640px){ .c72 .sheet{grid-template-columns:1fr;} }
+
+  /* 73 CONTRÔLE TECHNIQUE */
+  .c73 .mock { background:#e4e6e3; padding:34px 30px; }
+  .c73 .report { background:#fff; max-width:600px; margin:0 auto; border-radius:8px; overflow:hidden; box-shadow:0 12px 28px -16px rgba(0,0,0,.35); }
+  .c73 .rh { background:#17321f; color:#fff; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; }
+  .c73 .rh b { font-family:'Barlow Condensed',sans-serif; font-size:17px; text-transform:uppercase; letter-spacing:.05em; }
+  .c73 .rh span { font-family:'IBM Plex Mono',monospace; font-size:10.5px; opacity:.85; }
+  .c73 .rows73 { padding:16px 20px; }
+  .c73 .r73 { display:flex; align-items:center; gap:12px; padding:9px 0; border-bottom:1px solid #eef0ed; font-size:13.5px; }
+  .c73 .r73:last-child { border:none; }
+  .c73 .r73 .ok { color:#0d7a4f; font-weight:900; }
+  .c73 .r73 .ko { color:#c1121f; font-weight:900; }
+  .c73 .r73 small { margin-left:auto; font-size:10.5px; color:#96a09a; text-align:right; }
+  .c73 .verdict { margin:6px 20px 18px; border:2.5px solid #0d7a4f; color:#0d7a4f; border-radius:8px; text-align:center; font-weight:900; text-transform:uppercase; font-size:13px; padding:9px; letter-spacing:.06em; transform:rotate(-1deg); }
+  .c73 .ctarow { text-align:center; padding:0 20px 20px; }
+  .c73 .cta { display:inline-block; background:#17321f; color:#fff; font-weight:800; font-size:13.5px; padding:12px 20px; border-radius:8px; }
+
+  /* 74 BROUILLON */
+  .c74 .mock { background:#fdfcf7; background-image:linear-gradient(rgba(80,120,200,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(80,120,200,.14) 1px, transparent 1px); background-size:22px 22px; padding:36px 34px; }
+  .c74 .title74 { font-family:'Caveat',cursive; font-size:clamp(26px,4vw,36px); color:#2b3a55; transform:rotate(-1.5deg); margin-bottom:20px; }
+  .c74 .title74 u { text-decoration-thickness:3px; text-decoration-color:#e8590c; }
+  .c74 .wf { max-width:560px; margin:0 auto; position:relative; }
+  .c74 .box74 { border:2.5px dashed #7d8db0; border-radius:6px; padding:12px 14px; margin-bottom:12px; color:#54607a; font-size:12.5px; font-weight:600; background:rgba(255,255,255,.6); }
+  .c74 .box74.tall { min-height:74px; }
+  .c74 .note74 { position:absolute; font-family:'Caveat',cursive; color:#c1502e; font-size:19px; line-height:1; transform:rotate(-4deg); }
+  .c74 .n1 { right:-8px; top:2px; } .c74 .n2 { left:-6px; top:108px; transform:rotate(3deg); } .c74 .n3 { right:-4px; bottom:52px; }
+  .c74 .arrow { position:absolute; font-size:22px; color:#c1502e; }
+  .c74 .a1 { right:52px; top:22px; transform:rotate(40deg); } .c74 .a2 { left:44px; top:132px; transform:rotate(-140deg); }
+  .c74 .ctarow { text-align:center; margin-top:18px; }
+  .c74 .cta { display:inline-block; font-family:'Caveat',cursive; background:#2b3a55; color:#fff; font-size:19px; padding:11px 24px; border-radius:100px; transform:rotate(-1deg); }
+
+  /* 75 AFFICHE DE FILM */
+  .c75 .mock { background:#0a0a0c; padding:40px 30px; }
+  .c75 .poster { max-width:430px; margin:0 auto; text-align:center; color:#e8e4da; border:1px solid #2a2a30; padding:30px 26px; background:radial-gradient(ellipse at 50% 22%, #23232c, #0a0a0c 70%); }
+  .c75 .laurels { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#c5a13e; margin-bottom:16px; }
+  .c75 .un { font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:.34em; text-transform:uppercase; color:#9d9a90; margin-bottom:6px; }
+  .c75 h2 { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:clamp(30px,5.4vw,46px); line-height:1; letter-spacing:.01em; color:#fff; }
+  .c75 h2 em { font-style:normal; color:#ffb01f; display:block; }
+  .c75 .tagline { font-family:'Playfair Display',serif; font-style:italic; font-size:14px; color:#b9b4a6; margin:14px 0 20px; }
+  .c75 .credits { font-family:'Oswald',sans-serif; text-transform:uppercase; font-size:9.5px; letter-spacing:.1em; color:#8b887e; line-height:1.7; margin-bottom:18px; }
+  .c75 .credits b { color:#c9c5b8; }
+  .c75 .soon { font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.24em; font-size:13px; color:#ffb01f; margin-bottom:14px; }
+  .c75 .cta { display:inline-block; background:#ffb01f; color:#0a0a0c; font-weight:800; font-size:13px; padding:12px 22px; border-radius:4px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="intro">
+    <h1>Derniers concepts : 61 → 75</h1>
+    <p>Quinze idées de plus, du littéral (la vitrine, l'échafaudage) au décalé (le grand cru, l'affiche de film). Après ça, on choisit — promis.</p>
+  </div>
+
+  <!-- 61 -->
+  <div class="dir-block c61">
+    <div class="dir-meta"><span class="num">61</span><span class="name">La devanture</span><span class="vibe">« Site vitrine » pris au pied de la lettre : une vraie devanture de commerce avec enseigne, store banne, néon OUVERT et porte d'entrée. La porte, c'est le CTA.</span></div>
+    <div class="mock"><div class="shop">
+      <div class="sign"><b>Adrien Russo</b><span>Créateur de sites — Bordeaux &amp; Gironde</span></div>
+      <div class="awning"></div>
+      <div class="front">
+        <div class="window"><span class="neon">OUVERT</span><h2>Votre entreprise mérite une belle vitrine.</h2>
+          <div class="expo"><div>Site vitrine<span>chantiers &amp; certifs</span></div><div>Refonte<span>remis à neuf</span></div><div>Google<span>toute la Gironde</span></div></div>
+        </div>
+        <div class="door"><div class="plate">Artisans du BTP, entrez sans frapper</div><div class="cta">Pousser la porte — devis gratuit</div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- 62 -->
+  <div class="dir-block c62">
+    <div class="dir-meta"><span class="num">62</span><span class="name">L'échafaudage</span><span class="vibe">Le contenu posé sur les plateformes d'un échafaudage entre deux montants métalliques. On grimpe niveau par niveau jusqu'au sommet.</span></div>
+    <div class="mock">
+      <div class="head62"><h2>On monte votre présence en ligne, niveau par niveau.</h2></div>
+      <div class="scaf">
+        <div class="level"><i>🏆</i><div><b>Niveau 3 — Récolter</b><p>Les demandes de devis arrivent toutes seules.</p></div><span class="lvl">H +9,00 m</span></div>
+        <div class="level"><i>🔍</i><div><b>Niveau 2 — Être visible</b><p>Référencement local dans toute la Gironde.</p></div><span class="lvl">H +6,00 m</span></div>
+        <div class="level"><i>🏗</i><div><b>Niveau 1 — Construire</b><p>Un site vitrine solide, rapide, à votre image.</p></div><span class="lvl">H +3,00 m</span></div>
+        <div class="level"><i>🤝</i><div><b>Niveau 0 — On échange</b><p>Votre métier, vos besoins. Devis gratuit.</p></div><span class="lvl">SOL</span></div>
+      </div>
+      <div class="ctarow"><a class="cta">Commencer l'ascension</a></div>
+    </div>
+  </div>
+
+  <!-- 63 -->
+  <div class="dir-block c63">
+    <div class="dir-meta"><span class="num">63</span><span class="name">Le smartphone</span><span class="vibe">Ton site montré là où les clients le verront vraiment : dans un téléphone. Autour, les arguments mobile-first. Pédagogique et concret.</span></div>
+    <div class="mock">
+      <div class="phone"><div class="notch"></div><div class="screen">
+        <div class="apphead"><span>DUPONT MAÇONNERIE</span><span>Devis</span></div>
+        <div class="hero63"><h4>Maçon à Libourne, <em>depuis 2004.</em></h4><p>Gros œuvre, rénovation, extensions.</p><span class="b">Demander un devis</span></div>
+        <div class="ph63">Vos chantiers en photos</div>
+        <div class="call">📞 Appeler directement — 1 clic</div>
+      </div></div>
+      <div class="stats">
+        <h2>Vos clients vous cherchent <em>sur leur téléphone.</em></h2>
+        <div class="chip"><b>La majorité des recherches locales</b> se font sur mobile — votre site doit y être impeccable.</div>
+        <div class="chip"><b>Appel en un clic :</b> le visiteur devient un client sans effort.</div>
+        <a class="cta">Voir mon site sur mobile</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 64 -->
+  <div class="dir-block c64">
+    <div class="dir-meta"><span class="num">64</span><span class="name">Les stories</span><span class="vibe">La home racontée en stories verticales façon réseaux sociaux, avec barres de progression. Un format que tout le monde sait « lire » d'instinct.</span></div>
+    <div class="mock">
+      <div class="head64"><h2>Votre nouveau site, en 4 stories.</h2></div>
+      <div class="strip">
+        <div class="story s1"><div class="prog"><i class="on"></i><i></i><i></i><i></i></div><span class="who">adrienrusso.fr</span><i class="big">🏗</i><b>Un site à la hauteur de votre savoir-faire</b><span>Pour les artisans du BTP en Gironde</span></div>
+        <div class="story s2"><div class="prog"><i class="on"></i><i class="on"></i><i></i><i></i></div><span class="who">adrienrusso.fr</span><i class="big">📸</i><b>Vos chantiers en vitrine</b><span>Avant/après, certifications, avis</span></div>
+        <div class="story s3"><div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><span class="who">adrienrusso.fr</span><i class="big">🔍</i><b>Trouvé sur Google</b><span>Partout en Gironde</span></div>
+        <div class="story s4"><div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><span class="who">adrienrusso.fr</span><i class="big">✉️</i><b>À vous de jouer</b><span>Réponse rapide</span><div class="rep">Demander un devis gratuit</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 65 -->
+  <div class="dir-block c65">
+    <div class="dir-meta"><span class="num">65</span><span class="name">Le permis de construire</span><span class="vibe">Un formulaire administratif détourné avec cases cochées et tampon « ACCORDÉ ». L'artisan connaît ce document par cœur — ici, il fait sourire.</span></div>
+    <div class="mock"><div class="form">
+      <div class="bande"><b>Demande de permis de construire</b><span class="cerfa">cerfa n° 2026-WEB</span></div>
+      <h2>Objet : votre présence en ligne</h2>
+      <p class="obj65">Demandeur : votre entreprise du bâtiment — Gironde (33)</p>
+      <div class="sect"><div class="st">Article 1 — Nature des travaux</div><div class="rows">
+        <div class="chk"><i>[x]</i><span>Construction d'un site vitrine neuf (chantiers, certifications, devis en ligne)</span></div>
+        <div class="chk"><i>[x]</i><span>Rénovation lourde d'un site existant</span></div>
+        <div class="chk"><i>[x]</i><span>Raccordement au réseau Google — toute la Gironde</span></div>
+      </div></div>
+      <div class="sect"><div class="st">Article 2 — Maître d'œuvre</div><div class="rows">
+        <div class="chk"><i>[x]</i><span>Adrien Russo, développeur web à Bordeaux — 7 ans d'expérience, formateur en écoles</span></div>
+      </div></div>
+      <div class="stamp65">Accordé</div>
+      <div class="ctarow"><a class="cta">Déposer ma demande — devis gratuit</a></div>
+    </div></div>
+  </div>
+
+  <!-- 66 -->
+  <div class="dir-block c66">
+    <div class="dir-meta"><span class="num">66</span><span class="name">Le plan de métro</span><span class="vibe">Chaque prestation est une ligne de métro avec ses stations (les étapes), et toutes se croisent à la station « Devis gratuit ». Ludique et très lisible.</span></div>
+    <div class="mock">
+      <h2>Toutes les lignes mènent à votre site.</h2>
+      <p class="sub66">Plan du réseau Adrien Russo — dessert toute la Gironde.</p>
+      <div class="line66 la"><span class="lab"><span class="badge" style="background:#e8b500; color:#3a3000;">A</span> Ligne Site vitrine</span>
+        <div class="track66"><div class="stn term"><b>On échange</b><span>départ</span></div><div class="stn"><b>Devis clair</b></div><div class="stn"><b>Maquette</b></div><div class="stn"><b>Construction</b></div><div class="stn term"><b>Mise en ligne</b><span>terminus</span></div></div>
+      </div>
+      <div class="line66 lb"><span class="lab"><span class="badge" style="background:#1f6feb;">B</span> Ligne Visibilité Google</span>
+        <div class="track66"><div class="stn term"><b>Audit</b><span>départ</span></div><div class="stn"><b>Référencement local</b></div><div class="stn"><b>Fiche Google</b></div><div class="stn"><b>Suivi</b></div><div class="stn term"><b>Top Gironde</b><span>terminus</span></div></div>
+      </div>
+      <div class="corr">Correspondance de toutes les lignes : <b>⦿ Station Devis Gratuit</b></div>
+      <div class="ctarow"><a class="cta">Monter à bord</a></div>
+    </div>
+  </div>
+
+  <!-- 67 -->
+  <div class="dir-block c67">
+    <div class="dir-meta"><span class="num">67</span><span class="name">Le niveau supérieur</span><span class="vibe">La home façon jeu vidéo rétro : barre d'XP, quêtes, succès à débloquer. Assumé geek — clivant pour la cible, mais unique en son genre.</span></div>
+    <div class="mock"><div class="hud">
+      <div class="lvl67">JOUEUR : VOTRE ENTREPRISE — NIVEAU 1</div>
+      <h2>QUÊTE PRINCIPALE : <em>être trouvé sur Google.</em></h2>
+      <div class="xp"><div class="t"><span>XP VISIBILITÉ</span><span>120 / 1000</span></div><div class="bar67"><i></i></div></div>
+      <div class="quests">
+        <div class="q67"><b>Construire le site vitrine</b>Chantiers, certifications, devis en ligne.<div class="st67">► QUÊTE DISPONIBLE</div></div>
+        <div class="q67"><b>Vaincre le vieux site</b>Refonte : plus beau, plus rapide.<div class="st67">► QUÊTE DISPONIBLE</div></div>
+        <div class="q67 done"><b>Trouver un allié fiable</b>Dév. expérimenté — 7 ans, formateur.<div class="st67">✓ ACCOMPLIE</div></div>
+        <div class="q67"><b>Dominer la Gironde</b>Référencement local, fiche Google.<div class="st67">► QUÊTE DISPONIBLE</div></div>
+      </div>
+      <div class="ctarow"><a class="cta">APPUYEZ SUR START</a></div>
+    </div></div>
+  </div>
+
+  <!-- 68 -->
+  <div class="dir-block c68">
+    <div class="dir-meta"><span class="num">68</span><span class="name">Le nuancier</span><span class="vibe">Un éventail de nuancier de peintre où chaque languette est un service avec son nom de teinte. Clin d'œil direct aux peintres — et à ton envie de couleur.</span></div>
+    <div class="mock">
+      <div class="fan">
+        <div class="strip68 f4"><b>Outil sur-mesure</b><span>VERT-PLANNING · réf. AR-04</span></div>
+        <div class="strip68 f3"><b>Visibilité Google</b><span>BLEU-GIRONDE · réf. AR-03</span></div>
+        <div class="strip68 f2"><b>Refonte</b><span>ORANGE-RENOV · réf. AR-02</span></div>
+        <div class="strip68 f1"><b>Site vitrine</b><span>JAUNE-CHANTIER · réf. AR-01</span></div>
+        <div class="rivet"></div>
+      </div>
+      <div class="side68">
+        <h2>Choisissez votre teinte, je m'occupe de l'application.</h2>
+        <p>Des sites au fini impeccable pour les artisans du bâtiment, à Bordeaux et dans toute la Gironde.</p>
+        <a class="cta">Demander un devis gratuit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 69 -->
+  <div class="dir-block c69">
+    <div class="dir-meta"><span class="num">69</span><span class="name">Le grand cru</span><span class="vibe">La home est une étiquette de bouteille bordelaise : millésime, appellation, médaille. L'identité girondine poussée jusqu'au bout, avec second degré.</span></div>
+    <div class="mock"><div class="label">
+      <div class="millesime">— MILLÉSIME 2026 —</div>
+      <h2>Grand Cru du Web</h2>
+      <div class="dom">Domaine Adrien Russo</div>
+      <div class="filet"></div>
+      <div class="apl">Appellation Gironde Contrôlée</div>
+      <p class="notes69">Notes de dégustation : un site <b>charpenté</b>, à la robe soignée, une belle longueur sur <b>Google</b>. Cépages : <b>Symfony &amp; Vue</b>, élevé 7 ans en agence.<br>Se marie parfaitement avec tous les corps de métier du bâtiment.</p>
+      <div class="medal">🏅 Médaille du devis gratuit</div>
+      <a class="cta">Déguster — sans engagement</a>
+    </div></div>
+  </div>
+
+  <!-- 70 -->
+  <div class="dir-block c70">
+    <div class="dir-meta"><span class="num">70</span><span class="name">La météo</span><span class="vibe">Un widget météo détourné : les prévisions de votre activité avant/après le site. « Pluie de devis attendue jeudi. » Léger et sympathique.</span></div>
+    <div class="mock"><div class="app70">
+      <div class="loc">📍 Votre entreprise — Gironde</div>
+      <div class="now"><span class="ic70">⛅</span><h2>Éclaircies sur votre visibilité.</h2></div>
+      <p class="desc">Prévisions avec un site signé Adrien Russo :</p>
+      <div class="days">
+        <div class="day70"><div class="d">SEM. 1</div><div class="i">🌤</div><div class="v">Mise en ligne</div></div>
+        <div class="day70"><div class="d">SEM. 2</div><div class="i">☀️</div><div class="v">Visible sur Google</div></div>
+        <div class="day70"><div class="d">SEM. 3</div><div class="i">🌧</div><div class="v">Pluie de visites</div></div>
+        <div class="day70"><div class="d">SEM. 4</div><div class="i">⛈</div><div class="v">Averse de devis</div></div>
+      </div>
+      <a class="cta">Faire venir le beau temps</a>
+    </div></div>
+  </div>
+
+  <!-- 71 -->
+  <div class="dir-block c71">
+    <div class="dir-meta"><span class="num">71</span><span class="name">La grue</span><span class="vibe">Un chantier de nuit : la skyline en bas, et une grue qui descend « votre site » dans le paysage. Le hero raconte la pose du premier élément.</span></div>
+    <div class="mock">
+      <div class="msg">
+        <h2>On installe <em>votre site</em> dans le paysage.</h2>
+        <p>Développeur web à Bordeaux — je construis la présence en ligne des artisans du BTP, partout en Gironde.</p>
+        <a class="cta">Lancer le chantier</a>
+      </div>
+      <div class="crane"></div><div class="jib"></div><div class="cable"></div>
+      <div class="load">🌐 votre-entreprise.fr</div>
+      <div class="skyline"><div class="b71" style="height:40%"></div><div class="b71" style="height:70%"></div><div class="b71" style="height:52%"></div><div class="b71" style="height:88%"></div><div class="b71" style="height:60%"></div><div class="b71" style="height:34%"></div><div class="b71" style="height:76%"></div><div class="b71" style="height:48%"></div></div>
+    </div>
+  </div>
+
+  <!-- 72 -->
+  <div class="dir-block c72">
+    <div class="dir-meta"><span class="num">72</span><span class="name">La fiche produit</span><span class="vibe">Ton offre présentée comme une fiche produit e-commerce : étoiles, options, « livraison en quelques semaines ». Codes familiers, lecture immédiate.</span></div>
+    <div class="mock"><div class="sheet">
+      <div class="visu"><span class="tag72">Fabriqué à Bordeaux</span>Aperçu de votre futur site</div>
+      <div class="info">
+        <h2>Site internet pour artisan du BTP</h2>
+        <div class="stars">★★★★★ <span>· recommandé par ses clients</span></div>
+        <div class="price"><b>Devis gratuit</b><s>engagement</s></div>
+        <div class="opts72"><i class="on">Site vitrine</i><i>Refonte</i><i>Visibilité Google</i><i>Outil sur-mesure</i></div>
+        <div class="bullets"><span>✓ Livraison : quelques semaines</span><span>✓ Garantie : sécurité &amp; fiabilité incluses</span><span>✓ Service après-vente : maintenance &amp; suivi</span><span>✓ Vendeur : Adrien Russo — 7 ans d'expérience</span></div>
+        <a class="cta">Demander mon devis</a>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- 73 -->
+  <div class="dir-block c73">
+    <div class="dir-meta"><span class="num">73</span><span class="name">Le contrôle technique</span><span class="vibe">Le diagnostic de votre site actuel, façon rapport de contrôle technique : points verts, points rouges, verdict. L'audit de refonte rendu tangible.</span></div>
+    <div class="mock"><div class="report">
+      <div class="rh"><b>Contrôle technique — site internet</b><span>N° 33-2026</span></div>
+      <div class="rows73">
+        <div class="r73"><span class="ko">✗</span> S'affiche mal sur téléphone <small>défaillance critique — contre-visite</small></div>
+        <div class="r73"><span class="ko">✗</span> Introuvable sur Google en Gironde <small>défaillance majeure</small></div>
+        <div class="r73"><span class="ko">✗</span> Design d'origine (2012) <small>usure généralisée</small></div>
+        <div class="r73"><span class="ok">✓</span> Après réparation par Adrien Russo <small>rapide, sécurisé, visible</small></div>
+      </div>
+      <div class="verdict">Remise en circulation garantie</div>
+      <div class="ctarow"><a class="cta">Passer le contrôle — diagnostic offert</a></div>
+    </div></div>
+  </div>
+
+  <!-- 74 -->
+  <div class="dir-block c74">
+    <div class="dir-meta"><span class="num">74</span><span class="name">Le brouillon</span><span class="vibe">Papier millimétré, wireframe au crayon et annotations manuscrites : on voit le site en train d'être pensé. Montre la méthode plutôt que le résultat.</span></div>
+    <div class="mock">
+      <div class="title74">Croquis n°1 — <u>votre futur site</u></div>
+      <div class="wf">
+        <div class="box74">▢ Logo de votre entreprise + téléphone bien visible</div>
+        <span class="note74 n1">gros, qu'on le voie !</span>
+        <span class="arrow a1">↘</span>
+        <div class="box74 tall">▢ Grande photo de VOTRE chantier + bouton « Demander un devis »</div>
+        <span class="note74 n2">vos réalisations, pas des photos de banque !</span>
+        <span class="arrow a2">↖</span>
+        <div class="box74">▢ Vos certifications (RGE, Qualibat, décennale)</div>
+        <div class="box74">▢ Zone d'intervention : carte de la Gironde</div>
+        <span class="note74 n3">important pour Google →</span>
+      </div>
+      <div class="ctarow"><a class="cta">On dessine le vôtre ensemble ?</a></div>
+    </div>
+  </div>
+
+  <!-- 75 -->
+  <div class="dir-block c75">
+    <div class="dir-meta"><span class="num">75</span><span class="name">L'affiche de film</span><span class="vibe">La home en affiche de cinéma : lauriers de festival, tagline, bloc de crédits en bas. Théâtral, mémorable, et le CTA devient un ticket de séance.</span></div>
+    <div class="mock"><div class="poster">
+      <div class="laurels">🌿 Sélection officielle — Artisans de Gironde 2026 🌿</div>
+      <div class="un">Adrien Russo présente</div>
+      <h2>Un site <em>à la hauteur</em></h2>
+      <div class="tagline">« Ils le cherchaient sur Google. Ils l'ont trouvé. »</div>
+      <div class="credits">AVEC <b>VOTRE ENTREPRISE</b> · <b>VOS CHANTIERS</b> · <b>VOS CLIENTS</b><br>ÉCRIT ET RÉALISÉ PAR <b>ADRIEN RUSSO</b> — DÉVELOPPEUR WEB, BORDEAUX<br>MUSIQUE <b>SYMFONY</b> · IMAGE <b>VUE</b> · PRODUCTION <b>7 ANS D'EXPÉRIENCE</b></div>
+      <div class="soon">Prochainement — dans toute la Gironde</div>
+      <a class="cta">🎟 Réserver sa séance — devis gratuit</a>
+    </div></div>
+  </div>
+
+  <p class="foot">75 directions au total : ambiances 01–40, concepts &amp; structures 41–75. Il est temps de choisir.</p>
+</div>
+</body>
+</html>

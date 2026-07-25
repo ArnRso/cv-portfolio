@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Bon — 10 déclinaisons disruptives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800;900&family=Barlow+Condensed:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Caveat:wght@600;700&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#f4f4f5; color:#18181b; font-family:'Inter',system-ui,sans-serif; line-height:1.5; }
+  .page { max-width:1020px; margin:0 auto; padding:32px 20px 80px; }
+  .intro { text-align:center; margin-bottom:40px; }
+  .intro h1 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(26px,5vw,40px); letter-spacing:-0.02em; margin-bottom:12px; }
+  .intro p { max-width:660px; margin:0 auto; color:#52525b; font-size:16px; }
+  .dir-block { margin-bottom:44px; border-radius:18px; overflow:hidden; box-shadow:0 10px 40px -12px rgba(0,0,0,.22); background:#fff; }
+  .dir-meta { display:flex; flex-wrap:wrap; align-items:center; gap:14px; padding:15px 22px; background:#111114; color:#fff; }
+  .dir-meta .num { font-family:'Space Grotesk',monospace; font-weight:700; font-size:13px; opacity:.6; }
+  .dir-meta .name { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:18px; }
+  .dir-meta .vibe { font-size:13px; color:#a1a1aa; flex:1 1 240px; }
+  .foot { text-align:center; color:#71717a; font-size:13px; margin-top:8px; }
+
+  /* B1 — FLYER À FRANGES */
+  .b1 .mock { background:#8a6f52; background-image:repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 4px, transparent 4px 42px); padding:38px 30px; display:flex; justify-content:center; }
+  .b1 .flyer { background:#fdfaf0; width:360px; padding:22px 20px 0; box-shadow:0 14px 30px -12px rgba(0,0,0,.55); position:relative; transform:rotate(-1deg); }
+  .b1 .pin { position:absolute; top:-8px; left:50%; transform:translateX(-50%); width:16px; height:16px; border-radius:100px; background:radial-gradient(circle at 35% 30%, #ff8a80, #c62828); box-shadow:0 3px 5px rgba(0,0,0,.4); }
+  .b1 .flyer h3 { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:23px; text-align:center; line-height:1.1; }
+  .b1 .flyer h3 em { font-style:normal; color:#d1490f; }
+  .b1 .flyer p { text-align:center; font-size:12px; color:#6b6353; margin:8px 0 14px; }
+  .b1 .fringe { display:flex; border-top:2px dashed #b9ad92; }
+  .b1 .tab { flex:1; border-right:2px dashed #b9ad92; padding:10px 3px; writing-mode:vertical-rl; font-family:'IBM Plex Mono',monospace; font-size:8.5px; font-weight:700; color:#8a5a2b; text-align:center; height:98px; }
+  .b1 .tab:nth-child(3) { transform:rotate(2deg) translateY(3px); }
+  .b1 .tab.gone { visibility:hidden; }
+  .b1 .fallen { position:absolute; bottom:-34px; right:-16px; background:#fdfaf0; padding:8px 4px; writing-mode:vertical-rl; font-family:'IBM Plex Mono',monospace; font-size:8.5px; font-weight:700; color:#8a5a2b; transform:rotate(24deg); box-shadow:0 6px 12px -6px rgba(0,0,0,.5); }
+  .b1 .note1 { position:absolute; left:-84px; top:40%; font-family:'Caveat',cursive; color:#fdfaf0; font-size:18px; transform:rotate(-6deg); width:76px; line-height:1.1; text-shadow:0 2px 6px rgba(0,0,0,.5); }
+
+  /* B2 — TRIPLICATA CARBONE */
+  .b2 .mock { background:#e7e4dc; padding:44px 30px 54px; display:flex; justify-content:center; }
+  .b2 .stack { position:relative; width:min(560px,100%); }
+  .b2 .sheet { border-radius:4px; padding:22px 26px; box-shadow:0 10px 24px -12px rgba(0,0,0,.4); }
+  .b2 .rose { position:absolute; inset:0; background:#f6d5dc; transform:rotate(2.4deg) translate(10px,14px); }
+  .b2 .jaune { position:absolute; inset:0; background:#f7ecc0; transform:rotate(-1.6deg) translate(-8px,7px); }
+  .b2 .blanc { position:relative; background:#fdfdfa; }
+  .b2 .head2 { display:flex; justify-content:space-between; border-bottom:2px solid #22303c; padding-bottom:8px; margin-bottom:12px; }
+  .b2 .head2 b { font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; font-size:17px; letter-spacing:.05em; }
+  .b2 .head2 span { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#c1121f; font-weight:700; }
+  .b2 h3 { font-family:'Bricolage Grotesque',sans-serif; font-size:21px; margin-bottom:6px; }
+  .b2 p { font-size:12.5px; color:#5c6a76; margin-bottom:12px; }
+  .b2 .lines { display:flex; flex-direction:column; gap:8px; margin-bottom:14px; font-size:12.5px; }
+  .b2 .lines i { font-style:normal; border-bottom:1.5px dotted #9fb0be; padding:2px; font-family:'Caveat',cursive; font-size:16px; color:#22303c; }
+  .b2 .go2 { display:inline-block; background:#22303c; color:#fff; font-weight:800; font-size:13px; padding:11px 18px; border-radius:5px; }
+  .b2 .carbone { position:absolute; bottom:-32px; right:4px; font-family:'Caveat',cursive; font-size:17px; color:#6e6a5e; transform:rotate(-2deg); }
+
+  /* B3 — LE CHÈQUE */
+  .b3 .mock { background:#2c3e50; padding:44px 30px; display:flex; justify-content:center; }
+  .b3 .cheque { width:min(620px,100%); background:linear-gradient(135deg,#eef4ec, #dceadf 60%, #e8f0ea); background-image:repeating-linear-gradient(0deg, transparent 0 26px, rgba(44,62,80,.05) 26px 27px); border:1.5px solid #9fb4a6; border-radius:8px; padding:20px 26px; box-shadow:0 16px 34px -14px rgba(0,0,0,.6); }
+  .b3 .bank { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; }
+  .b3 .bank b { font-family:'DM Serif Display',serif; font-size:17px; color:#1e3d33; }
+  .b3 .bank span { font-family:'IBM Plex Mono',monospace; font-size:10px; color:#5c7568; }
+  .b3 .payline { font-size:12.5px; color:#37503f; margin-bottom:6px; }
+  .b3 .payline i { font-style:normal; font-family:'Caveat',cursive; font-size:20px; color:#14281f; border-bottom:1.5px solid #9fb4a6; padding:0 8px; }
+  .b3 .row3 { display:flex; justify-content:space-between; align-items:center; gap:14px; margin:12px 0; flex-wrap:wrap; }
+  .b3 .amount { border:2px solid #1e3d33; border-radius:6px; padding:8px 16px; font-family:'Archivo',sans-serif; font-weight:900; font-size:17px; color:#1e3d33; background:#fff; }
+  .b3 .sig3 { text-align:right; }
+  .b3 .sig3 .s { font-family:'Caveat',cursive; font-size:24px; color:#14281f; }
+  .b3 .sig3 small { display:block; font-size:9.5px; color:#5c7568; }
+  .b3 .micr { font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.24em; color:#1e3d33; border-top:1.5px dashed #9fb4a6; padding-top:8px; }
+  .b3 .go3 { display:inline-block; background:#1e3d33; color:#eef4ec; font-weight:800; font-size:12.5px; padding:10px 16px; border-radius:6px; }
+
+  /* B4 — PLANCHE DE TIMBRES */
+  .b4 .mock { background:#f3eee2; padding:40px 30px; display:flex; gap:26px; justify-content:center; align-items:center; flex-wrap:wrap; }
+  .b4 .sheet4 { background:#fff; padding:10px; box-shadow:0 12px 26px -14px rgba(0,0,0,.35); display:grid; grid-template-columns:repeat(3,118px); }
+  .b4 .stamp { border:5px dotted #fff; outline:1px solid #e2dbc8; background:#f7f3e6; padding:10px 8px; text-align:center; position:relative; }
+  .b4 .stamp .val { font-family:'Archivo',sans-serif; font-weight:900; font-size:15px; color:#1f5d43; }
+  .b4 .stamp .ic4 { font-size:22px; margin:5px 0; }
+  .b4 .stamp small { display:block; font-size:8px; letter-spacing:.1em; text-transform:uppercase; color:#8a8171; }
+  .b4 .stamp.rare { background:#ffe9c9; }
+  .b4 .stamp.rare .val { color:#b0742c; }
+  .b4 .loose { background:#f7f3e6; border:5px dotted #fff; outline:1px solid #e2dbc8; padding:10px 8px; text-align:center; width:118px; transform:rotate(-7deg); box-shadow:0 10px 20px -10px rgba(0,0,0,.4); }
+  .b4 .side4 { max-width:280px; }
+  .b4 .side4 h3 { font-family:'Bricolage Grotesque',sans-serif; font-size:21px; margin-bottom:8px; }
+  .b4 .side4 p { font-size:13px; color:#6e675c; margin-bottom:12px; }
+  .b4 .go4 { display:inline-block; background:#1f5d43; color:#fff; font-weight:800; font-size:13px; padding:11px 18px; border-radius:8px; }
+
+  /* B5 — TICKET DE PRESSING */
+  .b5 .mock { background:#4c5866; padding:44px 30px; display:flex; justify-content:center; }
+  .b5 .press5 { display:grid; grid-template-columns:1fr 1fr; gap:0; width:min(600px,100%); background:#fdf8ea; border-radius:10px; overflow:hidden; box-shadow:0 16px 34px -14px rgba(0,0,0,.55); transform:rotate(-.8deg); }
+  .b5 .half { padding:22px 22px; }
+  .b5 .depose { border-right:2px dashed #b9ae8e; background:#f4ecd6; }
+  .b5 .tag5 { font-size:10px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:#8a6f30; margin-bottom:8px; }
+  .b5 h3 { font-family:'Bricolage Grotesque',sans-serif; font-size:18px; margin-bottom:6px; color:#3a2f14; }
+  .b5 p { font-size:12px; color:#7a6c47; margin-bottom:10px; }
+  .b5 .num5 { font-family:'Archivo',sans-serif; font-weight:900; font-size:34px; color:#c1502e; }
+  .b5 .num5 small { display:block; font-family:'IBM Plex Mono',monospace; font-size:9px; color:#8a6f30; letter-spacing:.2em; font-weight:400; }
+  .b5 .go5 { display:inline-block; background:#c1502e; color:#fff; font-weight:800; font-size:12.5px; padding:10px 16px; border-radius:6px; margin-top:6px; }
+
+  /* B6 — COUPON −100% */
+  .b6 .mock { background:#fff; padding:40px 30px; display:flex; justify-content:center; }
+  .b6 .coupon { width:min(620px,100%); border:3px dashed #e5372a; border-radius:12px; padding:22px 26px; position:relative; display:grid; grid-template-columns:auto 1fr auto; gap:22px; align-items:center; background:#fff8f6; }
+  .b6 .burst { width:110px; height:110px; background:#e5372a; border-radius:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; transform:rotate(-8deg); box-shadow:0 10px 22px -10px rgba(229,55,42,.6); }
+  .b6 .burst b { font-family:'Archivo',sans-serif; font-weight:900; font-size:27px; }
+  .b6 .burst span { font-size:9.5px; font-weight:700; letter-spacing:.08em; }
+  .b6 .mid h3 { font-family:'Bricolage Grotesque',sans-serif; font-size:21px; margin-bottom:4px; }
+  .b6 .mid p { font-size:12.5px; color:#7a6a66; margin-bottom:8px; }
+  .b6 .cond { font-size:8.5px; color:#b0a09c; line-height:1.5; }
+  .b6 .bc6 { text-align:center; }
+  .b6 .bars { height:52px; width:96px; background:repeating-linear-gradient(90deg,#191919 0 2px,transparent 2px 5px,#191919 5px 6px,transparent 6px 9px); margin-bottom:5px; }
+  .b6 .bc6 small { font-family:'IBM Plex Mono',monospace; font-size:9px; color:#777; }
+  .b6 .go6 { display:inline-block; background:#e5372a; color:#fff; font-weight:800; font-size:12.5px; padding:10px 16px; border-radius:100px; margin-top:6px; }
+  .b6 .scissors6 { position:absolute; top:-13px; left:34px; background:#fff; padding:0 6px; color:#e5372a; font-size:16px; }
+  @media(max-width:640px){ .b6 .coupon{ grid-template-columns:1fr; text-align:center; justify-items:center; } }
+
+  /* B7 — CARTE DE FIDÉLITÉ */
+  .b7 .mock { background:#ece7de; padding:44px 30px; display:flex; justify-content:center; }
+  .b7 .card7 { width:min(520px,100%); background:#fff; border-radius:16px; padding:22px 26px; box-shadow:0 14px 30px -14px rgba(0,0,0,.35); transform:rotate(-.6deg); }
+  .b7 .head7 { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
+  .b7 .head7 b { font-family:'Bricolage Grotesque',sans-serif; font-size:17px; }
+  .b7 .head7 span { font-size:10.5px; color:#8a857b; }
+  .b7 p { font-size:12.5px; color:#6e6a60; margin-bottom:16px; }
+  .b7 .cells { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-bottom:14px; }
+  .b7 .cell { aspect-ratio:1; border:2.5px dashed #c9c2b4; border-radius:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:8.5px; font-weight:700; color:#8a857b; text-align:center; padding:4px; }
+  .b7 .cell.done { border-style:solid; border-color:#0d9f6e; background:#e7f6ef; color:#0d6e4c; position:relative; }
+  .b7 .cell.done::after { content:"✓"; position:absolute; font-size:26px; color:rgba(13,159,110,.45); font-weight:900; transform:rotate(-12deg); }
+  .b7 .foot7 { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .b7 .foot7 small { font-family:'Caveat',cursive; font-size:16px; color:#8a6f30; }
+  .b7 .go7 { display:inline-block; background:#191919; color:#fff; font-weight:800; font-size:12.5px; padding:10px 16px; border-radius:100px; }
+
+  /* B8 — BILLET DE TRAIN */
+  .b8 .mock { background:#33475c; padding:44px 30px; display:flex; justify-content:center; }
+  .b8 .train { width:min(640px,100%); background:linear-gradient(#fdf8ec 0 68%, #efe4c8 68%); border-radius:12px; overflow:hidden; box-shadow:0 16px 34px -14px rgba(0,0,0,.55); }
+  .b8 .strip8 { background:#e8590c; color:#fff; display:flex; justify-content:space-between; padding:8px 18px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.14em; }
+  .b8 .core { padding:18px 22px 14px; }
+  .b8 .route { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:10px; }
+  .b8 .route b { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(16px,2.6vw,21px); text-transform:uppercase; }
+  .b8 .route .arr8 { color:#e8590c; font-size:20px; }
+  .b8 .det { display:flex; gap:18px; flex-wrap:wrap; font-size:11px; color:#7a6c47; margin-bottom:12px; }
+  .b8 .det b { display:block; font-size:12.5px; color:#33475c; font-family:'IBM Plex Mono',monospace; }
+  .b8 .compost { display:flex; justify-content:space-between; align-items:center; padding:10px 22px 16px; }
+  .b8 .compost small { font-family:'Caveat',cursive; font-size:16px; color:#8a6f30; }
+  .b8 .go8 { display:inline-block; background:#33475c; color:#fff; font-weight:800; font-size:12.5px; padding:11px 18px; border-radius:6px; }
+
+  /* B9 — TICKET DE TOMBOLA */
+  .b9 .mock { background:#5a3a6e; padding:44px 30px; display:flex; justify-content:center; }
+  .b9 .twin { display:grid; grid-template-columns:200px 1fr; width:min(620px,100%); filter:drop-shadow(0 16px 24px rgba(0,0,0,.45)); transform:rotate(-1.2deg); }
+  .b9 .keep { background:#ffd93b; border-right:3px dashed #a8862a; border-radius:10px 0 0 10px; padding:20px 16px; text-align:center; }
+  .b9 .keep .k { font-size:9.5px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#7a5b00; }
+  .b9 .keep .n9 { font-family:'Archivo',sans-serif; font-weight:900; font-size:24px; color:#3a2c00; margin:8px 0; }
+  .b9 .keep p { font-size:10px; color:#8a6f10; }
+  .b9 .main9 { background:#fdf6e3; border-radius:0 10px 10px 0; padding:20px 24px; }
+  .b9 .main9 .k9 { font-size:10px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#b3862d; margin-bottom:5px; }
+  .b9 h3 { font-family:'Bricolage Grotesque',sans-serif; font-size:20px; margin-bottom:6px; }
+  .b9 p { font-size:12px; color:#6b6248; margin-bottom:10px; }
+  .b9 .odds9 { font-family:'Caveat',cursive; font-size:17px; color:#7a2437; margin-bottom:10px; }
+  .b9 .go9 { display:inline-block; background:#7a2437; color:#ffd93b; font-weight:800; font-size:12.5px; padding:10px 16px; border-radius:100px; }
+  @media(max-width:640px){ .b9 .twin{ grid-template-columns:1fr; } .b9 .keep{ border-right:none; border-bottom:3px dashed #a8862a; border-radius:10px 10px 0 0; } .b9 .main9{ border-radius:0 0 10px 10px; } }
+
+  /* B10 — BILLET DE BANQUE */
+  .b10 .mock { background:#1e3d33; padding:44px 30px; display:flex; justify-content:center; }
+  .b10 .bill { width:min(640px,100%); background:#e8ead8; border:2px solid #6e7a4f; border-radius:8px; padding:8px; box-shadow:0 16px 34px -14px rgba(0,0,0,.6); }
+  .b10 .inner10 { border:2px solid #6e7a4f; border-radius:5px; padding:18px 22px; background:radial-gradient(circle at 50% 50%, #eff1e0, #e0e3cc); background-image:repeating-radial-gradient(circle at 12% 40%, transparent 0 7px, rgba(110,122,79,.12) 7px 8px), repeating-radial-gradient(circle at 88% 60%, transparent 0 7px, rgba(110,122,79,.12) 7px 8px); display:grid; grid-template-columns:96px 1fr auto; gap:18px; align-items:center; position:relative; }
+  .b10 .portrait { width:96px; height:96px; border-radius:100px; border:2.5px solid #6e7a4f; display:flex; align-items:center; justify-content:center; font-family:'DM Serif Display',serif; font-size:32px; color:#3f4a26; background:repeating-linear-gradient(35deg, transparent 0 3px, rgba(110,122,79,.14) 3px 4px); }
+  .b10 .c10 { text-align:center; }
+  .b10 .c10 .bank10 { font-family:'DM Serif Display',serif; font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:#3f4a26; }
+  .b10 .c10 h3 { font-family:'DM Serif Display',serif; font-size:clamp(21px,3.4vw,30px); color:#2c3517; margin:4px 0; }
+  .b10 .c10 p { font-size:10.5px; color:#5c6b3d; font-style:italic; }
+  .b10 .val10 { font-family:'Archivo',sans-serif; font-weight:900; font-size:34px; color:#3f4a26; }
+  .b10 .serial { position:absolute; top:8px; right:12px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:#8a4b3a; }
+  .b10 .serial2 { position:absolute; bottom:8px; left:12px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:#8a4b3a; }
+  .b10 .go10row { text-align:center; padding:12px 0 4px; }
+  .b10 .go10 { display:inline-block; background:#3f4a26; color:#e8ead8; font-weight:800; font-size:12.5px; padding:10px 18px; border-radius:6px; }
+  @media(max-width:640px){ .b10 .inner10{ grid-template-columns:1fr; justify-items:center; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="intro">
+    <h1>Le Bon, challengé : 10 objets pour le même geste</h1>
+    <p>Ton CTA préféré — « réclamer son devis gratuit » — incarné par 10 objets du quotidien détournés. Tous se branchent sous le hero typo XXL, à la place du carnet à souche classique (ou avec lui).</p>
+  </div>
+
+  <!-- B1 -->
+  <div class="dir-block b1"><div class="dir-meta"><span class="num">B1</span><span class="name">Le flyer à franges</span><span class="vibe">La petite annonce punaisée sur un poteau, dont on arrache une languette. Une languette manque déjà, une autre est tombée au sol — la preuve sociale par l'objet.</span></div>
+  <div class="mock"><div class="flyer"><span class="pin"></span>
+    <h3>Site internet<br><em>pour artisan</em></h3>
+    <p>Devis gratuit — Bordeaux &amp; toute la Gironde<br>Adrien Russo, développeur web · 7 ans d'expérience</p>
+    <div class="fringe">
+      <div class="tab">DEVIS GRATUIT</div><div class="tab">DEVIS GRATUIT</div><div class="tab gone"></div><div class="tab">DEVIS GRATUIT</div><div class="tab">DEVIS GRATUIT</div><div class="tab">DEVIS GRATUIT</div>
+    </div>
+    <div class="fallen">DEVIS GRATUIT</div>
+    <span class="note1">servez-vous, il y en a pour tout le monde →</span>
+  </div></div></div>
+
+  <!-- B2 -->
+  <div class="dir-block b2"><div class="dir-meta"><span class="num">B2</span><span class="name">Le triplicata carbone</span><span class="vibe">Le carnet autocopiant blanc/jaune/rose que tout artisan a dans sa camionnette. Trois feuillets décalés : un pour vous, un pour moi, un pour le chantier.</span></div>
+  <div class="mock"><div class="stack">
+    <div class="sheet rose"></div><div class="sheet jaune"></div>
+    <div class="sheet blanc">
+      <div class="head2"><b>Bon de demande — exemplaire client</b><span>N° 2026-001</span></div>
+      <h3>Demande de devis gratuit</h3>
+      <p>À remplir sans appuyer trop fort, les deux copies suivent. Sans engagement.</p>
+      <div class="lines"><span>Entreprise : <i>votre nom ici</i></span><span>Métier : <i>maçon, plombier, électricien…</i></span><span>Le projet : <i>un site qui ramène des chantiers</i></span></div>
+      <a class="go2">Envoyer le feuillet blanc</a>
+    </div>
+    <div class="carbone">blanc : vous · jaune : moi · rose : le dossier</div>
+  </div></div></div>
+
+  <!-- B3 -->
+  <div class="dir-block b3"><div class="dir-meta"><span class="num">B3</span><span class="name">Le chèque</span><span class="vibe">Un chèque de la « Banque de la Visibilité » libellé à l'ordre de votre entreprise. Montant : un devis gratuit. Ligne MICR et signature comprises.</span></div>
+  <div class="mock"><div class="cheque">
+    <div class="bank"><b>Banque de la Visibilité — agence de Bordeaux</b><span>GIRONDE (33)</span></div>
+    <div class="payline">Payez contre ce chèque : <i>un devis gratuit, sans engagement</i></div>
+    <div class="payline">À l'ordre de : <i>votre entreprise du bâtiment</i></div>
+    <div class="row3">
+      <div class="amount">0,00 € — offert</div>
+      <div class="sig3"><div class="s">Adrien Russo</div><small>développeur web · 7 ans d'expérience</small></div>
+    </div>
+    <div class="micr">⑆2026⑆ 3300451 ⑈ HELLO@ADRIENRUSSO.FR ⑈</div>
+    <div style="text-align:right; margin-top:10px;"><a class="go3">Encaisser mon chèque</a></div>
+  </div></div></div>
+
+  <!-- B4 -->
+  <div class="dir-block b4"><div class="dir-meta"><span class="num">B4</span><span class="name">La planche de timbres</span><span class="vibe">Des timbres dentelés à détacher, façon collection philatélique « Gironde 2026 ». Un timbre rare doré = le devis. Un est déjà décollé.</span></div>
+  <div class="mock">
+    <div class="sheet4">
+      <div class="stamp"><div class="val">SITE VITRINE</div><div class="ic4">🏗</div><small>Gironde · 2026</small></div>
+      <div class="stamp"><div class="val">REFONTE</div><div class="ic4">🔁</div><small>Gironde · 2026</small></div>
+      <div class="stamp rare"><div class="val">DEVIS GRATUIT</div><div class="ic4">⭐</div><small>timbre rare · illimité</small></div>
+      <div class="stamp"><div class="val">GOOGLE</div><div class="ic4">🔍</div><small>Gironde · 2026</small></div>
+      <div class="stamp"><div class="val">MOBILE</div><div class="ic4">📱</div><small>Gironde · 2026</small></div>
+      <div class="stamp"><div class="val">SÉCURITÉ</div><div class="ic4">🔒</div><small>Gironde · 2026</small></div>
+    </div>
+    <div>
+      <div class="loose"><div class="val" style="font-family:'Archivo',sans-serif; font-weight:900; font-size:13px; color:#b0742c;">DEVIS GRATUIT</div><div class="ic4" style="font-size:20px; margin:4px 0;">⭐</div><small style="font-size:8px; color:#8a8171;">déjà détaché pour vous</small></div>
+      <div class="side4" style="margin-top:16px;">
+        <h3>Détachez le timbre rare.</h3>
+        <p>Il ne s'épuise jamais et s'échange contre un devis, partout en Gironde.</p>
+        <a class="go4">Détacher mon timbre</a>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- B5 -->
+  <div class="dir-block b5"><div class="dir-meta"><span class="num">B5</span><span class="name">Le ticket de pressing</span><span class="vibe">La consigne : vous déposez votre vieux site fatigué, vous repartez avec le numéro de retrait. « Prêt sous quelques semaines, rendu comme neuf. »</span></div>
+  <div class="mock"><div class="press5">
+    <div class="half depose">
+      <div class="tag5">Dépôt</div>
+      <h3>1 site fatigué (2012)</h3>
+      <p>Taches de lenteur, col élimé sur mobile, couleurs passées. On s'occupe de tout, même du repassage des textes.</p>
+      <div class="num5">N° 047<small>TICKET DE DÉPÔT</small></div>
+    </div>
+    <div class="half">
+      <div class="tag5">Retrait</div>
+      <h3>1 site comme neuf</h3>
+      <p>Rapide, sécurisé, visible sur Google dans toute la Gironde. Prêt sous quelques semaines.</p>
+      <div class="num5">N° 047<small>À CONSERVER</small></div>
+      <a class="go5">Déposer mon site — devis gratuit</a>
+    </div>
+  </div></div></div>
+
+  <!-- B6 -->
+  <div class="dir-block b6"><div class="dir-meta"><span class="num">B6</span><span class="name">Le coupon −100%</span><span class="vibe">Le coupon de supermarché avec code-barres et conditions en petits caractères — sauf que les petites lignes sont honnêtes et drôles.</span></div>
+  <div class="mock"><div class="coupon"><span class="scissors6">✂</span>
+    <div class="burst"><b>−100%</b><span>SUR LE DEVIS</span></div>
+    <div class="mid">
+      <h3>Bon de réduction : le devis passe à 0 €</h3>
+      <p>Site vitrine, refonte, visibilité Google ou outil sur-mesure — pour les artisans du bâtiment de Gironde.</p>
+      <div class="cond">*Offre valable sans limite de durée, cumulable avec votre bon sens. Le devis était déjà gratuit, mais on trouvait que −100% avait plus d'allure. Aucun achat requis. Voir modalités nulle part : il n'y en a pas.</div>
+      <a class="go6">Utiliser mon coupon</a>
+    </div>
+    <div class="bc6"><div class="bars"></div><small>3 300000 2026</small></div>
+  </div></div></div>
+
+  <!-- B7 -->
+  <div class="dir-block b7"><div class="dir-meta"><span class="num">B7</span><span class="name">La carte de fidélité</span><span class="vibe">La carte à tampons de la boulangerie — première case déjà tamponnée : le devis est offert. Les suivantes racontent le parcours (et le café est vraiment offert aussi).</span></div>
+  <div class="mock"><div class="card7">
+    <div class="head7"><b>Carte de fidélité — Adrien Russo</b><span>dév. web · Bordeaux</span></div>
+    <p>Première visite ? Bonne nouvelle : la case n°1 est déjà tamponnée.</p>
+    <div class="cells">
+      <div class="cell done">devis offert</div>
+      <div class="cell">échange</div>
+      <div class="cell">maquette</div>
+      <div class="cell">votre site</div>
+      <div class="cell">Google 33</div>
+      <div class="cell">café ☕</div>
+    </div>
+    <div class="foot7"><small>le café aussi est offert, promis.</small><a class="go7">Tamponner la case 2</a></div>
+  </div></div></div>
+
+  <!-- B8 -->
+  <div class="dir-block b8"><div class="dir-meta"><span class="num">B8</span><span class="name">Le billet de train</span><span class="vibe">Un billet compostable : BORDEAUX → VOTRE VISIBILITÉ, voiture DEV, place 33. Le CTA composte le billet.</span></div>
+  <div class="mock"><div class="train">
+    <div class="strip8"><span>BILLET — 2NDE ŒUVRE → 1ÈRE PAGE</span><span>N° 2026-33</span></div>
+    <div class="core">
+      <div class="route"><b>Bordeaux St-Web</b><span class="arr8">➜</span><b>Votre Visibilité</b></div>
+      <div class="det">
+        <div><b>VOIT. DEV</b>voiture</div>
+        <div><b>PLACE 33</b>fenêtre côté Google</div>
+        <div><b>DIRECT</b>sans correspondance</div>
+        <div><b>QUELQUES SEM.</b>durée du trajet</div>
+        <div><b>0,00 €</b>devis</div>
+      </div>
+    </div>
+    <div class="compost"><small>départ à l'heure, comme vos chantiers.</small><a class="go8">Composter mon billet</a></div>
+  </div></div></div>
+
+  <!-- B9 -->
+  <div class="dir-block b9"><div class="dir-meta"><span class="num">B9</span><span class="name">Le ticket de tombola</span><span class="vibe">Le double ticket de kermesse : vous gardez le talon jaune, je garde l'autre moitié. Tirage : tout le monde gagne, à chaque fois.</span></div>
+  <div class="mock"><div class="twin">
+    <div class="keep">
+      <div class="k">Gardez ce talon</div>
+      <div class="n9">N° 2026-0001</div>
+      <p>Tombola de la visibilité<br>Gironde — tirage permanent</p>
+    </div>
+    <div class="main9">
+      <div class="k9">Grande tombola du web artisan</div>
+      <h3>Lot unique : un devis gratuit</h3>
+      <p>Je garde cette moitié, vous gardez le talon. Quand vous m'écrivez, les deux numéros correspondent toujours.</p>
+      <div class="odds9">probabilité de gagner : 100% (vérifié par huissier… enfin, par moi)</div>
+      <a class="go9">Participer au tirage</a>
+    </div>
+  </div></div></div>
+
+  <!-- B10 -->
+  <div class="dir-block b10"><div class="dir-meta"><span class="num">B10</span><span class="name">Le billet de banque</span><span class="vibe">Un billet gravé « UN DEVIS » émis par la Banque du Web Girondin, guillochis, numéros de série et monogramme en filigrane. À dépenser sans compter : le cours est illimité.</span></div>
+  <div class="mock"><div>
+    <div class="bill"><div class="inner10">
+      <span class="serial">AR 2026 0001 33</span><span class="serial2">AR 2026 0001 33</span>
+      <div class="portrait">AR</div>
+      <div class="c10">
+        <div class="bank10">Banque du Web Girondin</div>
+        <h3>Un Devis Gratuit</h3>
+        <p>« La visibilité n'a pas de prix — le devis non plus. »</p>
+      </div>
+      <div class="val10">1</div>
+    </div></div>
+    <div class="go10row"><a class="go10">Encaisser mon billet</a></div>
+  </div></div></div>
+
+  <p class="foot">Chacun de ces objets remplace (ou complète) le carnet à souche sous ton hero typo XXL. Toutes les trouvailles précédentes (déchirure, agrafe, pile de carnet…) restent applicables.</p>
+</div>
+</body>
+</html>

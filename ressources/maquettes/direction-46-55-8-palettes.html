@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposition 46 + 55 — 8 palettes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Caveat:wght@600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#f4f4f5; color:#18181b; font-family:'Inter',system-ui,sans-serif; line-height:1.5; }
+  .page { max-width:1020px; margin:0 auto; padding:32px 20px 80px; }
+  .intro { text-align:center; margin-bottom:40px; }
+  .intro h1 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(26px,5vw,40px); letter-spacing:-0.02em; margin-bottom:12px; }
+  .intro p { max-width:660px; margin:0 auto; color:#52525b; font-size:16px; }
+  .dir-block { margin-bottom:44px; border-radius:18px; overflow:hidden; box-shadow:0 10px 40px -12px rgba(0,0,0,.22); background:#fff; }
+  .dir-meta { display:flex; flex-wrap:wrap; align-items:center; gap:14px; padding:15px 22px; background:#111114; color:#fff; }
+  .dir-meta .num { font-family:'Space Grotesk',monospace; font-weight:700; font-size:13px; opacity:.6; }
+  .dir-meta .name { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:18px; }
+  .dir-meta .vibe { font-size:13px; color:#a1a1aa; flex:1 1 200px; }
+  .swatches { display:flex; gap:6px; }
+  .sw { width:26px; height:26px; border-radius:7px; border:1px solid rgba(255,255,255,.18); }
+  .foot { text-align:center; color:#71717a; font-size:13px; margin-top:8px; }
+
+  /* ============ STRUCTURE COMMUNE (46 + 55) ============ */
+  .mock { background:var(--bg); color:var(--ink); padding:44px 34px 0; overflow:hidden; }
+  .line { font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; font-size:clamp(32px,6.6vw,60px); line-height:.98; letter-spacing:-0.03em; color:var(--ink); }
+  .line.l2 { color:transparent; -webkit-text-stroke:2px var(--ink); }
+  .line.l3 em { font-style:normal; background:var(--accent); color:var(--accent-ink); padding:0 12px; }
+  .hrow { display:flex; align-items:center; gap:22px; margin:22px 0 30px; flex-wrap:wrap; }
+  .hrow p { font-size:14.5px; color:var(--muted); max-width:42ch; }
+  .hcta { background:var(--ink); color:var(--bg); font-weight:800; padding:14px 24px; border-radius:100px; font-size:15px; white-space:nowrap; text-decoration:none; }
+  .marquee { border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); padding:12px 0; white-space:nowrap; overflow:hidden; }
+  .marquee div { display:inline-block; animation:mq 18s linear infinite; font-family:'Archivo',sans-serif; font-weight:800; text-transform:uppercase; font-size:15px; letter-spacing:.06em; color:var(--ink); }
+  .marquee span { margin-right:34px; }
+  .marquee span::after { content:"✦"; margin-left:34px; color:var(--accent2, var(--accent)); }
+  @keyframes mq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  .midhint { text-align:center; font-size:12px; color:var(--muted); padding:26px 0 8px; font-style:italic; }
+
+  /* Carnet à souche (bas de page) */
+  .ticketwrap { padding:16px 0 44px; }
+  .tlabel { text-align:center; font-family:'Archivo',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:.14em; font-size:12px; color:var(--muted); margin-bottom:14px; }
+  .ticket { max-width:660px; margin:0 auto; display:grid; grid-template-columns:190px 1fr; background:var(--paper); border-radius:10px; overflow:hidden; box-shadow:0 16px 36px -16px rgba(0,0,0,.45); transform:rotate(-1deg); color:var(--tink); }
+  .stub { border-right:2px dashed var(--tdash); padding:22px 18px; background:var(--stub); display:flex; flex-direction:column; gap:8px; justify-content:center; }
+  .stub b { font-family:'Bricolage Grotesque',sans-serif; font-size:15px; }
+  .stub span { font-size:11px; color:var(--tmuted); }
+  .stub .num55 { font-family:'IBM Plex Mono',monospace; color:var(--accent-num, var(--accent)); font-size:12px; font-weight:700; }
+  .tbody { padding:24px 26px; position:relative; }
+  .tbody .scissors { position:absolute; left:-13px; top:10px; font-size:16px; color:var(--tmuted); }
+  .tbody .kind { font-size:10.5px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:var(--accent-num, var(--accent)); margin-bottom:6px; }
+  .tbody h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(20px,3vw,27px); letter-spacing:-0.01em; margin-bottom:8px; }
+  .tbody p { font-size:13px; color:var(--tmuted); margin-bottom:14px; max-width:46ch; }
+  .fields { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:16px; }
+  .field { font-size:12px; color:var(--tmuted); }
+  .field i { display:block; font-style:normal; border-bottom:1.5px dotted var(--tdash); min-width:130px; padding:3px 2px; font-family:'Caveat',cursive; font-size:17px; color:var(--tink); }
+  .tcta { display:inline-block; background:var(--accent-num, var(--accent)); color:var(--tcta-ink, #fff); font-weight:800; font-size:13.5px; padding:11px 18px; border-radius:6px; text-decoration:none; }
+  @media(max-width:640px){ .ticket{ grid-template-columns:1fr; } .stub{ border-right:none; border-bottom:2px dashed var(--tdash); } .mock{ padding:32px 22px 0; } }
+
+  /* ============ 8 PALETTES ============ */
+  /* A — L'originale (crème / encre / orange) */
+  .pA { --bg:#faf7f0; --ink:#161616; --muted:#5c5852; --accent:#ff5722; --accent-ink:#faf7f0; --accent2:#ff5722;
+        --paper:#fdf6e3; --stub:#f4ead0; --tdash:#c9bd9c; --tink:#2f2a1c; --tmuted:#6b6248; --accent-num:#d64513; }
+  /* B — Nuit de chantier (noir / ivoire / jaune) */
+  .pB { --bg:#141414; --ink:#f2efe6; --muted:#a5a196; --accent:#ffd400; --accent-ink:#141414; --accent2:#ffd400;
+        --paper:#f6f0dd; --stub:#eadfc2; --tdash:#b5a87f; --tink:#2b2privaten; --tink:#2b2612; --tmuted:#6e6444; --accent-num:#a8850a; }
+  /* C — Terracotta */
+  .pC { --bg:#f7f1e7; --ink:#2f2a24; --muted:#6b6156; --accent:#c1502e; --accent-ink:#fdf4ea; --accent2:#7d8471;
+        --paper:#fffaf2; --stub:#f2e5d2; --tdash:#cdb69a; --tink:#3a2f22; --tmuted:#7a6a54; --accent-num:#c1502e; }
+  /* D — Bleu Confiance */
+  .pD { --bg:#f6f9ff; --ink:#0f2747; --muted:#5b6b80; --accent:#1d4ed8; --accent-ink:#ffffff; --accent2:#f97316;
+        --paper:#fdfbf4; --stub:#eef2f8; --tdash:#a8b8cc; --tink:#16304f; --tmuted:#5f7089; --accent-num:#1d4ed8; }
+  /* E — Rouge Brique */
+  .pE { --bg:#f3e9dd; --ink:#3a201a; --muted:#7a5c50; --accent:#a12d24; --accent-ink:#f8ede4; --accent2:#a12d24;
+        --paper:#fdf8ef; --stub:#f1e2cd; --tdash:#c8ab8d; --tink:#3f261c; --tmuted:#7d5f4c; --accent-num:#a12d24; }
+  /* F — Vert Sapin & Sable */
+  .pF { --bg:#f3efe4; --ink:#1e332a; --muted:#5d6b5f; --accent:#1f5d43; --accent-ink:#f0ead6; --accent2:#d9a13a;
+        --paper:#fbf7ea; --stub:#e9e2cc; --tdash:#b3ab8c; --tink:#243529; --tmuted:#5f6b57; --accent-num:#1f5d43; }
+  /* G — Bordeaux Vin */
+  .pG { --bg:#faf4f1; --ink:#40121f; --muted:#7d5561; --accent:#722f37; --accent-ink:#f7ecdf; --accent2:#c9a227;
+        --paper:#fbf5ea; --stub:#f0e2d5; --tdash:#c8a9a0; --tink:#41161f; --tmuted:#7d5a60; --accent-num:#722f37; }
+  /* H — Sombre Ambre */
+  .pH { --bg:#17140f; --ink:#f3ede1; --muted:#a89a83; --accent:#f0a338; --accent-ink:#17140f; --accent2:#f0a338;
+        --paper:#f6efdd; --stub:#eadfc4; --tdash:#b3a67e; --tink:#2c2412; --tmuted:#6e6244; --accent-num:#b57713; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="intro">
+    <h1>Ta direction : Typo XXL (46) + Carnet à souche (55)</h1>
+    <p>Même structure à chaque fois — le hero typographique avec bandeau défilant en haut, le bon détachable comme CTA de contact en bas de page — déclinée en 8 palettes. Compare et choisis.</p>
+  </div>
+
+  <!-- ============ A ============ -->
+  <div class="dir-block">
+    <div class="dir-meta"><span class="num">A</span><span class="name">L'originale</span><span class="vibe">Crème, encre noire, orange vif — la version du concept 46 d'origine.</span>
+      <div class="swatches"><div class="sw" style="background:#faf7f0"></div><div class="sw" style="background:#161616"></div><div class="sw" style="background:#ff5722"></div><div class="sw" style="background:#fdf6e3"></div></div></div>
+    <div class="mock pA">
+      <div class="line">Des sites</div><div class="line l2">qui ramènent</div><div class="line l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="hcta">Demander un devis gratuit</a></div>
+      <div class="marquee"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="midhint">— … sections services, méthode, zone d'intervention … —</div>
+      <div class="ticketwrap"><div class="tlabel">Un projet ? Détachez votre bon</div>
+        <div class="ticket"><div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="num55">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+        <div class="tbody"><span class="scissors">✂</span><div class="kind">Bon à valoir — sans engagement</div><h2>Bon pour un devis gratuit</h2><p>Valable pour : création de site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+        <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="tcta">Utiliser mon bon</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ B ============ -->
+  <div class="dir-block">
+    <div class="dir-meta"><span class="num">B</span><span class="name">Nuit de chantier</span><span class="vibe">Fond noir, ivoire, jaune sécurité — la version sombre et musclée. Le ticket papier claque dessus.</span>
+      <div class="swatches"><div class="sw" style="background:#141414"></div><div class="sw" style="background:#f2efe6"></div><div class="sw" style="background:#ffd400"></div><div class="sw" style="background:#f6f0dd"></div></div></div>
+    <div class="mock pB">
+      <div class="line">Des sites</div><div class="line l2">qui ramènent</div><div class="line l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="hcta">Demander un devis gratuit</a></div>
+      <div class="marquee"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="midhint">— … sections services, méthode, zone d'intervention … —</div>
+      <div class="ticketwrap"><div class="tlabel">Un projet ? Détachez votre bon</div>
+        <div class="ticket"><div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="num55">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+        <div class="tbody"><span class="scissors">✂</span><div class="kind">Bon à valoir — sans engagement</div><h2>Bon pour un devis gratuit</h2><p>Valable pour : création de site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+        <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="tcta">Utiliser mon bon</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ C ============ -->
+  <div class="dir-block">
+    <div class="dir-meta"><span class="num">C</span><span class="name">Terracotta</span><span class="vibe">Crème chaude, brun, terracotta — matériaux, brique, chaleur humaine.</span>
+      <div class="swatches"><div class="sw" style="background:#f7f1e7"></div><div class="sw" style="background:#2f2a24"></div><div class="sw" style="background:#c1502e"></div><div class="sw" style="background:#7d8471"></div></div></div>
+    <div class="mock pC">
+      <div class="line">Des sites</div><div class="line l2">qui ramènent</div><div class="line l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="hcta">Demander un devis gratuit</a></div>
+      <div class="marquee"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="midhint">— … sections services, méthode, zone d'intervention … —</div>
+      <div class="ticketwrap"><div class="tlabel">Un projet ? Détachez votre bon</div>
+        <div class="ticket"><div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="num55">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+        <div class="tbody"><span class="scissors">✂</span><div class="kind">Bon à valoir — sans engagement</div><h2>Bon pour un devis gratuit</h2><p>Valable pour : création de site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+        <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="tcta">Utiliser mon bon</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ D ============ -->
+  <div class="dir-block">
+    <div class="dir-meta"><span class="num">D</span><span class="name">Bleu Confiance</span><span class="vibe">Bleu profond sur fond clair, étincelle orange dans le bandeau — pro et rassurant.</span>
+      <div class="swatches"><div class="sw" style="background:#f6f9ff"></div><div class="sw" style="background:#0f2747"></div><div class="sw" style="background:#1d4ed8"></div><div class="sw" style="background:#f97316"></div></div></div>
+    <div class="mock pD">
+      <div class="line">Des sites</div><div class="line l2">qui ramènent</div><div class="line l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="hcta">Demander un devis gratuit</a></div>
+      <div class="marquee"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="midhint">— … sections services, méthode, zone d'intervention … —</div>
+      <div class="ticketwrap"><div class="tlabel">Un projet ? Détachez votre bon</div>
+        <div class="ticket"><div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="num55">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+        <div class="tbody"><span class="scissors">✂</span><div class="kind">Bon à valoir — sans engagement</div><h2>Bon pour un devis gratuit</h2><p>Valable pour : création de site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+        <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="tcta">Utiliser mon bon</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ E ============ -->
+  <div class="dir-block">
+    <div class="dir-meta"><span class="num">E</span><span class="name">Rouge Brique</span><span class="vibe">Crème rosée et rouge brique — classique, solide, très « bâtiment ».</span>
+      <div class="swatches"><div class="sw" style="background:#f3e9dd"></div><div class="sw" style="background:#3a201a"></div><div class="sw" style="background:#a12d24"></div><div class="sw" style="background:#fdf8ef"></div></div></div>
+    <div class="mock pE">
+      <div class="line">Des sites</div><div class="line l2">qui ramènent</div><div class="line l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="hcta">Demander un devis gratuit</a></div>
+      <div class="marquee"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="midhint">— … sections services, méthode, zone d'intervention … —</div>
+      <div class="ticketwrap"><div class="tlabel">Un projet ? Détachez votre bon</div>
+        <div class="ticket"><div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="num55">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+        <div class="tbody"><span class="scissors">✂</span><div class="kind">Bon à valoir — sans engagement</div><h2>Bon pour un devis gratuit</h2><p>Valable pour : création de site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+        <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="tcta">Utiliser mon bon</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ F ============ -->
+  <div class="dir-block">
+    <div class="dir-meta"><span class="num">F</span><span class="name">Vert Sapin &amp; Sable</span><span class="vibe">Sable clair, vert sapin, étincelle dorée — naturel, posé, différenciant.</span>
+      <div class="swatches"><div class="sw" style="background:#f3efe4"></div><div class="sw" style="background:#1e332a"></div><div class="sw" style="background:#1f5d43"></div><div class="sw" style="background:#d9a13a"></div></div></div>
+    <div class="mock pF">
+      <div class="line">Des sites</div><div class="line l2">qui ramènent</div><div class="line l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="hcta">Demander un devis gratuit</a></div>
+      <div class="marquee"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="midhint">— … sections services, méthode, zone d'intervention … —</div>
+      <div class="ticketwrap"><div class="tlabel">Un projet ? Détachez votre bon</div>
+        <div class="ticket"><div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="num55">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+        <div class="tbody"><span class="scissors">✂</span><div class="kind">Bon à valoir — sans engagement</div><h2>Bon pour un devis gratuit</h2><p>Valable pour : création de site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+        <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="tcta">Utiliser mon bon</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ G ============ -->
+  <div class="dir-block">
+    <div class="dir-meta"><span class="num">G</span><span class="name">Bordeaux Vin</span><span class="vibe">Lie de vin et filet doré — l'identité girondine, chic et chaleureuse.</span>
+      <div class="swatches"><div class="sw" style="background:#faf4f1"></div><div class="sw" style="background:#40121f"></div><div class="sw" style="background:#722f37"></div><div class="sw" style="background:#c9a227"></div></div></div>
+    <div class="mock pG">
+      <div class="line">Des sites</div><div class="line l2">qui ramènent</div><div class="line l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="hcta">Demander un devis gratuit</a></div>
+      <div class="marquee"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="midhint">— … sections services, méthode, zone d'intervention … —</div>
+      <div class="ticketwrap"><div class="tlabel">Un projet ? Détachez votre bon</div>
+        <div class="ticket"><div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="num55">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+        <div class="tbody"><span class="scissors">✂</span><div class="kind">Bon à valoir — sans engagement</div><h2>Bon pour un devis gratuit</h2><p>Valable pour : création de site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+        <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="tcta">Utiliser mon bon</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ H ============ -->
+  <div class="dir-block">
+    <div class="dir-meta"><span class="num">H</span><span class="name">Sombre Ambre</span><span class="vibe">Brun profond et ambre chaud — premium, chaleureux, singulier.</span>
+      <div class="swatches"><div class="sw" style="background:#17140f"></div><div class="sw" style="background:#f3ede1"></div><div class="sw" style="background:#f0a338"></div><div class="sw" style="background:#f6efdd"></div></div></div>
+    <div class="mock pH">
+      <div class="line">Des sites</div><div class="line l2">qui ramènent</div><div class="line l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="hcta">Demander un devis gratuit</a></div>
+      <div class="marquee"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="midhint">— … sections services, méthode, zone d'intervention … —</div>
+      <div class="ticketwrap"><div class="tlabel">Un projet ? Détachez votre bon</div>
+        <div class="ticket"><div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="num55">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+        <div class="tbody"><span class="scissors">✂</span><div class="kind">Bon à valoir — sans engagement</div><h2>Bon pour un devis gratuit</h2><p>Valable pour : création de site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+        <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="tcta">Utiliser mon bon</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Structure identique (hero 46 + bon détachable 55), 8 habillages. Le ticket reste toujours « papier » — c'est ce qui fait son charme, même sur fond sombre.</p>
+</div>
+</body>
+</html>
