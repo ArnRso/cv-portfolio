@@ -23,8 +23,16 @@ const prestations = [
     num: '2',
     title: 'Refonte & modernisation',
     lede: 'Repenser un site vieilli, lent ou invisible : design moderne, vitesse, SEO, migration sans perte.',
-    includes: [],
-    forWho: null,
+    includes: [
+      'Reprise du contenu existant',
+      'Design remis au goût du jour',
+      'Passage au mobile',
+      'Correction des erreurs qui bloquent Google',
+      'Mise en HTTPS et sécurisation',
+      'Redirections pour ne rien perdre du référencement acquis',
+    ],
+    forWho:
+      "Entreprises dont le site date de plus de cinq ans, s'affiche mal sur téléphone ou n'apparaît plus dans les résultats de recherche.",
   },
   {
     num: '3',
@@ -44,10 +52,79 @@ const prestations = [
     num: '4',
     title: 'Application web sur-mesure',
     lede: 'Suivi de chantiers, devis, planning, espace client. Outils robustes et sécurisés.',
-    includes: [],
-    forWho: 'Entreprises du bâtiment qui veulent digitaliser leur gestion.',
+    includes: [
+      'Suivi de chantiers et planning des équipes',
+      'Devis et factures',
+      'Espace client pour suivre l’avancement',
+      'Gestion des documents (photos, plans, PV de réception)',
+      'Accès depuis le chantier, sur téléphone ou tablette',
+      'Sauvegardes et hébergement sécurisé',
+    ],
+    forWho:
+      'Entreprises du bâtiment qui gèrent plusieurs chantiers en parallèle et pour lesquelles le tableur a atteint ses limites.',
   },
 ];
+
+/* Étapes reprises de l'accueil : la page Services est souvent la première
+   consultée depuis une recherche Google, elle doit se suffire à elle-même. */
+const etapes = [
+  {
+    titre: 'On échange',
+    texte:
+      'Un premier rendez-vous, par téléphone ou sur place, pour comprendre votre métier, vos chantiers et ce que vous attendez du site. Sans engagement.',
+  },
+  {
+    titre: 'Je vous fais une proposition',
+    texte:
+      'Un devis clair, détaillé poste par poste, avec un délai annoncé. Vous savez exactement ce que vous achetez.',
+  },
+  {
+    titre: 'Je conçois la maquette',
+    texte:
+      'Vous validez le design avant qu’une ligne de code soit écrite. Les corrections à cette étape ne coûtent rien.',
+  },
+  {
+    titre: 'Je développe votre site',
+    texte:
+      'Développement, intégration de vos contenus, optimisation pour Google et pour le mobile. Vous suivez l’avancement.',
+  },
+  {
+    titre: 'Mise en ligne et suivi',
+    texte:
+      'Mise en ligne, vérification finale, et je reste joignable ensuite. Un site n’est pas un projet qu’on livre et qu’on oublie.',
+  },
+];
+
+const questions = [
+  {
+    q: 'Faut-il que je fournisse les textes et les photos ?',
+    a: 'Si vous les avez, c’est un gain de temps. Sinon, on part de ce que vous me dites de votre métier : je rédige, vous relisez et vous corrigez. Pour les photos, celles que vous prenez sur vos chantiers avec votre téléphone suffisent la plupart du temps.',
+  },
+  {
+    q: 'Combien de temps faut-il compter ?',
+    a: 'Quelques semaines pour un site vitrine, selon la rapidité avec laquelle le contenu est réuni. Une refonte est souvent plus rapide, puisque la matière existe déjà. Une application sur-mesure demande plus de temps, on en discute au devis.',
+  },
+  {
+    q: 'Que se passe-t-il une fois le site en ligne ?',
+    a: 'Vous en êtes propriétaire : le nom de domaine, l’hébergement et le code vous appartiennent. Vous pouvez me confier la maintenance, la faire faire ailleurs, ou vous en occuper vous-même.',
+  },
+  {
+    q: 'Je peux modifier mon site moi-même ?',
+    a: 'Selon la formule choisie, oui. On voit ensemble ce que vous souhaitez pouvoir changer — textes, photos, réalisations — et je vous montre comment faire.',
+  },
+];
+
+/* Balisage FAQ : Google peut afficher ces questions directement dans les
+   résultats de recherche. */
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: questions.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -70,7 +147,7 @@ const serviceSchema = {
 <Layout
   title="Services — Sites internet et outils pour les entreprises du bâtiment"
   description="Création de site vitrine, refonte, référencement local en Gironde et application web sur-mesure pour les artisans du bâtiment. Devis gratuit et sans engagement."
-  schema={[serviceSchema]}
+  schema={[serviceSchema, faqSchema]}
 >
   <section class="intro">
     <div class="container">
@@ -117,11 +194,51 @@ const serviceSchema = {
     </ol>
   </Section>
 
+  <Section headingId="methode" title="Comment ça se passe" inverse>
+    <p class="lede-inverse">
+      Cinq étapes, du premier échange à la mise en ligne. Vous savez à tout
+      moment où en est votre projet.
+    </p>
+    <ol class="etapes">
+      {
+        etapes.map((e, i) => (
+          <li>
+            <span class="etape-num">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{e.titre}</h3>
+              <p>{e.texte}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+
+  <Section headingId="questions" title="Les questions qu'on me pose">
+    <dl class="faq">
+      {
+        questions.map((item) => (
+          <div class="qa">
+            <dt>{item.q}</dt>
+            <dd>{item.a}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </Section>
+
   <Section headingId="technique" title="Côté technique" raised>
     <p class="tech">
       Développement principalement avec Symfony et Vue.js, soin porté à la
       sécurité, la vitesse et la fiabilité. WordPress possible quand c'est le
       choix le plus adapté au budget et à l'autonomie du client.
+    </p>
+    <p class="tech">
+      Concrètement, cela veut dire des sites qui s'affichent vite — y compris
+      sur un téléphone en bord de chantier avec une mauvaise connexion —, qui ne
+      tombent pas en panne, et dont les données sont protégées. Ce sont les
+      mêmes exigences que celles que j'applique depuis sept ans à des
+      plateformes utilisées quotidiennement par des professionnels.
     </p>
   </Section>
 
@@ -233,5 +350,73 @@ const serviceSchema = {
     font-size: var(--text-md);
     color: var(--color-muted);
     max-width: 62ch;
+  }
+
+  .tech + .tech {
+    margin-top: var(--space-sm);
+  }
+
+  /* ---- Méthode, sur aplat marine ---------------------------------- */
+  .lede-inverse {
+    color: var(--color-on-inverse);
+    opacity: 0.82;
+    max-width: var(--measure);
+    margin-bottom: var(--space-lg);
+  }
+
+  .etapes {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .etapes li {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    max-width: 68ch;
+  }
+
+  .etape-num {
+    flex: none;
+    font-family: var(--font-mono);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    padding-top: var(--space-3xs);
+  }
+
+  .etapes h3 {
+    font-size: var(--text-md);
+  }
+
+  .etapes p {
+    margin-top: var(--space-3xs);
+    font-size: var(--text-sm);
+    opacity: 0.82;
+  }
+
+  /* ---- Questions --------------------------------------------------- */
+  .faq {
+    display: grid;
+    gap: var(--space-md);
+    max-width: var(--container-narrow);
+  }
+
+  .qa {
+    border-top: var(--border-thick) solid var(--color-ink);
+    padding-top: var(--space-sm);
+  }
+
+  dt {
+    font-family: var(--font-display);
+    font-weight: var(--weight-extrabold);
+    font-size: var(--text-md);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  dd {
+    margin-top: var(--space-2xs);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
   }
 </style>
