@@ -32,10 +32,10 @@ const projectTypes = [
   }
 
   <div class="field">
-    <label for="nom">Nom / entreprise</label>
+    <label for="name">Nom / entreprise</label>
     <input
-      id="nom"
-      name="nom"
+      id="name"
+      name="name"
       type="text"
       required
       autocomplete="organization"
@@ -113,9 +113,29 @@ const projectTypes = [
       submit.disabled = true;
       setStatus('Envoi en cours…', '');
 
+      // Le template EmailJS n'expose que name/email/message/title : métier et
+      // type de projet sont repliés dans le corps du message.
+      const data = new FormData(form);
+      const metier = String(data.get('metier') ?? '').trim();
+      const projet = String(data.get('projet') ?? '');
+      const message = [
+        `Type de projet : ${projet}`,
+        metier ? `Métier : ${metier}` : null,
+        '',
+        String(data.get('message') ?? ''),
+      ]
+        .filter((line) => line !== null)
+        .join('\n');
+
       try {
         emailjs.init({ publicKey });
-        await emailjs.sendForm(serviceId, templateId, form);
+        await emailjs.send(serviceId, templateId, {
+          name: data.get('name'),
+          email: data.get('email'),
+          title: projet,
+          time: new Date().toLocaleString('fr-FR'),
+          message,
+        });
         form.reset();
         setStatus('Message envoyé. Je vous réponds rapidement, merci !', 'ok');
       } catch {

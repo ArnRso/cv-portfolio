@@ -83,13 +83,33 @@ PUBLIC_EMAILJS_TEMPLATE_ID=
 Sans ces variables, le formulaire s'affiche mais reste désactivé, avec un lien
 `mailto:` en repli — le build ne casse pas.
 
+Le `.env` local est déjà renseigné (service `service_sowckle`, template
+`template_5v8we2i`). Ces trois valeurs sont publiques par nature : elles partent
+dans le JS du navigateur. La sécurité repose sur la liste blanche de domaine et
+le reCAPTCHA à activer côté EmailJS — voir ci-dessous.
+
+### Variables du template
+
+Le template « Contact Us » attend `{{name}}`, `{{email}}`, `{{message}}`,
+`{{title}}` et `{{time}}`. Le formulaire du site a cinq champs : le métier et le
+type de projet n'ayant pas de variable dédiée dans le template, ils sont repliés
+en tête du corps du message. Pour les recevoir dans des champs séparés, ajoutez
+`{{metier}}` et `{{projet}}` au template et adaptez l'appel `emailjs.send()`
+dans [ContactForm.astro](src/components/ContactForm.astro).
+
+Le template envoie vers `adrien.russo@gmail.com` et positionne `Reply To` sur
+l'email du visiteur.
+
 ## Reste à faire côté Adrien
 
-- [ ] Fournir les identifiants EmailJS et connecter le service email vers
-      `hello@adrienrusso.fr`.
+- [x] Fournir les identifiants EmailJS.
 - [ ] Activer dans EmailJS la **liste blanche de domaine** (`adrienrusso.fr`
-      uniquement) et le **reCAPTCHA**.
-- [ ] Vérifier que la boîte `hello@adrienrusso.fr` est opérationnelle.
+      uniquement) et le **reCAPTCHA** — à faire avant la mise en ligne, sinon
+      n'importe qui peut consommer le quota depuis un autre site.
+- [ ] Décider si les demandes doivent arriver sur `hello@adrienrusso.fr` plutôt
+      que sur l'adresse Gmail actuellement configurée dans le template, et
+      vérifier que cette boîte est opérationnelle.
+- [ ] Tester un envoi réel depuis `/contact` (quota : 200 requêtes/mois).
 - [ ] Rédiger les mentions légales et la politique de confidentialité
       (obligatoire avant mise en ligne — les liens du pied de page sont en place,
       désactivés).
