@@ -1,0 +1,348 @@
+---
+/**
+ * Gabarit d'impression du CV, imprimé en PDF par la CI (scripts/cv-pdf.mjs).
+ * Page non listée : absente de la navigation, du sitemap, et interdite aux
+ * robots. Elle existe pour produire un A4 dense en une seule page, là où la
+ * page /cv est pensée pour l'écran.
+ */
+import { cv } from '../data/cv';
+import '@fontsource-variable/archivo';
+import '@fontsource-variable/inter';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/700.css';
+import '../styles/tokens.css';
+
+const { basics } = cv;
+const linkedin = basics.profiles[0];
+
+const period = (start: string, end: string | null) =>
+  end ? `${start}–${end}` : `depuis ${start}`;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>CV — {basics.name}</title>
+  </head>
+  <body>
+    <header class="head">
+      <div>
+        <h1>{basics.name}</h1>
+        <p class="role">{basics.label}</p>
+      </div>
+      <ul class="contact">
+        <li>{basics.email}</li>
+        <li>linkedin.com/in/{linkedin.username}</li>
+        <li>{basics.location.city}, France</li>
+      </ul>
+    </header>
+
+    <p class="summary">{basics.summary}</p>
+
+    <div class="cols">
+      <main>
+        <section>
+          <h2>Parcours</h2>
+          {
+            cv.work.map((job) => (
+              <article class="job">
+                <div class="job-head">
+                  <h3>
+                    {job.position} · <span class="co">{job.company}</span>
+                  </h3>
+                  <span class="when">{period(job.startDate, job.endDate)}</span>
+                </div>
+                <p class="job-sum">{job.summary}</p>
+                <ul class="bullets">
+                  {job.highlights.map((h) => (
+                    <li>{h}</li>
+                  ))}
+                </ul>
+                <p class="stack">{job.stack.join(' · ')}</p>
+              </article>
+            ))
+          }
+        </section>
+
+        <section>
+          <h2>Enseignement</h2>
+          <ul class="teach">
+            {
+              cv.teaching.map((t) => (
+                <li>
+                  <strong>{t.institution}</strong>
+                  <span class="when">{t.period}</span>
+                  <span class="teach-role"> — {t.role}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </main>
+
+      <aside>
+        <section>
+          <h2>Compétences</h2>
+          {
+            cv.skills.map((group) => (
+              <div class="skill">
+                <h3>{group.domain}</h3>
+                <p>{group.keywords.join(' · ')}</p>
+              </div>
+            ))
+          }
+        </section>
+
+        <section>
+          <h2>Formation</h2>
+          <ul class="plain">
+            {
+              cv.education.map((e) => (
+                <li>
+                  <strong>{e.area}</strong>
+                  <span>
+                    {e.institution} · {e.period}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section>
+          <h2>Langues</h2>
+          <ul class="plain">
+            {
+              cv.languages.map((l) => (
+                <li>
+                  <strong>{l.language}</strong>
+                  <span>{l.fluency}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>
+
+<style>
+  /* Le PDF est produit en A4 ; les marges sont gérées par Playwright. */
+  :root {
+    --print-rule: 3px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-body);
+    /* Unités absolues : on compose pour du papier, pas pour un écran. */
+    font-size: 8.6pt;
+    line-height: 1.4;
+    color: var(--color-ink);
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  /* ---- En-tête ---------------------------------------------------- */
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12pt;
+    border-bottom: var(--print-rule) solid var(--color-ink);
+    padding-bottom: 6pt;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-black);
+    font-size: 24pt;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  .role {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    font-size: 10pt;
+    margin-top: 2pt;
+  }
+
+  .contact {
+    text-align: right;
+    font-size: 8pt;
+    line-height: 1.5;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .summary {
+    margin-top: 7pt;
+    font-size: 8.8pt;
+    line-height: 1.45;
+  }
+
+  /* ---- Deux colonnes ---------------------------------------------- */
+  .cols {
+    display: grid;
+    grid-template-columns: 1.85fr 1fr;
+    gap: 16pt;
+    margin-top: 10pt;
+  }
+
+  section + section {
+    margin-top: 10pt;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-extrabold);
+    font-size: 9.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding-bottom: 2.5pt;
+    margin-bottom: 6pt;
+    border-bottom: 1.5px solid var(--color-border);
+    position: relative;
+  }
+
+  /* Filet jaune : le seul aplat de couleur, en accent discret. */
+  h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1.5px;
+    width: 26pt;
+    height: 1.5px;
+    background: var(--color-accent);
+  }
+
+  /* ---- Parcours ---------------------------------------------------- */
+  .job + .job {
+    margin-top: 7pt;
+  }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8pt;
+  }
+
+  .job h3 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    font-size: 9.5pt;
+  }
+
+  .co {
+    color: var(--color-primary);
+  }
+
+  .when {
+    font-family: var(--font-mono);
+    font-size: 7.4pt;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .job-sum {
+    color: var(--color-muted);
+    font-size: 8.2pt;
+    margin-top: 1pt;
+  }
+
+  .bullets {
+    margin-top: 3pt;
+  }
+
+  .bullets li {
+    position: relative;
+    padding-left: 8pt;
+    margin-bottom: 2pt;
+    font-size: 8.2pt;
+  }
+
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4.4pt;
+    width: 4pt;
+    height: 1.5px;
+    background: var(--color-accent);
+  }
+
+  .stack {
+    margin-top: 3pt;
+    font-family: var(--font-mono);
+    font-size: 7.2pt;
+    color: var(--color-muted);
+  }
+
+  /* ---- Enseignement ------------------------------------------------ */
+  .teach li {
+    margin-bottom: 2.5pt;
+    font-size: 8.2pt;
+  }
+
+  .teach strong {
+    font-weight: var(--weight-semibold);
+  }
+
+  .teach .when {
+    margin-left: 4pt;
+  }
+
+  .teach-role {
+    color: var(--color-muted);
+  }
+
+  /* ---- Colonne de droite ------------------------------------------- */
+  .skill + .skill {
+    margin-top: 5pt;
+  }
+
+  .skill h3 {
+    font-size: 7.4pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-ink);
+    margin-bottom: 1pt;
+  }
+
+  .skill p {
+    font-size: 8pt;
+    line-height: 1.35;
+  }
+
+  .plain li {
+    margin-bottom: 4pt;
+    font-size: 8pt;
+  }
+
+  .plain strong {
+    display: block;
+    font-weight: var(--weight-semibold);
+    line-height: 1.25;
+  }
+
+  .plain span {
+    color: var(--color-muted);
+    font-size: 7.6pt;
+  }
+</style>

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# Gabarit d'impression du CV : le PDF est servi à la place.
+Disallow: /cv-print
 
 Sitemap: https://adrienrusso.fr/sitemap-index.xml
