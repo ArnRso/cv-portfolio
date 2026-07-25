@@ -22,9 +22,11 @@ const track = [...TRADES, ...TRADES];
 </div>
 
 <style>
+  /* Bandeau jaune : il sépare le hero du reste et tranche avec les
+     aplats marine des sections. */
   .marquee {
-    background: var(--color-inverse);
-    color: var(--color-on-inverse);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
     padding-block: var(--marquee-pad);
     overflow: hidden;
   }
@@ -51,7 +53,7 @@ const track = [...TRADES, ...TRADES];
 
   .track li::after {
     content: '✦';
-    color: var(--color-accent);
+    opacity: 0.55;
   }
 
   @keyframes scroll {

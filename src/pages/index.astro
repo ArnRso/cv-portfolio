@@ -151,8 +151,9 @@ const faqSchema = {
   <Section
     headingId="experience"
     title="Une expérience solide, mise à votre service"
+    inverse
   >
-    <p class="accroche">
+    <p class="accroche accroche-inverse">
       Depuis 7 ans, je conçois des plateformes web robustes et sécurisées,
       utilisées au quotidien par des professionnels. Cette exigence — fiabilité,
       sécurité, rapidité — je la mets aujourd'hui au service des artisans du
@@ -221,10 +222,12 @@ const faqSchema = {
     }
   }
 
+  /* Cartes en aplat marine : les 4 prestations forment un bloc de couleur
+     plutôt qu'une grille de rectangles blancs. */
   .card {
     position: relative;
-    background: var(--color-surface);
-    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
     border-radius: var(--radius-lg);
     padding: var(--space-md);
     transition: transform var(--duration-fast) var(--ease-out);
@@ -239,7 +242,7 @@ const faqSchema = {
     font-family: var(--font-mono);
     font-weight: var(--weight-bold);
     font-size: var(--text-sm);
-    color: var(--color-accent-ink);
+    color: var(--color-accent);
     margin-bottom: var(--space-2xs);
   }
 
@@ -249,6 +252,7 @@ const faqSchema = {
     border-left: var(--border-heavy) solid var(--color-accent);
     border-radius: 0;
     background: none;
+    color: var(--color-ink);
     padding: var(--space-2xs) 0 var(--space-2xs) var(--space-sm);
   }
 
@@ -262,8 +266,20 @@ const faqSchema = {
   }
 
   .card p {
-    color: var(--color-muted);
+    color: var(--color-on-inverse);
+    opacity: 0.82;
     font-size: var(--text-sm);
+  }
+
+  /* Les 4 raisons restent sur fond clair : texte en encre. */
+  .card-plain p {
+    color: var(--color-muted);
+    opacity: 1;
+  }
+
+  .accroche-inverse {
+    color: var(--color-on-inverse);
+    opacity: 0.85;
   }
 
   .steps {

@@ -61,8 +61,8 @@
 
   .line em {
     font-style: normal;
-    background: var(--color-primary);
-    color: var(--color-on-primary);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
     padding-inline: var(--space-xs);
     /* Le surlignage suit chaque ligne si le texte passe à la ligne. */
     box-decoration-break: clone;
@@ -100,26 +100,29 @@
     align-items: center;
   }
 
+  /* Une ligne de texte, pas des pastilles : bordées, elles se lisaient
+     comme une rangée de boutons juste sous les vrais CTA. */
   .badges {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2xs);
+    align-items: baseline;
+    gap: var(--space-2xs) var(--space-sm);
     font-size: var(--text-xs);
-    font-weight: var(--weight-bold);
+    font-weight: var(--weight-semibold);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
+    color: var(--color-muted);
   }
 
   .badges li {
-    border: var(--border-thin) solid var(--color-ink);
-    border-radius: var(--radius-pill);
-    padding: var(--space-3xs) var(--space-xs);
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
   }
 
-  /* Le premier badge porte l'accent : c'est le positionnement. */
-  .badges li:first-child {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: var(--color-on-accent);
+  .badges li:not(:last-child)::after {
+    content: '✦';
+    color: var(--color-accent);
+    font-size: 0.8em;
   }
 </style>

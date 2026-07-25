@@ -20,16 +20,16 @@ const {
       <h2>{title}</h2>
       <p>{text}</p>
     </div>
-    <a class="btn btn-accent" href={href}>{label}</a>
+    <a class="btn btn-solid" href={href}>{label}</a>
   </div>
 </section>
 
 <style>
+  /* Aplat jaune : le dernier appel de la page doit être le plus visible. */
   .band {
-    background: var(--color-inverse);
-    color: var(--color-on-inverse);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
     padding-block: var(--space-2xl);
-    border-top: var(--rule-height) solid var(--color-accent);
   }
 
   .inner {
@@ -49,8 +49,7 @@ const {
 
   p {
     margin-top: var(--space-2xs);
-    color: var(--color-bg);
-    opacity: 0.78;
+    opacity: 0.82;
     max-width: var(--measure);
   }
 </style>

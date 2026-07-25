@@ -10,21 +10,24 @@
 
 :root {
   /* ================================================================
-   * PALETTE ACTIVE — D « Bleu Confiance »
+   * PALETTE ACTIVE — N « Marine & Chantier »
+   * Fond blanc franc, masses bleu marine, jaune sécurité en accent.
    * ================================================================ */
-  --color-bg: #f6f9ff;
+  --color-bg: #ffffff;
   --color-ink: #0f2747;
-  --color-muted: #5b6b80;
-  --color-primary: #1d4ed8;
+  --color-muted: #566c8c;
+  --color-primary: #0f2747;
   --color-on-primary: #ffffff;
-  --color-accent: #f97316;
+  --color-accent: #ffc300;
   --color-on-accent: #0f2747;
-  /* Orange assombri : l'accent pur ne passe pas le contraste AA en texte
-     sur fond clair. À utiliser pour les libellés, pas pour les aplats. */
-  --color-accent-ink: #c2410c;
-  /* Aplat sombre des sections « inversées » */
-  --color-inverse: var(--color-ink);
-  --color-on-inverse: var(--color-bg);
+  /* Jaune assombri : le jaune pur est illisible en texte sur fond clair
+     (1.6:1). Réservé aux libellés ; l'accent pur va dans les aplats. */
+  --color-accent-ink: #7d6100;
+  /* Aplats marine des sections « inversées » */
+  --color-inverse: #0f2747;
+  --color-on-inverse: #ffffff;
+  /* Marine plus dense, pour superposer deux niveaux d'aplat */
+  --color-inverse-deep: #0a1b33;
 
   /* Ticket « carnet à souche » — volontairement indépendant de la palette :
    * le bon reste crème/papier quel que soit l'habillage du site. */
@@ -33,13 +36,13 @@
   --paper-dash: #cbbf9e;
   --paper-ink: #16304f;
   --paper-muted: #6b6349;
-  --paper-accent: #1d4ed8;
-  --paper-on-accent: #ffffff;
+  --paper-accent: #0f2747;
+  --paper-on-accent: #ffc300;
 
   /* ---- Couleurs dérivées ---------------------------------------- */
   --color-surface: #ffffff;
-  --color-surface-raised: #e7eefb;
-  --color-border: #c3d4ec;
+  --color-surface-raised: #eef3fb;
+  --color-border: #0f2747;
   --color-border-strong: var(--color-ink);
   --color-focus: var(--color-accent);
   --color-error: #b42318;
@@ -174,6 +177,21 @@
  * PALETTES DE RÉSERVE — explorées le 2026-07-19, conservées pour
  * itérer. Pour en essayer une : copier son bloc par-dessus les
  * valeurs de « PALETTE ACTIVE » ci-dessus.
+ *
+ * D — Bleu Confiance (la précédente : fond bleuté, bleu vif, accent orange)
+ *   --color-bg:#f6f9ff; --color-ink:#0f2747; --color-muted:#5b6b80;
+ *   --color-primary:#1d4ed8; --color-on-primary:#ffffff;
+ *   --color-accent:#f97316; --color-on-accent:#0f2747; --color-accent-ink:#c2410c;
+ *   --color-surface:#ffffff; --color-surface-raised:#e7eefb; --color-border:#c3d4ec;
+ *   --paper-accent:#1d4ed8; --paper-on-accent:#ffffff;
+ *
+ * Q — Béton & Jaune (gris minéral, noir, jaune sécurité)
+ *   --color-bg:#eceded; --color-ink:#1a1a1a; --color-muted:#5e6060;
+ *   --color-primary:#1a1a1a; --color-on-primary:#ffffff;
+ *   --color-accent:#ffd400; --color-on-accent:#1a1a1a; --color-accent-ink:#7a6500;
+ *   --color-surface:#ffffff; --color-surface-raised:#dcdedf; --color-border:#1a1a1a;
+ *   --color-inverse:#1a1a1a; --color-on-inverse:#eceded;
+ *   --paper-accent:#1a1a1a; --paper-on-accent:#ffd400;
  *
  * A — L'originale (crème / encre / orange)
  *   --color-bg:#faf7f0; --color-ink:#161616; --color-muted:#5c5852;
