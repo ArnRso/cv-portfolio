@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction 46+55 — 6 interprétations créatives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Anton&family=Archivo:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Caveat:wght@600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#f4f4f5; color:#18181b; font-family:'Inter',system-ui,sans-serif; line-height:1.5; }
+  .page { max-width:1020px; margin:0 auto; padding:32px 20px 80px; }
+  .intro { text-align:center; margin-bottom:40px; }
+  .intro h1 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(26px,5vw,40px); letter-spacing:-0.02em; margin-bottom:12px; }
+  .intro p { max-width:660px; margin:0 auto; color:#52525b; font-size:16px; }
+  .dir-block { margin-bottom:44px; border-radius:18px; overflow:hidden; box-shadow:0 10px 40px -12px rgba(0,0,0,.22); background:#fff; }
+  .dir-meta { display:flex; flex-wrap:wrap; align-items:center; gap:14px; padding:15px 22px; background:#111114; color:#fff; }
+  .dir-meta .num { font-family:'Space Grotesk',monospace; font-weight:700; font-size:13px; opacity:.6; }
+  .dir-meta .name { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:18px; }
+  .dir-meta .vibe { font-size:13px; color:#a1a1aa; flex:1 1 240px; }
+  .foot { text-align:center; color:#71717a; font-size:13px; margin-top:8px; }
+  @keyframes mq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes mqr { from{transform:translateX(-50%)} to{transform:translateX(0)} }
+
+  /* shared ticket bones (restylé par variante) */
+  .tk { display:grid; grid-template-columns:180px 1fr; max-width:640px; }
+  .tk .stub { border-right:2px dashed; padding:20px 16px; display:flex; flex-direction:column; gap:7px; justify-content:center; }
+  .tk .stub b { font-family:'Bricolage Grotesque',sans-serif; font-size:14.5px; }
+  .tk .stub span { font-size:10.5px; }
+  .tk .stub .n { font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700; }
+  .tk .tb { padding:22px 24px; position:relative; }
+  .tk .kind { font-size:10px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; margin-bottom:5px; }
+  .tk h3 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(19px,2.8vw,25px); letter-spacing:-0.01em; margin-bottom:7px; }
+  .tk .tb p { font-size:12.5px; margin-bottom:12px; max-width:46ch; }
+  .tk .fields { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:14px; }
+  .tk .field { font-size:11.5px; }
+  .tk .field i { display:block; font-style:normal; border-bottom:1.5px dotted; min-width:125px; padding:2px; font-family:'Caveat',cursive; font-size:16.5px; }
+  .tk .go { display:inline-block; font-weight:800; font-size:13px; padding:11px 18px; border-radius:6px; text-decoration:none; }
+  @media(max-width:640px){ .tk{ grid-template-columns:1fr; } .tk .stub{ border-right:none; border-bottom:2px dashed; } }
+
+  /* ============ V1 — POCHOIR ============ */
+  .v1 .mock { background:#e8e2d4; background-image:radial-gradient(circle at 12% 8%, rgba(0,0,0,.05), transparent 30%), radial-gradient(circle at 90% 92%, rgba(0,0,0,.06), transparent 34%); padding:46px 34px 0; overflow:hidden; }
+  .v1 .l { font-family:'Allerta Stencil',sans-serif; text-transform:uppercase; font-size:clamp(30px,6.2vw,56px); line-height:1.02; letter-spacing:.01em; color:#22221e; }
+  .v1 .l.spray { color:#d1490f; text-shadow:0 0 1px #d1490f, 2px 2px 8px rgba(209,73,15,.45); transform:rotate(-1.2deg); position:relative; }
+  .v1 .drip { display:inline-block; width:3px; height:22px; background:linear-gradient(#d1490f,transparent); vertical-align:bottom; margin-left:-6px; }
+  .v1 .hrow { display:flex; align-items:center; gap:22px; margin:22px 0 34px; flex-wrap:wrap; }
+  .v1 .hrow p { font-size:14px; color:#5c574c; max-width:42ch; }
+  .v1 .cta1 { background:#22221e; color:#e8e2d4; font-weight:800; padding:13px 22px; font-size:14px; border-radius:3px; text-decoration:none; }
+  .v1 .tape { transform:rotate(-2deg); margin:0 -40px; background:repeating-linear-gradient(45deg,#ffce00 0 22px,#191919 22px 44px); padding:5px 0; box-shadow:0 8px 20px -10px rgba(0,0,0,.4); }
+  .v1 .tape .inner { background:#191919; margin:0; padding:10px 0; overflow:hidden; white-space:nowrap; }
+  .v1 .tape .inner div { display:inline-block; animation:mq 18s linear infinite; font-family:'Allerta Stencil',sans-serif; text-transform:uppercase; font-size:15px; letter-spacing:.1em; color:#ffce00; }
+  .v1 .tape span { margin-right:36px; }
+  .v1 .tkzone { padding:38px 0 46px; display:flex; justify-content:center; }
+  .v1 .tk { background:#f6f0dd; color:#2c2712; transform:rotate(-1.4deg); box-shadow:0 14px 30px -14px rgba(0,0,0,.5); border-radius:4px; position:relative; }
+  .v1 .tk .stub { background:#eadfc2; border-color:#b3a67e; }
+  .v1 .tk .stub span, .v1 .tk .tb p, .v1 .tk .field { color:#6e6244; }
+  .v1 .tk .stub .n, .v1 .tk .kind { color:#c1490f; }
+  .v1 .tk .field i { border-color:#b3a67e; color:#2c2712; }
+  .v1 .tk .go { background:#22221e; color:#f6f0dd; }
+  .v1 .staple { position:absolute; top:-7px; left:52%; width:34px; height:9px; border:3px solid #7a7468; border-bottom:none; border-radius:3px 3px 0 0; }
+  .v1 .stencil-tag { position:absolute; right:-14px; top:-22px; font-family:'Allerta Stencil',sans-serif; color:#d1490f; font-size:13px; transform:rotate(6deg); letter-spacing:.12em; }
+
+  /* ============ V2 — EN CONSTRUCTION ============ */
+  .v2 .mock { background:#101318; color:#eef1f6; padding:46px 34px 0; overflow:hidden; position:relative; }
+  .v2 .l { font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; font-size:clamp(30px,6.2vw,56px); line-height:1; letter-spacing:-0.03em; }
+  .v2 .l.wire { color:transparent; -webkit-text-stroke:1.5px #46536b; position:relative; }
+  .v2 .l.wire::after { content:"EN COURS DE MONTAGE"; position:absolute; left:4px; bottom:-4px; font-family:'IBM Plex Mono',monospace; font-size:9px; -webkit-text-stroke:0; color:#5d7290; letter-spacing:.3em; }
+  .v2 .l .lift { display:inline-block; background:#ffb01f; color:#101318; padding:0 12px; transform:translateY(-16px) rotate(-3deg); position:relative; box-shadow:0 12px 24px -10px rgba(0,0,0,.7); }
+  .v2 .l .lift::before { content:""; position:absolute; top:-56px; left:50%; width:2px; height:56px; background:#8fa2bd; }
+  .v2 .l .lift::after { content:"⌐"; position:absolute; top:-64px; left:calc(50% - 7px); color:#8fa2bd; font-size:16px; }
+  .v2 .hrow { display:flex; align-items:center; gap:22px; margin:26px 0 34px; flex-wrap:wrap; }
+  .v2 .hrow p { font-size:14px; color:#98a2b3; max-width:42ch; }
+  .v2 .cta2 { background:#ffb01f; color:#101318; font-weight:800; padding:13px 22px; font-size:14px; border-radius:6px; text-decoration:none; }
+  .v2 .belt { border-top:2px solid #2b3442; border-bottom:2px solid #2b3442; background:#161b23; padding:11px 0; overflow:hidden; white-space:nowrap; position:relative; }
+  .v2 .belt::before, .v2 .belt::after { content:"⚙"; position:absolute; top:50%; transform:translateY(-50%); color:#46536b; font-size:15px; }
+  .v2 .belt::before{ left:8px; } .v2 .belt::after{ right:8px; }
+  .v2 .belt div { display:inline-block; animation:mq 16s linear infinite; font-family:'Archivo',sans-serif; font-weight:800; text-transform:uppercase; font-size:14px; letter-spacing:.08em; color:#c3cad8; }
+  .v2 .belt span { margin-right:34px; } .v2 .belt span::after { content:"▸"; margin-left:34px; color:#ffb01f; }
+  .v2 .tkzone { padding:40px 0 50px; display:flex; justify-content:center; }
+  .v2 .pile { position:relative; }
+  .v2 .pile::before, .v2 .pile::after { content:""; position:absolute; inset:0; background:#e9e2cc; border-radius:6px; z-index:0; }
+  .v2 .pile::before { transform:rotate(2.4deg) translate(6px,4px); opacity:.5; }
+  .v2 .pile::after { transform:rotate(-2deg) translate(-5px,7px); opacity:.75; }
+  .v2 .tk { position:relative; z-index:1; background:#f6f0dd; color:#2c2712; border-radius:6px; box-shadow:0 18px 38px -16px rgba(0,0,0,.8); }
+  .v2 .tk .stub { background:#eadfc2; border-color:#b3a67e; }
+  .v2 .tk .stub span, .v2 .tk .tb p, .v2 .tk .field { color:#6e6244; }
+  .v2 .tk .stub .n, .v2 .tk .kind { color:#b57713; }
+  .v2 .tk .field i { border-color:#b3a67e; color:#2c2712; }
+  .v2 .tk .go { background:#101318; color:#ffb01f; }
+  .v2 .carnet-note { text-align:center; font-family:'IBM Plex Mono',monospace; font-size:10px; color:#5d7290; letter-spacing:.2em; margin-top:14px; }
+
+  /* ============ V3 — ÇA DÉBORDE ============ */
+  .v3 .mock { background:#f5f2ea; padding:46px 0 0; overflow:hidden; }
+  .v3 .l { font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; line-height:.96; letter-spacing:-0.04em; color:#141414; font-size:clamp(38px,8.4vw,76px); white-space:nowrap; }
+  .v3 .l1 { margin-left:-18px; padding-left:34px; }
+  .v3 .l2 { text-align:right; margin-right:-30px; color:transparent; -webkit-text-stroke:2px #141414; }
+  .v3 .l3 { margin-left:8vw; }
+  .v3 .l3 em { font-style:normal; background:#2f43ff; color:#f5f2ea; padding:0 14px; }
+  .v3 .hrow { display:flex; align-items:center; gap:22px; margin:26px 34px 30px; flex-wrap:wrap; }
+  .v3 .hrow p { font-size:14px; color:#5c5852; max-width:40ch; }
+  .v3 .cta3 { background:#141414; color:#f5f2ea; font-weight:800; padding:13px 22px; font-size:14px; border-radius:100px; text-decoration:none; }
+  .v3 .mq2 { border-top:2.5px solid #141414; border-bottom:2.5px solid #141414; }
+  .v3 .mq2 .b1, .v3 .mq2 .b2 { padding:9px 0; overflow:hidden; white-space:nowrap; }
+  .v3 .mq2 .b1 { border-bottom:2.5px solid #141414; }
+  .v3 .mq2 div.scroll { display:inline-block; font-family:'Archivo',sans-serif; font-weight:800; text-transform:uppercase; font-size:14px; letter-spacing:.07em; }
+  .v3 .b1 .scroll { animation:mq 17s linear infinite; color:#141414; }
+  .v3 .b2 .scroll { animation:mqr 17s linear infinite; color:transparent; -webkit-text-stroke:1px #141414; }
+  .v3 .mq2 span { margin-right:32px; } .v3 .b1 span::after { content:"✦"; margin-left:32px; color:#2f43ff; } .v3 .b2 span::after { content:"✦"; margin-left:32px; -webkit-text-stroke:0; color:#d1490f; }
+  .v3 .tkzone { padding:40px 20px 54px; display:flex; justify-content:center; }
+  .v3 .torn { position:relative; display:grid; grid-template-columns:auto auto; gap:12px; align-items:start; }
+  .v3 .tk { background:#fdf6e3; color:#2c2712; border-radius:6px 0 0 6px; box-shadow:0 14px 30px -14px rgba(0,0,0,.45); grid-template-columns:150px 1fr; max-width:560px; }
+  .v3 .tk .tb { clip-path:polygon(0 0, 100% 0, 97% 8%, 100% 16%, 96% 26%, 100% 36%, 97% 46%, 100% 56%, 96% 66%, 100% 76%, 97% 86%, 100% 94%, 96% 100%, 0 100%); }
+  .v3 .tk .stub { background:#f4ead0; border-color:#c9bd9c; }
+  .v3 .tk .stub span, .v3 .tk .tb p, .v3 .tk .field { color:#6b6248; }
+  .v3 .tk .stub .n, .v3 .tk .kind { color:#2f43ff; }
+  .v3 .tk .field i { border-color:#c9bd9c; color:#2c2712; }
+  .v3 .tk .go { background:#2f43ff; color:#fff; }
+  .v3 .scrap { width:74px; background:#fdf6e3; border-radius:0 6px 6px 0; box-shadow:0 10px 22px -10px rgba(0,0,0,.4); padding:16px 10px; transform:rotate(7deg) translateY(10px); clip-path:polygon(6% 0, 100% 0, 100% 100%, 3% 100%, 8% 92%, 2% 82%, 7% 72%, 2% 62%, 8% 52%, 3% 42%, 8% 32%, 2% 22%, 7% 12%); font-family:'Caveat',cursive; font-size:15px; color:#a1734a; text-align:center; }
+  @media(max-width:640px){ .v3 .scrap{ display:none; } .v3 .tk{ grid-template-columns:1fr; } }
+
+  /* ============ V4 — SORTIE D'IMPRIMERIE ============ */
+  .v4 .mock { background:#fbfaf6; padding:46px 34px 0; overflow:hidden; position:relative; }
+  .v4 .regmark { position:absolute; font-size:14px; color:#8a877e; }
+  .v4 .r1{ top:12px; left:14px; } .v4 .r2{ top:12px; right:14px; } .v4 .r3{ top:200px; left:14px; }
+  .v4 .cmyk { position:absolute; top:12px; left:50%; transform:translateX(-50%); display:flex; gap:4px; }
+  .v4 .cmyk i { width:16px; height:16px; }
+  .v4 .l { font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; font-size:clamp(30px,6.4vw,58px); line-height:1; letter-spacing:-0.03em; color:#171717; }
+  .v4 .l.mis { text-shadow:3px 0 0 rgba(229,55,42,.55), -3px 0 0 rgba(6,182,212,.55); }
+  .v4 .l.mis2 { color:transparent; -webkit-text-stroke:2px #171717; text-shadow:4px 2px 0 rgba(229,55,42,.35); }
+  .v4 .l3 em { font-style:normal; background:#e5372a; color:#fbfaf6; padding:0 12px; }
+  .v4 .hrow { display:flex; align-items:center; gap:22px; margin:24px 0 30px; flex-wrap:wrap; }
+  .v4 .hrow p { font-size:14px; color:#5c5a52; max-width:42ch; }
+  .v4 .cta4 { background:#171717; color:#fbfaf6; font-weight:800; padding:13px 22px; font-size:14px; border-radius:3px; text-decoration:none; }
+  .v4 .press { border-top:2px solid #171717; border-bottom:2px solid #171717; padding:10px 0; overflow:hidden; white-space:nowrap; background:repeating-linear-gradient(90deg, transparent 0 90px, rgba(23,23,23,.05) 90px 92px); }
+  .v4 .press div { display:inline-block; animation:mq 18s linear infinite; font-family:'IBM Plex Mono',monospace; font-weight:700; text-transform:uppercase; font-size:13.5px; letter-spacing:.1em; color:#171717; }
+  .v4 .press span { margin-right:34px; } .v4 .press span::after { content:"·"; margin-left:34px; color:#e5372a; }
+  .v4 .cutter { max-width:660px; margin:40px auto 0; }
+  .v4 .slot { background:#171717; color:#8f8d84; border-radius:8px 8px 0 0; padding:9px 16px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.24em; display:flex; justify-content:space-between; }
+  .v4 .slot i { font-style:normal; color:#4ade80; }
+  .v4 .tk { background:#fdf6e3; color:#2c2712; border-radius:0 0 6px 6px; box-shadow:0 16px 32px -14px rgba(0,0,0,.4); transform-origin:top center; transform:rotate(.6deg); margin-bottom:48px; }
+  .v4 .tk .stub { background:#f4ead0; border-color:#c9bd9c; }
+  .v4 .tk .stub span, .v4 .tk .tb p, .v4 .tk .field { color:#6b6248; }
+  .v4 .tk .stub .n, .v4 .tk .kind { color:#e5372a; }
+  .v4 .tk .field i { border-color:#c9bd9c; color:#2c2712; }
+  .v4 .tk .go { background:#e5372a; color:#fff; }
+  .v4 .fresh { position:absolute; right:18px; margin-top:-40px; font-family:'Caveat',cursive; color:#e5372a; font-size:17px; transform:rotate(-5deg); }
+
+  /* ============ V5 — CORRIGÉ AU FEUTRE ============ */
+  .v5 .mock { background:#fffdf6; padding:48px 34px 0; overflow:hidden; }
+  .v5 .l { font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; font-size:clamp(30px,6.2vw,56px); line-height:1; letter-spacing:-0.03em; color:#1b1b18; position:relative; }
+  .v5 .l2v { color:transparent; -webkit-text-stroke:2px #1b1b18; }
+  .v5 .circle { position:relative; display:inline-block; }
+  .v5 .circle::after { content:""; position:absolute; inset:-8px -16px; border:3.5px solid #0d9f6e; border-radius:50% / 46%; transform:rotate(-2.4deg); }
+  .v5 .note5 { font-family:'Caveat',cursive; color:#0d9f6e; font-size:clamp(17px,2.4vw,22px); transform:rotate(-3deg); }
+  .v5 .n5a { margin:6px 0 0 46%; }
+  .v5 .hrow { display:flex; align-items:center; gap:22px; margin:18px 0 30px; flex-wrap:wrap; }
+  .v5 .hrow p { font-size:14px; color:#5c5a50; max-width:42ch; }
+  .v5 .hrow p mark { background:#ffe66d; padding:0 4px; }
+  .v5 .cta5 { background:#1b1b18; color:#fffdf6; font-weight:800; padding:13px 22px; font-size:14px; border-radius:100px; text-decoration:none; position:relative; }
+  .v5 .cta5::after { content:"↰ commencez ici"; position:absolute; right:-10px; top:-26px; font-family:'Caveat',cursive; font-size:17px; color:#e8590c; white-space:nowrap; transform:rotate(3deg); }
+  .v5 .mq { border-top:2px solid #1b1b18; border-bottom:2px solid #1b1b18; padding:11px 0; overflow:hidden; white-space:nowrap; }
+  .v5 .mq div { display:inline-block; animation:mq 19s linear infinite; font-family:'Archivo',sans-serif; font-weight:800; text-transform:uppercase; font-size:14.5px; letter-spacing:.07em; color:#1b1b18; }
+  .v5 .mq span { margin-right:32px; } .v5 .mq span::after { content:"✦"; margin-left:32px; color:#e8590c; }
+  .v5 .mq .you { background:#ffe66d; padding:2px 10px; position:relative; }
+  .v5 .tkzone { padding:42px 0 54px; display:flex; justify-content:center; position:relative; }
+  .v5 .tk { background:#fdf6e3; color:#2c2712; border-radius:6px; box-shadow:0 14px 30px -14px rgba(0,0,0,.4); transform:rotate(-.8deg); }
+  .v5 .tk .stub { background:#f4ead0; border-color:#c9bd9c; }
+  .v5 .tk .stub span, .v5 .tk .tb p, .v5 .tk .field { color:#6b6248; }
+  .v5 .tk .stub .n, .v5 .tk .kind { color:#0d9f6e; }
+  .v5 .tk .field i { border-color:#c9bd9c; color:#1b40a5; }
+  .v5 .tk .go { background:#0d9f6e; color:#fff; }
+  .v5 .pen { position:absolute; right:12%; bottom:34px; font-size:30px; transform:rotate(-40deg); filter:drop-shadow(0 6px 6px rgba(0,0,0,.25)); }
+  .v5 .exmpl { font-family:'Caveat',cursive; color:#1b40a5; }
+
+  /* ============ V6 — RELIEF 3D ============ */
+  .v6 .mock { background:#14101c; padding:48px 34px 0; overflow:hidden; }
+  .v6 .l { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:clamp(32px,6.8vw,62px); line-height:1.02; letter-spacing:.01em; }
+  .v6 .la { color:#ffd23f; text-shadow:2px 2px 0 #b8880c,4px 4px 0 #8a650a,6px 6px 0 #5c4306,8px 8px 14px rgba(0,0,0,.6); }
+  .v6 .lb { color:#5ee0ff; text-shadow:2px 2px 0 #2a93ad,4px 4px 0 #1d6a7d,6px 6px 0 #12414d,8px 8px 14px rgba(0,0,0,.6); transform:rotate(-.6deg); }
+  .v6 .lc { color:#ff4fa3; text-shadow:2px 2px 0 #b32a6e,4px 4px 0 #801d4e,6px 6px 0 #4d1130,8px 8px 14px rgba(0,0,0,.6); }
+  .v6 .hrow { display:flex; align-items:center; gap:22px; margin:26px 0 32px; flex-wrap:wrap; }
+  .v6 .hrow p { font-size:14px; color:#b3a8c9; max-width:42ch; }
+  .v6 .cta6 { background:#ffd23f; color:#14101c; font-weight:800; padding:13px 22px; font-size:14px; border-radius:6px; text-decoration:none; box-shadow:3px 3px 0 #8a650a; }
+  .v6 .mq { border-top:2px solid #3a3050; border-bottom:2px solid #3a3050; padding:11px 0; overflow:hidden; white-space:nowrap; }
+  .v6 .mq div { display:inline-block; animation:mq 16s linear infinite; font-family:'Anton',sans-serif; text-transform:uppercase; font-size:15px; letter-spacing:.08em; }
+  .v6 .mq span { margin-right:34px; }
+  .v6 .mq span:nth-child(4n+1){ color:#ffd23f; } .v6 .mq span:nth-child(4n+2){ color:#5ee0ff; } .v6 .mq span:nth-child(4n+3){ color:#ff4fa3; } .v6 .mq span:nth-child(4n){ color:#4ade80; }
+  .v6 .tkzone { padding:42px 0 54px; display:flex; justify-content:center; }
+  .v6 .tk { background:#f6f0dd; color:#2c2712; border-radius:6px; box-shadow:8px 8px 0 #ff4fa3, 16px 16px 34px -10px rgba(0,0,0,.7); transform:rotate(-1deg); position:relative; }
+  .v6 .tk::before { content:""; position:absolute; left:-8px; top:26px; width:16px; height:16px; border-radius:100px; background:#14101c; box-shadow:0 46px 0 #14101c; }
+  .v6 .tk .stub { background:#eadfc2; border-color:#b3a67e; padding-left:24px; }
+  .v6 .tk .stub span, .v6 .tk .tb p, .v6 .tk .field { color:#6e6244; }
+  .v6 .tk .stub .n, .v6 .tk .kind { color:#c22a76; }
+  .v6 .tk .field i { border-color:#b3a67e; color:#2c2712; }
+  .v6 .tk .go { background:#14101c; color:#ffd23f; box-shadow:3px 3px 0 #ff4fa3; }
+  .v6 .datestamp { position:absolute; right:16px; top:14px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:#a1734a; border:1.5px solid #a1734a; border-radius:4px; padding:2px 7px; transform:rotate(4deg); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="intro">
+    <h1>Le chemin est choisi — 6 façons de le pousser plus loin</h1>
+    <p>Toujours ta structure : typo XXL + bandeau défilant en haut, bon détachable en bas. Mais chaque version a sa trouvaille : pochoir peint, mot suspendu à la grue, déchirure en cours, sortie d'imprimerie, corrections au feutre, relief 3D.</p>
+  </div>
+
+  <!-- V1 -->
+  <div class="dir-block v1">
+    <div class="dir-meta"><span class="num">V1</span><span class="name">Le pochoir</span><span class="vibe">Typo stencil comme peinte à la bombe sur un mur (avec coulure), marquee en ruban de chantier jaune/noir incliné, ticket agrafé de travers.</span></div>
+    <div class="mock">
+      <div class="l">Des sites</div>
+      <div class="l">qui ramènent</div>
+      <div class="l spray">des chantiers.<span class="drip"></span></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="cta1">Demander un devis gratuit</a></div>
+      <div class="tape"><div class="inner"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div></div>
+      <div class="tkzone">
+        <div class="tk"><span class="staple"></span><span class="stencil-tag">BON OFFICIEL</span>
+          <div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="n">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+          <div class="tb"><div class="kind">Bon à valoir — sans engagement</div><h3>Bon pour un devis gratuit</h3><p>Valable pour : site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+          <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="go">Utiliser mon bon</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- V2 -->
+  <div class="dir-block v2">
+    <div class="dir-meta"><span class="num">V2</span><span class="name">En construction</span><span class="vibe">La 2e ligne est encore « en filaire », le mot final arrive suspendu au câble d'une grue. Marquee = tapis roulant à engrenages. Le bon sort d'une pile de carnet.</span></div>
+    <div class="mock">
+      <div class="l">Des sites</div>
+      <div class="l wire">qui ramènent</div>
+      <div class="l"><span class="lift">des chantiers.</span></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="cta2">Demander un devis gratuit</a></div>
+      <div class="belt"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="tkzone"><div>
+        <div class="pile"><div class="tk">
+          <div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="n">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+          <div class="tb"><div class="kind">Bon à valoir — sans engagement</div><h3>Bon pour un devis gratuit</h3><p>Valable pour : site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+          <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="go">Utiliser mon bon</a></div>
+        </div></div>
+        <div class="carnet-note">CARNET DE 50 BONS — IL EN RESTE POUR VOUS</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- V3 -->
+  <div class="dir-block v3">
+    <div class="dir-meta"><span class="num">V3</span><span class="name">Ça déborde</span><span class="vibe">La typo sort du cadre, les lignes zigzaguent, double marquee qui défile en sens opposés — et le bon est photographié en pleine déchirure, un bout arraché à côté.</span></div>
+    <div class="mock">
+      <div class="l l1">Des sites</div>
+      <div class="l l2">qui ramènent</div>
+      <div class="l l3"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="cta3">Demander un devis gratuit</a></div>
+      <div class="mq2">
+        <div class="b1"><div class="scroll"><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span></div></div>
+        <div class="b2"><div class="scroll"><span>Carreleurs</span><span>Chauffagistes</span><span>Plaquistes</span><span>Charpentiers</span><span>Serruriers</span><span>Paysagistes</span><span>Carreleurs</span><span>Chauffagistes</span><span>Plaquistes</span><span>Charpentiers</span><span>Serruriers</span><span>Paysagistes</span></div></div>
+      </div>
+      <div class="tkzone"><div class="torn">
+        <div class="tk">
+          <div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="n">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+          <div class="tb"><div class="kind">Bon à valoir — sans engagement</div><h3>Bon pour un devis gratuit</h3><p>Valable pour : site vitrine, refonte, visibilité Google ou outil sur-mesure. Artisans de Gironde.</p>
+          <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier…</i></div></div><a class="go">Utiliser mon bon</a></div>
+        </div>
+        <div class="scrap">déjà<br>à moitié<br>détaché !</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- V4 -->
+  <div class="dir-block v4">
+    <div class="dir-meta"><span class="num">V4</span><span class="name">Sortie d'imprimerie</span><span class="vibe">Typo avec léger décalage d'impression rouge/cyan, repères de calage et pastilles CMJN, marquee en rotative — le bon sort tout juste du massicot, « encre encore fraîche ».</span></div>
+    <div class="mock">
+      <span class="regmark r1">⌖</span><span class="regmark r2">⌖</span><span class="regmark r3">⌖</span>
+      <div class="cmyk"><i style="background:#06b6d4"></i><i style="background:#e5372a"></i><i style="background:#ffd400"></i><i style="background:#171717"></i></div>
+      <div class="l mis">Des sites</div>
+      <div class="l mis2">qui ramènent</div>
+      <div class="l l3 mis"><em>des chantiers.</em></div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="cta4">Demander un devis gratuit</a></div>
+      <div class="press"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="cutter">
+        <div class="slot"><span>MASSICOT — DÉCOUPE DU BON EN COURS</span><i>● PRÊT</i></div>
+        <div class="tk">
+          <div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="n">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+          <div class="tb"><div class="kind">Bon à valoir — sans engagement</div><h3>Bon pour un devis gratuit</h3><p>Valable pour : site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+          <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="go">Utiliser mon bon</a></div>
+        </div>
+        <div class="fresh">encre encore fraîche !</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- V5 -->
+  <div class="dir-block v5">
+    <div class="dir-meta"><span class="num">V5</span><span class="name">Corrigé au feutre</span><span class="vibe">La page a été relue et annotée à la main : mot entouré au feutre vert, flèches, surligneur — et dans le marquee, « c'est vous ? » surligné. Ton clin d'œil de formateur. Un stylo traîne près du bon.</span></div>
+    <div class="mock">
+      <div class="l">Des sites</div>
+      <div class="l l2v">qui ramènent</div>
+      <div class="l"><span class="circle">des chantiers.</span></div>
+      <div class="note5 n5a">ça, c'est la promesse ✓</div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des <mark>artisans du bâtiment</mark> de toute la Gironde depuis 7 ans.</p><a class="cta5">Demander un devis gratuit</a></div>
+      <div class="mq"><div><span>Maçons</span><span>Plombiers</span><span class="you">c'est vous ?</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Maçons</span><span>Plombiers</span><span class="you">c'est vous ?</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span></div></div>
+      <div class="tkzone">
+        <div class="tk">
+          <div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="n">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+          <div class="tb"><div class="kind">Bon à valoir — sans engagement</div><h3>Bon pour un devis gratuit</h3><p>Valable pour : site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+          <div class="fields"><div class="field">Entreprise<i class="exmpl">Dupont Rénovation</i></div><div class="field">Métier<i class="exmpl">maçon</i></div></div><a class="go">Utiliser mon bon</a></div>
+        </div>
+        <span class="pen">🖊</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- V6 -->
+  <div class="dir-block v6">
+    <div class="dir-meta"><span class="num">V6</span><span class="name">Relief fête foraine</span><span class="vibe">Typo extrudée en 3D multicolore sur fond nuit, marquee arc-en-ciel, ticket avec trous de perforation et ombre rose décalée. Le plus « coloré/créatif » des six.</span></div>
+    <div class="mock">
+      <div class="l la">Des sites</div>
+      <div class="l lb">qui ramènent</div>
+      <div class="l lc">des chantiers.</div>
+      <div class="hrow"><p>Adrien Russo — développeur web à Bordeaux, au service des artisans du bâtiment de toute la Gironde depuis 7 ans.</p><a class="cta6">Demander un devis gratuit</a></div>
+      <div class="mq"><div><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span><span>Maçons</span><span>Plombiers</span><span>Électriciens</span><span>Menuisiers</span><span>Couvreurs</span><span>Peintres</span><span>Carreleurs</span><span>Chauffagistes</span></div></div>
+      <div class="tkzone">
+        <div class="tk"><span class="datestamp">ADMIT ONE · 2026</span>
+          <div class="stub"><b>Adrien Russo</b><span>Développeur web<br>Bordeaux · Gironde</span><span class="n">BON N° 2026-0001</span><span>hello@adrienrusso.fr</span></div>
+          <div class="tb"><div class="kind">Bon à valoir — sans engagement</div><h3>Bon pour un devis gratuit</h3><p>Valable pour : site vitrine, refonte, visibilité Google ou outil sur-mesure. Réservé aux artisans du bâtiment de Gironde.</p>
+          <div class="fields"><div class="field">Entreprise<i>Votre nom ici</i></div><div class="field">Métier<i>plombier, maçon…</i></div></div><a class="go">Utiliser mon bon</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Les trouvailles sont combinables : par ex. la déchirure de V3 avec les couleurs de V1, ou les annotations de V5 sur la base de V2. Palettes toujours interchangeables.</p>
+</div>
+</body>
+</html>

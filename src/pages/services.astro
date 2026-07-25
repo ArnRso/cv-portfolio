@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const prestations = [
+  {
+    num: '1',
+    title: 'Création de site vitrine',
+    lede: 'Vitrine en ligne 24h/24 qui présente réalisations, savoir-faire et garanties.',
+    includes: [
+      'Galerie de chantiers (avant/après)',
+      'Demande de devis en ligne',
+      'Mise en avant des certifications (RGE, Qualibat, garantie décennale)',
+      "Bouton d'appel direct",
+      "Zone d'intervention",
+      'Version mobile',
+      'Optimisation Google',
+    ],
+    forWho: 'Tous corps de métier du bâtiment.',
+  },
+  {
+    num: '2',
+    title: 'Refonte & modernisation',
+    lede: 'Repenser un site vieilli, lent ou invisible : design moderne, vitesse, SEO, migration sans perte.',
+    includes: [],
+    forWho: null,
+  },
+  {
+    num: '3',
+    title: 'Référencement local, maintenance & sécurité',
+    lede: 'Être visible quand on vous cherche, et le rester.',
+    includes: [
+      'Référencement local (Gironde)',
+      'Aide à la fiche Google Business',
+      'Mises à jour',
+      'Sauvegardes automatiques',
+      'Surveillance sécurité',
+      'Corrections rapides',
+    ],
+    forWho: null,
+  },
+  {
+    num: '4',
+    title: 'Application web sur-mesure',
+    lede: 'Suivi de chantiers, devis, planning, espace client. Outils robustes et sécurisés.',
+    includes: [],
+    forWho: 'Entreprises du bâtiment qui veulent digitaliser leur gestion.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Prestations',
+  itemListElement: prestations.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Service',
+      name: p.title,
+      description: p.lede,
+      areaServed: { '@type': 'AdministrativeArea', name: 'Gironde' },
+      provider: { '@id': 'https://adrienrusso.fr/#business' },
+    },
+  })),
+};
+---
+
+<Layout
+  title="Services — Sites internet et outils pour les entreprises du bâtiment"
+  description="Création de site vitrine, refonte, référencement local en Gironde et application web sur-mesure pour les artisans du bâtiment. Devis gratuit et sans engagement."
+  schema={[serviceSchema]}
+>
+  <section class="intro">
+    <div class="container">
+      <h1>Ce que je peux construire pour votre entreprise du bâtiment</h1>
+      <p>
+        Un premier site, une refonte ou un outil de gestion : je vous accompagne
+        du début à la fin, avec un objectif simple — un site qui vous ressemble
+        et qui vous apporte des chantiers.
+      </p>
+    </div>
+  </section>
+
+  <Section headingId="prestations" title="Les prestations">
+    <ol class="list">
+      {
+        prestations.map((p) => (
+          <li class="presta">
+            <p class="num">{p.num}</p>
+            <div>
+              <h3>{p.title}</h3>
+              <p class="lede">{p.lede}</p>
+
+              {p.includes.length > 0 && (
+                <>
+                  <p class="label">Comprend</p>
+                  <ul class="tags">
+                    {p.includes.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+
+              {p.forWho && (
+                <p class="forwho">
+                  <span class="label">Pour qui</span>
+                  {p.forWho}
+                </p>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+
+  <Section headingId="technique" title="Côté technique" raised>
+    <p class="tech">
+      Développement principalement avec Symfony et Vue.js, soin porté à la
+      sécurité, la vitesse et la fiabilité. WordPress possible quand c'est le
+      choix le plus adapté au budget et à l'autonomie du client.
+    </p>
+  </Section>
+
+  <CtaBand
+    title="Vous ne savez pas par où commencer ?"
+    text="C'est mon rôle de vous guider. Parlons-en, sans engagement."
+  />
+</Layout>
+
+<style>
+  /* En-tête en aplat marine, comme le CV et l'accueil. */
+  .intro {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    padding-block: var(--space-2xl);
+  }
+
+  .intro h1 {
+    font-size: var(--text-3xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tighter);
+    max-width: 18ch;
+    border-left: var(--rule-height) solid var(--color-accent);
+    padding-left: var(--space-md);
+  }
+
+  .intro p {
+    margin-top: var(--space-md);
+    font-size: var(--text-md);
+    opacity: 0.82;
+    max-width: 60ch;
+    padding-left: calc(var(--rule-height) + var(--space-md));
+  }
+
+  .list {
+    display: grid;
+    gap: var(--space-xl);
+  }
+
+  .presta {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    border-top: var(--border-heavy) solid var(--color-ink);
+    padding-top: var(--space-md);
+  }
+
+  .num {
+    font-family: var(--font-display);
+    font-weight: var(--weight-black);
+    font-size: var(--text-2xl);
+    line-height: 1;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    flex: none;
+    width: var(--space-xl);
+    height: var(--space-xl);
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-sm);
+  }
+
+  .presta h3 {
+    font-size: var(--text-xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .presta .lede {
+    margin-top: var(--space-2xs);
+    color: var(--color-muted);
+    max-width: 60ch;
+  }
+
+  .label {
+    display: block;
+    margin-top: var(--space-sm);
+    font-family: var(--font-display);
+    font-weight: var(--weight-extrabold);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-ink);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+    margin-top: var(--space-2xs);
+  }
+
+  .tags li {
+    background: var(--color-surface-raised);
+    border: var(--border-thin) solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: var(--space-3xs) var(--space-xs);
+    font-size: var(--text-xs);
+    color: var(--color-ink);
+  }
+
+  .forwho {
+    margin-top: var(--space-2xs);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .tech {
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    max-width: 62ch;
+  }
+</style>

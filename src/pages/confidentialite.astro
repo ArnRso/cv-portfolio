@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../consts';
+
+const updated = '25 juillet 2026';
+---
+
+<Layout
+  title="Politique de confidentialité — Adrien Russo"
+  description="Comment les données transmises via le formulaire de contact du site adrienrusso.fr sont collectées, utilisées et conservées."
+>
+  <section class="intro">
+    <div class="container">
+      <h1>Politique de confidentialité</h1>
+      <p>
+        Comment vos données sont collectées, utilisées et conservées lorsque
+        vous me contactez via ce site.
+      </p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="container prose">
+      <h2>Responsable du traitement</h2>
+      <p>
+        Adrien Russo, entrepreneur individuel (SIREN 879 980 233), 33150 Cenon.
+        Contact : <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+      </p>
+
+      <h2>Données collectées</h2>
+      <p>
+        Seul le formulaire de contact collecte des données. Les champs transmis
+        sont :
+      </p>
+      <ul class="list">
+        <li>votre nom ou celui de votre entreprise ;</li>
+        <li>votre adresse email ;</li>
+        <li>votre métier (facultatif) ;</li>
+        <li>le type de projet ;</li>
+        <li>le contenu de votre message.</li>
+      </ul>
+      <p>
+        Aucune autre donnée n'est collectée à votre insu. Ce site ne pratique
+        aucun profilage et ne prend aucune décision automatisée vous concernant.
+      </p>
+
+      <h2>Finalité et base légale</h2>
+      <p>
+        Ces données servent uniquement à répondre à votre demande et à établir
+        un devis le cas échéant. La base légale est votre consentement, donné au
+        moment de l'envoi du formulaire, ainsi que l'exécution de mesures
+        précontractuelles prises à votre demande.
+      </p>
+      <p>
+        Vos données ne sont ni vendues, ni louées, ni utilisées à des fins
+        publicitaires.
+      </p>
+
+      <h2>Destinataires et sous-traitants</h2>
+      <p>
+        Les messages sont acheminés par <strong>EmailJS</strong>, service
+        d'envoi d'emails côté client, puis reçus dans une boîte de réception
+        personnelle. Je suis le seul destinataire de vos messages.
+      </p>
+      <p>
+        Le site est hébergé par <strong>GitHub, Inc.</strong> (GitHub Pages). L'hébergeur
+        peut conserver des journaux de connexion techniques, sur lesquels je n'ai
+        pas la main.
+      </p>
+      <p>
+        Ces prestataires étant établis aux États-Unis, un transfert de données
+        hors Union européenne peut avoir lieu, encadré par les clauses
+        contractuelles types de la Commission européenne.
+      </p>
+
+      <h2>Durée de conservation</h2>
+      <p>
+        Les messages sont conservés le temps nécessaire au traitement de votre
+        demande, puis pendant trois ans à compter de notre dernier échange à des
+        fins de suivi commercial. Passé ce délai, ils sont supprimés.
+      </p>
+
+      <h2>Cookies et mesure d'audience</h2>
+      <p>
+        Ce site ne dépose <strong>aucun cookie</strong> : ni cookie publicitaire,
+        ni cookie de mesure d'audience, ni traceur tiers. Les polices de caractères
+        sont hébergées sur le site lui-même, aucune requête n'est adressée à un service
+        externe lors de votre visite.
+      </p>
+
+      <h2>Vos droits</h2>
+      <p>
+        Conformément au Règlement général sur la protection des données (RGPD)
+        et à la loi Informatique et Libertés, vous disposez d'un droit d'accès,
+        de rectification, d'effacement, de limitation, d'opposition et de
+        portabilité de vos données.
+      </p>
+      <p>
+        Pour les exercer, écrivez-moi à <a href={`mailto:${SITE.email}`}
+          >{SITE.email}</a
+        >. Je réponds dans un délai maximum d'un mois.
+      </p>
+      <p>
+        Si vous estimez que vos droits ne sont pas respectés, vous pouvez
+        introduire une réclamation auprès de la CNIL — <a
+          href="https://www.cnil.fr"
+          rel="noopener">cnil.fr</a
+        >.
+      </p>
+
+      <h2>Sécurité</h2>
+      <p>
+        Le site est servi exclusivement en HTTPS. Les données transmises via le
+        formulaire sont chiffrées en transit. Aucune base de données n'est
+        exploitée sur ce site : il s'agit d'un site statique, sans compte
+        utilisateur ni stockage côté serveur.
+      </p>
+
+      <p class="updated">Dernière mise à jour : {updated}.</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    padding-block: var(--space-2xl);
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tighter);
+    border-left: var(--rule-height) solid var(--color-accent);
+    padding-left: var(--space-md);
+  }
+
+  .intro p {
+    margin-top: var(--space-md);
+    font-size: var(--text-md);
+    opacity: 0.82;
+    max-width: 58ch;
+    padding-left: calc(var(--rule-height) + var(--space-md));
+  }
+
+  .page {
+    padding-block: var(--section-gap);
+  }
+
+  .prose {
+    max-width: var(--container-narrow);
+  }
+
+  .prose h2 {
+    font-size: var(--text-lg);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose h2:first-child {
+    margin-top: 0;
+  }
+
+  .prose h2::before {
+    content: '';
+    display: block;
+    width: var(--rule-width);
+    height: var(--rule-height);
+    background: var(--color-accent);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .prose p {
+    margin-bottom: var(--space-sm);
+    color: var(--color-muted);
+  }
+
+  .list {
+    display: grid;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-sm);
+    color: var(--color-muted);
+  }
+
+  .list li {
+    position: relative;
+    padding-left: var(--space-sm);
+  }
+
+  .list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: var(--space-2xs);
+    height: var(--border-heavy);
+    background: var(--color-accent);
+  }
+
+  .updated {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-sm);
+    border-top: var(--border-thin) solid var(--color-border);
+    font-size: var(--text-sm);
+    font-style: italic;
+  }
+</style>

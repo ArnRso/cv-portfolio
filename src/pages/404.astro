@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page introuvable — Adrien Russo"
+  description="Cette page n'existe pas ou a été déplacée."
+>
+  <section class="page">
+    <div class="container">
+      <p class="code">404</p>
+      <h1>Cette page n'existe pas</h1>
+      <p class="text">
+        Le lien est peut-être erroné, ou la page a été déplacée. Reprenons
+        depuis le début.
+      </p>
+      <div class="actions">
+        <a class="btn btn-solid" href="/">Retour à l'accueil</a>
+        <a class="btn btn-outline" href="/contact">Me contacter</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page {
+    padding-block: var(--space-3xl) var(--space-4xl);
+  }
+
+  .code {
+    font-family: var(--font-display);
+    font-weight: var(--weight-black);
+    font-size: var(--text-hero);
+    line-height: var(--leading-tight);
+    color: transparent;
+    -webkit-text-stroke: var(--stroke-hero) var(--color-ink);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tighter);
+    margin-top: var(--space-2xs);
+  }
+
+  .text {
+    margin-top: var(--space-sm);
+    color: var(--color-muted);
+    max-width: var(--measure);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+</style>

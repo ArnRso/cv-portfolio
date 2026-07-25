@@ -1,0 +1,91 @@
+---
+import { NAV, SITE } from '../consts';
+
+const current = Astro.url.pathname.replace(/(.)\/$/, '$1');
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="/">
+      {SITE.name}
+      <span class="brand-job">Développeur web · {SITE.city}</span>
+    </a>
+
+    <nav aria-label="Navigation principale">
+      <ul>
+        {
+          NAV.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={item.href === current ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-top: var(--rule-height) solid var(--color-accent);
+    border-bottom: var(--border-thick) solid var(--color-ink);
+    background: var(--color-bg);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+  }
+
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xs) var(--space-md);
+    padding-block: var(--space-xs);
+  }
+
+  .brand {
+    font-family: var(--font-display);
+    font-weight: var(--weight-black);
+    font-size: var(--text-md);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-ink);
+    text-decoration: none;
+    line-height: var(--leading-snug);
+  }
+
+  .brand-job {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-muted);
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-md);
+  }
+
+  nav a {
+    color: var(--color-ink);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    padding-block: var(--space-3xs);
+    border-bottom: var(--border-thick) solid transparent;
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+
+  nav a:hover,
+  nav a[aria-current='page'] {
+    border-bottom-color: var(--color-primary);
+  }
+</style>
