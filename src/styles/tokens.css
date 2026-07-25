@@ -22,10 +22,10 @@
   /* Ticket « carnet à souche » — volontairement indépendant de la palette :
    * le bon reste crème/papier quel que soit l'habillage du site. */
   --paper-bg: #fdfbf4;
-  --paper-stub: #eef2f8;
-  --paper-dash: #a8b8cc;
+  --paper-stub: #f4efe0;
+  --paper-dash: #cbbf9e;
   --paper-ink: #16304f;
-  --paper-muted: #5f7089;
+  --paper-muted: #6b6349;
   --paper-accent: #1d4ed8;
   --paper-on-accent: #ffffff;
 
