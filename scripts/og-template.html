@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* Les polices sont chargées depuis node_modules au moment du rendu ;
+         le gabarit n'est jamais servi en ligne. */
+      @font-face {
+        font-family: 'Archivo';
+        src: url('../node_modules/@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2')
+          format('woff2');
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: 'Inter';
+        src: url('../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2')
+          format('woff2');
+        font-weight: 100 900;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 1200px;
+        height: 630px;
+        background: #0f2747;
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 72px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Filet jaune en haut, comme le header du site */
+      body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: #ffc300;
+      }
+
+      .xxl {
+        font-family: 'Archivo', sans-serif;
+        font-weight: 900;
+        font-size: 92px;
+        line-height: 0.98;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+
+      .outline {
+        color: transparent;
+        -webkit-text-stroke: 3px #fff;
+      }
+
+      .mark {
+        background: #ffc300;
+        color: #0f2747;
+        padding: 0 16px;
+        display: inline-block;
+      }
+
+      .lede {
+        margin-top: 36px;
+        font-size: 26px;
+        line-height: 1.4;
+        opacity: 0.85;
+        max-width: 24ch;
+      }
+
+      .foot {
+        position: absolute;
+        left: 80px;
+        right: 80px;
+        bottom: 56px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        font-size: 21px;
+      }
+
+      .name {
+        font-family: 'Archivo', sans-serif;
+        font-weight: 800;
+      }
+
+      .meta {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 17px;
+        font-weight: 600;
+        opacity: 0.75;
+      }
+
+      .meta b {
+        color: #ffc300;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="xxl">
+      <div>Des sites</div>
+      <div class="outline">qui ramènent</div>
+      <div><span class="mark">des chantiers.</span></div>
+    </div>
+
+    <p class="lede">Sites internet pour les artisans du bâtiment en Gironde.</p>
+
+    <div class="foot">
+      <span class="name">Adrien Russo</span>
+      <span class="meta">Développeur web <b>·</b> Bordeaux &amp; Gironde</span>
+    </div>
+  </body>
+</html>
