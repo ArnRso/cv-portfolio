@@ -188,15 +188,20 @@ p {
 }
 
 /* ---- Impression / PDF du CV --------------------------------------
- * La CI imprime /cv en PDF. On retire la navigation, le ticket et les
- * aplats de couleur, et on force un fond blanc pour l'encre.
+ * La CI imprime /cv en PDF. On retire la navigation et le ticket, on
+ * resserre le rythme vertical, et on empêche les blocs d'être coupés
+ * en travers d'une page à l'autre.
  * ------------------------------------------------------------------ */
 @media print {
   :root {
     --color-bg: #fff;
     --color-surface: #fff;
     --color-surface-raised: #fff;
+    /* Le rythme de l'écran laisserait des pages à moitié vides. */
     --section-gap: var(--space-md);
+    --space-2xl: var(--space-md);
+    --space-3xl: var(--space-lg);
+    --space-xl: var(--space-md);
   }
 
   .site-header,
@@ -206,7 +211,7 @@ p {
   }
 
   body {
-    font-size: 10.5pt;
+    font-size: 10pt;
   }
 
   main {
@@ -225,6 +230,11 @@ p {
 
   li,
   .timeline li {
+    break-inside: avoid;
+  }
+
+  /* Les aplats de couleur ne doivent pas être tranchés par un saut de page. */
+  section {
     break-inside: avoid;
   }
 }

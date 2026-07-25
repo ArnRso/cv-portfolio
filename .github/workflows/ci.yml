@@ -1,0 +1,32 @@
+name: Vérification
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Contrôler les types
+        run: npx astro check
+
+      - name: Vérifier le formatage
+        run: npx prettier --check .
+
+      - name: Construire le site
+        run: npm run build
+
+      - name: Vérifier que le CNAME est présent
+        run: test -f dist/CNAME
