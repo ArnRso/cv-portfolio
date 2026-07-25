@@ -72,7 +72,7 @@ const projectTypes = [
     <textarea id="message" name="message" rows="6" required></textarea>
   </div>
 
-  <button type="submit" class="submit" disabled={!configured}>
+  <button type="submit" class="btn btn-solid submit" disabled={!configured}>
     Envoyer ma demande
   </button>
 
@@ -184,17 +184,6 @@ const projectTypes = [
 
   .submit {
     justify-self: start;
-    background: var(--color-ink);
-    color: var(--color-bg);
-    font-weight: var(--weight-extrabold);
-    font-size: var(--text-sm);
-    padding: var(--space-xs) var(--space-md);
-    border-radius: var(--radius-pill);
-  }
-
-  .submit:disabled {
-    opacity: 0.55;
-    cursor: not-allowed;
   }
 
   .status:empty {
