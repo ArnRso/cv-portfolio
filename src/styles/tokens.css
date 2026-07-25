@@ -18,6 +18,13 @@
   --color-primary: #1d4ed8;
   --color-on-primary: #ffffff;
   --color-accent: #f97316;
+  --color-on-accent: #0f2747;
+  /* Orange assombri : l'accent pur ne passe pas le contraste AA en texte
+     sur fond clair. À utiliser pour les libellés, pas pour les aplats. */
+  --color-accent-ink: #c2410c;
+  /* Aplat sombre des sections « inversées » */
+  --color-inverse: var(--color-ink);
+  --color-on-inverse: var(--color-bg);
 
   /* Ticket « carnet à souche » — volontairement indépendant de la palette :
    * le bon reste crème/papier quel que soit l'habillage du site. */
@@ -31,8 +38,8 @@
 
   /* ---- Couleurs dérivées ---------------------------------------- */
   --color-surface: #ffffff;
-  --color-surface-raised: #eef3fc;
-  --color-border: #d5e0f0;
+  --color-surface-raised: #e7eefb;
+  --color-border: #c3d4ec;
   --color-border-strong: var(--color-ink);
   --color-focus: var(--color-accent);
   --color-error: #b42318;
@@ -124,6 +131,11 @@
 
   --border-thin: 1px;
   --border-thick: 2px;
+  --border-heavy: 3px;
+
+  /* Filet d'accent au-dessus des titres de section */
+  --rule-width: 3.5rem;
+  --rule-height: 5px;
 
   --shadow-sm: 0 1px 2px rgb(15 39 71 / 0.06);
   --shadow-md: 0 8px 24px -12px rgb(15 39 71 / 0.22);
