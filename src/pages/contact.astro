@@ -28,14 +28,18 @@ const contactSchema = {
   description="Un projet de site, une refonte ou une question ? Écrivez-moi, je réponds rapidement. Devis gratuit et sans engagement, Bordeaux et toute la Gironde."
   schema={[contactSchema]}
 >
-  <section class="page">
+  <section class="intro">
     <div class="container">
       <h1>Parlons de votre projet</h1>
-      <p class="intro">
+      <p>
         Un projet de site, une refonte ou juste une question ? Écrivez-moi, je
         vous réponds rapidement — sans engagement.
       </p>
+    </div>
+  </section>
 
+  <section class="page">
+    <div class="container">
       <div class="cols">
         <div>
           <h2>Votre demande</h2>
@@ -77,35 +81,54 @@ const contactSchema = {
 
 <style>
   .page {
-    padding-block: var(--space-2xl) var(--space-3xl);
+    padding-block: var(--section-gap);
+  }
+
+  /* En-tête en aplat marine, comme les autres pages. */
+  .intro {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    padding-block: var(--space-2xl);
   }
 
   h1 {
     font-size: var(--text-3xl);
     text-transform: uppercase;
     letter-spacing: var(--tracking-tighter);
+    border-left: var(--rule-height) solid var(--color-accent);
+    padding-left: var(--space-md);
   }
 
-  .intro {
-    margin-top: var(--space-sm);
+  .intro p {
+    margin-top: var(--space-md);
     font-size: var(--text-md);
-    color: var(--color-muted);
+    opacity: 0.82;
     max-width: 58ch;
+    padding-left: calc(var(--rule-height) + var(--space-md));
   }
 
   .cols {
     display: grid;
     grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
     gap: var(--space-xl);
-    margin-top: var(--space-xl);
     align-items: start;
   }
 
+  /* Même traitement que les titres de section : filet jaune au-dessus. */
   h2 {
     font-size: var(--text-md);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
     margin-bottom: var(--space-sm);
+  }
+
+  h2::before {
+    content: '';
+    display: block;
+    width: var(--rule-width);
+    height: var(--rule-height);
+    background: var(--color-accent);
+    margin-bottom: var(--space-2xs);
   }
 
   .side {
@@ -115,9 +138,13 @@ const contactSchema = {
 
   .block {
     background: var(--color-surface-raised);
-    border: var(--border-thin) solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-left: var(--rule-height) solid var(--color-accent);
     padding: var(--space-md);
+  }
+
+  /* Le filet du bloc suffit : pas de doublon avec celui du titre. */
+  .block h2::before {
+    display: none;
   }
 
   .coords {

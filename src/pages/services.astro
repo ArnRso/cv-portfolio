@@ -132,8 +132,11 @@ const serviceSchema = {
 </Layout>
 
 <style>
+  /* En-tête en aplat marine, comme le CV et l'accueil. */
   .intro {
-    padding-block: var(--space-2xl) var(--space-lg);
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    padding-block: var(--space-2xl);
   }
 
   .intro h1 {
@@ -141,13 +144,16 @@ const serviceSchema = {
     text-transform: uppercase;
     letter-spacing: var(--tracking-tighter);
     max-width: 18ch;
+    border-left: var(--rule-height) solid var(--color-accent);
+    padding-left: var(--space-md);
   }
 
   .intro p {
     margin-top: var(--space-md);
     font-size: var(--text-md);
-    color: var(--color-muted);
+    opacity: 0.82;
     max-width: 60ch;
+    padding-left: calc(var(--rule-height) + var(--space-md));
   }
 
   .list {
