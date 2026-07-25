@@ -140,7 +140,13 @@ p {
 
 .btn-accent {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--color-on-accent);
+}
+
+/* Secondaire posé sur un aplat sombre */
+.btn-ghost-light {
+  border: var(--border-thick) solid var(--color-on-inverse);
+  color: var(--color-on-inverse);
 }
 
 .btn:disabled {

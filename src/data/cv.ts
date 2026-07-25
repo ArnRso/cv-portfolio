@@ -21,6 +21,11 @@ export interface CvSkillGroup {
   keywords: string[];
 }
 
+export interface CvFact {
+  value: string;
+  label: string;
+}
+
 export interface CvJob {
   position: string;
   company: string;
@@ -30,6 +35,7 @@ export interface CvJob {
   endDate: string | null;
   summary: string;
   highlights: string[];
+  stack: string[];
 }
 
 export interface CvTeaching {
@@ -37,12 +43,6 @@ export interface CvTeaching {
   role: string;
   period: string;
   detail: string;
-}
-
-export interface CvProject {
-  name: string;
-  url: string;
-  description: string;
 }
 
 export interface CvEducation {
@@ -58,11 +58,10 @@ export interface CvLanguage {
 
 export interface Cv {
   basics: CvBasics;
+  facts: CvFact[];
   skills: CvSkillGroup[];
   work: CvJob[];
   teaching: CvTeaching[];
-  projects: CvProject[];
-  projectsNote: string;
   education: CvEducation[];
   languages: CvLanguage[];
 }
