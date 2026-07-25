@@ -23,7 +23,7 @@
   "facts": [
     { "value": "7", "label": "ans d'expérience" },
     { "value": "3", "label": "écoles où j'enseigne" },
-    { "value": "85 %", "label": "de couverture de tests" },
+    { "value": "Full stack", "label": "back, front et infrastructure" },
     { "value": "Symfony 8", "label": "version la plus récente en production" }
   ],
   "skills": [
@@ -88,7 +88,7 @@
       "highlights": [
         "Migration du legacy (CodeIgniter) vers Symfony, avec montée en version continue jusqu'à Symfony 7 et 8 ; infrastructure cloud (Docker, Kubernetes) pour la résilience.",
         "Plateformes métier : site B2B (stock en direct, ventes privées, enchères) ; module carte grise (malus, CERFA, signature électronique) ; outil VO (bons de commande, factures, garanties, financements) ; intégration location (géolocalisation, signature).",
-        "Sécurité (JWT, chiffrement, CSRF/XSS), tests supérieurs à 85 % de couverture, CI/CD GitLab, stockage S3, PRA/PCA."
+        "Sécurité (JWT, chiffrement, CSRF/XSS), stratégie de tests automatisés, CI/CD GitLab, stockage S3, PRA/PCA."
       ],
       "stack": [
         "Symfony",
