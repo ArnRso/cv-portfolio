@@ -29,15 +29,24 @@
   /* Marine plus dense, pour superposer deux niveaux d'aplat */
   --color-inverse-deep: #0a1b33;
 
-  /* Ticket « carnet à souche » — volontairement indépendant de la palette :
-   * le bon reste crème/papier quel que soit l'habillage du site. */
-  --paper-bg: #fdfbf4;
-  --paper-stub: #f4efe0;
-  --paper-dash: #cbbf9e;
-  --paper-ink: #16304f;
-  --paper-muted: #6b6349;
-  --paper-accent: #0f2747;
-  --paper-on-accent: #ffc300;
+  /* Ticket « carnet à souche » — jeu de couleurs dédié, indépendant du reste
+   * du site. La souche a ses propres tokens : son fond peut être sombre alors
+   * que le corps du bon reste clair. */
+  --paper-bg: #eef3fb;
+  --paper-ink: #0f2747;
+  --paper-muted: #566c8c;
+  --paper-dash: #8ba4c8;
+  /* Aplats du bon (bouton) : jaune, avec l'encre par-dessus. */
+  --paper-accent: #ffc300;
+  --paper-on-accent: #0f2747;
+  /* Libellés du bon : le jaune est illisible en texte sur fond clair. */
+  --paper-accent-ink: #7d6100;
+
+  /* Souche (partie gauche, détachable) */
+  --stub-bg: #0f2747;
+  --stub-ink: #ffffff;
+  --stub-muted: #b9c9e0;
+  --stub-accent: #ffc300;
 
   /* ---- Couleurs dérivées ---------------------------------------- */
   --color-surface: #ffffff;
