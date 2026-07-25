@@ -1,0 +1,232 @@
+---
+const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY ?? '';
+const serviceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID ?? '';
+const templateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? '';
+const configured = Boolean(publicKey && serviceId && templateId);
+
+const projectTypes = [
+  'Nouveau site vitrine',
+  'Refonte de mon site',
+  'Référencement & visibilité',
+  'Outil sur-mesure',
+  'Autre',
+];
+---
+
+<form
+  class="form"
+  id="contact-form"
+  data-public-key={publicKey || undefined}
+  data-service-id={serviceId || undefined}
+  data-template-id={templateId || undefined}
+  novalidate
+>
+  {
+    !configured && (
+      <p class="notice">
+        Le formulaire n'est pas encore relié à sa boîte de réception. En
+        attendant, écrivez-moi directement à{' '}
+        <a href="mailto:hello@adrienrusso.fr">hello@adrienrusso.fr</a>.
+      </p>
+    )
+  }
+
+  <div class="field">
+    <label for="name">Nom / entreprise</label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      required
+      autocomplete="organization"
+    />
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required autocomplete="email" />
+  </div>
+
+  <div class="field">
+    <label for="metier">
+      Votre métier <span class="opt">(optionnel)</span>
+    </label>
+    <input
+      id="metier"
+      name="metier"
+      type="text"
+      placeholder="plombier, maçon, électricien…"
+    />
+  </div>
+
+  <div class="field">
+    <label for="projet">Type de projet</label>
+    <select id="projet" name="projet" required>
+      <option value="">Choisissez…</option>
+      {projectTypes.map((type) => <option value={type}>{type}</option>)}
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="message">Votre message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-solid submit" disabled={!configured}>
+    Envoyer ma demande
+  </button>
+
+  <p class="status" role="status" aria-live="polite"></p>
+
+  <p class="rgpd">
+    Les informations transmises via ce formulaire servent uniquement à répondre
+    à votre demande. Elles ne sont ni revendues ni utilisées à des fins
+    publicitaires. Conformément au RGPD, vous pouvez demander leur suppression à
+    tout moment par email — voir la <a href="/confidentialite"
+      >politique de confidentialité</a
+    >.
+  </p>
+</form>
+
+<script>
+  import emailjs from '@emailjs/browser';
+
+  const form = document.querySelector<HTMLFormElement>('#contact-form');
+  const { publicKey, serviceId, templateId } = form?.dataset ?? {};
+
+  // Sans identifiants, le bouton reste désactivé et le formulaire n'est pas câblé.
+  if (form && publicKey && serviceId && templateId) {
+    const status = form.querySelector<HTMLParagraphElement>('.status')!;
+    const submit = form.querySelector<HTMLButtonElement>('.submit')!;
+
+    const setStatus = (message: string, state: 'ok' | 'ko' | '') => {
+      status.textContent = message;
+      status.dataset.state = state;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submit.disabled = true;
+      setStatus('Envoi en cours…', '');
+
+      // Le template EmailJS n'expose que name/email/message/title : métier et
+      // type de projet sont repliés dans le corps du message.
+      const data = new FormData(form);
+      const metier = String(data.get('metier') ?? '').trim();
+      const projet = String(data.get('projet') ?? '');
+      const message = [
+        `Type de projet : ${projet}`,
+        metier ? `Métier : ${metier}` : null,
+        '',
+        String(data.get('message') ?? ''),
+      ]
+        .filter((line) => line !== null)
+        .join('\n');
+
+      try {
+        emailjs.init({ publicKey });
+        await emailjs.send(serviceId, templateId, {
+          name: data.get('name'),
+          email: data.get('email'),
+          title: projet,
+          time: new Date().toLocaleString('fr-FR'),
+          message,
+        });
+        form.reset();
+        setStatus('Message envoyé. Je vous réponds rapidement, merci !', 'ok');
+      } catch {
+        setStatus(
+          "L'envoi a échoué. Écrivez-moi directement à hello@adrienrusso.fr.",
+          'ko',
+        );
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .form {
+    display: grid;
+    gap: var(--space-sm);
+    max-width: var(--container-narrow);
+  }
+
+  .notice {
+    background: var(--color-surface-raised);
+    border-left: var(--border-thick) solid var(--color-accent);
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .field {
+    display: grid;
+    gap: var(--space-3xs);
+  }
+
+  label {
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-sm);
+  }
+
+  .opt {
+    font-weight: var(--weight-regular);
+    color: var(--color-muted);
+  }
+
+  input,
+  select,
+  textarea {
+    background: var(--color-surface);
+    border: var(--border-thin) solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2xs) var(--space-xs);
+    font-size: var(--text-base);
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    border-color: var(--color-primary);
+  }
+
+  .submit {
+    justify-self: start;
+  }
+
+  .status:empty {
+    display: none;
+  }
+
+  .status {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+  }
+
+  .status[data-state='ok'] {
+    color: var(--color-success);
+  }
+
+  .status[data-state='ko'] {
+    color: var(--color-error);
+  }
+
+  .rgpd {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+  }
+</style>

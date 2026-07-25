@@ -1,0 +1,131 @@
+---
+/* Arbitrage SEO : le bloc typo XXL porte le H1 (il contient les mots-clés
+   métier et domine la page). La phrase longue « Votre entreprise mérite un
+   site à la hauteur » devient le sous-titre juste en dessous. Un seul H1. */
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="xxl">
+      <span class="line">Des sites</span>
+      <span class="line outline">qui ramènent</span>
+      <span class="line"><em>des chantiers.</em></span>
+    </h1>
+
+    <p class="claim">
+      Votre entreprise mérite un site à la hauteur. Je m'en occupe.
+    </p>
+
+    <div class="hrow">
+      <p class="lede">
+        Développeur web à Bordeaux, je crée des sites internet pour les artisans
+        du bâtiment en Gironde. Objectif : plus de chantiers, et une entreprise
+        qu'on trouve enfin sur Google.
+      </p>
+
+      <div class="ctas">
+        <a class="btn btn-accent" href="/contact">Demander un devis gratuit</a>
+        <a class="btn btn-ghost-light" href="/cv">Voir mon parcours</a>
+      </div>
+    </div>
+
+    <ul class="badges">
+      <li>Spécialiste des artisans du BTP</li>
+      <li>Bordeaux &amp; toute la Gironde</li>
+      <li>7 ans d'expérience</li>
+      <li>Sites optimisés pour Google</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  /* Aplat marine : la page démarre sur une masse de couleur, comme le CV. */
+  .hero {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    padding-block: var(--space-2xl);
+  }
+
+  .xxl {
+    font-size: var(--text-hero);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tighter);
+    text-transform: uppercase;
+  }
+
+  .line {
+    display: block;
+  }
+
+  .outline {
+    color: transparent;
+    -webkit-text-stroke: var(--stroke-hero) var(--color-on-inverse);
+  }
+
+  .line em {
+    font-style: normal;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    padding-inline: var(--space-xs);
+    /* Le surlignage suit chaque ligne si le texte passe à la ligne. */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .claim {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    margin-top: var(--space-md);
+    max-width: 24ch;
+  }
+
+  .hrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-md) var(--space-lg);
+    margin-block: var(--space-md) var(--space-lg);
+  }
+
+  .lede {
+    opacity: 0.8;
+    max-width: var(--measure);
+    font-size: var(--text-md);
+  }
+
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-sm);
+    align-items: center;
+  }
+
+  /* Une ligne de texte, pas des pastilles : bordées, elles se lisaient
+     comme une rangée de boutons juste sous les vrais CTA. */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2xs) var(--space-sm);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    opacity: 0.85;
+  }
+
+  .badges li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+
+  .badges li:not(:last-child)::after {
+    content: '✦';
+    color: var(--color-accent);
+    font-size: 0.8em;
+  }
+</style>

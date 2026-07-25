@@ -1,61 +1,127 @@
-## Print-friendly portfolio CV
+# adrienrusso.fr
 
-![preview](https://github.com/user-attachments/assets/44c47034-06e4-412a-b9dd-014593b32215)
+Site vitrine + CV d'Adrien Russo, développeur web à Bordeaux, au service des
+artisans du bâtiment en Gironde.
 
-![Astro Badge](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=flat)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss)
-![GitHub stars](https://img.shields.io/github/stars/Smilesharks/dev-portfolio)
-![GitHub issues](https://img.shields.io/github/issues/Smilesharks/dev-portfolio)
-![GitHub forks](https://img.shields.io/github/forks/Smilesharks/dev-portfolio)
-![GitHub PRs](https://img.shields.io/github/issues-pr/Smilesharks/dev-portfolio)
+Site statique **Astro**, CSS natif piloté par variables, sans Tailwind et sans
+CDN. Déploiement prévu sur GitHub Pages.
 
-## 🛠️ Stack
-
-- [**Astro**](https://astro.build/) - The next-gen web framework.
-- [**Typescript**](https://www.typescriptlang.org/) - JavaScript with type syntax.
-- [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Dropdown menu with keyboard shortcuts made in pure JavaScript.
-
-## 🚀 Getting Started
-
-### 1. Use this Repo as an Astro Project Template
-
-- I use [pnpm](https://pnpm.io/installation) as my package manager.
+## Commandes
 
 ```bash
-# Enable pnpm on MacOS, WSL & Linux:
-corepack enable
-corepack prepare pnpm@latest --activate
+npm install      # installer les dépendances
+npm run dev      # serveur de dev sur http://localhost:4321
+npm run build    # build de production dans dist/
+npm run preview  # prévisualiser le build
+npm run check    # contrôle des types Astro/TypeScript
+npm run format   # Prettier
 ```
 
-# Initialize the project
-```bash
-pnpm create astro@latest -- --template Smilesharks/dev-portfolio
+## Structure
+
+```
+src/
+  components/    Header, Footer, Hero, Marquee, Ticket, Section, CtaBand, ContactForm
+  data/          cv.json (données du CV) + cv.ts (types)
+  layouts/       Layout.astro — meta, Open Graph, JSON-LD
+  pages/         index, services, cv, contact, 404
+  styles/
+    tokens.css   ← LE fichier à éditer pour le design
+    base.css     reset, utilitaires, styles d'impression du CV
+public/          CNAME, robots.txt, favicon
+ressources/      documentation projet (briefs, contenus, maquettes d'origine)
 ```
 
-### 2. Add Your Content:
+## Design : où éditer
 
-Edit the `cv.json` file to create your own printable Portfolio/CV.
+**Tout ce qui est visuel vit dans `src/styles/tokens.css`.** Aucun composant ne
+contient de couleur, de taille ou de durée en dur — si une valeur apparaît dans
+un composant, c'est un bug : ajoutez plutôt le token.
 
-### 3. Launch the Development Server:
+### Changer la palette
 
-```bash
-# Enjoy the results
-pnpm dev
+Le fichier contient un bloc « PALETTE ACTIVE » (actuellement **D — Bleu
+Confiance**) et, en fin de fichier, les 7 autres palettes explorées, en
+commentaire. Pour en essayer une : copier ses valeurs par-dessus celles du bloc
+actif. Rien d'autre à toucher.
+
+Les palettes sombres (B « Nuit de chantier », H « Sombre Ambre ») demandent en
+plus d'ajuster `--color-surface`, `--color-surface-raised` et `--color-border`,
+qui sont calculés pour un fond clair.
+
+Le ticket « carnet à souche » du pied de page a ses propres variables
+(`--paper-*`) : il reste crème quelle que soit la palette du site. C'est
+volontaire.
+
+## Choix d'implémentation
+
+- **H1 de l'accueil** : le bloc typographique XXL (« Des sites qui ramènent des
+  chantiers ») porte le H1 — il contient les mots-clés métier et domine la page.
+  La phrase « Votre entreprise mérite un site à la hauteur » est le sous-titre
+  juste en dessous. Un seul H1 par page sur tout le site.
+- **Marquee** : la liste des métiers est dupliquée dans le DOM pour boucler sans
+  saut (translation de -50 %). Sous `prefers-reduced-motion`, l'animation est
+  coupée et la copie masquée.
+- **Données du CV** : `src/data/cv.json` suit l'éditorialisation de
+  `ressources/04-contenu-cv.md`, pas la structure brute des anciens JSON. Le
+  téléphone et le champ `theme` ont été retirés, Symfony 6 corrigé en 7 et 8, et
+  les entrées inventées par l'ancien template (bénévolat, allemand, projets
+  génériques) écartées. Aucun projet n'est attribué à un employeur.
+- **Polices** : auto-hébergées via `@fontsource`, aucun appel à Google Fonts.
+
+## Formulaire de contact (EmailJS)
+
+Le formulaire attend trois variables d'environnement. Copiez `.env.example` en
+`.env` et renseignez-les :
+
 ```
-1. Open [**http://localhost:4321**](http://localhost:4321/) in your browser to view the result 🚀
+PUBLIC_EMAILJS_PUBLIC_KEY=
+PUBLIC_EMAILJS_SERVICE_ID=
+PUBLIC_EMAILJS_TEMPLATE_ID=
+```
 
-### 4. Customisable colours:
-Change the data-theme of `cv.json` and choose one of the colour themes defined in theme.css, red, blue, green, cyber and default, with its variants in dark mode, or create your own.
+Sans ces variables, le formulaire s'affiche mais reste désactivé, avec un lien
+`mailto:` en repli — le build ne casse pas.
 
-## 🧞 Commands
+Le `.env` local est déjà renseigné (service `service_sowckle`, template
+`template_5v8we2i`). Ces trois valeurs sont publiques par nature : elles partent
+dans le JS du navigateur. La sécurité repose sur la liste blanche de domaine et
+le reCAPTCHA à activer côté EmailJS — voir ci-dessous.
 
-|     | Command         | Action                                                                       |
-| :-- | :-------------- | :--------------------------------------------------------------------------- |
-| ⚙️  | `dev` o `start` | Launches a local development server at `localhost:4321`.                   |
-| ⚙️  | `build`         | Checks for errors and creates a production build in `./dist/`. |
-| ⚙️  | `preview`       | Local preview at `localhost:4321`                                       |
+### Variables du template
 
+Le template « Contact Us » attend `{{name}}`, `{{email}}`, `{{message}}`,
+`{{title}}` et `{{time}}`. Le formulaire du site a cinq champs : le métier et le
+type de projet n'ayant pas de variable dédiée dans le template, ils sont repliés
+en tête du corps du message. Pour les recevoir dans des champs séparés, ajoutez
+`{{metier}}` et `{{projet}}` au template et adaptez l'appel `emailjs.send()`
+dans [ContactForm.astro](src/components/ContactForm.astro).
 
-CV JSON schema from [**jsonresume.org**](https://jsonresume.org/schema/)
+Le template envoie vers `adrien.russo@gmail.com` et positionne `Reply To` sur
+l'email du visiteur.
 
-Based on [**Bartosz Jarocki - Print-friendly, minimalist CV page**](https://github.com/BartoszJarocki/cv) and [**Miguel Ángel Durán - minimalist-portfolio-json**](https://github.com/midudev/minimalist-portfolio-json)
+## Reste à faire côté Adrien
+
+- [x] Fournir les identifiants EmailJS.
+- [ ] Activer dans EmailJS la **liste blanche de domaine** (`adrienrusso.fr`
+      uniquement) et le **reCAPTCHA** — à faire avant la mise en ligne, sinon
+      n'importe qui peut consommer le quota depuis un autre site.
+- [ ] Décider si les demandes doivent arriver sur `hello@adrienrusso.fr` plutôt
+      que sur l'adresse Gmail actuellement configurée dans le template, et
+      vérifier que cette boîte est opérationnelle.
+- [ ] Tester un envoi réel depuis `/contact` (quota : 200 requêtes/mois).
+- [ ] Rédiger les mentions légales et la politique de confidentialité
+      (obligatoire avant mise en ligne — les liens du pied de page sont en place,
+      désactivés).
+- [ ] Créer la fiche Google Business Profile.
+- [ ] Optionnel plus tard : 2-3 sites démo BTP pour remplacer la section
+      « expérience » de l'accueil.
+
+## Reste à faire côté dev
+
+- [ ] Image Open Graph (`public/og.png`) — référencée dans le layout, pas encore
+      produite.
+- [ ] CI GitHub Actions : build, génération du PDF du CV (`/cv` imprimée via
+      Playwright, la feuille `@media print` est déjà écrite) et déploiement Pages.
+      Le bouton « Télécharger mon CV (PDF) » pointe vers `/adrien-russo-cv.pdf`,
+      produit par cette CI.

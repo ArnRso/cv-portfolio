@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layouts créatifs 76–100 — adrienrusso.fr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800;900&family=Barlow+Condensed:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Caveat:wght@600;700&family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#f4f4f5; color:#18181b; font-family:'Inter',system-ui,sans-serif; line-height:1.5; }
+  .page { max-width:1020px; margin:0 auto; padding:32px 20px 80px; }
+  .intro { text-align:center; margin-bottom:40px; }
+  .intro h1 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(26px,5vw,42px); letter-spacing:-0.02em; margin-bottom:12px; }
+  .intro p { max-width:660px; margin:0 auto; color:#52525b; font-size:16px; }
+  .dir-block { margin-bottom:44px; border-radius:18px; overflow:hidden; box-shadow:0 10px 40px -12px rgba(0,0,0,.22); background:#fff; }
+  .dir-meta { display:flex; flex-wrap:wrap; align-items:center; gap:14px; padding:15px 22px; background:#111114; color:#fff; }
+  .dir-meta .num { font-family:'Space Grotesk',monospace; font-weight:700; font-size:13px; opacity:.6; }
+  .dir-meta .name { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:18px; }
+  .dir-meta .vibe { font-size:13px; color:#a1a1aa; flex:1 1 260px; }
+  .cta-g { display:inline-block; font-weight:800; border-radius:8px; padding:12px 20px; font-size:14px; }
+  .foot { text-align:center; color:#71717a; font-size:13px; margin-top:8px; }
+
+  /* 76 CASIERS */
+  .c76 .mock { background:#3e444b; padding:36px 30px; }
+  .c76 h2 { text-align:center; color:#fff; font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(19px,3vw,26px); margin-bottom:22px; }
+  .c76 .lockers { display:flex; gap:8px; max-width:720px; margin:0 auto; }
+  .c76 .lk { flex:1; background:linear-gradient(#5a87a8,#4b7191); border:2px solid #33505f; border-radius:6px; padding:14px 12px 16px; color:#eaf2f7; min-height:210px; display:flex; flex-direction:column; }
+  .c76 .lk .vents { height:18px; background:repeating-linear-gradient(#3c5c6e 0 3px, transparent 3px 8px); border-radius:2px; margin-bottom:10px; }
+  .c76 .lk .plate { background:#e8eef2; color:#2b3a44; font-size:10px; font-weight:800; text-align:center; border-radius:3px; padding:3px 4px; margin-bottom:10px; letter-spacing:.04em; }
+  .c76 .lk b { font-size:13px; margin-bottom:4px; }
+  .c76 .lk p { font-size:10.5px; color:#c3d4de; }
+  .c76 .lk .handle { margin-top:auto; width:7px; height:22px; background:#2b4553; border-radius:3px; }
+  .c76 .lk.open { background:#f6efe2; border-color:#b8a988; color:#3a2f1e; transform:rotate(-1deg); }
+  .c76 .lk.open .plate { background:#c1502e; color:#fff; }
+  .c76 .lk.open p { color:#6e5c42; }
+  .c76 .lk.open .cta76 { margin-top:auto; background:#c1502e; color:#fff; font-weight:800; font-size:11px; text-align:center; padding:9px 6px; border-radius:5px; }
+  @media(max-width:680px){ .c76 .lockers{flex-wrap:wrap;} .c76 .lk{flex:1 1 40%;} }
+
+  /* 77 RECETTE */
+  .c77 .mock { background:#fbf6ec; padding:36px 30px; }
+  .c77 .fiche { max-width:600px; margin:0 auto; background:#fff; border-radius:10px; padding:26px 30px; box-shadow:0 10px 26px -16px rgba(0,0,0,.3); }
+  .c77 .kicker { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#c1802e; font-weight:800; }
+  .c77 h2 { font-family:'Fraunces',serif; font-weight:600; font-size:clamp(21px,3vw,28px); margin:4px 0 10px; }
+  .c77 .meta77 { display:flex; gap:14px; flex-wrap:wrap; font-size:11.5px; color:#8a8171; border-top:1px solid #efe8d8; border-bottom:1px solid #efe8d8; padding:9px 0; margin-bottom:16px; }
+  .c77 .cols { display:grid; grid-template-columns:1fr 1.4fr; gap:22px; }
+  .c77 h3 { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#b5a férir; color:#a89464; margin-bottom:8px; }
+  .c77 ul { list-style:none; font-size:13px; display:flex; flex-direction:column; gap:6px; }
+  .c77 ul li::before { content:"◻ "; color:#c1802e; }
+  .c77 ol { font-size:13px; padding-left:18px; display:flex; flex-direction:column; gap:7px; }
+  .c77 .cta77 { display:block; text-align:center; margin-top:18px; background:#c1802e; color:#fff; font-weight:800; font-size:13.5px; padding:12px; border-radius:8px; }
+  @media(max-width:640px){ .c77 .cols{grid-template-columns:1fr;} }
+
+  /* 78 PLANNING */
+  .c78 .mock { background:#f2f3f0; padding:36px 32px; }
+  .c78 h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(19px,3vw,26px); margin-bottom:18px; }
+  .c78 .gantt { background:#fff; border-radius:12px; padding:18px 20px; box-shadow:0 8px 22px -16px rgba(0,0,0,.35); max-width:700px; }
+  .c78 .weeks { display:grid; grid-template-columns:150px repeat(4,1fr); font-size:10.5px; font-weight:800; color:#8b9088; letter-spacing:.06em; margin-bottom:8px; }
+  .c78 .row78 { display:grid; grid-template-columns:150px repeat(4,1fr); align-items:center; gap:0; padding:7px 0; border-top:1px solid #f0f1ee; font-size:12.5px; font-weight:600; }
+  .c78 .bar78 { height:16px; border-radius:100px; }
+  .c78 .ctarow { margin-top:16px; }
+  .c78 .cta-g { background:#1a1d1a; color:#fff; }
+  .c78 .youare { font-family:'Caveat',cursive; color:#d1490f; font-size:17px; }
+
+  /* 79 TICKET À GRATTER */
+  .c79 .mock { background:#7a3fb8; padding:38px 30px; }
+  .c79 .tk { max-width:480px; margin:0 auto; background:#ffd93b; border-radius:14px; padding:24px 26px; box-shadow:0 16px 36px -16px rgba(0,0,0,.5); transform:rotate(-1deg); }
+  .c79 .tk .top79 { display:flex; justify-content:space-between; font-size:11px; font-weight:800; color:#7a5b00; letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px; }
+  .c79 h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(20px,3vw,27px); color:#3a2c00; line-height:1.05; margin-bottom:14px; }
+  .c79 .zone { position:relative; background:#b9b3ab; border-radius:10px; padding:20px; text-align:center; overflow:hidden; }
+  .c79 .zone .rev { background:#fff; border-radius:8px; padding:14px; transform:rotate(1deg); }
+  .c79 .zone .rev b { font-size:15px; display:block; }
+  .c79 .zone .rev span { font-size:11.5px; color:#6a6a64; }
+  .c79 .zone .scratch { position:absolute; top:-8px; right:-14px; width:130px; height:150%; background:repeating-linear-gradient(-35deg,#a09a90 0 7px,#b9b3ab 7px 14px); transform:rotate(8deg); }
+  .c79 .odds { text-align:center; font-size:11.5px; color:#7a5b00; margin-top:12px; font-weight:700; }
+  .c79 .cta79 { display:block; text-align:center; background:#3a2c00; color:#ffd93b; font-weight:800; font-size:13px; padding:12px; border-radius:100px; margin-top:12px; }
+
+  /* 80 TAMPONS */
+  .c80 .mock { background:#ece9e2; padding:40px 30px; }
+  .c80 .sheet80 { background:#fdfcf8; max-width:600px; margin:0 auto; padding:34px 30px; box-shadow:0 12px 28px -16px rgba(0,0,0,.3); position:relative; min-height:300px; }
+  .c80 h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(19px,2.8vw,25px); max-width:20ch; margin-bottom:8px; }
+  .c80 p { font-size:13px; color:#6e6a60; max-width:44ch; }
+  .c80 .stamp { position:absolute; font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; border:3.5px solid; border-radius:8px; padding:6px 16px; opacity:.85; }
+  .c80 .s1 { color:#0d7a4f; border-color:#0d7a4f; transform:rotate(-8deg); top:24px; right:26px; font-size:15px; }
+  .c80 .s2 { color:#1f5fd6; border-color:#1f5fd6; transform:rotate(5deg); top:104px; right:64px; font-size:13px; }
+  .c80 .s3 { color:#8a4bc9; border-color:#8a4bc9; transform:rotate(-4deg); bottom:88px; right:30px; font-size:13px; }
+  .c80 .s4 { color:#c1121f; border-color:#c1121f; transform:rotate(-10deg); bottom:24px; left:28px; font-size:21px; border-width:4.5px; }
+  .c80 .date80 { position:absolute; bottom:34px; right:34px; font-family:'IBM Plex Mono',monospace; color:#5b5b55; font-size:11px; transform:rotate(3deg); }
+
+  /* 81 NOTICE DE MONTAGE */
+  .c81 .mock { background:#fff; padding:36px 32px; }
+  .c81 .man { max-width:640px; margin:0 auto; border:3px solid #111; padding:22px 26px; }
+  .c81 .brand { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+  .c81 .brand b { font-family:'Archivo',sans-serif; font-weight:900; font-size:24px; letter-spacing:-0.02em; }
+  .c81 .brand span { font-size:11px; color:#666; font-family:'IBM Plex Mono',monospace; }
+  .c81 .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:16px; }
+  .c81 .st81 { border:2px solid #111; padding:14px 12px; text-align:center; }
+  .c81 .st81 .n { font-family:'Archivo',sans-serif; font-weight:900; font-size:20px; margin-bottom:6px; }
+  .c81 .st81 .pic { font-size:30px; margin-bottom:8px; }
+  .c81 .st81 p { font-size:11px; color:#444; }
+  .c81 .warn { display:flex; gap:10px; align-items:center; border:2px solid #111; background:#ffe66d; padding:10px 14px; font-size:12px; font-weight:700; margin-bottom:14px; }
+  .c81 .inc { font-size:12px; color:#444; margin-bottom:14px; }
+  .c81 .cta-g { background:#111; color:#fff; border-radius:0; }
+  @media(max-width:640px){ .c81 .steps{grid-template-columns:1fr;} }
+
+  /* 82 AUTOROUTE */
+  .c82 .mock { background:linear-gradient(#87b5e0 0 55%, #6b7280 55% 58%, #545b66 58%); padding:40px 30px 34px; }
+  .c82 .signs { max-width:560px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
+  .c82 .big { background:#0d47a1; border:6px solid #fff; border-radius:14px; color:#fff; padding:22px 26px; box-shadow:0 14px 30px -14px rgba(0,0,0,.5); }
+  .c82 .big .dir { font-size:12px; letter-spacing:.1em; opacity:.85; margin-bottom:4px; }
+  .c82 .big h2 { font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(20px,3.2vw,29px); line-height:1.1; }
+  .c82 .big .arrow82 { font-size:26px; margin-top:8px; }
+  .c82 .small { background:#1b7a3d; border:4px solid #fff; border-radius:10px; color:#fff; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:14px; max-width:420px; align-self:flex-end; }
+  .c82 .exit { background:#fff; color:#0d47a1; border-radius:8px; align-self:flex-start; font-weight:900; padding:8px 16px; font-family:'Archivo',sans-serif; }
+
+  /* 83 DÉVIATION */
+  .c83 .mock { background:#e8e5de; padding:38px 30px; text-align:center; }
+  .c83 .row83 { display:flex; gap:20px; justify-content:center; align-items:center; flex-wrap:wrap; margin-bottom:22px; }
+  .c83 .barre { background:#fff; border:4px solid #c1121f; border-radius:8px; padding:16px 20px; transform:rotate(-2deg); box-shadow:0 10px 20px -12px rgba(0,0,0,.4); }
+  .c83 .barre .bande83 { background:repeating-linear-gradient(45deg,#c1121f 0 14px,#fff 14px 28px); height:12px; border-radius:3px; margin-bottom:10px; }
+  .c83 .barre b { font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; font-size:15px; display:block; }
+  .c83 .barre span { font-size:11.5px; color:#777; }
+  .c83 .dev { background:#ffce00; border:4px solid #191919; border-radius:8px; padding:16px 22px; transform:rotate(1.5deg); box-shadow:0 10px 20px -12px rgba(0,0,0,.4); }
+  .c83 .dev b { font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; font-size:15px; display:block; }
+  .c83 .dev .fl { font-size:30px; line-height:1; }
+  .c83 h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(19px,2.8vw,25px); margin-bottom:14px; }
+  .c83 .cta-g { background:#191919; color:#ffce00; }
+
+  /* 84 TICKET DE CAISSE */
+  .c84 .mock { background:#565d68; padding:38px 30px; }
+  .c84 .rcpt { width:290px; margin:0 auto; background:#fdfdf9; font-family:'IBM Plex Mono',monospace; padding:20px 18px 26px; box-shadow:0 16px 34px -14px rgba(0,0,0,.55); clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),95% 100%,90% calc(100% - 8px),85% 100%,80% calc(100% - 8px),75% 100%,70% calc(100% - 8px),65% 100%,60% calc(100% - 8px),55% 100%,50% calc(100% - 8px),45% 100%,40% calc(100% - 8px),35% 100%,30% calc(100% - 8px),25% 100%,20% calc(100% - 8px),15% 100%,10% calc(100% - 8px),5% 100%,0 calc(100% - 8px)); }
+  .c84 .rcpt .h { text-align:center; font-size:12px; font-weight:700; margin-bottom:4px; }
+  .c84 .rcpt .sub84 { text-align:center; font-size:9.5px; color:#777; margin-bottom:12px; }
+  .c84 .rcpt .sep { border-top:1px dashed #999; margin:8px 0; }
+  .c84 .li { display:flex; justify-content:space-between; font-size:10.5px; padding:2.5px 0; }
+  .c84 .tot { display:flex; justify-content:space-between; font-size:13px; font-weight:700; padding-top:6px; }
+  .c84 .bc { height:34px; margin:12px auto 4px; width:80%; background:repeating-linear-gradient(90deg,#111 0 2px,transparent 2px 5px,#111 5px 6px,transparent 6px 10px); }
+  .c84 .thx { text-align:center; font-size:9.5px; color:#777; }
+  .c84 .cta84 { display:block; text-align:center; background:#111; color:#fff; font-size:11px; font-weight:700; padding:9px; margin-top:10px; }
+
+  /* 85 RADIOGRAPHIE */
+  .c85 .mock { background:#0b1526; padding:36px 30px; display:flex; gap:26px; justify-content:center; align-items:center; flex-wrap:wrap; }
+  .c85 .xray { width:280px; background:#101f38; border:2px solid #1d3357; border-radius:10px; padding:18px; position:relative; box-shadow:0 0 40px -10px rgba(90,160,255,.35); }
+  .c85 .xray .tag85 { font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:#5a86c9; margin-bottom:10px; }
+  .c85 .bone { border:2.5px dashed rgba(160,200,255,.6); border-radius:6px; margin-bottom:9px; padding:8px 10px; color:rgba(190,215,255,.85); font-size:10.5px; font-weight:600; }
+  .c85 .bone.broke { border-color:#ff5f6d; color:#ff9aa2; position:relative; }
+  .c85 .bone.broke::after { content:"⚡ fracture"; position:absolute; right:8px; top:8px; font-size:9px; color:#ff5f6d; font-family:'IBM Plex Mono',monospace; }
+  .c85 .diag { max-width:300px; color:#d7e4f7; }
+  .c85 .diag h2 { font-family:'Space Grotesk',sans-serif; font-size:clamp(19px,2.8vw,25px); line-height:1.15; margin-bottom:10px; }
+  .c85 .diag h2 em { font-style:normal; color:#5ab0ff; }
+  .c85 .diag p { font-size:13px; color:#8ca3c4; margin-bottom:8px; }
+  .c85 .diag .rx { font-family:'Caveat',cursive; font-size:19px; color:#5ab0ff; margin-bottom:12px; }
+  .c85 .cta-g { background:#5ab0ff; color:#0b1526; }
+
+  /* 86 MACHINE À SOUS */
+  .c86 .mock { background:#2a0e35; padding:38px 30px; text-align:center; }
+  .c86 h2 { color:#ffd93b; font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(20px,3vw,27px); margin-bottom:18px; text-shadow:0 0 18px rgba(255,217,59,.5); }
+  .c86 .slot { display:inline-flex; gap:10px; background:#4a1a5c; border:4px solid #ffd93b; border-radius:16px; padding:18px; margin-bottom:14px; position:relative; }
+  .c86 .reel { width:86px; height:96px; background:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:42px; box-shadow:inset 0 10px 14px -8px rgba(0,0,0,.35), inset 0 -10px 14px -8px rgba(0,0,0,.35); }
+  .c86 .lever { position:absolute; right:-34px; top:10px; width:10px; height:64px; background:#c9c2b8; border-radius:100px; }
+  .c86 .lever::before { content:""; position:absolute; top:-20px; left:-8px; width:26px; height:26px; border-radius:100px; background:#e5372a; }
+  .c86 .win { color:#fff; font-size:13.5px; margin-bottom:14px; }
+  .c86 .win b { color:#ffd93b; }
+  .c86 .cta-g { background:#ffd93b; color:#2a0e35; border-radius:100px; }
+
+  /* 87 FLASH INFO */
+  .c87 .mock { background:#101318; padding:32px 30px 0; }
+  .c87 .tv { max-width:640px; margin:0 auto; background:linear-gradient(160deg,#2b3d55,#16202e); border-radius:14px 14px 0 0; padding:22px 24px 0; position:relative; min-height:270px; display:flex; flex-direction:column; }
+  .c87 .live { position:absolute; top:14px; right:16px; background:#e5372a; color:#fff; font-size:10.5px; font-weight:800; border-radius:4px; padding:3px 9px; letter-spacing:.08em; }
+  .c87 .whoTv { color:#9fb2cc; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; margin-bottom:10px; }
+  .c87 .headline { margin-top:auto; }
+  .c87 .alert { display:inline-block; background:#e5372a; color:#fff; font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; font-size:12px; padding:5px 12px; letter-spacing:.06em; }
+  .c87 .band87 { background:#fff; padding:12px 16px; }
+  .c87 .band87 h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(16px,2.6vw,22px); line-height:1.15; color:#101318; }
+  .c87 .ticker { background:#0b0d11; color:#cfd8e6; overflow:hidden; white-space:nowrap; padding:8px 0; font-size:12px; font-weight:600; }
+  .c87 .ticker div { display:inline-block; animation:tk 16s linear infinite; }
+  .c87 .ticker span { margin-right:40px; color:#8fa2bd; }
+  .c87 .ticker b { color:#ffd23f; }
+  @keyframes tk { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .c87 .ctarow { text-align:center; padding:18px 0 26px; }
+  .c87 .cta-g { background:#e5372a; color:#fff; }
+
+  /* 88 CARTE AU TRÉSOR */
+  .c88 .mock { background:#8a6842; padding:34px 30px; }
+  .c88 .map { max-width:620px; margin:0 auto; background:#f2e3c2; border-radius:6px; padding:28px 30px; position:relative; box-shadow:0 14px 30px -14px rgba(0,0,0,.5); background-image:radial-gradient(circle at 8% 12%, rgba(138,104,66,.25), transparent 30%), radial-gradient(circle at 94% 88%, rgba(138,104,66,.3), transparent 32%); min-height:280px; }
+  .c88 h2 { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(19px,2.8vw,25px); color:#4a3417; margin-bottom:4px; }
+  .c88 .sub88 { font-size:12px; color:#7c6238; margin-bottom:16px; }
+  .c88 .path { position:relative; height:150px; }
+  .c88 .path svg { width:100%; height:100%; }
+  .c88 .pt { position:absolute; font-size:11px; font-weight:700; color:#4a3417; text-align:center; }
+  .c88 .pt i { font-style:normal; display:block; font-size:20px; }
+  .c88 .x { position:absolute; right:24px; bottom:4px; font-family:'Archivo',sans-serif; font-weight:900; font-size:34px; color:#b1301f; transform:rotate(-6deg); }
+  .c88 .rose { position:absolute; top:18px; right:22px; font-size:26px; opacity:.7; }
+  .c88 .cta-g { background:#4a3417; color:#f2e3c2; }
+
+  /* 89 TABLEAU NOIR */
+  .c89 .mock { background:#2f4538; padding:38px 34px; border:14px solid #8a5f3a; border-radius:4px; }
+  .c89 .chalk { color:#f2efe4; font-family:'Caveat',cursive; }
+  .c89 .date89 { position:relative; text-align:right; font-size:19px; color:#c9d4c3; transform:rotate(-1deg); }
+  .c89 h2 { font-size:clamp(30px,4.6vw,42px); line-height:1.05; margin-bottom:8px; transform:rotate(-.5deg); }
+  .c89 h2 u { text-decoration-thickness:3px; text-decoration-color:#ffd23f; }
+  .c89 .lesson { font-size:20px; color:#d8e2d0; margin-bottom:18px; }
+  .c89 ul { list-style:none; font-size:19px; display:flex; flex-direction:column; gap:8px; margin-bottom:20px; }
+  .c89 ul li::before { content:"✓ "; color:#ffd23f; }
+  .c89 .note89 { font-size:16px; color:#a9bba2; }
+  .c89 .cta89 { display:inline-block; background:#f2efe4; color:#2f4538; font-family:'Inter',sans-serif; font-weight:800; font-size:13.5px; padding:12px 20px; border-radius:8px; margin-top:14px; }
+
+  /* 90 DPE */
+  .c90 .mock { background:#f6f6f3; padding:36px 32px; display:flex; gap:30px; justify-content:center; align-items:center; flex-wrap:wrap; }
+  .c90 .dpe { flex:0 0 auto; display:flex; flex-direction:column; gap:5px; }
+  .c90 .cl { display:flex; align-items:center; gap:10px; }
+  .c90 .arr { color:#fff; font-weight:900; font-family:'Archivo',sans-serif; font-size:13px; padding:6px 10px; clip-path:polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%); }
+  .c90 .tag90 { font-size:11px; font-weight:800; border-radius:5px; padding:4px 9px; }
+  .c90 .tg { background:#fde3e3; color:#a11212; }
+  .c90 .ta { background:#dcf5e4; color:#0d6e3f; }
+  .c90 .txt90 { max-width:320px; }
+  .c90 h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(20px,3vw,27px); line-height:1.1; margin-bottom:10px; }
+  .c90 h2 em { font-style:normal; color:#0d9f5e; }
+  .c90 p { font-size:13.5px; color:#6b6b63; margin-bottom:14px; }
+  .c90 .cta-g { background:#0d9f5e; color:#fff; }
+
+  /* 91 NIVEAU À BULLE */
+  .c91 .mock { background:#fdf9ef; padding:40px 32px; text-align:center; }
+  .c91 h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(21px,3.2vw,29px); margin-bottom:22px; }
+  .c91 .tool { max-width:560px; margin:0 auto 10px; background:linear-gradient(#e8b500,#c79a00); border-radius:10px; padding:14px 18px; display:flex; align-items:center; gap:16px; box-shadow:0 12px 26px -14px rgba(0,0,0,.4); }
+  .c91 .vial { flex:1; background:#d9f2b8; border:3px solid #8a7500; border-radius:100px; height:34px; position:relative; }
+  .c91 .vial::before, .c91 .vial::after { content:""; position:absolute; top:0; bottom:0; width:2px; background:#8a7500; left:calc(50% - 16px); }
+  .c91 .vial::after { left:auto; right:calc(50% - 16px); }
+  .c91 .bubble { position:absolute; top:4px; left:50%; transform:translateX(-50%); width:26px; height:22px; background:radial-gradient(circle at 35% 30%, #fff, #cfe89b 70%); border-radius:100px; }
+  .c91 .cap { width:22px; height:34px; background:#9a8000; border-radius:4px; }
+  .c91 .verdict91 { font-family:'Caveat',cursive; font-size:21px; color:#0d7a4f; margin-bottom:16px; }
+  .c91 .ruler { height:16px; max-width:560px; margin:0 auto 20px; background:repeating-linear-gradient(90deg,#3a3a35 0 1.5px, transparent 1.5px 12px), repeating-linear-gradient(90deg,#3a3a35 0 1.5px, transparent 1.5px 60px); background-size:100% 55%, 100% 100%; background-repeat:no-repeat; background-position:bottom, bottom; border-bottom:2px solid #3a3a35; }
+  .c91 .cta-g { background:#191919; color:#ffd23f; }
+
+  /* 92 PLAQUES DE RUE */
+  .c92 .mock { background:#d8d2c4; padding:38px 30px; display:flex; flex-direction:column; gap:14px; align-items:center; }
+  .c92 .plaque92 { background:#1b3f7a; border:5px solid #fff; outline:2px solid #14305e; border-radius:8px; color:#fff; padding:12px 26px; text-align:center; box-shadow:0 10px 22px -12px rgba(0,0,0,.5); }
+  .c92 .plaque92 .t { font-family:'Oswald',sans-serif; text-transform:uppercase; font-size:clamp(15px,2.4vw,21px); letter-spacing:.06em; }
+  .c92 .plaque92 .s { font-size:10px; letter-spacing:.14em; opacity:.8; }
+  .c92 .old92 { position:relative; opacity:.75; transform:rotate(-1.5deg); }
+  .c92 .old92::after { content:""; position:absolute; left:6%; right:6%; top:48%; height:5px; background:#c1121f; transform:rotate(-3deg); }
+  .c92 .gold { background:#0d6e3f; outline-color:#0a5530; transform:rotate(.6deg); }
+  .c92 .cta-g { background:#1b3f7a; color:#fff; margin-top:8px; }
+
+  /* 93 DISTRIBUTEUR */
+  .c93 .mock { background:#39424e; padding:36px 30px; display:flex; justify-content:center; }
+  .c93 .vm { background:#e5372a; border-radius:16px; padding:16px; display:grid; grid-template-columns:1fr 92px; gap:12px; max-width:560px; width:100%; box-shadow:0 18px 40px -16px rgba(0,0,0,.6); }
+  .c93 .glass { background:#1d232c; border-radius:10px; padding:14px; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .c93 .prod { background:#2a3340; border-radius:8px; padding:12px 10px; color:#e8edf4; position:relative; }
+  .c93 .prod .code { position:absolute; top:6px; right:8px; font-family:'IBM Plex Mono',monospace; font-size:9px; color:#8fa0b5; }
+  .c93 .prod i { font-style:normal; font-size:22px; display:block; margin-bottom:6px; }
+  .c93 .prod b { font-size:12px; display:block; }
+  .c93 .prod span { font-size:9.5px; color:#9fb0c4; }
+  .c93 .panel93 { background:#c62b1f; border-radius:10px; padding:12px 10px; display:flex; flex-direction:column; gap:10px; color:#fff; }
+  .c93 .slot93 { background:#1d232c; height:8px; border-radius:100px; }
+  .c93 .scr { background:#0f2e1c; color:#4ade80; font-family:'IBM Plex Mono',monospace; font-size:9px; border-radius:6px; padding:7px 8px; text-align:center; }
+  .c93 .btn93 { background:#ffd23f; color:#5c1a12; font-weight:800; font-size:10.5px; text-align:center; border-radius:6px; padding:9px 6px; margin-top:auto; }
+
+  /* 94 BULLETIN */
+  .c94 .mock { background:#e9e7e0; padding:36px 30px; }
+  .c94 .bul { background:#fff; max-width:600px; margin:0 auto; padding:24px 28px; box-shadow:0 12px 26px -16px rgba(0,0,0,.35); }
+  .c94 .bh { text-align:center; border-bottom:2px solid #1a1a1a; padding-bottom:10px; margin-bottom:14px; }
+  .c94 .bh b { font-family:'DM Serif Display',serif; font-size:19px; }
+  .c94 .bh span { display:block; font-size:11px; color:#777; }
+  .c94 table { width:100%; border-collapse:collapse; font-size:12.5px; margin-bottom:14px; }
+  .c94 th { text-align:left; font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:#999; padding:5px 6px; border-bottom:1.5px solid #1a1a1a; }
+  .c94 td { padding:7px 6px; border-bottom:1px solid #eee; }
+  .c94 .note94 { font-weight:800; }
+  .c94 .bad { color:#c1121f; } .c94 .good { color:#0d7a4f; }
+  .c94 td i { font-style:italic; color:#8a8a84; font-size:11.5px; }
+  .c94 .avis { background:#f7f5ee; border-left:3px solid #1a1a1a; padding:10px 14px; font-size:12.5px; margin-bottom:14px; }
+  .c94 .sig94 { text-align:right; font-family:'Caveat',cursive; font-size:21px; }
+  .c94 .sig94 small { display:block; font-family:'Inter',sans-serif; font-size:10px; color:#999; }
+  .c94 .ctarow { text-align:center; margin-top:8px; }
+  .c94 .cta-g { background:#1a1a1a; color:#fff; }
+
+  /* 95 PUZZLE */
+  .c95 .mock { background:#f4f1ea; padding:38px 30px; text-align:center; }
+  .c95 h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(20px,3vw,27px); margin-bottom:20px; }
+  .c95 .board95 { display:grid; grid-template-columns:repeat(3,110px); gap:6px; justify-content:center; margin-bottom:18px; }
+  .c95 .pz { position:relative; height:86px; border-radius:10px; padding:10px 8px; color:#fff; font-weight:700; font-size:11.5px; display:flex; align-items:center; justify-content:center; text-align:center; }
+  .c95 .pz::after { content:""; position:absolute; right:-9px; top:50%; transform:translateY(-50%); width:18px; height:18px; border-radius:100px; background:inherit; }
+  .c95 .pz:nth-child(3n)::after { display:none; }
+  .c95 .p95a { background:#e8590c; } .c95 .p95b { background:#1f6feb; } .c95 .p95c { background:#0d9f6e; }
+  .c95 .p95d { background:#8250df; } .c95 .p95e { background:#e8b500; color:#3a3000; }
+  .c95 .hole { background:#dcd6c8; border:2.5px dashed #b5ac97; color:#8a systém; color:#8a8171; box-shadow:inset 0 3px 8px rgba(0,0,0,.12); }
+  .c95 .last { position:relative; display:inline-flex; align-items:center; justify-content:center; background:#c1121f; color:#fff; font-weight:800; font-size:12px; border-radius:10px; width:110px; height:86px; transform:rotate(8deg); box-shadow:0 12px 22px -10px rgba(0,0,0,.45); margin-bottom:16px; }
+  .c95 .cta-g { background:#191919; color:#fff; display:block; max-width:260px; margin:0 auto; }
+
+  /* 96 DÉCENNALE */
+  .c96 .mock { background:#243447; padding:38px 30px; }
+  .c96 .cert { background:#fbf8ef; max-width:560px; margin:0 auto; padding:30px 34px; border:2px solid #b5a06a; outline:8px solid #fbf8ef; box-shadow:0 0 0 10px #8f7c46, 0 20px 44px -18px rgba(0,0,0,.6); text-align:center; position:relative; }
+  .c96 .cert .kick { font-size:10.5px; letter-spacing:.26em; text-transform:uppercase; color:#8f7c46; margin-bottom:8px; }
+  .c96 h2 { font-family:'DM Serif Display',serif; font-size:clamp(21px,3.2vw,29px); color:#2c2617; margin-bottom:10px; }
+  .c96 p { font-size:13px; color:#5c5440; max-width:46ch; margin:0 auto 14px; }
+  .c96 .clauses { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; font-size:11.5px; font-weight:700; color:#2c2617; margin-bottom:18px; }
+  .c96 .clauses span::before { content:"✓ "; color:#8f7c46; }
+  .c96 .seal { position:absolute; bottom:20px; left:26px; width:58px; height:58px; border-radius:100px; background:radial-gradient(circle at 35% 30%, #d8bf7a, #8f7c46); box-shadow:0 6px 14px -6px rgba(0,0,0,.5); }
+  .c96 .seal::after { content:"AR"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'DM Serif Display',serif; color:#3c320f; font-size:17px; }
+  .c96 .sig96 { text-align:right; font-family:'Caveat',cursive; font-size:22px; color:#2c2617; }
+  .c96 .cta-g { background:#2c2617; color:#fbf8ef; margin-top:10px; }
+
+  /* 97 ENSEIGNE MOTEL */
+  .c97 .mock { background:#12080f; padding:44px 30px; text-align:center; }
+  .c97 .sign97 { display:inline-block; background:#20101c; border:4px solid #ff4fa3; border-radius:18px; padding:26px 34px; position:relative; box-shadow:0 0 40px -6px rgba(255,79,163,.55), inset 0 0 30px -12px rgba(255,79,163,.4); }
+  .c97 .bulbs { position:absolute; inset:6px; border:3px dotted #ffd23f; border-radius:12px; pointer-events:none; }
+  .c97 .top97 { font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.3em; color:#5ee0ff; font-size:13px; text-shadow:0 0 12px rgba(94,224,255,.9); margin-bottom:8px; }
+  .c97 h2 { font-family:'Anton',sans-serif; text-transform:uppercase; color:#ff4fa3; font-size:clamp(28px,5vw,44px); line-height:1; text-shadow:0 0 22px rgba(255,79,163,.9); margin-bottom:8px; }
+  .c97 .vac { font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.2em; color:#4ade80; font-size:14px; text-shadow:0 0 14px rgba(74,222,128,.9); margin-bottom:14px; }
+  .c97 .arrow97 { font-size:34px; color:#ffd23f; text-shadow:0 0 18px rgba(255,210,63,.9); margin-bottom:6px; }
+  .c97 .cta-g { background:#ffd23f; color:#12080f; border-radius:100px; }
+
+  /* 98 GPS */
+  .c98 .mock { background:#101a14; padding:34px 30px; display:flex; gap:22px; justify-content:center; align-items:stretch; flex-wrap:wrap; }
+  .c98 .nav { width:300px; background:#16241c; border-radius:16px; overflow:hidden; border:1px solid #24402f; }
+  .c98 .mapz { position:relative; height:170px; background:#1c3126; background-image:linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size:26px 26px; }
+  .c98 .route { position:absolute; left:20px; bottom:-6px; width:70%; height:120%; border-left:6px solid #4ade80; border-top:6px solid #4ade80; border-radius:24px 0 0 0; transform:rotate(8deg); }
+  .c98 .you98 { position:absolute; bottom:12px; left:12px; background:#4ade80; color:#0d2417; font-size:9.5px; font-weight:800; border-radius:100px; padding:3px 9px; }
+  .c98 .dest { position:absolute; top:10px; right:10px; background:#fff; color:#16241c; font-size:9.5px; font-weight:800; border-radius:100px; padding:3px 9px; }
+  .c98 .instr { padding:14px 16px; color:#d7e8dc; }
+  .c98 .instr b { display:block; font-size:13.5px; margin-bottom:3px; }
+  .c98 .instr span { font-size:11px; color:#8fae99; }
+  .c98 .side98 { max-width:300px; display:flex; flex-direction:column; gap:12px; justify-content:center; }
+  .c98 .side98 h2 { color:#fff; font-family:'Space Grotesk',sans-serif; font-size:clamp(19px,2.8vw,25px); line-height:1.15; }
+  .c98 .side98 h2 em { font-style:normal; color:#4ade80; }
+  .c98 .eta { background:#16241c; border:1px solid #24402f; border-radius:12px; padding:11px 14px; color:#b9d4c2; font-size:12.5px; }
+  .c98 .eta b { color:#4ade80; }
+  .c98 .cta-g { background:#4ade80; color:#0d2417; align-self:flex-start; }
+
+  /* 99 PLAN D'ÉVACUATION */
+  .c99 .mock { background:#eef1ee; padding:36px 30px; }
+  .c99 .plan { background:#fff; max-width:600px; margin:0 auto; border:3px solid #0d7a4f; border-radius:8px; overflow:hidden; box-shadow:0 12px 26px -16px rgba(0,0,0,.3); }
+  .c99 .ph99 { background:#0d7a4f; color:#fff; text-align:center; padding:12px; font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; letter-spacing:.06em; font-size:15px; }
+  .c99 .body99 { padding:20px 24px; }
+  .c99 .steps99 { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+  .c99 .s99 { display:flex; gap:12px; align-items:center; font-size:13.5px; }
+  .c99 .s99 .pic99 { width:38px; height:38px; background:#0d7a4f; color:#fff; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:18px; flex:0 0 auto; }
+  .c99 .rdv { background:#e5f4ec; border:1.5px dashed #0d7a4f; border-radius:8px; padding:12px 14px; font-size:12.5px; color:#12523a; display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .c99 .rdv .exit99 { background:#0d7a4f; color:#fff; font-weight:900; font-size:11px; padding:5px 10px; border-radius:4px; }
+  .c99 .ctarow { text-align:center; padding-bottom:20px; }
+  .c99 .cta-g { background:#0d7a4f; color:#fff; }
+
+  /* 100 PLAQUE EN LAITON */
+  .c100 .mock { background:linear-gradient(#4a3527,#382718); background-image:repeating-linear-gradient(90deg, rgba(0,0,0,.16) 0 3px, transparent 3px 60px), linear-gradient(#4a3527,#382718); padding:52px 30px; text-align:center; }
+  .c100 .brass { display:inline-block; background:linear-gradient(135deg,#d9b56a,#b3873c 45%,#e2c27c 70%,#a97f36); border-radius:10px; padding:28px 40px; box-shadow:0 14px 32px -12px rgba(0,0,0,.7), inset 0 2px 3px rgba(255,255,255,.55), inset 0 -3px 5px rgba(0,0,0,.35); position:relative; }
+  .c100 .screw { position:absolute; width:13px; height:13px; border-radius:100px; background:radial-gradient(circle at 35% 30%, #e8cf94, #8f6b28); box-shadow:inset 0 1px 2px rgba(0,0,0,.5); }
+  .c100 .screw::after { content:""; position:absolute; left:2px; right:2px; top:50%; height:1.5px; background:rgba(60,40,5,.7); transform:rotate(40deg); }
+  .c100 .sc1{top:9px;left:9px;} .c100 .sc2{top:9px;right:9px;} .c100 .sc3{bottom:9px;left:9px;} .c100 .sc4{bottom:9px;right:9px;}
+  .c100 h2 { font-family:'DM Serif Display',serif; color:#3c2a08; font-size:clamp(23px,3.6vw,32px); letter-spacing:.03em; }
+  .c100 .role100 { font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:#5c4413; margin:4px 0 10px; }
+  .c100 .line100 { width:60%; height:1.5px; background:rgba(60,42,8,.4); margin:0 auto 10px; }
+  .c100 .msg100 { font-size:13px; color:#4c3810; font-style:italic; }
+  .c100 .bell { margin-top:22px; }
+  .c100 .bell .btn100 { display:inline-flex; align-items:center; gap:10px; background:#20160c; color:#e8cf94; border:2px solid #8f6b28; border-radius:100px; padding:12px 22px; font-weight:800; font-size:13.5px; }
+  .c100 .bell .dot100 { width:14px; height:14px; border-radius:100px; background:radial-gradient(circle at 35% 30%, #ffe9a8, #c19a3f); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="intro">
+    <h1>Le sprint final : 76 → 100</h1>
+    <p>Vingt-cinq derniers concepts. Après ça, le catalogue est officiellement complet — place au choix.</p>
+  </div>
+
+  <!-- 76 -->
+  <div class="dir-block c76"><div class="dir-meta"><span class="num">76</span><span class="name">Les casiers de chantier</span><span class="vibe">Un vestiaire d'atelier : chaque casier une section, l'un est ouvert et révèle le devis gratuit.</span></div>
+  <div class="mock"><h2>Tout ce qu'il vous faut est dans les casiers.</h2><div class="lockers">
+    <div class="lk"><div class="vents"></div><div class="plate">CASIER 01</div><b>Site vitrine</b><p>Chantiers, certifications, devis en ligne.</p><div class="handle"></div></div>
+    <div class="lk"><div class="vents"></div><div class="plate">CASIER 02</div><b>Refonte</b><p>Votre vieux site remis à neuf.</p><div class="handle"></div></div>
+    <div class="lk"><div class="vents"></div><div class="plate">CASIER 03</div><b>Visibilité Google</b><p>Trouvé partout en Gironde.</p><div class="handle"></div></div>
+    <div class="lk open"><div class="vents"></div><div class="plate">OUVERT !</div><b>Devis gratuit</b><p>Sans engagement, réponse rapide.</p><div class="cta76">Je me sers →</div></div>
+  </div></div></div>
+
+  <!-- 77 -->
+  <div class="dir-block c77"><div class="dir-meta"><span class="num">77</span><span class="name">La recette</span><span class="vibe">Une fiche recette de grand-mère : ingrédients, étapes, temps de cuisson. Familier et chaleureux.</span></div>
+  <div class="mock"><div class="fiche">
+    <span class="kicker">La recette du chef</span>
+    <h2>Le site qui ramène des chantiers</h2>
+    <div class="meta77"><span>⏱ Préparation : 1 échange</span><span>🔥 Cuisson : quelques semaines</span><span>👥 Pour : 1 entreprise du BTP</span></div>
+    <div class="cols">
+      <div><h3>Ingrédients</h3><ul><li>Votre savoir-faire</li><li>Vos photos de chantiers</li><li>Vos certifications</li><li>7 ans d'expérience (fournis)</li><li>1 pincée de Google</li></ul></div>
+      <div><h3>Préparation</h3><ol><li>Mélangez vos besoins et mes questions, sans grumeaux.</li><li>Laissez reposer le devis (gratuit) le temps qu'il faut.</li><li>Montez la maquette jusqu'à validation ferme.</li><li>Enfournez le développement, surveillez la dorure.</li><li>Servez en ligne, dégustez les demandes de devis.</li></ol></div>
+    </div>
+    <a class="cta77">Commander la recette — devis gratuit</a>
+  </div></div></div>
+
+  <!-- 78 -->
+  <div class="dir-block c78"><div class="dir-meta"><span class="num">78</span><span class="name">Le planning de chantier</span><span class="vibe">Un Gantt mural comme dans un bureau de conduite de travaux : chaque lot a sa barre, « vous êtes ici ».</span></div>
+  <div class="mock"><h2>Votre site, planifié comme un chantier.</h2><div class="gantt">
+    <div class="weeks"><span></span><span>SEM. 1</span><span>SEM. 2</span><span>SEM. 3</span><span>SEM. 4</span></div>
+    <div class="row78"><span>Échange &amp; devis <span class="youare">← vous êtes ici</span></span><span><span class="bar78" style="background:#e8590c; width:80%; display:block;"></span></span><span></span><span></span><span></span></div>
+    <div class="row78"><span>Maquette</span><span></span><span><span class="bar78" style="background:#1f6feb; width:90%; display:block;"></span></span><span></span><span></span></div>
+    <div class="row78"><span>Développement</span><span></span><span></span><span><span class="bar78" style="background:#0d9f6e; width:95%; display:block;"></span></span><span><span class="bar78" style="background:#0d9f6e; width:45%; display:block;"></span></span></div>
+    <div class="row78"><span>Mise en ligne + Google</span><span></span><span></span><span></span><span><span class="bar78" style="background:#e8b500; width:70%; display:block;"></span></span></div>
+  </div><div class="ctarow"><a class="cta-g">Lancer la semaine 1 — devis gratuit</a></div></div></div>
+
+  <!-- 79 -->
+  <div class="dir-block c79"><div class="dir-meta"><span class="num">79</span><span class="name">Le ticket à gratter</span><span class="vibe">Un jeu de grattage dont la zone à moitié grattée révèle déjà le lot : votre nouveau site. 1 chance sur 1.</span></div>
+  <div class="mock"><div class="tk">
+    <div class="top79"><span>Jeu n° 33</span><span>Gagnant à tous les coups</span></div>
+    <h2>Grattez ici pour découvrir votre avenir en ligne</h2>
+    <div class="zone"><div class="rev"><b>🎉 GAGNÉ : un site à la hauteur</b><span>+ visibilité Google dans toute la Gironde</span></div><div class="scratch"></div></div>
+    <div class="odds">Probabilité de gagner : 1 sur 1 (il suffit de demander)</div>
+    <a class="cta79">Réclamer mon lot — devis gratuit</a>
+  </div></div></div>
+
+  <!-- 80 -->
+  <div class="dir-block c80"><div class="dir-meta"><span class="num">80</span><span class="name">Les tampons</span><span class="vibe">Une feuille passée entre toutes les mains de l'administration : tamponnée APPROUVÉ, SÉCURISÉ, VISIBLE — et validée d'office.</span></div>
+  <div class="mock"><div class="sheet80">
+    <h2>Dossier : le site de votre entreprise.</h2>
+    <p>Instruit par Adrien Russo, développeur web à Bordeaux. Avis des services compétents ci-contre.</p>
+    <span class="stamp s1">Approuvé</span>
+    <span class="stamp s2">Sécurisé</span>
+    <span class="stamp s3">Visible Google</span>
+    <span class="stamp s4">Devis gratuit</span>
+    <span class="date80">Bordeaux, le 19/07/2026</span>
+  </div></div></div>
+
+  <!-- 81 -->
+  <div class="dir-block c81"><div class="dir-meta"><span class="num">81</span><span class="name">La notice de montage</span><span class="vibe">Un manuel façon meuble en kit : 3 pictos, un avertissement jaune, et la promesse qu'il ne restera aucune vis.</span></div>
+  <div class="mock"><div class="man">
+    <div class="brand"><b>SÏTVITRIN</b><span>réf. AR-2026 · notice de montage</span></div>
+    <div class="steps">
+      <div class="st81"><div class="n">1</div><div class="pic">🗣</div><p>Décrivez votre métier et vos besoins. Aucun outil requis.</p></div>
+      <div class="st81"><div class="n">2</div><div class="pic">📐</div><p>Validez la maquette. Vissage du design par nos soins.</p></div>
+      <div class="st81"><div class="n">3</div><div class="pic">🌐</div><p>Site monté, livré en ligne, garanti solide et stable.</p></div>
+    </div>
+    <div class="warn">⚠ Contrairement au meuble, il ne restera aucune vis à la fin.</div>
+    <div class="inc">Inclus dans le carton : 1× développeur expérimenté (7 ans), 1× visibilité Google Gironde, 1× devis gratuit.</div>
+    <a class="cta-g">Commencer le montage</a>
+  </div></div></div>
+
+  <!-- 82 -->
+  <div class="dir-block c82"><div class="dir-meta"><span class="num">82</span><span class="name">La sortie d'autoroute</span><span class="vibe">Signalisation autoroutière : la grande pancarte bleue annonce votre sortie, la verte le devis 500 m plus loin.</span></div>
+  <div class="mock"><div class="signs">
+    <span class="exit">SORTIE 33</span>
+    <div class="big"><div class="dir">Direction</div><h2>votre-entreprise.fr<br>Visible dans toute la Gironde</h2><div class="arrow82">⬆</div></div>
+    <div class="small"><span>Devis gratuit</span><span>500 m ➜</span></div>
+  </div></div></div>
+
+  <!-- 83 -->
+  <div class="dir-block c83"><div class="dir-meta"><span class="num">83</span><span class="name">La déviation</span><span class="vibe">Panneaux de travaux : l'ancien site est ROUTE BARRÉE, la déviation mène au nouveau. Message compris en 2 secondes.</span></div>
+  <div class="mock">
+    <div class="row83">
+      <div class="barre"><div class="bande83"></div><b>Route barrée</b><span>votre site de 2012 — impraticable sur mobile</span></div>
+      <div class="dev"><b>Déviation</b><div class="fl">→</div><span style="font-size:11.5px;">votre nouveau site, signé A. Russo</span></div>
+    </div>
+    <h2>On vous remet sur la bonne route.</h2>
+    <a class="cta-g">Suivre la déviation — devis gratuit</a>
+  </div></div>
+
+  <!-- 84 -->
+  <div class="dir-block c84"><div class="dir-meta"><span class="num">84</span><span class="name">Le ticket de caisse</span><span class="vibe">Un long reçu de caisse qui détaille tout ce que le site apporte — total à payer pour le devis : 0,00 €.</span></div>
+  <div class="mock"><div class="rcpt">
+    <div class="h">ADRIEN RUSSO — BORDEAUX</div>
+    <div class="sub84">Développeur web · artisans du BTP · Gironde<br>Le 19/07/2026 — Caisse 01</div>
+    <div class="sep"></div>
+    <div class="li"><span>SITE VITRINE SUR-MESURE</span><span>x1</span></div>
+    <div class="li"><span>GALERIE DE CHANTIERS</span><span>x1</span></div>
+    <div class="li"><span>CERTIFICATIONS (RGE...)</span><span>x1</span></div>
+    <div class="li"><span>VISIBILITE GOOGLE 33</span><span>x1</span></div>
+    <div class="li"><span>VERSION MOBILE</span><span>x1</span></div>
+    <div class="li"><span>SECURITE + FIABILITE</span><span>incl.</span></div>
+    <div class="sep"></div>
+    <div class="tot"><span>DEVIS ESTIMATIF</span><span>0,00 €</span></div>
+    <div class="li"><span>ENGAGEMENT</span><span>aucun</span></div>
+    <div class="bc"></div>
+    <div class="thx">Merci de votre visite — réponse rapide</div>
+    <a class="cta84">DEMANDER MON DEVIS</a>
+  </div></div></div>
+
+  <!-- 85 -->
+  <div class="dir-block c85"><div class="dir-meta"><span class="num">85</span><span class="name">La radiographie</span><span class="vibe">Le site actuel passé aux rayons X : fractures du responsive, carence en référencement. Ordonnance du docteur à droite.</span></div>
+  <div class="mock">
+    <div class="xray"><div class="tag85">RADIO N°33-2026 — SITE-INTERNET.SCAN</div>
+      <div class="bone">En-tête + logo</div>
+      <div class="bone broke">Affichage mobile</div>
+      <div class="bone broke">Référencement Gironde</div>
+      <div class="bone">Photos de chantiers</div>
+      <div class="bone broke">Formulaire de contact</div>
+    </div>
+    <div class="diag">
+      <h2>Diagnostic : votre site a besoin <em>d'une intervention.</em></h2>
+      <p>Fractures multiples détectées. Pronostic excellent après opération.</p>
+      <div class="rx">℞ — 1 refonte complète, à prendre dès que possible.</div>
+      <a class="cta-g">Prendre rendez-vous — diagnostic offert</a>
+    </div>
+  </div></div>
+
+  <!-- 86 -->
+  <div class="dir-block c86"><div class="dir-meta"><span class="num">86</span><span class="name">Le jackpot</span><span class="vibe">Une machine à sous dont les trois rouleaux sont déjà alignés : site + Google + téléphone. Gagnant à tous les coups.</span></div>
+  <div class="mock">
+    <h2>Les trois rouleaux sont déjà alignés.</h2>
+    <div class="slot"><div class="reel">🏗</div><div class="reel">🔍</div><div class="reel">📞</div><div class="lever"></div></div>
+    <div class="win">Un site solide <b>+</b> visible sur Google <b>=</b> le téléphone qui sonne. <b>JACKPOT.</b></div>
+    <a class="cta-g">Tenter ma chance (garantie sans hasard)</a>
+  </div></div>
+
+  <!-- 87 -->
+  <div class="dir-block c87"><div class="dir-meta"><span class="num">87</span><span class="name">Le flash info</span><span class="vibe">Un JT en direct : bandeau ALERTE INFO, gros titre, et un fil d'actus qui défile en bas d'écran.</span></div>
+  <div class="mock">
+    <div class="tv"><span class="live">● EN DIRECT</span><div class="whoTv">AR INFO — Bordeaux</div>
+      <div class="headline"><span class="alert">Alerte info</span>
+        <div class="band87"><h2>Un artisan de Gironde double ses demandes de devis grâce à son nouveau site</h2></div>
+        <div class="ticker"><div><span>Développeur web à Bordeaux — 7 ans d'expérience</span><b>DEVIS GRATUIT</b><span>Visibilité Google dans toute la Gironde</span><span>Sites sécurisés, rapides, impeccables sur mobile</span><span>Développeur web à Bordeaux — 7 ans d'expérience</span><b>DEVIS GRATUIT</b><span>Visibilité Google dans toute la Gironde</span><span>Sites sécurisés, rapides, impeccables sur mobile</span></div></div>
+      </div>
+    </div>
+    <div class="ctarow"><a class="cta-g">Faire la une à mon tour</a></div>
+  </div></div>
+
+  <!-- 88 -->
+  <div class="dir-block c88"><div class="dir-meta"><span class="num">88</span><span class="name">La carte au trésor</span><span class="vibe">Un parchemin où le chemin en pointillés mène de votre entreprise au X rouge : vos nouveaux clients.</span></div>
+  <div class="mock"><div class="map">
+    <span class="rose">🧭</span>
+    <h2>La carte vers vos nouveaux clients</h2>
+    <div class="sub88">Levée par A. Russo, cartographe web — Bordeaux, an 2026</div>
+    <div class="path">
+      <svg viewBox="0 0 560 150" fill="none"><path d="M30 120 C 120 60, 200 140, 300 80 S 480 30, 520 110" stroke="#7c6238" stroke-width="3" stroke-dasharray="8 8"/></svg>
+      <span class="pt" style="left:6px; top:96px;"><i>🏠</i>Votre entreprise</span>
+      <span class="pt" style="left:190px; top:36px;"><i>🌐</i>Le site</span>
+      <span class="pt" style="left:330px; top:96px;"><i>🔍</i>Google</span>
+      <span class="x">✕</span>
+    </div>
+    <a class="cta-g">Suivre la carte — devis gratuit</a>
+  </div></div></div>
+
+  <!-- 89 -->
+  <div class="dir-block c89"><div class="dir-meta"><span class="num">89</span><span class="name">Le tableau noir</span><span class="vibe">Une leçon à la craie, cadre en bois : légitime puisque tu enseignes vraiment. « Le prof » fait cours aux artisans.</span></div>
+  <div class="mock chalk">
+    <div class="date89">Bordeaux — leçon n°1</div>
+    <h2>Aujourd'hui : <u>être trouvé sur Google.</u></h2>
+    <div class="lesson">Par votre professeur — il enseigne aussi dans 3 écoles de développement.</div>
+    <ul><li>Un site clair qui montre vos chantiers</li><li>Rapide et impeccable sur téléphone</li><li>Visible dans toute la Gironde</li><li>Sécurisé, dès la conception</li></ul>
+    <div class="note89">Devoir maison : demander un devis (gratuit, promis).</div><br>
+    <a class="cta89">Lever la main — me contacter</a>
+  </div></div>
+
+  <!-- 90 -->
+  <div class="dir-block c90"><div class="dir-meta"><span class="num">90</span><span class="name">Le DPE</span><span class="vibe">L'étiquette énergie que tout artisan connaît par cœur : votre site actuel est classé G, le mien vous fait passer en A.</span></div>
+  <div class="mock">
+    <div class="dpe">
+      <div class="cl"><span class="arr" style="background:#0d9f5e; width:90px;">A</span><span class="tag90 ta">← votre futur site</span></div>
+      <div class="cl"><span class="arr" style="background:#55b849; width:110px;">B</span></div>
+      <div class="cl"><span class="arr" style="background:#b6d234; width:130px; color:#4c5405;">C</span></div>
+      <div class="cl"><span class="arr" style="background:#ffd500; width:150px; color:#5c4c00;">D</span></div>
+      <div class="cl"><span class="arr" style="background:#f8a13a; width:170px;">E</span></div>
+      <div class="cl"><span class="arr" style="background:#ef7d23; width:190px;">F</span></div>
+      <div class="cl"><span class="arr" style="background:#e5372a; width:210px;">G</span><span class="tag90 tg">← votre site actuel</span></div>
+    </div>
+    <div class="txt90">
+      <h2>Diagnostic de performance <em>numérique.</em></h2>
+      <p>Lent, invisible, illisible sur mobile : votre site actuel est une passoire. Je le fais passer en classe A — rapide, visible, sécurisé.</p>
+      <a class="cta-g">Demander mon diagnostic gratuit</a>
+    </div>
+  </div></div>
+
+  <!-- 91 -->
+  <div class="dir-block c91"><div class="dir-meta"><span class="num">91</span><span class="name">Le niveau à bulle</span><span class="vibe">Un niveau posé au centre de la page, bulle parfaitement centrée : « votre site est d'aplomb ». Règles graduées en séparateurs.</span></div>
+  <div class="mock">
+    <h2>Un site parfaitement de niveau.</h2>
+    <div class="tool"><div class="cap"></div><div class="vial"><div class="bubble"></div></div><div class="cap"></div></div>
+    <div class="verdict91">✓ d'aplomb — rapide, solide, visible</div>
+    <div class="ruler"></div>
+    <p style="font-size:13.5px; color:#6e6a5c; max-width:46ch; margin:0 auto 18px;">Comme sur vos chantiers, tout se joue à la pose : je construis des sites droits, carrés et durables pour les artisans de Gironde.</p>
+    <a class="cta-g">Vérifier mon niveau — devis gratuit</a>
+  </div></div>
+
+  <!-- 92 -->
+  <div class="dir-block c92"><div class="dir-meta"><span class="num">92</span><span class="name">Les plaques de rue</span><span class="vibe">Un itinéraire en plaques émaillées bleues : on quitte l'Impasse du Site de 2012 pour la Place du Devis Gratuit.</span></div>
+  <div class="mock">
+    <div class="plaque92 old92"><div class="t">Impasse du Site de 2012</div><div class="s">voie sans issue — quartier oublié de Google</div></div>
+    <div class="plaque92"><div class="t">Rue de la Visibilité</div><div class="s">dessert toute la Gironde</div></div>
+    <div class="plaque92"><div class="t">Avenue des Chantiers Signés</div><div class="s">prolongée grâce à votre nouveau site</div></div>
+    <div class="plaque92 gold"><div class="t">Place du Devis Gratuit</div><div class="s">ouverte 24h/24 — sans engagement</div></div>
+    <a class="cta-g">Changer d'adresse</a>
+  </div></div>
+
+  <!-- 93 -->
+  <div class="dir-block c93"><div class="dir-meta"><span class="num">93</span><span class="name">Le distributeur</span><span class="vibe">Un distributeur automatique : les services derrière la vitre, l'écran affiche « faites votre choix », le monnayeur ne prend pas de pièces — c'est gratuit.</span></div>
+  <div class="mock"><div class="vm">
+    <div class="glass">
+      <div class="prod"><span class="code">A1</span><i>🏗</i><b>Site vitrine</b><span>chantiers &amp; certifs</span></div>
+      <div class="prod"><span class="code">A2</span><i>🔁</i><b>Refonte</b><span>remis à neuf</span></div>
+      <div class="prod"><span class="code">B1</span><i>🔍</i><b>Visibilité</b><span>Google Gironde</span></div>
+      <div class="prod"><span class="code">B2</span><i>🧰</i><b>Outil métier</b><span>devis, planning</span></div>
+    </div>
+    <div class="panel93">
+      <div class="scr">FAITES VOTRE CHOIX_<br>PAIEMENT : AUCUN<br>DEVIS : GRATUIT</div>
+      <div class="slot93"></div>
+      <div style="font-size:9px; opacity:.8; text-align:center;">monnayeur décoratif — ici tout commence gratuitement</div>
+      <div class="btn93">COMMANDER</div>
+    </div>
+  </div></div></div>
+
+  <!-- 94 -->
+  <div class="dir-block c94"><div class="dir-meta"><span class="num">94</span><span class="name">Le bulletin scolaire</span><span class="vibe">Le bulletin de notes du site actuel — catastrophique — signé par un vrai prof (tu enseignes dans 3 écoles). Redoublement évitable.</span></div>
+  <div class="mock"><div class="bul">
+    <div class="bh"><b>Bulletin trimestriel — votre site internet</b><span>Établissement : Internet · Classe : Gironde · Année 2026</span></div>
+    <table>
+      <tr><th>Matière</th><th>Note</th><th>Appréciation</th></tr>
+      <tr><td>Affichage mobile</td><td class="note94 bad">3/20</td><td><i>illisible sur téléphone, se disperse</i></td></tr>
+      <tr><td>Visibilité Google</td><td class="note94 bad">2/20</td><td><i>absent la plupart du temps</i></td></tr>
+      <tr><td>Design</td><td class="note94 bad">5/20</td><td><i>vit dans le passé (2012)</i></td></tr>
+      <tr><td>Potentiel avec A. Russo</td><td class="note94 good">18/20</td><td><i>élève brillant si bien accompagné</i></td></tr>
+    </table>
+    <div class="avis"><b>Avis du conseil de classe :</b> le redoublement peut encore être évité. Un accompagnement personnalisé est fortement recommandé.</div>
+    <div class="sig94">A. Russo<small>Professeur — enseigne dans 3 écoles de développement</small></div>
+    <div class="ctarow"><a class="cta-g">Inscrire mon site au soutien — devis gratuit</a></div>
+  </div></div></div>
+
+  <!-- 95 -->
+  <div class="dir-block c95"><div class="dir-meta"><span class="num">95</span><span class="name">Le puzzle</span><span class="vibe">Cinq pièces déjà en place, il ne manque que la dernière — et c'est le visiteur qui la tient dans la main.</span></div>
+  <div class="mock">
+    <h2>Il ne manque qu'une pièce : la vôtre.</h2>
+    <div class="board95">
+      <div class="pz p95a">Site vitrine</div><div class="pz p95b">Visibilité Google</div><div class="pz p95c">Version mobile</div>
+      <div class="pz p95d">Sécurité</div><div class="pz p95e">7 ans d'expérience</div><div class="pz hole">votre entreprise ?</div>
+    </div>
+    <div class="last">VOTRE ENTREPRISE</div>
+    <a class="cta-g">Poser ma pièce — devis gratuit</a>
+  </div></div>
+
+  <!-- 96 -->
+  <div class="dir-block c96"><div class="dir-meta"><span class="num">96</span><span class="name">La garantie décennale</span><span class="vibe">Le document sacré des artisans, détourné en « garantie décennale numérique » : certificat, sceau doré, clauses cochées.</span></div>
+  <div class="mock"><div class="cert">
+    <div class="kick">Attestation officielle</div>
+    <h2>Garantie décennale numérique</h2>
+    <p>Le présent certificat atteste que le site de <b>votre entreprise</b> est couvert contre : la lenteur, l'invisibilité sur Google, et les pannes d'affichage sur mobile.</p>
+    <div class="clauses"><span>Sécurité incluse</span><span>Maintenance assurée</span><span>Suivi dans le temps</span></div>
+    <div class="sig96">A. Russo — assureur de votre visibilité</div>
+    <div class="seal"></div>
+    <a class="cta-g">Souscrire — devis gratuit</a>
+  </div></div></div>
+
+  <!-- 97 -->
+  <div class="dir-block c97"><div class="dir-meta"><span class="num">97</span><span class="name">L'enseigne américaine</span><span class="vibe">Un néon de motel rétro planté au bord de la route : ampoules, flèche, VACANCY. Kitsch assumé et inoubliable.</span></div>
+  <div class="mock"><div class="sign97"><div class="bulbs"></div>
+    <div class="top97">Adrien Russo présente</div>
+    <h2>Votre site<br>ici</h2>
+    <div class="vac">✦ Disponible — devis gratuit ✦</div>
+    <div class="arrow97">⬇</div>
+    <a class="cta-g">Prendre la sortie Gironde</a>
+  </div></div></div>
+
+  <!-- 98 -->
+  <div class="dir-block c98"><div class="dir-meta"><span class="num">98</span><span class="name">Le GPS</span><span class="vibe">Un écran de navigation qui recalcule l'itinéraire de vos clients : aujourd'hui ils tournent chez le concurrent — on corrige la route.</span></div>
+  <div class="mock">
+    <div class="nav">
+      <div class="mapz"><div class="route"></div><span class="you98">● Vos clients</span><span class="dest">🏁 votre-entreprise.fr</span></div>
+      <div class="instr"><b>⟳ Recalcul de l'itinéraire…</b><span>Dans 300 m, vos clients ne tourneront plus chez le concurrent.</span></div>
+    </div>
+    <div class="side98">
+      <h2>On remet vos clients <em>sur votre route.</em></h2>
+      <div class="eta">Arrivée estimée des nouveaux chantiers : <b>quelques semaines</b></div>
+      <a class="cta-g">Recalculer mon itinéraire</a>
+    </div>
+  </div></div>
+
+  <!-- 99 -->
+  <div class="dir-block c99"><div class="dir-meta"><span class="num">99</span><span class="name">Le plan d'évacuation</span><span class="vibe">Les consignes de sécurité affichées dans tous les ateliers, détournées : « en cas de manque de clients, suivez les flèches vertes ».</span></div>
+  <div class="mock"><div class="plan">
+    <div class="ph99">Consignes — en cas de manque de clients</div>
+    <div class="body99">
+      <div class="steps99">
+        <div class="s99"><div class="pic99">1</div><span>Gardez votre calme : c'est votre site qui est en cause, pas votre travail.</span></div>
+        <div class="s99"><div class="pic99">2</div><span>Suivez les flèches vertes jusqu'au développeur le plus proche (Bordeaux).</span></div>
+        <div class="s99"><div class="pic99">3</div><span>N'utilisez pas votre site de 2012 : empruntez la refonte.</span></div>
+      </div>
+      <div class="rdv"><span class="exit99">SORTIE</span> Point de rassemblement : le formulaire de devis gratuit — réponse rapide assurée.</div>
+      <div class="ctarow"><a class="cta-g">Évacuer vers un meilleur site</a></div>
+    </div>
+  </div></div></div>
+
+  <!-- 100 -->
+  <div class="dir-block c100"><div class="dir-meta"><span class="num">100</span><span class="name">La plaque en laiton</span><span class="vibe">Pour finir, la sobriété absolue : une plaque professionnelle gravée, vissée sur une belle porte en bois. On sonne, c'est tout.</span></div>
+  <div class="mock">
+    <div class="brass">
+      <span class="screw sc1"></span><span class="screw sc2"></span><span class="screw sc3"></span><span class="screw sc4"></span>
+      <h2>Adrien Russo</h2>
+      <div class="role100">Développeur web — Bordeaux</div>
+      <div class="line100"></div>
+      <div class="msg100">Sites pour les artisans du bâtiment · toute la Gironde</div>
+    </div>
+    <div class="bell"><span class="btn100"><span class="dot100"></span> Sonner — devis gratuit</span></div>
+  </div></div>
+
+  <p class="foot">100 / 100. Le catalogue est complet — maintenant, on choisit.</p>
+</div>
+</body>
+</html>

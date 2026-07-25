@@ -1,31 +1,56 @@
-name: Deploy to GitHub Pages
+name: Déploiement
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+    branches: [main]
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Un seul déploiement à la fois ; les pushs suivants attendent leur tour
+# plutôt que d'annuler un déploiement en cours.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
         with:
-            # path: . # The root location of your Astro project inside the repository. (optional)
-            # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+          node-version: 22
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Construire le site
+        run: npm run build
+        env:
+          PUBLIC_EMAILJS_PUBLIC_KEY: ${{ vars.PUBLIC_EMAILJS_PUBLIC_KEY }}
+          PUBLIC_EMAILJS_SERVICE_ID: ${{ vars.PUBLIC_EMAILJS_SERVICE_ID }}
+          PUBLIC_EMAILJS_TEMPLATE_ID: ${{ vars.PUBLIC_EMAILJS_TEMPLATE_ID }}
+
+      - name: Vérifier que le CNAME est présent
+        run: |
+          test -f dist/CNAME || { echo "::error::dist/CNAME absent — le domaine custom casserait."; exit 1; }
+          echo "CNAME : $(cat dist/CNAME)"
+
+      - name: Installer Chromium pour la génération du PDF
+        run: npx playwright install --with-deps chromium
+
+      - name: Générer le PDF du CV
+        run: node scripts/cv-pdf.mjs
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
   deploy:
     needs: build
@@ -34,6 +59,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Déployer sur GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,0 +1,249 @@
+/*
+ * Tokens de design — source unique de vérité.
+ *
+ * Toute valeur susceptible de changer vit ici. Un composant qui contient une
+ * couleur, une taille ou une durée en dur est un bug : ajouter le token ici.
+ *
+ * Pour changer la palette : remplacer le bloc « PALETTE ACTIVE » par une des
+ * palettes de réserve en fin de fichier. Rien d'autre à toucher.
+ */
+
+:root {
+  /* ================================================================
+   * PALETTE ACTIVE — N « Marine & Chantier »
+   * Fond blanc franc, masses bleu marine, jaune sécurité en accent.
+   * ================================================================ */
+  --color-bg: #ffffff;
+  --color-ink: #0f2747;
+  --color-muted: #566c8c;
+  --color-primary: #0f2747;
+  --color-on-primary: #ffffff;
+  --color-accent: #ffc300;
+  --color-on-accent: #0f2747;
+  /* Jaune assombri : le jaune pur est illisible en texte sur fond clair
+     (1.6:1). Réservé aux libellés ; l'accent pur va dans les aplats. */
+  --color-accent-ink: #7d6100;
+  /* Aplats marine des sections « inversées » */
+  --color-inverse: #0f2747;
+  --color-on-inverse: #ffffff;
+  /* Marine plus dense, pour superposer deux niveaux d'aplat */
+  --color-inverse-deep: #0a1b33;
+
+  /* Ticket « carnet à souche » — jeu de couleurs dédié, indépendant du reste
+   * du site. La souche a ses propres tokens : son fond peut être sombre alors
+   * que le corps du bon reste clair. */
+  --paper-bg: #eef3fb;
+  --paper-ink: #0f2747;
+  --paper-muted: #566c8c;
+  --paper-dash: #8ba4c8;
+  /* Aplats du bon (bouton) : jaune, avec l'encre par-dessus. */
+  --paper-accent: #ffc300;
+  --paper-on-accent: #0f2747;
+  /* Libellés du bon : le jaune est illisible en texte sur fond clair. */
+  --paper-accent-ink: #7d6100;
+
+  /* Souche (partie gauche, détachable) */
+  --stub-bg: #0f2747;
+  --stub-ink: #ffffff;
+  --stub-muted: #b9c9e0;
+  --stub-accent: #ffc300;
+
+  /* ---- Couleurs dérivées ---------------------------------------- */
+  --color-surface: #ffffff;
+  --color-surface-raised: #eef3fb;
+  --color-border: #0f2747;
+  --color-border-strong: var(--color-ink);
+  --color-focus: var(--color-accent);
+  --color-error: #b42318;
+  --color-success: #067647;
+
+  /* ================================================================
+   * TYPOGRAPHIE
+   * ================================================================ */
+  --font-display: 'Archivo Variable', system-ui, sans-serif;
+  --font-body: 'Inter Variable', system-ui, sans-serif;
+  --font-ticket: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+  --font-hand: 'Caveat Variable', cursive;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+
+  /* Échelle fluide — min à 360px, max à 1280px */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --text-sm: clamp(0.8125rem, 0.78rem + 0.17vw, 0.9062rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+  --text-md: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  --text-lg: clamp(1.1875rem, 1.1rem + 0.4vw, 1.4375rem);
+  --text-xl: clamp(1.375rem, 1.24rem + 0.65vw, 1.75rem);
+  --text-2xl: clamp(1.625rem, 1.4rem + 1.1vw, 2.25rem);
+  --text-3xl: clamp(2rem, 1.6rem + 1.9vw, 3rem);
+  --text-hero: clamp(2rem, 0.6rem + 6.6vw, 5.25rem);
+
+  --leading-tight: 0.98;
+  --leading-snug: 1.2;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.7;
+
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-widest: 0.14em;
+
+  /* Épaisseur du contour de la ligne 2 du hero */
+  --stroke-hero: clamp(1.5px, 0.35vw, 3px);
+
+  /* ================================================================
+   * ESPACEMENTS — échelle de 4px
+   * ================================================================ */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  /* Rythme vertical des sections — se resserre sur mobile */
+  --section-gap: clamp(var(--space-2xl), 8vw, var(--space-4xl));
+
+  /* ================================================================
+   * MISE EN PAGE
+   * ================================================================ */
+  --container-max: 72rem;
+  --container-narrow: 46rem;
+  --container-pad: clamp(var(--space-sm), 4vw, var(--space-lg));
+  --measure: 42ch;
+
+  /* Largeur minimale d'une colonne avant que la grille ne se replie */
+  --col-min: 16rem;
+  --col-min-wide: 17rem;
+  /* Colonne de dates des frises (CV) */
+  --col-date: minmax(8rem, 10rem);
+  /* Souche du ticket */
+  --stub-width: minmax(11rem, 15rem);
+  /* Ligne manuscrite du ticket */
+  --field-width: 8rem;
+  /* Pastille numérotée des étapes */
+  --bullet-size: 2rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-pill: 100px;
+
+  --border-thin: 1px;
+  --border-thick: 2px;
+  --border-heavy: 3px;
+
+  /* Filet d'accent au-dessus des titres de section */
+  --rule-width: 3.5rem;
+  --rule-height: 5px;
+
+  --shadow-sm: 0 1px 2px rgb(15 39 71 / 0.06);
+  --shadow-md: 0 8px 24px -12px rgb(15 39 71 / 0.22);
+  --shadow-lg: 0 16px 36px -16px rgb(15 39 71 / 0.45);
+
+  --z-base: 0;
+  --z-raised: 10;
+  --z-header: 100;
+  --z-overlay: 1000;
+
+  /* ================================================================
+   * MOUVEMENT
+   * ================================================================ */
+  --duration-fast: 120ms;
+  --duration-base: 220ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Bandeau défilant des métiers */
+  --marquee-duration: 32s;
+  --marquee-gap: var(--space-xl);
+  --marquee-pad: var(--space-xs);
+
+  /* ================================================================
+   * POINTS DE RUPTURE — pour référence.
+   * Les media queries ne peuvent pas lire une custom property : garder
+   * ces valeurs synchronisées à la main avec les @media du projet.
+   * ================================================================ */
+  --bp-sm: 40em; /* 640px */
+  --bp-md: 48em; /* 768px */
+  --bp-lg: 64em; /* 1024px */
+}
+
+/* ==================================================================
+ * PALETTES DE RÉSERVE — explorées le 2026-07-19, conservées pour
+ * itérer. Pour en essayer une : copier son bloc par-dessus les
+ * valeurs de « PALETTE ACTIVE » ci-dessus.
+ *
+ * D — Bleu Confiance (la précédente : fond bleuté, bleu vif, accent orange)
+ *   --color-bg:#f6f9ff; --color-ink:#0f2747; --color-muted:#5b6b80;
+ *   --color-primary:#1d4ed8; --color-on-primary:#ffffff;
+ *   --color-accent:#f97316; --color-on-accent:#0f2747; --color-accent-ink:#c2410c;
+ *   --color-surface:#ffffff; --color-surface-raised:#e7eefb; --color-border:#c3d4ec;
+ *   --paper-accent:#1d4ed8; --paper-on-accent:#ffffff;
+ *
+ * Q — Béton & Jaune (gris minéral, noir, jaune sécurité)
+ *   --color-bg:#eceded; --color-ink:#1a1a1a; --color-muted:#5e6060;
+ *   --color-primary:#1a1a1a; --color-on-primary:#ffffff;
+ *   --color-accent:#ffd400; --color-on-accent:#1a1a1a; --color-accent-ink:#7a6500;
+ *   --color-surface:#ffffff; --color-surface-raised:#dcdedf; --color-border:#1a1a1a;
+ *   --color-inverse:#1a1a1a; --color-on-inverse:#eceded;
+ *   --paper-accent:#1a1a1a; --paper-on-accent:#ffd400;
+ *
+ * A — L'originale (crème / encre / orange)
+ *   --color-bg:#faf7f0; --color-ink:#161616; --color-muted:#5c5852;
+ *   --color-primary:#ff5722; --color-on-primary:#faf7f0; --color-accent:#ff5722;
+ *   --paper-bg:#fdf6e3; --paper-stub:#f4ead0; --paper-dash:#c9bd9c;
+ *   --paper-ink:#2f2a1c; --paper-muted:#6b6248; --paper-accent:#d64513;
+ *
+ * B — Nuit de chantier (noir / ivoire / jaune)
+ *   --color-bg:#141414; --color-ink:#f2efe6; --color-muted:#a5a196;
+ *   --color-primary:#ffd400; --color-on-primary:#141414; --color-accent:#ffd400;
+ *   --paper-bg:#f6f0dd; --paper-stub:#eadfc2; --paper-dash:#b5a87f;
+ *   --paper-ink:#2b2612; --paper-muted:#6e6444; --paper-accent:#a8850a;
+ *
+ * C — Terracotta
+ *   --color-bg:#f7f1e7; --color-ink:#2f2a24; --color-muted:#6b6156;
+ *   --color-primary:#c1502e; --color-on-primary:#fdf4ea; --color-accent:#7d8471;
+ *   --paper-bg:#fffaf2; --paper-stub:#f2e5d2; --paper-dash:#cdb69a;
+ *   --paper-ink:#3a2f22; --paper-muted:#7a6a54; --paper-accent:#c1502e;
+ *
+ * E — Rouge Brique
+ *   --color-bg:#f3e9dd; --color-ink:#3a201a; --color-muted:#7a5c50;
+ *   --color-primary:#a12d24; --color-on-primary:#f8ede4; --color-accent:#a12d24;
+ *   --paper-bg:#fdf8ef; --paper-stub:#f1e2cd; --paper-dash:#c8ab8d;
+ *   --paper-ink:#3f261c; --paper-muted:#7d5f4c; --paper-accent:#a12d24;
+ *
+ * F — Vert Sapin & Sable
+ *   --color-bg:#f3efe4; --color-ink:#1e332a; --color-muted:#5d6b5f;
+ *   --color-primary:#1f5d43; --color-on-primary:#f0ead6; --color-accent:#d9a13a;
+ *   --paper-bg:#fbf7ea; --paper-stub:#e9e2cc; --paper-dash:#b3ab8c;
+ *   --paper-ink:#243529; --paper-muted:#5f6b57; --paper-accent:#1f5d43;
+ *
+ * G — Bordeaux Vin
+ *   --color-bg:#faf4f1; --color-ink:#40121f; --color-muted:#7d5561;
+ *   --color-primary:#722f37; --color-on-primary:#f7ecdf; --color-accent:#c9a227;
+ *   --paper-bg:#fbf5ea; --paper-stub:#f0e2d5; --paper-dash:#c8a9a0;
+ *   --paper-ink:#41161f; --paper-muted:#7d5a60; --paper-accent:#722f37;
+ *
+ * H — Sombre Ambre
+ *   --color-bg:#17140f; --color-ink:#f3ede1; --color-muted:#a89a83;
+ *   --color-primary:#f0a338; --color-on-primary:#17140f; --color-accent:#f0a338;
+ *   --paper-bg:#f6efdd; --paper-stub:#eadfc4; --paper-dash:#b3a67e;
+ *   --paper-ink:#2c2412; --paper-muted:#6e6244; --paper-accent:#b57713;
+ *
+ * Note : les palettes sombres (B, H) demandent de revoir --color-surface,
+ * --color-surface-raised et --color-border, calculés ici pour un fond clair.
+ * ================================================================== */
