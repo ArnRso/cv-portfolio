@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
+import Section from '../components/Section.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const services = [
+  {
+    title: 'Créer votre site vitrine',
+    text: 'Présentez vos chantiers, votre savoir-faire et vos certifications. Un site clair qui inspire confiance et transforme les visiteurs en demandes de devis.',
+  },
+  {
+    title: 'Refaire votre site actuel',
+    text: "Site vieillissant, lent ou invisible sur Google ? Je le modernise pour qu'il vous ramène enfin des clients.",
+  },
+  {
+    title: 'Vous rendre visible en Gironde',
+    text: 'Référencement local pour apparaître quand un habitant cherche un artisan comme vous, plus la maintenance et la sécurité.',
+  },
+  {
+    title: 'Développer un outil sur-mesure',
+    text: "Gestion de chantiers, devis, planning… pour les entreprises du bâtiment qui ont besoin de plus qu'un site.",
+  },
+];
+
+const reasons = [
+  {
+    title: 'Un développeur expérimenté',
+    text: '7 ans à concevoir des applications web pour des entreprises exigeantes.',
+  },
+  {
+    title: 'Je forme les développeurs de demain',
+    text: "Enseigne dans 3 écoles (MyDigitalSchool, Campus du Lac, MJM). Quand on enseigne, c'est qu'on maîtrise.",
+  },
+  {
+    title: 'La sécurité par défaut',
+    text: 'Site et données des clients protégés dès le départ.',
+  },
+  {
+    title: 'Un indépendant, comme vous',
+    text: "Basé à Bordeaux, contact direct avec la personne qui construit le site. Pas de commercial, pas d'intermédiaire.",
+  },
+];
+
+const steps = [
+  'On échange (métier, besoins, objectifs — sans engagement).',
+  'Je vous fais une proposition (devis clair).',
+  'Je conçois la maquette (validation avant code).',
+  'Je développe votre site (solide, rapide, sécurisé).',
+  'Mise en ligne et suivi.',
+];
+
+const faq = [
+  {
+    q: 'Combien coûte un site internet pour un artisan ?',
+    a: 'Chaque projet est différent. Après un premier échange, devis clair et gratuit, sans engagement.',
+  },
+  {
+    q: 'Combien de temps pour créer mon site ?',
+    a: 'En général quelques semaines, selon le contenu à préparer.',
+  },
+  {
+    q: "Je n'ai pas de belles photos de mes chantiers, c'est bloquant ?",
+    a: 'Non, on trouve toujours une solution pour valoriser votre travail.',
+  },
+  {
+    q: 'Est-ce que mon site apparaîtra sur Google ?',
+    a: 'Oui, chaque site est optimisé pour le référencement local en Gironde.',
+  },
+  {
+    q: 'Pourrai-je modifier mon site moi-même ?',
+    a: 'Selon la formule, oui, en autonomie.',
+  },
+  {
+    q: 'Dans quelle zone intervenez-vous ?',
+    a: 'Toute la Gironde, base à Bordeaux.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+---
+
+<Layout
+  title="Création de site internet pour artisans du BTP à Bordeaux et en Gironde"
+  description="Développeur web à Bordeaux, je crée des sites internet pour les artisans du bâtiment en Gironde : plus de chantiers, et une entreprise qu'on trouve sur Google. Devis gratuit."
+  schema={[faqSchema]}
+>
+  <Hero />
+  <Marquee />
+
+  <Section headingId="metiers" title="Quel que soit votre corps de métier">
+    <p class="accroche">
+      Maçon, plombier, électricien, menuisier, couvreur, plaquiste, peintre,
+      carreleur… quel que soit votre corps de métier, je conçois le site qui met
+      votre savoir-faire en avant et vous amène de nouveaux clients partout en
+      Gironde.
+    </p>
+  </Section>
+
+  <Section headingId="services" title="Ce que je peux faire pour vous" raised>
+    <ul class="grid">
+      {
+        services.map((item) => (
+          <li class="card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+
+  <Section headingId="pourquoi" title="Pourquoi me confier votre projet">
+    <ul class="grid">
+      {
+        reasons.map((item) => (
+          <li class="card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+
+  <Section headingId="methode" title="Comment ça se passe" raised>
+    <ol class="steps">
+      {
+        steps.map((step, i) => (
+          <li>
+            <span class="num">{i + 1}</span>
+            <span>{step}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+
+  <Section
+    headingId="experience"
+    title="Une expérience solide, mise à votre service"
+  >
+    <p class="accroche">
+      Depuis 7 ans, je conçois des plateformes web robustes et sécurisées,
+      utilisées au quotidien par des professionnels. Cette exigence — fiabilité,
+      sécurité, rapidité — je la mets aujourd'hui au service des artisans du
+      bâtiment en Gironde.
+    </p>
+  </Section>
+
+  <Section headingId="zone" title="Zone d'intervention" raised>
+    <p class="accroche">
+      Basé à Bordeaux, j'accompagne les artisans du bâtiment dans toute la
+      Gironde : Bordeaux Métropole (Mérignac, Pessac, Talence, Bègles…), le
+      Bassin d'Arcachon, le Libournais, le Médoc et au-delà.
+    </p>
+  </Section>
+
+  <Section headingId="faq" title="Questions fréquentes">
+    <dl class="faq">
+      {
+        faq.map((item) => (
+          <div class="qa">
+            <dt>{item.q}</dt>
+            <dd>{item.a}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </Section>
+
+  <CtaBand
+    title="Un chantier de plus commence par un bon site."
+    text="Parlons de votre projet, je vous réponds rapidement."
+  />
+</Layout>
+
+<style>
+  .accroche {
+    font-size: var(--text-md);
+    max-width: 62ch;
+    color: var(--color-muted);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--col-min), 1fr));
+    gap: var(--space-md);
+  }
+
+  .card {
+    background: var(--color-surface);
+    border: var(--border-thin) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .card p {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .steps {
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .steps li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    max-width: 62ch;
+  }
+
+  .num {
+    flex: none;
+    width: var(--bullet-size);
+    height: var(--bullet-size);
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    font-family: var(--font-display);
+    font-weight: var(--weight-black);
+    font-size: var(--text-sm);
+  }
+
+  .faq {
+    display: grid;
+    gap: var(--space-md);
+    max-width: var(--container-narrow);
+  }
+
+  .qa {
+    border-top: var(--border-thin) solid var(--color-border);
+    padding-top: var(--space-sm);
+  }
+
+  dt {
+    font-family: var(--font-display);
+    font-weight: var(--weight-extrabold);
+    font-size: var(--text-md);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  dd {
+    margin-top: var(--space-3xs);
+    color: var(--color-muted);
+  }
+</style>

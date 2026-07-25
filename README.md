@@ -1,0 +1,107 @@
+# adrienrusso.fr
+
+Site vitrine + CV d'Adrien Russo, développeur web à Bordeaux, au service des
+artisans du bâtiment en Gironde.
+
+Site statique **Astro**, CSS natif piloté par variables, sans Tailwind et sans
+CDN. Déploiement prévu sur GitHub Pages.
+
+## Commandes
+
+```bash
+npm install      # installer les dépendances
+npm run dev      # serveur de dev sur http://localhost:4321
+npm run build    # build de production dans dist/
+npm run preview  # prévisualiser le build
+npm run check    # contrôle des types Astro/TypeScript
+npm run format   # Prettier
+```
+
+## Structure
+
+```
+src/
+  components/    Header, Footer, Hero, Marquee, Ticket, Section, CtaBand, ContactForm
+  data/          cv.json (données du CV) + cv.ts (types)
+  layouts/       Layout.astro — meta, Open Graph, JSON-LD
+  pages/         index, services, cv, contact, 404
+  styles/
+    tokens.css   ← LE fichier à éditer pour le design
+    base.css     reset, utilitaires, styles d'impression du CV
+public/          CNAME, robots.txt, favicon
+ressources/      documentation projet (briefs, contenus, maquettes d'origine)
+```
+
+## Design : où éditer
+
+**Tout ce qui est visuel vit dans `src/styles/tokens.css`.** Aucun composant ne
+contient de couleur, de taille ou de durée en dur — si une valeur apparaît dans
+un composant, c'est un bug : ajoutez plutôt le token.
+
+### Changer la palette
+
+Le fichier contient un bloc « PALETTE ACTIVE » (actuellement **D — Bleu
+Confiance**) et, en fin de fichier, les 7 autres palettes explorées, en
+commentaire. Pour en essayer une : copier ses valeurs par-dessus celles du bloc
+actif. Rien d'autre à toucher.
+
+Les palettes sombres (B « Nuit de chantier », H « Sombre Ambre ») demandent en
+plus d'ajuster `--color-surface`, `--color-surface-raised` et `--color-border`,
+qui sont calculés pour un fond clair.
+
+Le ticket « carnet à souche » du pied de page a ses propres variables
+(`--paper-*`) : il reste crème quelle que soit la palette du site. C'est
+volontaire.
+
+## Choix d'implémentation
+
+- **H1 de l'accueil** : le bloc typographique XXL (« Des sites qui ramènent des
+  chantiers ») porte le H1 — il contient les mots-clés métier et domine la page.
+  La phrase « Votre entreprise mérite un site à la hauteur » est le sous-titre
+  juste en dessous. Un seul H1 par page sur tout le site.
+- **Marquee** : la liste des métiers est dupliquée dans le DOM pour boucler sans
+  saut (translation de -50 %). Sous `prefers-reduced-motion`, l'animation est
+  coupée et la copie masquée.
+- **Données du CV** : `src/data/cv.json` suit l'éditorialisation de
+  `ressources/04-contenu-cv.md`, pas la structure brute des anciens JSON. Le
+  téléphone et le champ `theme` ont été retirés, Symfony 6 corrigé en 7 et 8, et
+  les entrées inventées par l'ancien template (bénévolat, allemand, projets
+  génériques) écartées. Aucun projet n'est attribué à un employeur.
+- **Polices** : auto-hébergées via `@fontsource`, aucun appel à Google Fonts.
+
+## Formulaire de contact (EmailJS)
+
+Le formulaire attend trois variables d'environnement. Copiez `.env.example` en
+`.env` et renseignez-les :
+
+```
+PUBLIC_EMAILJS_PUBLIC_KEY=
+PUBLIC_EMAILJS_SERVICE_ID=
+PUBLIC_EMAILJS_TEMPLATE_ID=
+```
+
+Sans ces variables, le formulaire s'affiche mais reste désactivé, avec un lien
+`mailto:` en repli — le build ne casse pas.
+
+## Reste à faire côté Adrien
+
+- [ ] Fournir les identifiants EmailJS et connecter le service email vers
+      `hello@adrienrusso.fr`.
+- [ ] Activer dans EmailJS la **liste blanche de domaine** (`adrienrusso.fr`
+      uniquement) et le **reCAPTCHA**.
+- [ ] Vérifier que la boîte `hello@adrienrusso.fr` est opérationnelle.
+- [ ] Rédiger les mentions légales et la politique de confidentialité
+      (obligatoire avant mise en ligne — les liens du pied de page sont en place,
+      désactivés).
+- [ ] Créer la fiche Google Business Profile.
+- [ ] Optionnel plus tard : 2-3 sites démo BTP pour remplacer la section
+      « expérience » de l'accueil.
+
+## Reste à faire côté dev
+
+- [ ] Image Open Graph (`public/og.png`) — référencée dans le layout, pas encore
+      produite.
+- [ ] CI GitHub Actions : build, génération du PDF du CV (`/cv` imprimée via
+      Playwright, la feuille `@media print` est déjà écrite) et déploiement Pages.
+      Le bouton « Télécharger mon CV (PDF) » pointe vers `/adrien-russo-cv.pdf`,
+      produit par cette CI.

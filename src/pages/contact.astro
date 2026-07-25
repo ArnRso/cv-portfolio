@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { SITE } from '../consts';
+
+const reassurance = [
+  'Réponse rapide.',
+  'Devis gratuit et sans engagement.',
+  'Un interlocuteur unique, basé à Bordeaux.',
+];
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact',
+  mainEntity: {
+    '@type': 'ContactPoint',
+    contactType: 'Demande de devis',
+    email: SITE.email,
+    availableLanguage: 'fr',
+    areaServed: { '@type': 'AdministrativeArea', name: 'Gironde' },
+  },
+};
+---
+
+<Layout
+  title="Contact — Demander un devis gratuit pour votre site à Bordeaux"
+  description="Un projet de site, une refonte ou une question ? Écrivez-moi, je réponds rapidement. Devis gratuit et sans engagement, Bordeaux et toute la Gironde."
+  schema={[contactSchema]}
+>
+  <section class="page">
+    <div class="container">
+      <h1>Parlons de votre projet</h1>
+      <p class="intro">
+        Un projet de site, une refonte ou juste une question ? Écrivez-moi, je
+        vous réponds rapidement — sans engagement.
+      </p>
+
+      <div class="cols">
+        <div>
+          <h2>Votre demande</h2>
+          <ContactForm />
+        </div>
+
+        <aside class="side">
+          <div class="block">
+            <h2>Me joindre directement</h2>
+            <ul class="coords">
+              <li>
+                <span class="k">Email</span>
+                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </li>
+              <li>
+                <span class="k">LinkedIn</span>
+                <a href={SITE.linkedin} rel="me noopener">
+                  linkedin.com/in/russoad
+                </a>
+              </li>
+              <li>
+                <span class="k">Zone d'intervention</span>
+                <span>Bordeaux et toute la Gironde</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h2>Ce que je vous garantis</h2>
+            <ul class="checks">
+              {reassurance.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page {
+    padding-block: var(--space-2xl) var(--space-3xl);
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tighter);
+  }
+
+  .intro {
+    margin-top: var(--space-sm);
+    font-size: var(--text-md);
+    color: var(--color-muted);
+    max-width: 58ch;
+  }
+
+  .cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    align-items: start;
+  }
+
+  h2 {
+    font-size: var(--text-md);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-sm);
+  }
+
+  .side {
+    display: grid;
+    gap: var(--space-lg);
+  }
+
+  .block {
+    background: var(--color-surface-raised);
+    border: var(--border-thin) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+  }
+
+  .coords {
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .k {
+    display: block;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-muted);
+  }
+
+  .coords a,
+  .coords span:not(.k) {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    word-break: break-word;
+  }
+
+  .checks {
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .checks li {
+    position: relative;
+    padding-left: var(--space-md);
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .checks li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: var(--weight-bold);
+  }
+
+  @media (max-width: 48em) {
+    .cols {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+</style>

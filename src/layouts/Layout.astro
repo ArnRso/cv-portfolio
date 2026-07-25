@@ -1,0 +1,104 @@
+---
+import '@fontsource-variable/archivo';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/caveat';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/700.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../consts';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Données structurées supplémentaires propres à la page. */
+  schema?: Record<string, unknown>[];
+}
+
+const { title, description, schema = [] } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE.url).href;
+const ogImage = new URL('/og.png', Astro.site ?? SITE.url).href;
+
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${SITE.url}/#business`,
+  name: SITE.name,
+  description:
+    'Création de sites internet pour les artisans du bâtiment à Bordeaux et en Gironde.',
+  url: SITE.url,
+  email: SITE.email,
+  image: ogImage,
+  priceRange: 'Sur devis',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: SITE.city,
+    postalCode: '33000',
+    addressRegion: 'Nouvelle-Aquitaine',
+    addressCountry: 'FR',
+  },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Gironde',
+  },
+  founder: {
+    '@type': 'Person',
+    name: SITE.name,
+    jobTitle: 'Développeur web',
+  },
+  sameAs: [SITE.linkedin],
+};
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(business)}
+      is:inline
+    />
+    {
+      schema.map((entry) => (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(entry)}
+          is:inline
+        />
+      ))
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <Header />
+    <main id="contenu">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
