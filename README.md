@@ -18,7 +18,26 @@ npm run format   # Prettier
 npm run verify   # toute la pipeline, comme la CI
 npm run cv:pdf   # regénérer le PDF du CV
 npm run og       # regénérer l'image de partage
+npm run icons    # regénérer les icônes depuis favicon.svg
 ```
+
+### Icônes
+
+`public/favicon.svg` est la **source unique** : monogramme AR en Archivo Black,
+converti en tracés (aucune dépendance à une police installée).
+
+`npm run icons` en dérive toutes les déclinaisons :
+
+| Fichier | Usage |
+|---|---|
+| `favicon.svg` | onglet des navigateurs modernes |
+| `favicon.ico` | anciens navigateurs, favoris Windows |
+| `apple-touch-icon.png` | écran d'accueil iOS (180×180, bords carrés : iOS applique son propre masque) |
+| `icon-192.png` / `icon-512.png` | Android et PWA |
+| `site.webmanifest` | déclaration PWA, couleur de thème |
+
+Après avoir modifié `favicon.svg`, relancez `npm run icons` — la pipeline
+vérifie que les six fichiers sont présents dans le build.
 
 ### Vérifier avant de pousser
 
