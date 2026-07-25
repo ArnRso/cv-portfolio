@@ -5,7 +5,9 @@
  * robots. Elle existe pour produire un A4 dense en une seule page, là où la
  * page /cv est pensée pour l'écran.
  */
+import { Image } from 'astro:assets';
 import { cv } from '../data/cv';
+import portrait from '../assets/adrien_russo_avatar.jpg';
 import '@fontsource-variable/archivo';
 import '@fontsource-variable/inter';
 import '@fontsource/ibm-plex-mono/400.css';
@@ -28,9 +30,19 @@ const period = (start: string, end: string | null) =>
   </head>
   <body>
     <header class="head">
-      <div>
-        <h1>{basics.name}</h1>
-        <p class="role">{basics.label}</p>
+      <div class="identite">
+        <Image
+          class="portrait"
+          src={portrait}
+          alt=""
+          width={132}
+          height={132}
+          loading="eager"
+        />
+        <div>
+          <h1>{basics.name}</h1>
+          <p class="role">{basics.label}</p>
+        </div>
       </div>
       <ul class="contact">
         <li>{basics.email}</li>
@@ -164,6 +176,21 @@ const period = (start: string, end: string | null) =>
     gap: 12pt;
     border-bottom: var(--print-rule) solid var(--color-ink);
     padding-bottom: 6pt;
+  }
+
+  .identite {
+    display: flex;
+    align-items: center;
+    gap: 10pt;
+  }
+
+  /* Portrait rond : usage courant sur un CV français. */
+  .portrait {
+    width: 44pt;
+    height: 44pt;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: none;
   }
 
   h1 {
