@@ -30,23 +30,17 @@ jobs:
       - name: Installer les dépendances
         run: npm ci
 
-      - name: Construire le site
-        run: npm run build
+      - name: Installer Chromium
+        run: npx playwright install --with-deps chromium
+
+      # Build, contrôles et génération du PDF : mêmes étapes qu'en local
+      # (npm run verify), définies dans scripts/verify.mjs.
+      - name: Construire et vérifier
+        run: npm run verify
         env:
           PUBLIC_EMAILJS_PUBLIC_KEY: ${{ vars.PUBLIC_EMAILJS_PUBLIC_KEY }}
           PUBLIC_EMAILJS_SERVICE_ID: ${{ vars.PUBLIC_EMAILJS_SERVICE_ID }}
           PUBLIC_EMAILJS_TEMPLATE_ID: ${{ vars.PUBLIC_EMAILJS_TEMPLATE_ID }}
-
-      - name: Vérifier que le CNAME est présent
-        run: |
-          test -f dist/CNAME || { echo "::error::dist/CNAME absent — le domaine custom casserait."; exit 1; }
-          echo "CNAME : $(cat dist/CNAME)"
-
-      - name: Installer Chromium pour la génération du PDF
-        run: npx playwright install --with-deps chromium
-
-      - name: Générer le PDF du CV
-        run: node scripts/cv-pdf.mjs
 
       - uses: actions/upload-pages-artifact@v5
         with:

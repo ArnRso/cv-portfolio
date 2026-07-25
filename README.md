@@ -15,7 +15,23 @@ npm run build    # build de production dans dist/
 npm run preview  # prévisualiser le build
 npm run check    # contrôle des types Astro/TypeScript
 npm run format   # Prettier
+npm run verify   # toute la pipeline, comme la CI
+npm run cv:pdf   # regénérer le PDF du CV
+npm run og       # regénérer l'image de partage
 ```
+
+### Vérifier avant de pousser
+
+`npm run verify` exécute **exactement** ce que la CI exécute sur GitHub :
+types, formatage, build, présence du CNAME et des pages attendues, absence de
+numéro de téléphone, absence de valeur en dur hors `tokens.css`, génération du
+PDF et contrôle qu'il tient sur une page.
+
+Si le formatage bloque, `node scripts/verify.mjs --fix` corrige au lieu
+d'échouer.
+
+Les deux workflows GitHub appellent ce même script : les vérifications sont
+définies une seule fois, dans `scripts/verify.mjs`.
 
 ## Structure
 
@@ -24,7 +40,8 @@ src/
   components/    Header, Footer, Hero, Marquee, Ticket, Section, CtaBand, ContactForm
   data/          cv.json (données du CV) + cv.ts (types)
   layouts/       Layout.astro — meta, Open Graph, JSON-LD
-  pages/         index, services, cv, contact, 404
+  pages/         index, services, cv, contact, 404, mentions-legales,
+                 confidentialite, cv-print (gabarit d'impression, non listé)
   styles/
     tokens.css   ← LE fichier à éditer pour le design
     base.css     reset, utilitaires, styles d'impression du CV
@@ -55,6 +72,11 @@ volontaire.
 
 ## Choix d'implémentation
 
+- **PDF du CV** : imprimé depuis `/cv-print`, un gabarit dédié composé en points
+  pour tenir sur un A4 en deux colonnes. La page `/cv` publique reste pensée
+  pour l'écran — imprimer celle-ci donnait quatre pages avec des aplats coupés.
+  `/cv-print` est absente de la navigation et du sitemap, et interdite aux
+  robots ; c'est le PDF qui est servi aux visiteurs.
 - **H1 de l'accueil** : le bloc typographique XXL (« Des sites qui ramènent des
   chantiers ») porte le H1 — il contient les mots-clés métier et domine la page.
   La phrase « Votre entreprise mérite un site à la hauteur » est le sous-titre
