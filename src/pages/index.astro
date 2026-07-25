@@ -109,8 +109,11 @@ const faqSchema = {
   <Section headingId="services" title="Ce que je peux faire pour vous" raised>
     <ul class="grid">
       {
-        services.map((item) => (
+        services.map((item, i) => (
           <li class="card">
+            <span class="card-num" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </li>
@@ -123,7 +126,7 @@ const faqSchema = {
     <ul class="grid">
       {
         reasons.map((item) => (
-          <li class="card">
+          <li class="card card-plain">
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </li>
@@ -132,7 +135,7 @@ const faqSchema = {
     </ul>
   </Section>
 
-  <Section headingId="methode" title="Comment ça se passe" raised>
+  <Section headingId="methode" title="Comment ça se passe" inverse>
     <ol class="steps">
       {
         steps.map((step, i) => (
@@ -163,6 +166,20 @@ const faqSchema = {
       Gironde : Bordeaux Métropole (Mérignac, Pessac, Talence, Bègles…), le
       Bassin d'Arcachon, le Libournais, le Médoc et au-delà.
     </p>
+    <ul class="villes">
+      {
+        [
+          'Bordeaux',
+          'Mérignac',
+          'Pessac',
+          'Talence',
+          'Bègles',
+          'Libourne',
+          'Arcachon',
+          'Le Médoc',
+        ].map((ville) => <li>{ville}</li>)
+      }
+    </ul>
   </Section>
 
   <Section headingId="faq" title="Questions fréquentes">
@@ -191,18 +208,52 @@ const faqSchema = {
     color: var(--color-muted);
   }
 
+  /* 2 colonnes plutôt que 3 : 4 cartes tombent juste, sans trou. */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--col-min), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--col-min-wide), 1fr));
     gap: var(--space-md);
   }
 
+  @media (min-width: 48em) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   .card {
+    position: relative;
     background: var(--color-surface);
-    border: var(--border-thin) solid var(--color-border);
+    border: var(--border-thick) solid var(--color-ink);
     border-radius: var(--radius-lg);
     padding: var(--space-md);
-    box-shadow: var(--shadow-sm);
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+  }
+
+  .card-num {
+    display: block;
+    font-family: var(--font-mono);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-sm);
+    color: var(--color-accent-ink);
+    margin-bottom: var(--space-2xs);
+  }
+
+  /* Les 4 raisons : pas de numérotation, un filet d'accent à gauche. */
+  .card-plain {
+    border: none;
+    border-left: var(--border-heavy) solid var(--color-accent);
+    border-radius: 0;
+    background: none;
+    padding: var(--space-2xs) 0 var(--space-2xs) var(--space-sm);
+  }
+
+  .card-plain:hover {
+    transform: none;
   }
 
   .card h3 {
@@ -217,13 +268,14 @@ const faqSchema = {
 
   .steps {
     display: grid;
-    gap: var(--space-sm);
+    gap: var(--space-md);
+    counter-reset: step;
   }
 
   .steps li {
     display: flex;
     align-items: baseline;
-    gap: var(--space-sm);
+    gap: var(--space-md);
     max-width: 62ch;
   }
 
@@ -234,11 +286,27 @@ const faqSchema = {
     display: grid;
     place-items: center;
     border-radius: var(--radius-pill);
-    background: var(--color-primary);
-    color: var(--color-on-primary);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
     font-family: var(--font-display);
     font-weight: var(--weight-black);
     font-size: var(--text-sm);
+  }
+
+  .villes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+    margin-top: var(--space-md);
+  }
+
+  .villes li {
+    border: var(--border-thin) solid var(--color-border);
+    background: var(--color-surface);
+    border-radius: var(--radius-pill);
+    padding: var(--space-3xs) var(--space-xs);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
   }
 
   .faq {
@@ -248,7 +316,7 @@ const faqSchema = {
   }
 
   .qa {
-    border-top: var(--border-thin) solid var(--color-border);
+    border-top: var(--border-thick) solid var(--color-ink);
     padding-top: var(--space-sm);
   }
 

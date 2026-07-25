@@ -159,7 +159,7 @@ const serviceSchema = {
     display: flex;
     gap: var(--space-md);
     align-items: flex-start;
-    border-top: var(--border-thick) solid var(--color-ink);
+    border-top: var(--border-heavy) solid var(--color-ink);
     padding-top: var(--space-md);
   }
 
@@ -168,8 +168,14 @@ const serviceSchema = {
     font-weight: var(--weight-black);
     font-size: var(--text-2xl);
     line-height: 1;
-    color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
     flex: none;
+    width: var(--space-xl);
+    height: var(--space-xl);
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-sm);
   }
 
   .presta h3 {

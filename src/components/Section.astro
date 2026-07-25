@@ -4,20 +4,36 @@ interface Props {
   lede?: string;
   /** Rend la section sur une surface contrastée. */
   raised?: boolean;
+  /** Aplat bleu profond, texte clair — pour rythmer la page. */
+  inverse?: boolean;
   id?: string;
   headingId?: string;
 }
 
-const { title, lede, raised = false, id, headingId } = Astro.props;
+const {
+  title,
+  lede,
+  raised = false,
+  inverse = false,
+  id,
+  headingId,
+} = Astro.props;
 ---
 
 <section
-  class:list={['section', { raised }]}
+  class:list={['section', { raised, inverse }]}
   id={id}
   aria-labelledby={headingId}
 >
   <div class="container">
-    {title && <h2 id={headingId}>{title}</h2>}
+    {
+      title && (
+        <h2 id={headingId}>
+          <span class="rule" aria-hidden="true" />
+          {title}
+        </h2>
+      )
+    }
     {lede && <p class="lede">{lede}</p>}
     <slot />
   </div>
@@ -32,6 +48,11 @@ const { title, lede, raised = false, id, headingId } = Astro.props;
     background: var(--color-surface-raised);
   }
 
+  .inverse {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+  }
+
   h2 {
     font-size: var(--text-2xl);
     text-transform: uppercase;
@@ -39,11 +60,26 @@ const { title, lede, raised = false, id, headingId } = Astro.props;
     max-width: 20ch;
   }
 
+  /* Filet orange au-dessus du titre : donne le rythme d'une section à
+     l'autre et fait exister l'accent ailleurs que dans les détails. */
+  .rule {
+    display: block;
+    width: var(--rule-width);
+    height: var(--rule-height);
+    background: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
   .lede {
     margin-top: var(--space-sm);
     color: var(--color-muted);
     font-size: var(--text-md);
     max-width: var(--measure);
+  }
+
+  .inverse .lede {
+    color: var(--color-on-inverse);
+    opacity: 0.8;
   }
 
   h2 + :global(*:not(.lede)),
