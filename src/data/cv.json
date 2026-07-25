@@ -35,6 +35,7 @@
       "domain": "Front-end",
       "keywords": [
         "Vue.js",
+        "Nuxt",
         "React",
         "Angular",
         "TypeScript",
@@ -49,12 +50,11 @@
       "keywords": [
         "Docker",
         "Kubernetes",
-        "Proxmox",
         "GitLab CI/CD",
         "Ansible",
         "Linux",
-        "Self-hosting",
-        "AWS S3"
+        "AWS S3",
+        "Self-hosting (Proxmox)"
       ]
     },
     {
@@ -95,7 +95,6 @@
         "Vue.js",
         "Docker",
         "Kubernetes",
-        "Proxmox",
         "MySQL",
         "Redis",
         "Meilisearch"
