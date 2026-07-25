@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../consts';
+
+const updated = '25 juillet 2026';
+---
+
+<Layout
+  title="Mentions légales — Adrien Russo"
+  description="Mentions légales du site adrienrusso.fr : éditeur, hébergeur, propriété intellectuelle et responsabilité."
+>
+  <section class="intro">
+    <div class="container">
+      <h1>Mentions légales</h1>
+      <p>
+        Informations légales relatives au site {
+          SITE.url.replace('https://', '')
+        }, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance
+        dans l'économie numérique (LCEN).
+      </p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="container prose">
+      <h2>Éditeur du site</h2>
+      <dl class="facts">
+        <div>
+          <dt>Responsable de la publication</dt>
+          <dd>Adrien Russo</dd>
+        </div>
+        <div>
+          <dt>Dénomination</dt>
+          <dd>Russo Adrien — entrepreneur individuel</dd>
+        </div>
+        <div>
+          <dt>Siège social</dt>
+          <dd>33150 Cenon, France</dd>
+        </div>
+        <div>
+          <dt>SIREN</dt>
+          <dd>879 980 233</dd>
+        </div>
+        <div>
+          <dt>SIRET (siège)</dt>
+          <dd>879 980 233 00024</dd>
+        </div>
+        <div>
+          <dt>Code APE</dt>
+          <dd>62.01Z — Programmation informatique</dd>
+        </div>
+        <div>
+          <dt>TVA</dt>
+          <dd>TVA non applicable, article 293 B du Code général des impôts</dd>
+        </div>
+        <div>
+          <dt>Contact</dt>
+          <dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd>
+        </div>
+      </dl>
+
+      <p class="note">
+        Entreprise individuelle non inscrite au registre du commerce et des
+        sociétés, immatriculée au registre national des entreprises (RNE) depuis
+        le 17 décembre 2019.
+      </p>
+
+      <h2>Hébergement</h2>
+      <p>
+        Le site est hébergé par <strong>GitHub, Inc.</strong>, 88 Colin P. Kelly
+        Jr. Street, San Francisco, CA 94107, États-Unis, via le service GitHub
+        Pages — <a href="https://github.com" rel="noopener">github.com</a>.
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble du contenu de ce site — textes, mise en page, code source,
+        éléments graphiques — est la propriété d'Adrien Russo, sauf mention
+        contraire. Toute reproduction ou représentation, totale ou partielle,
+        sans autorisation écrite préalable est interdite.
+      </p>
+      <p>
+        Les marques et noms d'entreprises cités le sont à titre de référence
+        professionnelle et restent la propriété de leurs détenteurs respectifs.
+      </p>
+
+      <h2>Responsabilité</h2>
+      <p>
+        Les informations publiées sur ce site sont fournies à titre indicatif et
+        peuvent évoluer. Adrien Russo s'efforce de les maintenir exactes et à
+        jour, sans pouvoir garantir leur exhaustivité.
+      </p>
+      <p>
+        Ce site peut contenir des liens vers des sites tiers, sur le contenu
+        desquels Adrien Russo n'exerce aucun contrôle et n'engage aucune
+        responsabilité.
+      </p>
+
+      <h2>Données personnelles et cookies</h2>
+      <p>
+        Le traitement des données transmises via le formulaire de contact est
+        décrit dans la <a href="/confidentialite"
+          >politique de confidentialité</a
+        >. Ce site ne dépose aucun cookie de mesure d'audience ni de publicité.
+      </p>
+
+      <h2>Médiation de la consommation</h2>
+      <p>
+        Conformément à l'article L. 612-1 du Code de la consommation, tout
+        litige de nature contractuelle avec un client consommateur qui n'aurait
+        pas été résolu à l'amiable peut être soumis gratuitement à un médiateur
+        de la consommation. Les coordonnées du médiateur compétent sont
+        communiquées sur demande à <a href={`mailto:${SITE.email}`}
+          >{SITE.email}</a
+        >.
+      </p>
+
+      <p class="updated">Dernière mise à jour : {updated}.</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    padding-block: var(--space-2xl);
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tighter);
+    border-left: var(--rule-height) solid var(--color-accent);
+    padding-left: var(--space-md);
+  }
+
+  .intro p {
+    margin-top: var(--space-md);
+    font-size: var(--text-md);
+    opacity: 0.82;
+    max-width: 58ch;
+    padding-left: calc(var(--rule-height) + var(--space-md));
+  }
+
+  .page {
+    padding-block: var(--section-gap);
+  }
+
+  .prose {
+    max-width: var(--container-narrow);
+  }
+
+  .prose h2 {
+    font-size: var(--text-lg);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose h2:first-child {
+    margin-top: 0;
+  }
+
+  .prose h2::before {
+    content: '';
+    display: block;
+    width: var(--rule-width);
+    height: var(--rule-height);
+    background: var(--color-accent);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .prose p {
+    margin-bottom: var(--space-sm);
+    color: var(--color-muted);
+  }
+
+  .facts {
+    display: grid;
+    gap: var(--border-thin);
+    background: var(--color-border);
+    border: var(--border-thick) solid var(--color-ink);
+    margin-bottom: var(--space-md);
+  }
+
+  .facts > div {
+    background: var(--color-surface);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    gap: var(--space-sm);
+    padding: var(--space-2xs) var(--space-sm);
+  }
+
+  dt {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-accent-ink);
+    align-self: center;
+  }
+
+  dd {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+  }
+
+  .note,
+  .updated {
+    font-size: var(--text-sm);
+  }
+
+  .updated {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-sm);
+    border-top: var(--border-thin) solid var(--color-border);
+    font-style: italic;
+  }
+
+  @media (max-width: 40em) {
+    .facts > div {
+      grid-template-columns: 1fr;
+      gap: var(--space-3xs);
+    }
+  }
+</style>
