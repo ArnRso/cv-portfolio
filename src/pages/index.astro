@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import portrait from '../assets/adrien_russo_avatar.jpg';
 import Hero from '../components/Hero.astro';
 import Marquee from '../components/Marquee.astro';
 import Section from '../components/Section.astro';
@@ -152,12 +154,22 @@ const faqSchema = {
     headingId="experience"
     title="Une expérience solide, mise à votre service"
   >
-    <p class="accroche">
-      Depuis 7 ans, je conçois des plateformes web robustes et sécurisées,
-      utilisées au quotidien par des professionnels. Cette exigence — fiabilité,
-      sécurité, rapidité — je la mets aujourd'hui au service des artisans du
-      bâtiment en Gironde.
-    </p>
+    <div class="portrait-bloc">
+      <Image
+        class="portrait"
+        src={portrait}
+        alt="Adrien Russo, développeur web à Bordeaux"
+        width={128}
+        height={128}
+        loading="lazy"
+      />
+      <p class="accroche">
+        Depuis 7 ans, je conçois des plateformes web robustes et sécurisées,
+        utilisées au quotidien par des professionnels. Cette exigence —
+        fiabilité, sécurité, rapidité — je la mets aujourd'hui au service des
+        artisans du bâtiment en Gironde.
+      </p>
+    </div>
   </Section>
 
   <Section headingId="zone" title="Zone d'intervention" raised>
@@ -206,6 +218,26 @@ const faqSchema = {
     font-size: var(--text-md);
     max-width: 62ch;
     color: var(--color-muted);
+  }
+
+  /* Le portrait donne un visage à la promesse « un interlocuteur unique ». */
+  .portrait-bloc {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  .portrait {
+    flex: none;
+    border-radius: var(--radius-pill);
+    border: var(--border-heavy) solid var(--color-accent);
+  }
+
+  @media (max-width: 40em) {
+    .portrait-bloc {
+      flex-direction: column;
+      gap: var(--space-md);
+    }
   }
 
   /* 2 colonnes plutôt que 3 : 4 cartes tombent juste, sans trou. */

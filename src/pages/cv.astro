@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
+import portrait from '../assets/adrien_russo_avatar.jpg';
 import { cv } from '../data/cv';
 
 const { basics } = cv;
@@ -14,6 +16,7 @@ const personSchema = {
   description: basics.summary,
   email: `mailto:${basics.email}`,
   url: basics.url,
+  image: new URL(portrait.src, Astro.site ?? basics.url).href,
   address: {
     '@type': 'PostalAddress',
     addressLocality: basics.location.city,
@@ -41,6 +44,14 @@ const period = (start: string, end: string | null) =>
     <div class="container head-inner">
       <div class="identity">
         <p class="eyebrow">Curriculum vitæ</p>
+        <Image
+          class="portrait"
+          src={portrait}
+          alt="Adrien Russo, développeur web à Bordeaux"
+          width={112}
+          height={112}
+          loading="eager"
+        />
         <h1>{basics.name}</h1>
         <p class="role">{basics.label}</p>
         <p class="tagline">
@@ -208,6 +219,13 @@ const period = (start: string, end: string | null) =>
     letter-spacing: var(--tracking-widest);
     color: var(--color-accent);
     margin-bottom: var(--space-2xs);
+  }
+
+  /* Portrait : le filet jaune le rattache au reste du système visuel. */
+  .portrait {
+    border-radius: var(--radius-pill);
+    border: var(--border-heavy) solid var(--color-accent);
+    margin-bottom: var(--space-sm);
   }
 
   h1 {
