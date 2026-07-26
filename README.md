@@ -19,7 +19,26 @@ npm run verify   # toute la pipeline, comme la CI
 npm run cv:pdf   # regénérer le PDF du CV
 npm run og       # regénérer l'image de partage
 npm run icons    # regénérer les icônes depuis favicon.svg
+npm run shots    # regénérer les captures des démos (après `npm run build`)
 ```
+
+### Sites de démonstration
+
+`/demos/couvreur` et `/demos/electricien` présentent des entreprises
+**fictives**. Chacun a sa propre feuille de style dans `src/styles/demos/`,
+sans aucun lien avec `tokens.css` : l'intérêt est de montrer des identités
+visuelles distinctes. Ces pages portent un bandeau explicite, sont en
+`noindex, nofollow` et sont exclues du sitemap et de `robots.txt`.
+
+La page `/realisations` les présente à partir de captures versionnées dans
+`src/assets/demos/captures/`. Après avoir modifié une démo :
+
+```bash
+npm run build && npm run shots
+```
+
+Les captures sont des assets comme les autres — Astro les convertit en WebP.
+Le build n'a donc jamais besoin de lancer un navigateur.
 
 ### Icônes
 

@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 # Gabarit d'impression du CV : le PDF est servi à la place.
 Disallow: /cv-print
+# Sites de démonstration : entreprises fictives, à ne pas indexer.
+Disallow: /demos
 
 Sitemap: https://adrienrusso.fr/sitemap-index.xml

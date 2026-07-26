@@ -1,0 +1,382 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import CtaBand from '../components/CtaBand.astro';
+/* Captures produites par `npm run shots` à partir du build. */
+import couvreurDesktop from '../assets/demos/captures/couvreur-desktop.webp';
+import couvreurMobile from '../assets/demos/captures/couvreur-mobile.webp';
+import electricienDesktop from '../assets/demos/captures/electricien-desktop.webp';
+import electricienMobile from '../assets/demos/captures/electricien-mobile.webp';
+
+/* Ces sites présentent des entreprises fictives : ce sont des maquettes
+   fonctionnelles, pas des références clients. La page le dit explicitement,
+   et les démos elles-mêmes portent un bandeau et restent en noindex. */
+const demos = [
+  {
+    href: '/demos/couvreur',
+    desktop: couvreurDesktop,
+    mobile: couvreurMobile,
+    alt: 'Site de démonstration Toitures Delmas, sur ordinateur et sur téléphone',
+    metier: 'Couvreur zingueur',
+    nom: 'Toitures Delmas',
+    /* .example est réservé par l'IANA : le domaine ne peut appartenir
+       à personne, contrairement à un .fr qu'on inventerait. */
+    domaine: 'toitures-delmas.example',
+    lede: 'Un site qui met la matière en avant : grandes photos de chantiers, palette terre cuite et ardoise, typographie classique.',
+    points: [
+      'Galerie de réalisations',
+      'Zone d’intervention',
+      'Demande de devis',
+      'Certifications mises en avant',
+    ],
+  },
+  {
+    href: '/demos/electricien',
+    desktop: electricienDesktop,
+    mobile: electricienMobile,
+    alt: 'Site de démonstration Voltek, sur ordinateur et sur téléphone',
+    metier: 'Électricien',
+    nom: 'Voltek',
+    domaine: 'voltek.example',
+    lede: 'Un registre plus technique : vert profond et cuivre, mise en page géométrique, entrée directe par les prestations.',
+    points: [
+      'Prestations détaillées',
+      'Qualifications IRVE et Consuel',
+      'Formulaire qualifié',
+      'Chantiers commentés',
+    ],
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Sites de démonstration',
+  itemListElement: demos.map((d, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${d.nom} — ${d.metier}`,
+    url: `https://adrienrusso.fr${d.href}`,
+  })),
+};
+---
+
+<Layout
+  title="Réalisations — Exemples de sites pour artisans du bâtiment"
+  description="Deux sites de démonstration complets, un couvreur et un électricien, pour montrer concrètement à quoi peut ressembler votre site."
+  schema={[schema]}
+>
+  <section class="intro">
+    <div class="container">
+      <h1>À quoi peut ressembler votre site</h1>
+      <p>
+        Plutôt que de décrire, je préfère montrer. Voici deux sites complets,
+        conçus pour deux métiers du bâtiment. Vous pouvez les parcourir
+        entièrement.
+      </p>
+    </div>
+  </section>
+
+  <Section headingId="demos" title="Les démonstrations">
+    <p class="avertissement">
+      <strong>Ce sont des maquettes, pas des références clients.</strong>
+      Les entreprises présentées sont fictives : noms, coordonnées et chantiers ont
+      été inventés pour l’exercice. Le but est de montrer une mise en page, une identité
+      visuelle et un parcours de visite réels — pas de m’attribuer des clients que
+      je n’ai pas.
+    </p>
+
+    <ul class="demos">
+      {
+        demos.map((d) => (
+          <li class="demo">
+            <a
+              class="visuel"
+              href={d.href}
+              aria-label={`Voir le site ${d.nom}`}
+            >
+              <span class="ecran">
+                <span class="barre" aria-hidden="true">
+                  <span class="pastilles" />
+                  <span class="url">{d.domaine}</span>
+                </span>
+                <Image
+                  src={d.desktop}
+                  alt={d.alt}
+                  widths={[520, 1040]}
+                  sizes="(max-width: 720px) 100vw, 50vw"
+                  loading="lazy"
+                />
+              </span>
+              <span class="tel" aria-hidden="true">
+                <Image
+                  src={d.mobile}
+                  alt=""
+                  widths={[150, 300]}
+                  loading="lazy"
+                />
+              </span>
+            </a>
+            <div class="corps">
+              <p class="metier">{d.metier}</p>
+              <h3>
+                <a href={d.href}>{d.nom}</a>
+              </h3>
+              <p class="lede">{d.lede}</p>
+              <ul class="points">
+                {d.points.map((p) => (
+                  <li>{p}</li>
+                ))}
+              </ul>
+              <a class="btn btn-solid" href={d.href}>
+                Voir le site
+              </a>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+
+  <Section headingId="lecture" title="Ce qu'il faut y regarder" raised>
+    <div class="notes">
+      <p class="note">
+        Les deux sites n’ont pas une ligne de style en commun. C’est volontaire
+        : votre site doit ressembler à votre entreprise, pas à un gabarit
+        reconnu d’un client à l’autre.
+      </p>
+      <p class="note">
+        Ce qui se retrouve en revanche dans les deux, c’est la structure — on
+        comprend en quelques secondes le métier, la zone couverte, les
+        garanties, et comment demander un devis.
+      </p>
+      <p class="note">
+        Regardez-les aussi sur votre téléphone : c’est là que la majorité de vos
+        futurs clients vous découvriront.
+      </p>
+    </div>
+  </Section>
+
+  <CtaBand
+    title="Vous vous projetez sur l'un des deux ?"
+    text="Parlons de votre métier et de ce que votre site doit raconter."
+  />
+</Layout>
+
+<style>
+  /* En-tête en aplat marine, comme les autres pages. */
+  .intro {
+    background: var(--color-inverse);
+    color: var(--color-on-inverse);
+    padding-block: var(--space-2xl);
+  }
+
+  .intro h1 {
+    font-size: var(--text-3xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tighter);
+    max-width: 18ch;
+    border-left: var(--rule-height) solid var(--color-accent);
+    padding-left: var(--space-md);
+  }
+
+  .intro p {
+    margin-top: var(--space-md);
+    font-size: var(--text-md);
+    opacity: 0.82;
+    max-width: 60ch;
+    padding-left: calc(var(--rule-height) + var(--space-md));
+  }
+
+  /* Le caractère fictif des démos doit se lire avant les visuels. */
+  .avertissement {
+    border-left: var(--rule-height) solid var(--color-accent);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-surface-raised);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    max-width: var(--measure);
+  }
+
+  .avertissement strong {
+    display: block;
+    color: var(--color-ink);
+    margin-bottom: var(--space-3xs);
+  }
+
+  .demos {
+    display: grid;
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+  }
+
+  .demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+    border-top: var(--border-heavy) solid var(--color-ink);
+    padding-top: var(--space-md);
+  }
+
+  /* Mockup : fenêtre de navigateur, avec le rendu mobile en médaillon.
+     Le cadre est en CSS et non dans l'image — les captures restent des
+     PNG bruts, régénérables par `npm run shots`. */
+  .visuel {
+    display: block;
+    position: relative;
+    padding-bottom: var(--space-lg);
+  }
+
+  .ecran {
+    display: block;
+    border: var(--border-thin) solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--color-bg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .barre {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    padding: var(--space-3xs) var(--space-2xs);
+    background: var(--color-surface-raised);
+    border-bottom: var(--border-thin) solid var(--color-border);
+  }
+
+  /* Les trois pastilles d'une fenêtre : suffisant pour lire « navigateur ». */
+  .pastilles {
+    flex: none;
+    width: calc(var(--space-xs) * 2.5);
+    height: var(--space-2xs);
+    background:
+      radial-gradient(
+        circle at 15% 50%,
+        var(--color-border) 42%,
+        transparent 44%
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        var(--color-border) 42%,
+        transparent 44%
+      ),
+      radial-gradient(
+        circle at 85% 50%,
+        var(--color-border) 42%,
+        transparent 44%
+      );
+  }
+
+  .url {
+    flex: 1;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    background: var(--color-bg);
+    border-radius: var(--radius-pill);
+    padding: 0 var(--space-2xs);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  /* La capture desktop est en pleine page : on ne montre que le haut,
+     dans un format proche d'une fenêtre de navigateur. */
+  .ecran img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .tel {
+    position: absolute;
+    right: var(--space-md);
+    bottom: 0;
+    width: 22%;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-bg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .tel img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .metier {
+    font-family: var(--font-display);
+    font-weight: var(--weight-extrabold);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-accent-ink);
+  }
+
+  .demo h3 {
+    margin-top: var(--space-3xs);
+    font-size: var(--text-xl);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .demo h3 a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .demo h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .demo .lede {
+    margin-top: var(--space-2xs);
+    color: var(--color-muted);
+  }
+
+  .points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+    margin-top: var(--space-sm);
+  }
+
+  .points li {
+    background: var(--color-surface-raised);
+    border: var(--border-thin) solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: var(--space-3xs) var(--space-xs);
+    font-size: var(--text-xs);
+  }
+
+  .demo .btn {
+    margin-top: var(--space-sm);
+  }
+
+  /* Deux colonnes : sur une pleine largeur, un seul bloc bridé à 62ch
+     laisserait la moitié droite vide. */
+  .notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28ch, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .note {
+    color: var(--color-muted);
+    max-width: 52ch;
+  }
+
+  @media (max-width: 720px) {
+    .demo {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+  }
+</style>
