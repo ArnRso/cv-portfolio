@@ -11,7 +11,7 @@ const prestations = [
     includes: [
       'Galerie de chantiers (avant/après)',
       'Demande de devis en ligne',
-      'Mise en avant des certifications (RGE, Qualibat, garantie décennale)',
+      'Certifications (RGE, Qualibat, décennale)',
       "Bouton d'appel direct",
       "Zone d'intervention",
       'Version mobile',
@@ -29,7 +29,7 @@ const prestations = [
       'Passage au mobile',
       'Correction des erreurs qui bloquent Google',
       'Mise en HTTPS et sécurisation',
-      'Redirections pour ne rien perdre du référencement acquis',
+      'Redirections, sans perte de référencement',
     ],
     forWho:
       "Entreprises dont le site date de plus de cinq ans, s'affiche mal sur téléphone ou n'apparaît plus dans les résultats de recherche.",
@@ -56,8 +56,8 @@ const prestations = [
       'Suivi de chantiers et planning des équipes',
       'Devis et factures',
       'Espace client pour suivre l’avancement',
-      'Gestion des documents (photos, plans, PV de réception)',
-      'Accès depuis le chantier, sur téléphone ou tablette',
+      'Documents : photos, plans, PV de réception',
+      'Accès mobile depuis le chantier',
       'Sauvegardes et hébergement sécurisé',
     ],
     forWho:
@@ -173,7 +173,7 @@ const serviceSchema = {
               {p.includes.length > 0 && (
                 <>
                   <p class="label">Comprend</p>
-                  <ul class="tags">
+                  <ul class="tags taglist">
                     {p.includes.map((item) => (
                       <li>{item}</li>
                     ))}
@@ -324,20 +324,9 @@ const serviceSchema = {
     color: var(--color-ink);
   }
 
+  /* Mise en forme dans .taglist (base.css). */
   .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2xs);
     margin-top: var(--space-2xs);
-  }
-
-  .tags li {
-    background: var(--color-surface-raised);
-    border: var(--border-thin) solid var(--color-border);
-    border-radius: var(--radius-pill);
-    padding: var(--space-3xs) var(--space-xs);
-    font-size: var(--text-xs);
-    color: var(--color-ink);
   }
 
   .forwho {

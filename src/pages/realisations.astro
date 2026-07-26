@@ -137,7 +137,7 @@ const schema = {
                 <a href={d.href}>{d.nom}</a>
               </h3>
               <p class="lede">{d.lede}</p>
-              <ul class="points">
+              <ul class="points taglist">
                 {d.points.map((p) => (
                   <li>{p}</li>
                 ))}
@@ -340,19 +340,9 @@ const schema = {
     color: var(--color-muted);
   }
 
+  /* Mise en forme dans .taglist (base.css). */
   .points {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2xs);
     margin-top: var(--space-sm);
-  }
-
-  .points li {
-    background: var(--color-surface-raised);
-    border: var(--border-thin) solid var(--color-border);
-    border-radius: var(--radius-pill);
-    padding: var(--space-3xs) var(--space-xs);
-    font-size: var(--text-xs);
   }
 
   .demo .btn {
