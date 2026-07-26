@@ -11,15 +11,16 @@ import electricienMobile from '../assets/demos/captures/electricien-mobile.webp'
 import menuisierDesktop from '../assets/demos/captures/menuisier-desktop.webp';
 import menuisierMobile from '../assets/demos/captures/menuisier-mobile.webp';
 
-/* Ces sites présentent des entreprises fictives : ce sont des maquettes
-   fonctionnelles, pas des références clients. La page le dit explicitement,
-   et les démos elles-mêmes portent un bandeau et restent en noindex. */
+/* Ces sites présentent des entreprises fictives. Le cadre est posé par le
+   bandeau de chaque démo et par son pied de page ; inutile d'en faire un
+   sujet ici, où l'enjeu est de montrer le travail. Les démos restent en
+   noindex et hors sitemap. */
 const demos = [
   {
     href: '/demos/couvreur',
     desktop: couvreurDesktop,
     mobile: couvreurMobile,
-    alt: 'Site de démonstration Toitures Delmas, sur ordinateur et sur téléphone',
+    alt: 'Site Toitures Delmas, sur ordinateur et sur téléphone',
     metier: 'Couvreur zingueur',
     nom: 'Toitures Delmas',
     /* .example est réservé par l'IANA : le domaine ne peut appartenir
@@ -37,7 +38,7 @@ const demos = [
     href: '/demos/electricien',
     desktop: electricienDesktop,
     mobile: electricienMobile,
-    alt: 'Site de démonstration Voltek, sur ordinateur et sur téléphone',
+    alt: 'Site Voltek, sur ordinateur et sur téléphone',
     metier: 'Électricien',
     nom: 'Voltek',
     domaine: 'voltek.example',
@@ -53,7 +54,7 @@ const demos = [
     href: '/demos/menuisier',
     desktop: menuisierDesktop,
     mobile: menuisierMobile,
-    alt: 'Site de démonstration Atelier Lascaze, sur ordinateur et sur téléphone',
+    alt: 'Site Atelier Lascaze, sur ordinateur et sur téléphone',
     metier: 'Menuisier',
     nom: 'Atelier Lascaze',
     domaine: 'atelier-lascaze.example',
@@ -82,7 +83,7 @@ const schema = {
 
 <Layout
   title="Réalisations — Exemples de sites pour artisans du bâtiment"
-  description="Trois sites de démonstration complets, un couvreur, un électricien et un menuisier, pour montrer concrètement à quoi peut ressembler votre site."
+  description="Trois sites complets conçus pour un couvreur, un électricien et un menuisier, pour montrer concrètement à quoi peut ressembler votre site."
   schema={[schema]}
 >
   <section class="intro">
@@ -96,15 +97,7 @@ const schema = {
     </div>
   </section>
 
-  <Section headingId="demos" title="Les démonstrations">
-    <p class="avertissement">
-      <strong>Ce sont des maquettes, pas des références clients.</strong>
-      Les entreprises présentées sont fictives : noms, coordonnées et chantiers ont
-      été inventés pour l’exercice. Le but est de montrer une mise en page, une identité
-      visuelle et un parcours de visite réels — pas de m’attribuer des clients que
-      je n’ai pas.
-    </p>
-
+  <Section headingId="demos" title="Trois métiers, trois sites">
     <ul class="demos">
       {
         demos.map((d) => (
@@ -209,26 +202,9 @@ const schema = {
     padding-left: calc(var(--rule-height) + var(--space-md));
   }
 
-  /* Le caractère fictif des démos doit se lire avant les visuels. */
-  .avertissement {
-    border-left: var(--rule-height) solid var(--color-accent);
-    padding: var(--space-sm) var(--space-md);
-    background: var(--color-surface-raised);
-    color: var(--color-muted);
-    font-size: var(--text-sm);
-    max-width: var(--measure);
-  }
-
-  .avertissement strong {
-    display: block;
-    color: var(--color-ink);
-    margin-bottom: var(--space-3xs);
-  }
-
   .demos {
     display: grid;
     gap: var(--space-xl);
-    margin-top: var(--space-lg);
   }
 
   .demo {
