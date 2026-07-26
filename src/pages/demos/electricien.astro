@@ -307,9 +307,8 @@ const secteurs = [
           </a>
         </div>
 
-        <form
-          onsubmit="event.preventDefault(); alert('Démonstration — le formulaire n’envoie rien.');"
-        >
+        {/* La soumission est interceptée par DemoLayout. */}
+        <form>
           <p class="champ">
             <label for="nom">Nom</label>
             <input id="nom" type="text" required />
