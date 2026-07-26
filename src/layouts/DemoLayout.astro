@@ -41,13 +41,51 @@ const retour = `/realisations#${slug}`;
   <body>
     <div class="demo-bandeau">
       <p>
-        <strong>Démonstration</strong> — {entreprise} est une entreprise fictive,
-        créée pour illustrer mon travail.
+        <strong>Démonstration</strong> — {entreprise} est une entreprise fictive.
       </p>
       <a href={retour}>← Retour aux réalisations</a>
     </div>
 
     <slot />
+
+    {
+      /*
+      Retour de soumission des formulaires. Plutôt qu'un alert() qui casse
+      l'immersion, on montre au visiteur ce que son propre site lui
+      apporterait — le bandeau se charge déjà de dire que c'est une démo.
+    */
+    }
+    <dialog class="demo-modale" aria-labelledby="demo-modale-titre">
+      <div class="demo-modale-boite">
+        <p class="demo-modale-eyebrow">Nouvelle demande de devis</p>
+        <h2 id="demo-modale-titre">
+          Si c'était votre site, ce mail serait pour vous.
+        </h2>
+        <p class="demo-modale-texte">
+          Une demande de devis vient d'arriver. Sur votre site, elle tomberait
+          dans votre boîte mail en quelques secondes — nom, téléphone, commune
+          et détail du chantier. Vous rappelez, vous décrochez le devis.
+        </p>
+
+        <p class="demo-modale-actions">
+          <a class="demo-modale-cta" href="/contact">Je veux ce site</a>
+          <button class="demo-modale-lien" type="button" data-fermer
+            >Continuer la visite</button
+          >
+        </p>
+
+        {
+          /* En dernier dans le DOM : le focus initial doit se poser sur
+            l'action utile, pas sur la croix de fermeture. */
+        }
+        <button
+          class="demo-modale-fermer"
+          type="button"
+          data-fermer
+          aria-label="Fermer">×</button
+        >
+      </div>
+    </dialog>
 
     <script>
       /* Publie la hauteur réelle du bandeau : une démo à navigation fixe doit
@@ -65,6 +103,31 @@ const retour = `/realisations#${slug}`;
         mesurer();
         new ResizeObserver(mesurer).observe(bandeau);
       }
+
+      /* Les formulaires des démos ne mènent nulle part : on intercepte la
+         soumission et on ouvre le dialogue à la place. showModal() apporte
+         déjà le piège à focus, la fermeture par Échap et l'inertie du fond. */
+      const modale = document.querySelector<HTMLDialogElement>('.demo-modale');
+
+      if (modale) {
+        for (const form of document.querySelectorAll('form')) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            modale.showModal();
+            form.reset();
+          });
+        }
+
+        for (const bouton of modale.querySelectorAll('[data-fermer]')) {
+          bouton.addEventListener('click', () => modale.close());
+        }
+
+        /* Clic sur le fond : tout le contenu vit dans .demo-modale-boite,
+           donc un clic dont la cible est le <dialog> vient de l'extérieur. */
+        modale.addEventListener('click', (e) => {
+          if (e.target === modale) modale.close();
+        });
+      }
     </script>
 
     <footer class="demo-pied">
@@ -74,8 +137,7 @@ const retour = `/realisations#${slug}`;
         <a href="/">Adrien Russo</a>, développeur web à Bordeaux.
       </p>
       <p class="demo-pied-note">
-        Aucune des informations de cette page ne correspond à une entreprise
-        réelle. Photographies libres de droits.
+        Entreprise, coordonnées et chantiers fictifs.
       </p>
       <p class="demo-pied-liens">
         <a href={retour}>← Retour aux réalisations</a>
@@ -193,6 +255,147 @@ const retour = `/realisations#${slug}`;
         font-weight: 700;
         border-radius: 100px;
         text-decoration: none;
+      }
+
+      /* ---- Modale de soumission --------------------------------------
+         Elle emprunte l'identité de la démo qui l'accueille : chaque
+         feuille de style redéfinit --modale-*. Les valeurs ci-dessous ne
+         servent que de repli. */
+      .demo-modale {
+        --modale-accent: #1a1a1a;
+        --modale-sur-accent: #fff;
+        --modale-encre: #1a1a1a;
+        --modale-rayon: 4px;
+
+        margin: auto;
+        padding: 0;
+        border: 0;
+        max-width: 30rem;
+        width: calc(100% - 32px);
+        background: transparent;
+        color: var(--modale-encre);
+      }
+
+      .demo-modale::backdrop {
+        background: rgb(0 0 0 / 0.62);
+        backdrop-filter: blur(3px);
+      }
+
+      .demo-modale-boite {
+        position: relative;
+        padding: 40px 36px 30px;
+        background: #fff;
+        border-radius: var(--modale-rayon);
+        box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.45);
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        text-align: left;
+      }
+
+      /* L'apparition confirme l'action sans faire attendre. */
+      .demo-modale[open] .demo-modale-boite {
+        animation: demo-modale-entree 0.28s cubic-bezier(0.2, 0.9, 0.3, 1);
+      }
+
+      @keyframes demo-modale-entree {
+        from {
+          opacity: 0;
+          transform: translateY(12px) scale(0.98);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .demo-modale[open] .demo-modale-boite {
+          animation: none;
+        }
+      }
+
+      .demo-modale-fermer {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: 0;
+        background: transparent;
+        color: #9aa0a6;
+        font-size: 26px;
+        line-height: 1;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .demo-modale-fermer:hover {
+        background: #f1f1f1;
+        color: var(--modale-encre);
+      }
+
+      .demo-modale-eyebrow {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--modale-accent);
+        margin-bottom: 12px;
+      }
+
+      .demo-modale h2 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: var(--modale-encre);
+      }
+
+      .demo-modale-texte {
+        margin-top: 12px;
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: #5f6570;
+      }
+
+      .demo-modale-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+        margin-top: 26px;
+      }
+
+      .demo-modale-cta {
+        display: inline-block;
+        padding: 13px 24px;
+        background: var(--modale-accent);
+        color: var(--modale-sur-accent);
+        border-radius: var(--modale-rayon);
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .demo-modale-cta:hover {
+        filter: brightness(1.12);
+      }
+
+      .demo-modale-lien {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        font: inherit;
+        font-size: 14px;
+        color: #5f6570;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        cursor: pointer;
+      }
+
+      .demo-modale-lien:hover {
+        color: var(--modale-encre);
       }
     </style>
   </body>

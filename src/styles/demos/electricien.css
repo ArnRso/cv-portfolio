@@ -34,6 +34,14 @@
   padding: 0;
 }
 
+/* La modale du gabarit emprunte l'identité de la démo. */
+.demo-modale {
+  --modale-accent: #b87333;
+  --modale-sur-accent: #fff;
+  --modale-encre: #0b3d2e;
+  --modale-rayon: 2px;
+}
+
 .dm-elec img {
   display: block;
   max-width: 100%;
