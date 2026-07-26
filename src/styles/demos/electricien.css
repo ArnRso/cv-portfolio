@@ -286,13 +286,23 @@
   margin-bottom: 48px;
 }
 
-/* Le numéro de section reprend la numérotation du rail. */
+/* Le numéro reprend celui du rail, et c'est désormais le seul compteur de
+   la page : il doit se lire franchement, avec le filet qui le rattache
+   visuellement au titre. */
 .dm-elec .tete .no {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
   color: var(--cuivre);
-  padding-top: 10px;
+  padding-top: 4px;
+  padding-right: 28px;
+  border-right: 1px solid var(--gris-clair);
+}
+
+.dm-elec .fond-vert .tete .no {
+  color: var(--cuivre-clair);
+  border-right-color: rgb(255 255 255 / 0.22);
 }
 
 .dm-elec .tete h2 {
@@ -351,16 +361,8 @@
   color: var(--vert-clair);
 }
 
-.dm-elec .accordeon .rang {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--cuivre);
-  flex: none;
-}
-
 .dm-elec .accordeon .contenu {
-  padding: 0 0 30px 52px;
+  padding: 0 0 30px;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 40px;
@@ -525,14 +527,27 @@
   background: var(--creme);
 }
 
+/* Même grille numéro + titre que les autres sections, avec le téléphone
+   en troisième colonne. */
 .dm-elec .contact-tete {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr auto;
   gap: 32px;
   align-items: end;
   padding-bottom: 32px;
   border-bottom: 2px solid var(--vert);
   margin-bottom: 40px;
+}
+
+.dm-elec .contact-tete .no {
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--cuivre);
+  padding-right: 28px;
+  border-right: 1px solid var(--gris-clair);
+  align-self: start;
 }
 
 .dm-elec .contact-tete h2 {
@@ -646,8 +661,13 @@
   }
 
   .dm-elec .contact-tete {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr;
     align-items: start;
+  }
+
+  /* Le téléphone passe sous le titre, aligné avec lui. */
+  .dm-elec .contact-tete .contact-tel {
+    grid-column: 2;
   }
 
   .dm-elec .contact-tel {
@@ -700,9 +720,5 @@
 
   .dm-elec .hero {
     min-height: 74vh;
-  }
-
-  .dm-elec .accordeon .contenu {
-    padding-left: 0;
   }
 }
