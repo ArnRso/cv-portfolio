@@ -178,7 +178,7 @@ const faqSchema = {
       Gironde : Bordeaux Métropole (Mérignac, Pessac, Talence, Bègles…), le
       Bassin d'Arcachon, le Libournais, le Médoc et au-delà.
     </p>
-    <ul class="villes">
+    <ul class="villes taglist taglist-court">
       {
         [
           'Bordeaux',
@@ -186,9 +186,11 @@ const faqSchema = {
           'Pessac',
           'Talence',
           'Bègles',
+          'Villenave-d’Ornon',
+          'Saint-Médard-en-Jalles',
+          'Le Bouscat',
           'Libourne',
           'Arcachon',
-          'Le Médoc',
         ].map((ville) => <li>{ville}</li>)
       }
     </ul>
@@ -335,20 +337,10 @@ const faqSchema = {
     font-size: var(--text-sm);
   }
 
+  /* Mise en forme dans .taglist (base.css) ; ne reste ici que l'espacement
+     propre à cette section. */
   .villes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2xs);
     margin-top: var(--space-md);
-  }
-
-  .villes li {
-    border: var(--border-thin) solid var(--color-border);
-    background: var(--color-surface);
-    border-radius: var(--radius-pill);
-    padding: var(--space-3xs) var(--space-xs);
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
   }
 
   .faq {

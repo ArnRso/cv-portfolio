@@ -155,6 +155,68 @@ p {
   transform: none;
 }
 
+/* Listes d'attributs : prestations comprises, communes desservies, points
+   d'une réalisation. En pastille, elles se confondaient avec les boutons et
+   invitaient au clic ; la puce carrée les rend à leur statut de liste.
+
+   `columns` plutôt qu'une grille : le remplissage se fait colonne par
+   colonne, ce qui préserve la lecture verticale, et le nombre de colonnes
+   s'ajuste seul à la largeur disponible. Pas de max-width : elle brimerait
+   ce découpage et la liste s'étirerait en hauteur. */
+.taglist {
+  columns: var(--taglist-col, 11rem) var(--taglist-max, 3);
+  column-gap: var(--space-lg);
+}
+
+.taglist li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2xs);
+  padding-block: 3px;
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  /* Une entrée ne doit jamais être coupée entre deux colonnes. */
+  break-inside: avoid;
+}
+
+.taglist li::before {
+  content: '';
+  flex: none;
+  width: 7px;
+  height: 7px;
+  background: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* Listes à libellés courts (communes) : le navigateur équilibre les hauteurs
+   et s'arrêterait à quatre colonnes. On impose le compte pour resserrer le
+   bloc — `columns` en entier, sinon la règle raccourcie de .taglist gagne. */
+/* Listes à libellés courts (communes). `columns` équilibre les hauteurs et
+   refuserait une cinquième colonne à moitié vide ; la grille, elle, respecte
+   le compte demandé. Le remplissage devient horizontal, sans conséquence sur
+   une liste de noms sans ordre. */
+/* Listes à libellés courts (communes) : cinq colonnes fixes, pour que dix
+   entrées forment deux lignes pleines. La grille est nécessaire ici, `columns`
+   équilibrant les hauteurs au lieu de respecter le compte demandé. */
+.taglist-court {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 var(--space-md);
+}
+
+@media (max-width: 68rem) {
+  .taglist-court {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 40rem) {
+  .taglist-court {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Le 1px est ici une constante de la technique de masquage accessible
    (un 0 retirerait l'élément des lecteurs d'écran), pas un choix de design. */
 .visually-hidden {
