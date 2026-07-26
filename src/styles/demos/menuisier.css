@@ -1,0 +1,530 @@
+/*
+ * Démo « Atelier Lascaze » — menuisier.
+ *
+ * Troisième structure, distincte des deux autres : pas de hero photo mais une
+ * ouverture typographique, une mosaïque asymétrique en guise de galerie, et un
+ * parcours en deux colonnes texte/image. Registre éditorial, beaucoup de blanc.
+ *
+ * Aucun lien avec tokens.css : cette démo a sa propre identité.
+ */
+
+.dm-menu {
+  --chene: #c8a06a;
+  --chene-fonce: #a67c45;
+  --noir: #1c1a17;
+  --noir-doux: #3a3631;
+  --papier: #faf8f5;
+  --gris: #7d766c;
+  --gris-clair: #e6e1d8;
+  --blanc: #fff;
+  --serif: 'Bricolage Grotesque Variable', 'Georgia', serif;
+  --sans: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+
+  font-family: var(--sans);
+  color: var(--noir);
+  line-height: 1.65;
+  background: var(--blanc);
+}
+
+.dm-menu * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dm-menu img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.dm-menu ul,
+.dm-menu ol {
+  list-style: none;
+}
+
+.dm-menu .wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 56px);
+}
+
+/* ---- Navigation : haute, aérée, sans fond ------------------------- */
+.dm-menu .nav {
+  border-bottom: 1px solid var(--gris-clair);
+}
+
+.dm-menu .nav-in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding-block: clamp(20px, 3vw, 34px);
+}
+
+.dm-menu .logo {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.dm-menu .logo small {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gris);
+}
+
+.dm-menu .nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 30px;
+  font-size: 14px;
+}
+
+.dm-menu .nav a {
+  color: var(--noir);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.dm-menu .nav a:hover {
+  border-bottom-color: var(--chene);
+}
+
+/* ---- Ouverture typographique, sans photo -------------------------- */
+.dm-menu .ouverture {
+  padding-block: clamp(56px, 9vw, 128px);
+}
+
+.dm-menu .ouverture h1 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5.6vw, 72px);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  max-width: 24ch;
+}
+
+.dm-menu .ouverture h1 em {
+  font-style: italic;
+  color: var(--chene-fonce);
+}
+
+.dm-menu .ouverture-bas {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px 56px;
+  align-items: end;
+  margin-top: clamp(32px, 4vw, 56px);
+  padding-top: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--gris-clair);
+}
+
+.dm-menu .ouverture-bas p {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: var(--gris);
+  max-width: 52ch;
+}
+
+.dm-menu .btn {
+  display: inline-block;
+  padding: 15px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid var(--noir);
+}
+
+.dm-menu .btn-plein {
+  background: var(--noir);
+  color: var(--blanc);
+}
+
+.dm-menu .btn-plein:hover {
+  background: var(--noir-doux);
+  border-color: var(--noir-doux);
+}
+
+/* ---- Mosaïque asymétrique ----------------------------------------- */
+/* Rangées de hauteur fixe : les cellules qui s'étendent sur deux rangées
+   obtiennent ainsi une vraie double hauteur, au lieu d'écraser leur voisine.
+   `dense` comble les trous laissés par les cellules doubles. */
+.dm-menu .mosaique {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: clamp(160px, 19vw, 250px);
+  grid-auto-flow: dense;
+  gap: clamp(12px, 1.4vw, 20px);
+}
+
+.dm-menu .mosaique figure {
+  position: relative;
+  overflow: hidden;
+  background: var(--papier);
+}
+
+.dm-menu .mosaique img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dm-menu .mosaique figure:hover img {
+  transform: scale(1.03);
+}
+
+/* Le portrait de l'atelier occupe deux rangées, la verrière deux colonnes :
+   c'est cette irrégularité qui distingue la mosaïque d'une grille. */
+.dm-menu .mosaique .haute {
+  grid-row: span 2;
+}
+
+/* Pleine largeur sur deux rangées : en fin de mosaïque, une bande de deux
+   colonnes sur trois laisserait un vide à sa droite, et une seule rangée
+   écraserait une image en paysage. */
+.dm-menu .mosaique .large {
+  grid-column: 1 / -1;
+  grid-row: span 2;
+}
+
+.dm-menu .mosaique figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 28px 20px 16px;
+  background: linear-gradient(transparent, rgb(28 26 23 / 0.82));
+  color: var(--blanc);
+  font-size: 13px;
+}
+
+.dm-menu .mosaique figcaption strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+/* ---- Sections ------------------------------------------------------ */
+.dm-menu section {
+  padding-block: clamp(56px, 8vw, 112px);
+}
+
+.dm-menu .surtitre {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--chene-fonce);
+  margin-bottom: 14px;
+}
+
+.dm-menu .titre {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.6vw, 46px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  max-width: 26ch;
+}
+
+.dm-menu .intro {
+  margin-top: 18px;
+  max-width: 58ch;
+  color: var(--gris);
+}
+
+/* ---- Savoir-faire : liste numérotée en deux colonnes -------------- */
+.dm-menu .fond-papier {
+  background: var(--papier);
+}
+
+.dm-menu .savoirs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(28px, 3.4vw, 56px);
+  margin-top: clamp(36px, 4vw, 60px);
+}
+
+.dm-menu .savoir {
+  padding-top: 20px;
+  border-top: 2px solid var(--noir);
+}
+
+.dm-menu .savoir h3 {
+  font-family: var(--serif);
+  font-size: clamp(19px, 1.9vw, 24px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.dm-menu .savoir p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--gris);
+}
+
+.dm-menu .savoir ul {
+  margin-top: 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.dm-menu .savoir li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14px;
+}
+
+.dm-menu .savoir li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 1px;
+  background: var(--chene-fonce);
+}
+
+/* ---- Le bois : deux colonnes texte / image ------------------------ */
+.dm-menu .duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 88px);
+  align-items: center;
+}
+
+.dm-menu .duo-img {
+  overflow: hidden;
+  background: var(--papier);
+}
+
+.dm-menu .duo-img img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.dm-menu .essences {
+  display: grid;
+  gap: 0;
+  margin-top: 28px;
+}
+
+.dm-menu .essences > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding-block: 13px;
+  border-bottom: 1px solid var(--gris-clair);
+}
+
+.dm-menu .essences dt {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.dm-menu .essences dd {
+  font-size: 14px;
+  color: var(--gris);
+  text-align: right;
+}
+
+/* ---- Étapes : frise horizontale ---------------------------------- */
+.dm-menu .frise {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: clamp(24px, 2.6vw, 40px);
+  margin-top: clamp(36px, 4vw, 60px);
+  counter-reset: etape;
+}
+
+.dm-menu .frise li {
+  counter-increment: etape;
+  padding-top: 22px;
+  border-top: 1px solid var(--gris-clair);
+}
+
+.dm-menu .frise li::before {
+  content: counter(etape, decimal-leading-zero);
+  display: block;
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--chene);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.dm-menu .frise h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.dm-menu .frise p {
+  font-size: 14px;
+  color: var(--gris);
+}
+
+/* ---- Contact : aplat noir ---------------------------------------- */
+.dm-menu .fond-noir {
+  background: var(--noir);
+  color: var(--blanc);
+}
+
+.dm-menu .fond-noir .titre {
+  color: var(--blanc);
+}
+
+.dm-menu .fond-noir .surtitre {
+  color: var(--chene);
+}
+
+.dm-menu .fond-noir .intro {
+  color: rgb(255 255 255 / 0.72);
+}
+
+.dm-menu .contact-grille {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(32px, 5vw, 80px);
+  margin-top: clamp(36px, 4vw, 56px);
+}
+
+.dm-menu .coord {
+  display: grid;
+  gap: 0;
+  align-content: start;
+}
+
+.dm-menu .coord > div {
+  padding-block: 15px;
+  border-bottom: 1px solid rgb(255 255 255 / 0.16);
+}
+
+.dm-menu .coord dt {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--chene);
+  margin-bottom: 5px;
+}
+
+.dm-menu .coord dd {
+  font-size: 15px;
+}
+
+.dm-menu form {
+  display: grid;
+  gap: 18px;
+}
+
+.dm-menu .champ {
+  display: grid;
+  gap: 7px;
+}
+
+.dm-menu .duo-champ {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.dm-menu label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.62);
+}
+
+.dm-menu input,
+.dm-menu select,
+.dm-menu textarea {
+  width: 100%;
+  padding: 13px 0;
+  border: 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.28);
+  background: transparent;
+  color: var(--blanc);
+  font: inherit;
+}
+
+.dm-menu select option {
+  color: var(--noir);
+}
+
+.dm-menu input:focus,
+.dm-menu select:focus,
+.dm-menu textarea:focus {
+  outline: 0;
+  border-bottom-color: var(--chene);
+}
+
+.dm-menu form button {
+  justify-self: start;
+  margin-top: 8px;
+  padding: 15px 34px;
+  background: var(--chene);
+  color: var(--noir);
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dm-menu form button:hover {
+  background: var(--chene-fonce);
+  color: var(--blanc);
+}
+
+/* ---- Adaptations -------------------------------------------------- */
+@media (max-width: 900px) {
+  .dm-menu .duo,
+  .dm-menu .contact-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .dm-menu .ouverture-bas {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+/* La mosaïque perd son irrégularité en dessous de trois colonnes : les
+   `span` produiraient des trous. */
+@media (max-width: 700px) {
+  .dm-menu .mosaique {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dm-menu .mosaique .haute,
+  .dm-menu .mosaique .large {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .dm-menu .mosaique img {
+    aspect-ratio: 1;
+  }
+
+  .dm-menu .duo-champ {
+    grid-template-columns: 1fr;
+  }
+}

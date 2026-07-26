@@ -50,6 +50,7 @@ const STEPS = [
       'dist/realisations/index.html',
       'dist/demos/couvreur/index.html',
       'dist/demos/electricien/index.html',
+      'dist/demos/menuisier/index.html',
       'dist/cv/index.html',
       'dist/contact/index.html',
       'dist/mentions-legales/index.html',
