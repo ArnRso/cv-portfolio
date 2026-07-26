@@ -10,6 +10,11 @@
  * l'intérêt de l'exercice est de montrer des identités visuelles distinctes.
  */
 import '@fontsource-variable/inter';
+import '@fontsource-variable/archivo';
+/* Uniquement pour la modale de soumission, qui parle en mon nom et porte
+   donc mon identité. Ce fichier ne déclare que des variables : il n'impose
+   rien au style des démos. */
+import '../styles/tokens.css';
 
 interface Props {
   title: string;
@@ -39,11 +44,15 @@ const retour = `/realisations#${slug}`;
     <slot name="head" />
   </head>
   <body>
+    {
+      /* Le retour d'abord — c'est la sortie de la démo, et il vient donc en
+        premier au clavier comme à l'écran. */
+    }
     <div class="demo-bandeau">
+      <a class="demo-bandeau-retour" href={retour}>← Retour aux réalisations</a>
       <p>
         <strong>Démonstration</strong> — {entreprise} est une entreprise fictive.
       </p>
-      <a href={retour}>← Retour aux réalisations</a>
     </div>
 
     <slot />
@@ -149,7 +158,7 @@ const retour = `/realisations#${slug}`;
 
     <style is:global>
       /* Ces pages n'utilisent pas base.css : sans cette remise à zéro, la
-         marge par défaut du navigateur cerne la démo d'un liseré blanc. */
+         marge par défaut du navigateur cerne la page d'un liseré blanc. */
       body {
         margin: 0;
       }
@@ -180,11 +189,13 @@ const retour = `/realisations#${slug}`;
         /* Au-dessus du contenu de la démo, mais une démo à navigation fixe
            doit pouvoir se placer dessous : voir --demo-bandeau-h. */
         z-index: 999;
+        /* Mention et bouton forment un seul groupe centré : séparés aux deux
+           bouts, l'œil doit faire deux arrêts pour lire le bandeau. */
         display: flex;
         flex-wrap: wrap;
-        gap: 8px 20px;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        gap: 8px 16px;
         padding: 10px 20px;
         background: #1a1a1a;
         color: #fff;
@@ -194,6 +205,9 @@ const retour = `/realisations#${slug}`;
           sans-serif;
         font-size: 13px;
         line-height: 1.4;
+      }
+
+      .demo-bandeau p {
         text-align: center;
       }
 
@@ -206,6 +220,31 @@ const retour = `/realisations#${slug}`;
         text-decoration: underline;
         text-underline-offset: 3px;
         white-space: nowrap;
+      }
+
+      /* Le retour se lit comme un bouton : au bord d'un bandeau sombre, un
+         lien souligné passe inaperçu. */
+      .demo-bandeau-retour {
+        flex: none;
+        padding: 5px 12px;
+        border: 1px solid rgb(255 255 255 / 0.4);
+        border-radius: var(--radius-pill);
+        text-decoration: none !important;
+        font-weight: 600;
+      }
+
+      .demo-bandeau-retour:hover {
+        background: #fff;
+        color: #1a1a1a;
+        border-color: #fff;
+      }
+
+      /* Trop étroit pour une rangée : la mention passe au-dessus, elle pose
+         le cadre, et le bouton se centre dessous. */
+      @media (max-width: 620px) {
+        .demo-bandeau p {
+          order: -1;
+        }
       }
 
       .demo-pied {
@@ -258,45 +297,37 @@ const retour = `/realisations#${slug}`;
       }
 
       /* ---- Modale de soumission --------------------------------------
-         Elle emprunte l'identité de la démo qui l'accueille : chaque
-         feuille de style redéfinit --modale-*. Les valeurs ci-dessous ne
-         servent que de repli. */
+         C'est moi qui m'adresse au visiteur, pas l'entreprise fictive :
+         elle porte donc mon identité, la même sur toutes les démos. */
       .demo-modale {
-        --modale-accent: #1a1a1a;
-        --modale-sur-accent: #fff;
-        --modale-encre: #1a1a1a;
-        --modale-rayon: 4px;
-
         margin: auto;
         padding: 0;
         border: 0;
         max-width: 30rem;
-        width: calc(100% - 32px);
+        width: calc(100% - var(--space-md));
         background: transparent;
-        color: var(--modale-encre);
+        color: var(--color-ink);
       }
 
       .demo-modale::backdrop {
-        background: rgb(0 0 0 / 0.62);
+        background: rgb(15 39 71 / 0.66);
         backdrop-filter: blur(3px);
       }
 
       .demo-modale-boite {
         position: relative;
-        padding: 40px 36px 30px;
-        background: #fff;
-        border-radius: var(--modale-rayon);
-        box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.45);
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
+        padding: var(--space-lg) var(--space-lg) var(--space-md);
+        background: var(--color-bg);
+        border-top: var(--rule-height) solid var(--color-accent);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-lg);
+        font-family: var(--font-body);
         text-align: left;
       }
 
       /* L'apparition confirme l'action sans faire attendre. */
       .demo-modale[open] .demo-modale-boite {
-        animation: demo-modale-entree 0.28s cubic-bezier(0.2, 0.9, 0.3, 1);
+        animation: demo-modale-entree var(--duration-slow) var(--ease-out);
       }
 
       @keyframes demo-modale-entree {
@@ -314,72 +345,73 @@ const retour = `/realisations#${slug}`;
 
       .demo-modale-fermer {
         position: absolute;
-        top: 10px;
-        right: 12px;
-        width: 34px;
-        height: 34px;
+        top: var(--space-2xs);
+        right: var(--space-2xs);
+        width: var(--space-lg);
+        height: var(--space-lg);
         display: grid;
         place-items: center;
         border: 0;
         background: transparent;
-        color: #9aa0a6;
-        font-size: 26px;
+        color: var(--color-muted);
+        font-size: var(--text-xl);
         line-height: 1;
         cursor: pointer;
-        border-radius: 50%;
+        border-radius: var(--radius-pill);
       }
 
       .demo-modale-fermer:hover {
-        background: #f1f1f1;
-        color: var(--modale-encre);
+        background: var(--color-surface-raised);
+        color: var(--color-ink);
       }
 
       .demo-modale-eyebrow {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.16em;
+        font-family: var(--font-display);
+        font-weight: var(--weight-extrabold);
+        font-size: var(--text-xs);
+        letter-spacing: var(--tracking-widest);
         text-transform: uppercase;
-        color: var(--modale-accent);
-        margin-bottom: 12px;
+        color: var(--color-accent-ink);
+        margin-bottom: var(--space-2xs);
       }
 
       .demo-modale h2 {
         margin: 0;
-        font-size: 22px;
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        color: var(--modale-encre);
+        font-family: var(--font-display);
+        font-size: var(--text-lg);
+        font-weight: var(--weight-black);
+        line-height: var(--leading-snug);
+        letter-spacing: var(--tracking-tight);
+        color: var(--color-ink);
       }
 
       .demo-modale-texte {
-        margin-top: 12px;
-        font-size: 14.5px;
-        line-height: 1.6;
-        color: #5f6570;
+        margin-top: var(--space-2xs);
+        font-size: var(--text-sm);
+        color: var(--color-muted);
       }
 
       .demo-modale-actions {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 10px 18px;
-        margin-top: 26px;
+        gap: var(--space-2xs) var(--space-sm);
+        margin-top: var(--space-md);
       }
 
       .demo-modale-cta {
         display: inline-block;
-        padding: 13px 24px;
-        background: var(--modale-accent);
-        color: var(--modale-sur-accent);
-        border-radius: var(--modale-rayon);
-        font-size: 15px;
-        font-weight: 700;
+        padding: var(--space-2xs) var(--space-md);
+        background: var(--color-accent);
+        color: var(--color-on-accent);
+        border-radius: var(--radius-pill);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-bold);
         text-decoration: none;
       }
 
       .demo-modale-cta:hover {
-        filter: brightness(1.12);
+        filter: brightness(1.06);
       }
 
       .demo-modale-lien {
@@ -387,15 +419,15 @@ const retour = `/realisations#${slug}`;
         background: transparent;
         padding: 0;
         font: inherit;
-        font-size: 14px;
-        color: #5f6570;
+        font-size: var(--text-sm);
+        color: var(--color-muted);
         text-decoration: underline;
         text-underline-offset: 3px;
         cursor: pointer;
       }
 
       .demo-modale-lien:hover {
-        color: var(--modale-encre);
+        color: var(--color-ink);
       }
     </style>
   </body>
