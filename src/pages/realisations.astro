@@ -26,7 +26,7 @@ const demos = [
     /* .example est réservé par l'IANA : le domaine ne peut appartenir
        à personne, contrairement à un .fr qu'on inventerait. */
     domaine: 'toitures-delmas.example',
-    lede: 'Un site qui met la matière en avant : grandes photos de chantiers, palette terre cuite et ardoise, typographie classique.',
+    lede: 'Un métier qui se juge sur l’ouvrage : les chantiers occupent tout l’écran, et les certifications sont visibles sans avoir à les chercher.',
     points: [
       'Galerie de réalisations',
       'Zone d’intervention',
@@ -42,7 +42,7 @@ const demos = [
     metier: 'Électricien',
     nom: 'Voltek',
     domaine: 'voltek.example',
-    lede: 'Une conception à l’opposé : navigation latérale fixe, prestations dépliables, chantiers présentés en bandes pleine largeur avec leur fiche technique.',
+    lede: 'Un métier technique, donc un site qui explique. Le téléphone reste à portée de main pendant toute la visite, et chaque chantier dit le problème résolu.',
     points: [
       'Navigation latérale',
       'Prestations en accordéon',
@@ -58,7 +58,7 @@ const demos = [
     metier: 'Menuisier',
     nom: 'Atelier Lascaze',
     domaine: 'atelier-lascaze.example',
-    lede: 'Un registre éditorial : pas de photo en ouverture mais un grand titre, puis une mosaïque asymétrique où les réalisations passent avant le discours.',
+    lede: 'Du sur-mesure haut de gamme, où l’image vaut mieux qu’un argumentaire : les réalisations arrivent avant le discours, en grand.',
     points: [
       'Ouverture typographique',
       'Mosaïque asymétrique',
@@ -71,7 +71,7 @@ const demos = [
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Sites de démonstration',
+  name: 'Exemples de sites',
   itemListElement: demos.map((d, i) => ({
     '@type': 'ListItem',
     position: i + 1,
@@ -83,21 +83,21 @@ const schema = {
 
 <Layout
   title="Réalisations — Exemples de sites pour artisans du bâtiment"
-  description="Trois sites complets conçus pour un couvreur, un électricien et un menuisier, pour montrer concrètement à quoi peut ressembler votre site."
+  description="Des exemples de sites conçus pour les artisans du bâtiment en Gironde : couvreur, électricien, menuisier. Chaque métier, sa mise en page."
   schema={[schema]}
 >
   <section class="intro">
     <div class="container">
       <h1>À quoi peut ressembler votre site</h1>
       <p>
-        Plutôt que de décrire, je préfère montrer. Voici trois sites complets,
-        conçus pour trois métiers du bâtiment. Vous pouvez les parcourir
+        Chaque métier raconte quelque chose de différent, et chaque site doit le
+        dire à sa manière. En voici trois, que vous pouvez parcourir
         entièrement.
       </p>
     </div>
   </section>
 
-  <Section headingId="demos" title="Trois métiers, trois sites">
+  <Section headingId="demos" title="Quelques exemples">
     <ul class="demos">
       {
         demos.map((d) => (
@@ -152,27 +152,27 @@ const schema = {
     </ul>
   </Section>
 
-  <Section headingId="lecture" title="Ce qu'il faut y regarder" raised>
+  <Section headingId="lecture" title="Ma façon de travailler" raised>
     <div class="notes">
       <p class="note">
-        Les trois sites n’ont pas une ligne de style en commun. C’est volontaire
-        : votre site doit ressembler à votre entreprise, pas à un gabarit
-        reconnu d’un client à l’autre.
+        Aucun de ces sites n’a une ligne de style en commun avec les autres. Un
+        couvreur et un menuisier ne vendent pas la même chose, et ne devraient
+        pas se retrouver derrière le même gabarit.
       </p>
       <p class="note">
-        Ce qui se retrouve en revanche dans les trois, c’est la structure — on
-        comprend en quelques secondes le métier, la zone couverte, les
-        garanties, et comment demander un devis.
+        Ce qui revient en revanche à chaque fois, c’est la structure : on
+        comprend en quelques secondes le métier, la zone couverte, les garanties
+        et comment demander un devis.
       </p>
       <p class="note">
-        Regardez-les aussi sur votre téléphone : c’est là que la majorité de vos
-        futurs clients vous découvriront.
+        Et tout est pensé pour le téléphone d’abord. C’est là que la majorité de
+        vos futurs clients vous découvriront, souvent depuis un chantier.
       </p>
     </div>
   </Section>
 
   <CtaBand
-    title="Vous vous projetez sur l'un d'entre eux ?"
+    title="Et pour votre entreprise ?"
     text="Parlons de votre métier et de ce que votre site doit raconter."
   />
 </Layout>
