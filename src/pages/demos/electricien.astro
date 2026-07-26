@@ -209,7 +209,9 @@ const secteurs = [
         <div class="accordeon">
           {
             prestations.map((p, i) => (
-              <details open={i === 0}>
+              /* Le même `name` sur tous les volets suffit à les rendre
+                 exclusifs : ouvrir l'un ferme l'autre, sans JavaScript. */
+              <details name="prestation" open={i === 0}>
                 {/* Pas de numéro ici : ces prestations n'ont pas d'ordre, et
                     un second compteur brouillerait celui des sections. */}
                 <summary>{p.titre}</summary>
