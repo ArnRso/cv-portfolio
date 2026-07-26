@@ -19,6 +19,11 @@ interface Props {
 }
 
 const { title, description, entreprise } = Astro.props;
+
+/* Le visiteur arrive de /realisations : c'est là qu'il doit pouvoir revenir,
+   sur la fiche de cette démo précisément. L'ancre se déduit de l'URL. */
+const slug = Astro.url.pathname.replace(/\/$/, '').split('/').pop();
+const retour = `/realisations#${slug}`;
 ---
 
 <!doctype html>
@@ -39,23 +44,45 @@ const { title, description, entreprise } = Astro.props;
         <strong>Démonstration</strong> — {entreprise} est une entreprise fictive,
         créée pour illustrer mon travail.
       </p>
-      <a href="/">Voir le vrai site d'Adrien Russo</a>
+      <a href={retour}>← Retour aux réalisations</a>
     </div>
 
     <slot />
 
+    <script>
+      /* Publie la hauteur réelle du bandeau : une démo à navigation fixe doit
+         pouvoir s'y adosser, et cette hauteur change quand le texte passe sur
+         deux lignes. */
+      const bandeau = document.querySelector<HTMLElement>('.demo-bandeau');
+
+      if (bandeau) {
+        const mesurer = () =>
+          document.documentElement.style.setProperty(
+            '--demo-bandeau-h',
+            `${bandeau.offsetHeight}px`,
+          );
+
+        mesurer();
+        new ResizeObserver(mesurer).observe(bandeau);
+      }
+    </script>
+
     <footer class="demo-pied">
+      {/* Espace explicite : le saut de ligne avant le lien serait avalé. */}
       <p>
-        Site de démonstration réalisé par
+        {'Site de démonstration réalisé par '}
         <a href="/">Adrien Russo</a>, développeur web à Bordeaux.
       </p>
       <p class="demo-pied-note">
         Aucune des informations de cette page ne correspond à une entreprise
         réelle. Photographies libres de droits.
       </p>
-      <a class="demo-pied-cta" href="/contact"
-        >Demander un devis pour mon site</a
-      >
+      <p class="demo-pied-liens">
+        <a href={retour}>← Retour aux réalisations</a>
+        <a class="demo-pied-cta" href="/contact"
+          >Demander un devis pour mon site</a
+        >
+      </p>
     </footer>
 
     <style is:global>
@@ -65,6 +92,8 @@ const { title, description, entreprise } = Astro.props;
       .demo-bandeau {
         position: sticky;
         top: 0;
+        /* Au-dessus du contenu de la démo, mais une démo à navigation fixe
+           doit pouvoir se placer dessous : voir --demo-bandeau-h. */
         z-index: 999;
         display: flex;
         flex-wrap: wrap;
@@ -117,9 +146,24 @@ const { title, description, entreprise } = Astro.props;
         font-size: 12.5px;
       }
 
+      /* Le retour reste discret : le bouton jaune porte l'action principale. */
+      .demo-pied-liens > a:not(.demo-pied-cta) {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .demo-pied-liens {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 24px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 22px;
+      }
+
       .demo-pied-cta {
         display: inline-block;
-        margin-top: 20px;
         padding: 12px 24px;
         background: #ffc300;
         color: #0f2747 !important;
