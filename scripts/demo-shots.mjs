@@ -59,10 +59,28 @@ for (const demo of DEMOS) {
       waitUntil: 'networkidle',
     });
 
-    /* Le bandeau « Démonstration » est collant : il resterait incrusté en
-       haut de la capture pleine page. Il n'a pas sa place dans un visuel de
-       présentation — la page /realisations porte déjà l'avertissement. */
+    /* Le bandeau collant resterait incrusté en haut du visuel, et il n'a pas
+       sa place dans une capture de présentation. */
     await page.addStyleTag({ content: '.demo-bandeau { display: none; }' });
+
+    /* Un élément `sticky` reste figé à sa position initiale dans une capture
+       pleine page : le rail de Voltek flotterait au milieu du vide au lieu de
+       longer toute la hauteur. On le désolidarise le temps du cliché. */
+
+    await page.evaluate(() => {
+      for (const el of document.querySelectorAll('*')) {
+        if (getComputedStyle(el).position !== 'sticky') continue;
+        el.style.position = 'static';
+        /* Le rail tire sa hauteur de la fenêtre : sans cela il resterait
+           court, et ne longerait pas la page une fois désolidarisé. */
+        el.style.height = 'auto';
+        el.style.alignSelf = 'stretch';
+        /* Étiré sur toute la page, un `space-between` éparpillerait le menu
+           et les coordonnées aux deux extrémités. On les regroupe en haut. */
+        el.style.justifyContent = 'flex-start';
+        el.style.gap = '40px';
+      }
+    });
 
     await chargerImages(page);
 
