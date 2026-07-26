@@ -47,6 +47,9 @@ const STEPS = [
     const missing = [
       'dist/index.html',
       'dist/services/index.html',
+      'dist/realisations/index.html',
+      'dist/demos/couvreur/index.html',
+      'dist/demos/electricien/index.html',
       'dist/cv/index.html',
       'dist/contact/index.html',
       'dist/mentions-legales/index.html',
@@ -85,10 +88,23 @@ const STEPS = [
       ],
       { encoding: 'utf8' },
     );
-    // cv-print.astro compose en points pour le papier : c'est volontaire.
+    // Exceptions assumées : cv-print.astro compose en points pour le papier,
+    // et les démos ont chacune leur identité propre, sans lien avec tokens.css.
+    const exempts = [
+      'src/pages/cv-print.astro',
+      'src/pages/demos/',
+      'src/layouts/DemoLayout.astro',
+    ];
+    /* Les points de rupture (@media, attribut sizes) décrivent la fenêtre du
+       visiteur, pas une décision de design : ils n'ont rien à faire dans
+       tokens.css et n'ont donc pas à être signalés ici. */
+    const breakpoint = /@media|(\s|")sizes=/;
     const hits = stdout
       .split('\n')
-      .filter((l) => l && !l.startsWith('src/pages/cv-print.astro'));
+      .filter(
+        (l) =>
+          l && !exempts.some((e) => l.startsWith(e)) && !breakpoint.test(l),
+      );
     return hits.length ? `\n${hits.slice(0, 5).join('\n')}` : null;
   }),
 

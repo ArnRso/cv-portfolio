@@ -1,0 +1,453 @@
+/*
+ * Démo « Voltek » — électricien.
+ * Registre technique et haut de gamme : vert profond, cuivre, blanc cassé.
+ * Volontairement plus géométrique et contrasté que la démo couvreur.
+ */
+
+.dm-elec {
+  --vert: #0b3d2e;
+  --vert-clair: #14563f;
+  --cuivre: #b87333;
+  --cuivre-clair: #d99a5b;
+  --creme: #f6f4ef;
+  --gris: #6b7280;
+  --blanc: #fff;
+  --sans: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+
+  font-family: var(--sans);
+  color: var(--vert);
+  line-height: 1.6;
+  background: var(--blanc);
+}
+
+.dm-elec * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dm-elec img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.dm-elec ul {
+  list-style: none;
+}
+
+.dm-elec .wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ---- Navigation --------------------------------------------------- */
+.dm-elec .nav {
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+.dm-elec .nav-in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 20px;
+}
+
+.dm-elec .logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.dm-elec .logo span {
+  color: var(--cuivre-clair);
+}
+
+.dm-elec .nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dm-elec .nav a {
+  color: var(--blanc);
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.dm-elec .nav a:hover {
+  opacity: 1;
+  color: var(--cuivre-clair);
+}
+
+.dm-elec .nav-tel {
+  padding: 9px 18px;
+  background: var(--cuivre);
+  border-radius: 4px;
+  font-weight: 700;
+  opacity: 1 !important;
+}
+
+/* ---- Hero : texte à gauche, image à droite ------------------------ */
+.dm-elec .hero {
+  background: var(--vert);
+  color: var(--blanc);
+  overflow: hidden;
+}
+
+.dm-elec .hero-in {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-block: clamp(48px, 7vw, 88px);
+}
+
+.dm-elec .hero h1 {
+  font-size: clamp(32px, 4.6vw, 54px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.dm-elec .hero h1 em {
+  font-style: normal;
+  color: var(--cuivre-clair);
+}
+
+.dm-elec .hero p {
+  margin-top: 18px;
+  font-size: clamp(16px, 1.6vw, 19px);
+  opacity: 0.82;
+  max-width: 46ch;
+}
+
+.dm-elec .hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.dm-elec .btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.dm-elec .btn-plein {
+  background: var(--cuivre);
+  color: var(--blanc);
+}
+
+.dm-elec .btn-plein:hover {
+  background: var(--cuivre-clair);
+}
+
+.dm-elec .btn-vide {
+  border-color: rgb(255 255 255 / 0.4);
+  color: var(--blanc);
+}
+
+.dm-elec .btn-vide:hover {
+  border-color: var(--blanc);
+}
+
+.dm-elec .hero-img {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.dm-elec .hero-img img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+/* ---- Bandeau chiffres ---------------------------------------------- */
+.dm-elec .chiffres {
+  background: var(--creme);
+  border-bottom: 1px solid #e5e0d6;
+}
+
+.dm-elec .chiffres ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding-block: 30px;
+  text-align: center;
+}
+
+.dm-elec .chiffres strong {
+  display: block;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--cuivre);
+  letter-spacing: -0.02em;
+}
+
+.dm-elec .chiffres span {
+  font-size: 14px;
+  color: var(--gris);
+}
+
+/* ---- Sections ------------------------------------------------------ */
+.dm-elec section {
+  padding-block: clamp(56px, 8vw, 92px);
+}
+
+.dm-elec .surtitre {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cuivre);
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--cuivre);
+  margin-bottom: 16px;
+}
+
+.dm-elec .titre {
+  font-size: clamp(26px, 3.6vw, 40px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+}
+
+.dm-elec .intro {
+  margin-top: 16px;
+  max-width: 60ch;
+  color: var(--gris);
+}
+
+/* ---- Prestations ---------------------------------------------------- */
+.dm-elec .prestations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 28px;
+  margin-top: 44px;
+}
+
+.dm-elec .presta {
+  border: 1px solid #e5e0d6;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.dm-elec .presta:hover {
+  border-color: var(--cuivre);
+}
+
+.dm-elec .presta img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.dm-elec .presta-txt {
+  padding: 24px;
+}
+
+.dm-elec .presta h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.dm-elec .presta p {
+  font-size: 15px;
+  color: var(--gris);
+}
+
+/* ---- Interventions (liste dense) ------------------------------------ */
+.dm-elec .fond-vert {
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+.dm-elec .fond-vert .titre {
+  color: var(--blanc);
+}
+
+.dm-elec .fond-vert .intro {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.dm-elec .fond-vert .surtitre {
+  color: var(--cuivre-clair);
+  border-bottom-color: var(--cuivre-clair);
+}
+
+/* 3 colonnes : les 6 interventions forment deux rangées pleines, sans trou. */
+.dm-elec .interventions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1px;
+  margin-top: 40px;
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.dm-elec .interventions li {
+  background: var(--vert);
+  padding: 22px 24px;
+}
+
+.dm-elec .interventions strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--cuivre-clair);
+}
+
+.dm-elec .interventions p {
+  font-size: 14px;
+  opacity: 0.78;
+}
+
+@media (min-width: 900px) {
+  .dm-elec .interventions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---- Réalisations ---------------------------------------------------- */
+.dm-elec .galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 44px;
+}
+
+.dm-elec .galerie figure {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e5e0d6;
+}
+
+.dm-elec .galerie img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.dm-elec .galerie figcaption {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--gris);
+}
+
+.dm-elec .galerie figcaption strong {
+  display: block;
+  color: var(--vert);
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+/* ---- Zone ------------------------------------------------------------ */
+.dm-elec .fond-creme {
+  background: var(--creme);
+}
+
+.dm-elec .villes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.dm-elec .villes li {
+  padding: 8px 16px;
+  background: var(--blanc);
+  border: 1px solid #e5e0d6;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ---- Contact ---------------------------------------------------------- */
+.dm-elec .contact-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 44px;
+  margin-top: 44px;
+}
+
+.dm-elec .coord li {
+  padding-block: 14px;
+  border-bottom: 1px solid #e5e0d6;
+}
+
+.dm-elec .coord span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gris);
+  margin-bottom: 3px;
+}
+
+.dm-elec .coord strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dm-elec form {
+  display: grid;
+  gap: 14px;
+}
+
+.dm-elec input,
+.dm-elec select,
+.dm-elec textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #d8d2c6;
+  border-radius: 4px;
+  font: inherit;
+  background: var(--blanc);
+}
+
+.dm-elec input:focus,
+.dm-elec select:focus,
+.dm-elec textarea:focus {
+  outline: 2px solid var(--cuivre);
+  outline-offset: 1px;
+}
+
+.dm-elec form button {
+  justify-self: start;
+  padding: 14px 30px;
+  background: var(--vert);
+  color: var(--blanc);
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dm-elec form button:hover {
+  background: var(--vert-clair);
+}
+
+@media (max-width: 860px) {
+  .dm-elec .hero-in {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

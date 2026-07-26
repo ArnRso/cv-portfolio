@@ -7,8 +7,9 @@ export default defineConfig({
   site: 'https://adrienrusso.fr',
   integrations: [
     sitemap({
-      // /cv-print est un gabarit d'impression, pas une page du site.
-      filter: (page) => !page.includes('/cv-print'),
+      // /cv-print est un gabarit d'impression ; /demos présente des
+      // entreprises fictives. Ni l'un ni l'autre ne doit être indexé.
+      filter: (page) => !page.includes('/cv-print') && !page.includes('/demos'),
     }),
   ],
 });

@@ -16,6 +16,7 @@
     "cv:pdf": "node scripts/cv-pdf.mjs",
     "og": "node scripts/og-image.mjs",
     "icons": "node scripts/icons.mjs",
+    "shots": "node scripts/demo-shots.mjs",
     "astro": "astro"
   },
   "dependencies": {
@@ -37,6 +38,7 @@
     "playwright": "^1.62.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
+    "sharp": "0.35.3",
     "typescript": "^6.0.3"
   }
 }

@@ -1,0 +1,240 @@
+---
+import { Image } from 'astro:assets';
+import DemoLayout from '../../layouts/DemoLayout.astro';
+import hero from '../../assets/demos/couvreur/hero.webp';
+import charpente from '../../assets/demos/couvreur/charpente.webp';
+import couverture from '../../assets/demos/couvreur/couverture.webp';
+import zinguerie from '../../assets/demos/couvreur/zinguerie.webp';
+import real1 from '../../assets/demos/couvreur/real1.webp';
+import real2 from '../../assets/demos/couvreur/real2.webp';
+import real3 from '../../assets/demos/couvreur/real3.webp';
+import '../../styles/demos/couvreur.css';
+
+const expertises = [
+  {
+    img: charpente,
+    titre: 'Charpente',
+    texte:
+      'Création, rénovation et renforcement de charpentes traditionnelles en chêne ou en résineux. Traitement des bois contre les insectes et l’humidité.',
+    alt: 'Charpente traditionnelle en chêne éclairée par une lucarne',
+  },
+  {
+    img: couverture,
+    titre: 'Couverture',
+    texte:
+      'Pose et réfection de toitures en tuiles canal, tuiles plates ou ardoise. Démoussage, remplacement ponctuel, réfection complète.',
+    alt: 'Pose de tuiles canal sur une toiture girondine',
+  },
+  {
+    img: zinguerie,
+    titre: 'Zinguerie',
+    texte:
+      'Gouttières, chéneaux, noues et solins en zinc ou en cuivre. Évacuation des eaux pluviales et étanchéité des points sensibles.',
+    alt: 'Zinguerie en zinc sur une toiture en ardoise',
+  },
+];
+
+const prestations = [
+  ['Isolation des combles', 'Par soufflage ou en panneaux, sous la toiture.'],
+  ['Fenêtres de toit', 'Pose de Velux, lucarnes et châssis de désenfumage.'],
+  ['Nettoyage & démoussage', 'Traitement hydrofuge et anti-mousse.'],
+  ['Bardage', 'Habillage de façade en bois, zinc ou composite.'],
+  ['Terrasses & étanchéité', 'Toitures-terrasses et balcons.'],
+  ['Dépannage', 'Fuite, tuile envolée, urgence après tempête.'],
+];
+
+const realisations = [
+  {
+    img: real1,
+    legende: 'Réfection complète — maison de maître, Cenon',
+    alt: 'Toiture en tuiles rénovée sur une maison de maître',
+  },
+  {
+    img: real2,
+    legende: 'Extension zinc joint debout — Bordeaux Caudéran',
+    alt: 'Extension contemporaine avec toiture en zinc',
+  },
+  {
+    img: real3,
+    legende: 'Restauration ardoise — longère, Libournais',
+    alt: 'Toiture en ardoise restaurée avec lucarnes',
+  },
+];
+
+const villes = [
+  'Bordeaux',
+  'Cenon',
+  'Mérignac',
+  'Pessac',
+  'Talence',
+  'Bègles',
+  'Libourne',
+  'Saint-André-de-Cubzac',
+  'Lormont',
+  'Floirac',
+];
+---
+
+<DemoLayout
+  title="Toitures Delmas — Couvreur zingueur à Bordeaux (démonstration)"
+  description="Site de démonstration : entreprise fictive de couverture et charpente en Gironde."
+  entreprise="Toitures Delmas"
+>
+  <div class="dm-couvreur">
+    <header class="nav">
+      <div class="wrap nav-in">
+        <p class="logo">Toitures <span>Delmas</span></p>
+        <nav>
+          <ul>
+            <li><a href="#expertises">Expertises</a></li>
+            <li><a href="#prestations">Prestations</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <Image
+        src={hero}
+        alt="Chartreuse girondine avec sa toiture en tuiles canal, au milieu des vignes"
+        widths={[900, 1400, 1800]}
+        sizes="100vw"
+        loading="eager"
+      />
+      <div class="hero-txt">
+        <h1>Couvreur zingueur en Gironde</h1>
+        <p>Charpente · Couverture · Zinguerie</p>
+        <div class="hero-cta">
+          <a class="btn btn-plein" href="#contact">Demander un devis</a>
+          <a class="btn btn-vide" href="#realisations">Voir nos chantiers</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="bandeau">
+      <div class="wrap">
+        <ul>
+          <li><strong>27</strong> ans de métier</li>
+          <li><strong>10 ans</strong> de garantie décennale</li>
+          <li><strong>RGE</strong> Qualibat</li>
+          <li><strong>48 h</strong> pour un devis</li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="expertises">
+      <div class="wrap">
+        <p class="surtitre">Nos métiers</p>
+        <h2 class="titre">Trois savoir-faire, un seul interlocuteur</h2>
+        <p class="intro">
+          De la charpente à l’évacuation des eaux, nous intervenons sur
+          l’ensemble de la toiture. Une équipe, un chantier, une responsabilité.
+        </p>
+
+        <div class="expertises">
+          {
+            expertises.map((e) => (
+              <article class="expertise">
+                <Image
+                  src={e.img}
+                  alt={e.alt}
+                  widths={[400, 700]}
+                  sizes="(max-width: 700px) 100vw, 33vw"
+                  loading="lazy"
+                />
+                <div class="expertise-txt">
+                  <h3>{e.titre}</h3>
+                  <p>{e.texte}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="prestations" class="fond-clair">
+      <div class="wrap">
+        <p class="surtitre">Ce que nous faisons aussi</p>
+        <h2 class="titre">Prestations complémentaires</h2>
+        <ul class="prestations">
+          {
+            prestations.map(([t, d]) => (
+              <li>
+                <strong>{t}</strong>
+                {d}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section id="realisations">
+      <div class="wrap">
+        <p class="surtitre">Nos chantiers</p>
+        <h2 class="titre">Dernières réalisations</h2>
+        <div class="galerie">
+          {
+            realisations.map((r) => (
+              <figure>
+                <Image
+                  src={r.img}
+                  alt={r.alt}
+                  widths={[400, 800]}
+                  sizes="(max-width: 700px) 100vw, 33vw"
+                  loading="lazy"
+                />
+                <figcaption>{r.legende}</figcaption>
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="fond-clair">
+      <div class="wrap">
+        <p class="surtitre">Où nous intervenons</p>
+        <h2 class="titre">Bordeaux Métropole et Gironde</h2>
+        <p class="intro">
+          Basés à Cenon, nous nous déplaçons dans un rayon de 50 km. Devis et
+          déplacement gratuits pour toute demande dans la métropole.
+        </p>
+        <ul class="villes">{villes.map((v) => <li>{v}</li>)}</ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <p class="surtitre">Parlons de votre toit</p>
+        <h2 class="titre">Demander un devis</h2>
+        <p class="intro">
+          Décrivez-nous votre projet ou votre problème. Nous passons sur place
+          sous 48 h pour établir un devis gratuit.
+        </p>
+
+        <div class="contact-grille">
+          <ul class="coord">
+            <li><span>Téléphone</span>05 00 00 00 00</li>
+            <li><span>Email</span>contact@toitures-delmas.example</li>
+            <li><span>Adresse</span>Zone artisanale, 33150 Cenon</li>
+            <li><span>Horaires</span>Du lundi au vendredi, 7h30 – 18h</li>
+          </ul>
+
+          <form
+            onsubmit="event.preventDefault(); alert('Démonstration — le formulaire n’envoie rien.');"
+          >
+            <input type="text" placeholder="Nom" required />
+            <input type="tel" placeholder="Téléphone" required />
+            <input type="text" placeholder="Commune" />
+            <textarea rows="4" placeholder="Votre projet" required></textarea>
+            <button type="submit">Envoyer ma demande</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</DemoLayout>

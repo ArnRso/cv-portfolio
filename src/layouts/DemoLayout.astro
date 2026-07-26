@@ -1,0 +1,132 @@
+---
+/**
+ * Enveloppe des sites de démonstration.
+ *
+ * Ces pages présentent des entreprises fictives : elles portent un bandeau
+ * explicite et sont interdites aux moteurs. Sans cela, Google pourrait les
+ * lire comme du contenu trompeur et sanctionner tout le domaine.
+ *
+ * Chaque démo apporte sa propre feuille de style, sans lien avec tokens.css :
+ * l'intérêt de l'exercice est de montrer des identités visuelles distinctes.
+ */
+import '@fontsource-variable/inter';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Nom de l'entreprise fictive, affiché dans le bandeau. */
+  entreprise: string;
+}
+
+const { title, description, entreprise } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Ces pages ne doivent jamais être indexées ni suivies. */}
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="demo-bandeau">
+      <p>
+        <strong>Démonstration</strong> — {entreprise} est une entreprise fictive,
+        créée pour illustrer mon travail.
+      </p>
+      <a href="/">Voir le vrai site d'Adrien Russo</a>
+    </div>
+
+    <slot />
+
+    <footer class="demo-pied">
+      <p>
+        Site de démonstration réalisé par
+        <a href="/">Adrien Russo</a>, développeur web à Bordeaux.
+      </p>
+      <p class="demo-pied-note">
+        Aucune des informations de cette page ne correspond à une entreprise
+        réelle. Photographies libres de droits.
+      </p>
+      <a class="demo-pied-cta" href="/contact"
+        >Demander un devis pour mon site</a
+      >
+    </footer>
+
+    <style is:global>
+      /* Styles du bandeau et du pied de page, communs à toutes les démos.
+         Volontairement neutres : ils ne doivent pas se confondre avec
+         l'identité de la démo qu'ils encadrent. */
+      .demo-bandeau {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        background: #1a1a1a;
+        color: #fff;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 13px;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .demo-bandeau strong {
+        color: #ffc300;
+      }
+
+      .demo-bandeau a {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        white-space: nowrap;
+      }
+
+      .demo-pied {
+        padding: 48px 24px;
+        background: #1a1a1a;
+        color: #fff;
+        text-align: center;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .demo-pied a {
+        color: #ffc300;
+      }
+
+      .demo-pied-note {
+        margin-top: 8px;
+        opacity: 0.55;
+        font-size: 12.5px;
+      }
+
+      .demo-pied-cta {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background: #ffc300;
+        color: #0f2747 !important;
+        font-weight: 700;
+        border-radius: 100px;
+        text-decoration: none;
+      }
+    </style>
+  </body>
+</html>

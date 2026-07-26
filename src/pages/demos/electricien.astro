@@ -1,0 +1,277 @@
+---
+import { Image } from 'astro:assets';
+import DemoLayout from '../../layouts/DemoLayout.astro';
+import hero from '../../assets/demos/electricien/hero.webp';
+import presta1 from '../../assets/demos/electricien/presta1.webp';
+import presta2 from '../../assets/demos/electricien/presta2.webp';
+import presta3 from '../../assets/demos/electricien/presta3.webp';
+import real1 from '../../assets/demos/electricien/real1.webp';
+import real2 from '../../assets/demos/electricien/real2.webp';
+import real3 from '../../assets/demos/electricien/real3.webp';
+import '../../styles/demos/electricien.css';
+
+const prestations = [
+  {
+    img: presta1,
+    titre: 'Installation & rénovation',
+    texte:
+      'Tableaux électriques, remise aux normes NF C 15-100, réfection complète de logement. Diagnostic avant travaux et mise en conformité Consuel.',
+    alt: 'Tableau électrique neuf avec câblage organisé',
+  },
+  {
+    img: presta3,
+    titre: 'Domotique & pilotage',
+    texte:
+      'Éclairage connecté, volets motorisés, thermostats et scénarios. Installations KNX ou sans fil, pilotables depuis un smartphone.',
+    alt: 'Interface de pilotage domotique murale',
+  },
+  {
+    img: presta2,
+    titre: 'Bornes de recharge',
+    texte:
+      'Pose de bornes pour véhicule électrique en maison ou copropriété. Installateur qualifié IRVE, éligible aux aides à l’installation.',
+    alt: 'Borne de recharge pour véhicule électrique installée dans un garage',
+  },
+];
+
+const interventions = [
+  [
+    'Mise aux normes',
+    'Tableau, terre, différentiels et protection des circuits.',
+  ],
+  ['Éclairage', 'Intérieur, extérieur, LED et éclairage architectural.'],
+  [
+    'Chauffage électrique',
+    'Radiateurs pilotés, plancher chauffant, sèche-serviettes.',
+  ],
+  ['Réseau & VDI', 'Prises RJ45, baie de brassage, couverture Wi-Fi.'],
+  ['Tertiaire', 'Bureaux, commerces et locaux professionnels.'],
+  ['Dépannage', 'Panne, court-circuit, disjonction répétée.'],
+];
+
+const realisations = [
+  {
+    img: real1,
+    titre: 'Rénovation — appartement haussmannien',
+    legende: 'Bordeaux Chartrons · 95 m² · réfection totale du réseau',
+    alt: 'Salon rénové avec éclairage encastré dans un appartement ancien',
+  },
+  {
+    img: real2,
+    titre: 'Remise aux normes — tableau général',
+    legende: 'Pessac · tableau neuf, différentiels 30 mA et repérage complet',
+    alt: 'Tableau électrique neuf avec circuits repérés',
+  },
+  {
+    img: real3,
+    titre: 'Éclairage architectural — cuisine ouverte',
+    legende: 'Mérignac · bandeaux LED pilotés et éclairage de plan de travail',
+    alt: 'Cuisine contemporaine avec éclairage LED intégré',
+  },
+];
+
+const villes = [
+  'Bordeaux',
+  'Mérignac',
+  'Pessac',
+  'Talence',
+  'Bègles',
+  'Le Bouscat',
+  'Bruges',
+  'Gradignan',
+  'Villenave-d’Ornon',
+  'Saint-Médard-en-Jalles',
+  'Eysines',
+  'Cenon',
+];
+---
+
+<DemoLayout
+  title="Voltek — Électricien à Bordeaux (démonstration)"
+  description="Site de démonstration : entreprise fictive d’électricité générale, domotique et bornes de recharge en Gironde."
+  entreprise="Voltek"
+>
+  <div class="dm-elec">
+    <header class="nav">
+      <div class="wrap nav-in">
+        <p class="logo">Vol<span>tek</span></p>
+        <nav>
+          <ul>
+            <li><a href="#prestations">Prestations</a></li>
+            <li><a href="#interventions">Interventions</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a class="nav-tel" href="#contact">05 00 00 00 00</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="wrap hero-in">
+        <div>
+          <h1>Électricien à Bordeaux, <em>du tableau à la domotique</em></h1>
+          <p>
+            Installation, rénovation et mise aux normes pour les particuliers et
+            les professionnels de la métropole. Devis sous 48 h.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-plein" href="#contact">Demander un devis</a>
+            <a class="btn btn-vide" href="#realisations">Voir nos chantiers</a>
+          </div>
+        </div>
+        <div class="hero-img">
+          <Image
+            src={hero}
+            alt="Électricien intervenant sur un tableau électrique"
+            widths={[600, 900, 1200]}
+            sizes="(max-width: 860px) 100vw, 50vw"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="chiffres">
+      <div class="wrap">
+        <ul>
+          <li><strong>15 ans</strong><span>d’expérience</span></li>
+          <li><strong>IRVE</strong><span>installateur qualifié</span></li>
+          <li><strong>Consuel</strong><span>attestation fournie</span></li>
+          <li><strong>48 h</strong><span>pour un devis</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="prestations">
+      <div class="wrap">
+        <p class="surtitre">Nos prestations</p>
+        <h2 class="titre">Trois spécialités, une seule équipe</h2>
+        <p class="intro">
+          De la remise aux normes d’un logement ancien à l’installation d’une
+          borne de recharge, nous couvrons l’ensemble du courant fort et faible.
+        </p>
+
+        <div class="prestations">
+          {
+            prestations.map((p) => (
+              <article class="presta">
+                <Image
+                  src={p.img}
+                  alt={p.alt}
+                  widths={[400, 700]}
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                  loading="lazy"
+                />
+                <div class="presta-txt">
+                  <h3>{p.titre}</h3>
+                  <p>{p.texte}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="interventions" class="fond-vert">
+      <div class="wrap">
+        <p class="surtitre">Ce que nous faisons aussi</p>
+        <h2 class="titre">Toutes nos interventions</h2>
+        <ul class="interventions">
+          {
+            interventions.map(([t, d]) => (
+              <li>
+                <strong>{t}</strong>
+                <p>{d}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section id="realisations">
+      <div class="wrap">
+        <p class="surtitre">Nos chantiers</p>
+        <h2 class="titre">Dernières réalisations</h2>
+        <div class="galerie">
+          {
+            realisations.map((r) => (
+              <figure>
+                <Image
+                  src={r.img}
+                  alt={r.alt}
+                  widths={[400, 800]}
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong>{r.titre}</strong>
+                  {r.legende}
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="fond-creme">
+      <div class="wrap">
+        <p class="surtitre">Où nous intervenons</p>
+        <h2 class="titre">Bordeaux Métropole</h2>
+        <p class="intro">
+          Basés à Mérignac, nous couvrons l’ensemble de la métropole et sa
+          périphérie. Déplacement et devis gratuits.
+        </p>
+        <ul class="villes">{villes.map((v) => <li>{v}</li>)}</ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <p class="surtitre">Parlons de votre projet</p>
+        <h2 class="titre">Demander un devis</h2>
+        <p class="intro">
+          Décrivez votre besoin en quelques lignes. Nous vous rappelons sous 48
+          h pour convenir d’une visite technique.
+        </p>
+
+        <div class="contact-grille">
+          <ul class="coord">
+            <li><span>Téléphone</span><strong>05 00 00 00 00</strong></li>
+            <li><span>Email</span><strong>contact@voltek.example</strong></li>
+            <li>
+              <span>Adresse</span><strong
+                >Avenue de l’Yser, 33700 Mérignac</strong
+              >
+            </li>
+            <li>
+              <span>Horaires</span><strong
+                >Du lundi au vendredi, 8h – 18h</strong
+              >
+            </li>
+          </ul>
+
+          <form
+            onsubmit="event.preventDefault(); alert('Démonstration — le formulaire n’envoie rien.');"
+          >
+            <input type="text" placeholder="Nom" required />
+            <input type="tel" placeholder="Téléphone" required />
+            <select required>
+              <option value="">Type de projet</option>
+              <option>Installation ou rénovation</option>
+              <option>Domotique</option>
+              <option>Borne de recharge</option>
+              <option>Dépannage</option>
+              <option>Autre</option>
+            </select>
+            <textarea rows="4" placeholder="Votre projet" required></textarea>
+            <button type="submit">Envoyer ma demande</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</DemoLayout>
