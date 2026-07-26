@@ -32,7 +32,9 @@
   /* Ticket « carnet à souche » — jeu de couleurs dédié, indépendant du reste
    * du site. La souche a ses propres tokens : son fond peut être sombre alors
    * que le corps du bon reste clair. */
-  --paper-bg: #eef3fb;
+  /* Blanc franc : le pied de page est en --color-surface-raised, et un corps
+     de bon de la même teinte s'y fondrait au lieu de s'en détacher. */
+  --paper-bg: #ffffff;
   --paper-ink: #0f2747;
   --paper-muted: #566c8c;
   --paper-dash: #8ba4c8;
