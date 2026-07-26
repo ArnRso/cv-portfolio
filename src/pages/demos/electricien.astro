@@ -7,12 +7,17 @@ import real2 from '../../assets/demos/electricien/real2.webp';
 import real3 from '../../assets/demos/electricien/real3.webp';
 import '../../styles/demos/electricien.css';
 
+/* Source unique de la numérotation : le rail et les titres de section
+   lisent la même liste, ils ne peuvent donc pas se contredire. */
 const menu = [
   { href: '#prestations', label: 'Prestations' },
   { href: '#chantiers', label: 'Chantiers' },
   { href: '#zone', label: 'Zone d’intervention' },
   { href: '#contact', label: 'Devis' },
 ];
+
+const numero = (ancre: string) =>
+  String(menu.findIndex((m) => m.href === `#${ancre}`) + 1).padStart(2, '0');
 
 /* Accordéon : le premier volet est ouvert pour que la section ne se présente
    pas comme une liste de titres fermés. */
@@ -191,7 +196,7 @@ const secteurs = [
 
       <section id="prestations" class="bloc">
         <div class="tete">
-          <p class="no">01</p>
+          <p class="no" aria-hidden="true">{numero('prestations')}</p>
           <div>
             <h2>Ce que nous prenons en charge</h2>
             <p>
@@ -205,10 +210,9 @@ const secteurs = [
           {
             prestations.map((p, i) => (
               <details open={i === 0}>
-                <summary>
-                  <span class="rang">{String(i + 1).padStart(2, '0')}</span>
-                  {p.titre}
-                </summary>
+                {/* Pas de numéro ici : ces prestations n'ont pas d'ordre, et
+                    un second compteur brouillerait celui des sections. */}
+                <summary>{p.titre}</summary>
                 <div class="contenu">
                   <p>{p.texte}</p>
                   <ul>
@@ -226,7 +230,7 @@ const secteurs = [
       <section id="chantiers">
         <div class="bloc">
           <div class="tete">
-            <p class="no">02</p>
+            <p class="no" aria-hidden="true">{numero('chantiers')}</p>
             <div>
               <h2>Trois chantiers, expliqués</h2>
               <p>
@@ -271,7 +275,7 @@ const secteurs = [
 
       <section id="zone" class="bloc fond-vert">
         <div class="tete">
-          <p class="no">03</p>
+          <p class="no" aria-hidden="true">{numero('zone')}</p>
           <div>
             <h2>Où nous intervenons, et sous quel délai</h2>
             <p>
@@ -300,6 +304,7 @@ const secteurs = [
 
       <section id="contact" class="bloc fond-creme">
         <div class="contact-tete">
+          <p class="no" aria-hidden="true">{numero('contact')}</p>
           <h2>Décrivez votre projet, nous vous rappelons</h2>
           <a class="contact-tel" href="#contact">
             <small>Ou appelez directement</small>
