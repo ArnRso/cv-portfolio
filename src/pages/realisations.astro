@@ -39,12 +39,12 @@ const demos = [
     metier: 'Électricien',
     nom: 'Voltek',
     domaine: 'voltek.example',
-    lede: 'Un registre plus technique : vert profond et cuivre, mise en page géométrique, entrée directe par les prestations.',
+    lede: 'Une conception à l’opposé : navigation latérale fixe, prestations dépliables, chantiers présentés en bandes pleine largeur avec leur fiche technique.',
     points: [
-      'Prestations détaillées',
-      'Qualifications IRVE et Consuel',
-      'Formulaire qualifié',
-      'Chantiers commentés',
+      'Navigation latérale',
+      'Prestations en accordéon',
+      'Chantiers expliqués',
+      'Délais par commune',
     ],
   },
 ];
@@ -90,7 +90,9 @@ const schema = {
     <ul class="demos">
       {
         demos.map((d) => (
-          <li class="demo">
+          /* L'ancre reprend le nom de la démo : les pages de démonstration
+             renvoient ici, sur leur propre fiche. */
+          <li class="demo" id={d.href.split('/').pop()}>
             <a
               class="visuel"
               href={d.href}
@@ -218,6 +220,9 @@ const schema = {
     align-items: center;
     border-top: var(--border-heavy) solid var(--color-ink);
     padding-top: var(--space-md);
+    /* En arrivant par l'ancre, la fiche ne doit pas se coller sous
+       l'en-tête collant du site. */
+    scroll-margin-top: var(--space-xl);
   }
 
   /* Mockup : fenêtre de navigateur, avec le rendu mobile en médaillon.
