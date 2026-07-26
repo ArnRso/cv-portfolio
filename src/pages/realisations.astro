@@ -8,6 +8,8 @@ import couvreurDesktop from '../assets/demos/captures/couvreur-desktop.webp';
 import couvreurMobile from '../assets/demos/captures/couvreur-mobile.webp';
 import electricienDesktop from '../assets/demos/captures/electricien-desktop.webp';
 import electricienMobile from '../assets/demos/captures/electricien-mobile.webp';
+import menuisierDesktop from '../assets/demos/captures/menuisier-desktop.webp';
+import menuisierMobile from '../assets/demos/captures/menuisier-mobile.webp';
 
 /* Ces sites présentent des entreprises fictives : ce sont des maquettes
    fonctionnelles, pas des références clients. La page le dit explicitement,
@@ -47,6 +49,22 @@ const demos = [
       'Délais par commune',
     ],
   },
+  {
+    href: '/demos/menuisier',
+    desktop: menuisierDesktop,
+    mobile: menuisierMobile,
+    alt: 'Site de démonstration Atelier Lascaze, sur ordinateur et sur téléphone',
+    metier: 'Menuisier',
+    nom: 'Atelier Lascaze',
+    domaine: 'atelier-lascaze.example',
+    lede: 'Un registre éditorial : pas de photo en ouverture mais un grand titre, puis une mosaïque asymétrique où les réalisations passent avant le discours.',
+    points: [
+      'Ouverture typographique',
+      'Mosaïque asymétrique',
+      'Essences détaillées',
+      'Méthode en quatre étapes',
+    ],
+  },
 ];
 
 const schema = {
@@ -64,15 +82,15 @@ const schema = {
 
 <Layout
   title="Réalisations — Exemples de sites pour artisans du bâtiment"
-  description="Deux sites de démonstration complets, un couvreur et un électricien, pour montrer concrètement à quoi peut ressembler votre site."
+  description="Trois sites de démonstration complets, un couvreur, un électricien et un menuisier, pour montrer concrètement à quoi peut ressembler votre site."
   schema={[schema]}
 >
   <section class="intro">
     <div class="container">
       <h1>À quoi peut ressembler votre site</h1>
       <p>
-        Plutôt que de décrire, je préfère montrer. Voici deux sites complets,
-        conçus pour deux métiers du bâtiment. Vous pouvez les parcourir
+        Plutôt que de décrire, je préfère montrer. Voici trois sites complets,
+        conçus pour trois métiers du bâtiment. Vous pouvez les parcourir
         entièrement.
       </p>
     </div>
@@ -144,12 +162,12 @@ const schema = {
   <Section headingId="lecture" title="Ce qu'il faut y regarder" raised>
     <div class="notes">
       <p class="note">
-        Les deux sites n’ont pas une ligne de style en commun. C’est volontaire
+        Les trois sites n’ont pas une ligne de style en commun. C’est volontaire
         : votre site doit ressembler à votre entreprise, pas à un gabarit
         reconnu d’un client à l’autre.
       </p>
       <p class="note">
-        Ce qui se retrouve en revanche dans les deux, c’est la structure — on
+        Ce qui se retrouve en revanche dans les trois, c’est la structure — on
         comprend en quelques secondes le métier, la zone couverte, les
         garanties, et comment demander un devis.
       </p>
@@ -161,7 +179,7 @@ const schema = {
   </Section>
 
   <CtaBand
-    title="Vous vous projetez sur l'un des deux ?"
+    title="Vous vous projetez sur l'un d'entre eux ?"
     text="Parlons de votre métier et de ce que votre site doit raconter."
   />
 </Layout>

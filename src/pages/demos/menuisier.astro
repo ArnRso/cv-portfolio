@@ -1,0 +1,363 @@
+---
+import { Image } from 'astro:assets';
+import DemoLayout from '../../layouts/DemoLayout.astro';
+import atelier from '../../assets/demos/menuisier/atelier.webp';
+import cuisine from '../../assets/demos/menuisier/cuisine.webp';
+import bibliotheque from '../../assets/demos/menuisier/bibliotheque.webp';
+import escalier from '../../assets/demos/menuisier/escalier.webp';
+import dressing from '../../assets/demos/menuisier/dressing.webp';
+import detail from '../../assets/demos/menuisier/detail-assemblage.webp';
+import verriere from '../../assets/demos/menuisier/verriere.webp';
+import '../../styles/demos/menuisier.css';
+
+const menu = [
+  { href: '#realisations', label: 'Réalisations' },
+  { href: '#savoirs', label: 'Savoir-faire' },
+  { href: '#bois', label: 'Les bois' },
+  { href: '#methode', label: 'Méthode' },
+  { href: '#contact', label: 'Contact' },
+];
+
+/* Mosaïque asymétrique : l'atelier en portrait tient deux rangées, la verrière
+   ferme la grille en pleine largeur. C'est cette irrégularité qui la distingue
+   d'une grille ordinaire. */
+const mosaique = [
+  {
+    img: atelier,
+    classe: 'haute',
+    titre: 'L’atelier',
+    lieu: 'Créon',
+    alt: 'Atelier de menuiserie avec établi et planches de chêne',
+  },
+  {
+    img: cuisine,
+    classe: '',
+    titre: 'Cuisine en chêne',
+    lieu: 'Bordeaux Caudéran',
+    alt: 'Cuisine sur-mesure en chêne clair avec îlot central',
+  },
+  {
+    img: escalier,
+    classe: '',
+    titre: 'Escalier et garde-corps',
+    lieu: 'Gradignan',
+    alt: 'Escalier en chêne massif avec garde-corps en acier noir',
+  },
+  {
+    img: bibliotheque,
+    classe: '',
+    titre: 'Bibliothèque intégrée',
+    lieu: 'Bordeaux Saint-Genès',
+    alt: 'Bibliothèque en chêne du sol au plafond dans un salon ancien',
+  },
+  {
+    img: dressing,
+    classe: '',
+    titre: 'Dressing ouvert',
+    lieu: 'Le Bouscat',
+    alt: 'Dressing sur-mesure en chêne clair dans une chambre',
+  },
+  /* En dernier : la verrière ferme la mosaïque par une bande pleine largeur
+     plutôt que par une rangée incomplète. */
+  {
+    img: verriere,
+    classe: 'large',
+    titre: 'Verrière d’atelier',
+    lieu: 'Bordeaux Chartrons',
+    alt: 'Verrière en acier noir séparant une cuisine d’un séjour',
+  },
+];
+
+const savoirs = [
+  {
+    titre: 'Agencement intérieur',
+    texte:
+      'Cuisines, bibliothèques, dressings et meubles pensés pour l’espace exact où ils vont vivre. Relevé sur place, dessin, fabrication à l’atelier, pose par nos soins.',
+    points: [
+      'Cuisines et plans de travail',
+      'Bibliothèques et niches',
+      'Dressings et rangements',
+      'Meubles de salle de bain',
+    ],
+  },
+  {
+    titre: 'Escaliers & garde-corps',
+    texte:
+      'Escaliers droits, quart tournant ou hélicoïdaux en bois massif, seuls ou associés à l’acier. Calcul des emmarchements et respect des normes de sécurité.',
+    points: [
+      'Bois massif ou mixte bois-acier',
+      'Garde-corps et mains courantes',
+      'Rénovation d’escalier existant',
+      'Habillage de marches béton',
+    ],
+  },
+  {
+    titre: 'Menuiseries extérieures',
+    texte:
+      'Fenêtres, portes d’entrée et volets en bois, dans le respect des règles applicables aux façades bordelaises et aux bâtiments protégés.',
+    points: [
+      'Fenêtres et portes-fenêtres',
+      'Portes d’entrée sur-mesure',
+      'Volets battants et persiennes',
+      'Restauration à l’identique',
+    ],
+  },
+  {
+    titre: 'Verrières & cloisons',
+    texte:
+      'Verrières d’atelier en acier, cloisons vitrées et claustras pour partager l’espace sans perdre la lumière. Conception avec un serrurier partenaire.',
+    points: [
+      'Verrières d’atelier',
+      'Cloisons vitrées',
+      'Claustras et brise-vues',
+      'Portes à galandage',
+    ],
+  },
+];
+
+const essences = [
+  ['Chêne', 'Massif ou plaqué, le plus courant'],
+  ['Frêne', 'Fil marqué, teintes claires'],
+  ['Noyer', 'Veinage sombre, pièces d’exception'],
+  ['Châtaignier', 'Local, bonne tenue extérieure'],
+  ['Pin des Landes', 'Filière régionale, économique'],
+  ['Panneaux', 'Contreplaqué et médium plaqué'],
+];
+
+const etapes = [
+  {
+    titre: 'Visite et relevé',
+    texte:
+      'Nous venons mesurer, comprendre l’usage et repérer les contraintes du bâti. Sans engagement.',
+  },
+  {
+    titre: 'Dessin et devis',
+    texte:
+      'Vous recevez un plan coté et un devis détaillé, poste par poste, avec le choix des essences.',
+  },
+  {
+    titre: 'Fabrication',
+    texte:
+      'Tout est fabriqué à l’atelier de Créon. Vous pouvez venir voir l’avancement quand vous voulez.',
+  },
+  {
+    titre: 'Pose et finitions',
+    texte:
+      'Pose par l’équipe qui a fabriqué, ajustements sur place, nettoyage du chantier avant de partir.',
+  },
+];
+---
+
+<DemoLayout
+  title="Atelier Lascaze — Menuisier à Bordeaux (démonstration)"
+  description="Site de démonstration : entreprise fictive de menuiserie sur-mesure et agencement intérieur en Gironde."
+  entreprise="Atelier Lascaze"
+>
+  <div class="dm-menu">
+    <header class="nav">
+      <div class="wrap nav-in">
+        <p class="logo">
+          Atelier Lascaze
+          <small>Menuiserie sur-mesure · Gironde</small>
+        </p>
+        <nav aria-label="Navigation principale">
+          <ul>
+            {
+              menu.map((m) => (
+                <li>
+                  <a href={m.href}>{m.label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    {
+      /* Ouverture typographique : les deux autres démos s'ouvrent sur une
+        photo, celle-ci sur son propos. */
+    }
+    <section class="ouverture">
+      <div class="wrap">
+        <h1>
+          Le meuble qui manquait à votre maison, <em>dessiné et fabriqué ici</em
+          >.
+        </h1>
+        <div class="ouverture-bas">
+          <p>
+            Atelier de menuiserie à Créon depuis 1998. Nous concevons,
+            fabriquons et posons des agencements sur-mesure pour les
+            particuliers et les architectes de la métropole bordelaise.
+          </p>
+          <a class="btn btn-plein" href="#contact">Parler de votre projet</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="realisations" class="mosaique-section">
+      <div class="wrap">
+        <div class="mosaique">
+          {
+            mosaique.map((m) => (
+              <figure class={m.classe}>
+                <Image
+                  src={m.img}
+                  alt={m.alt}
+                  widths={[500, 1000]}
+                  sizes="(max-width: 700px) 50vw, 33vw"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong>{m.titre}</strong>
+                  {m.lieu}
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="savoirs" class="fond-papier">
+      <div class="wrap">
+        <p class="surtitre">Ce que nous fabriquons</p>
+        <h2 class="titre">Quatre savoir-faire, un seul atelier</h2>
+        <p class="intro">
+          Tout est dessiné et fabriqué à Créon, puis posé par l’équipe qui l’a
+          construit. Pas de sous-traitance, pas d’intermédiaire.
+        </p>
+
+        <div class="savoirs">
+          {
+            savoirs.map((s) => (
+              <article class="savoir">
+                <h3>{s.titre}</h3>
+                <p>{s.texte}</p>
+                <ul>
+                  {s.points.map((p) => (
+                    <li>{p}</li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="bois">
+      <div class="wrap duo">
+        <div>
+          <p class="surtitre">La matière</p>
+          <h2 class="titre">Des bois choisis, pas des bois disponibles</h2>
+          <p class="intro">
+            Nous travaillons principalement des essences européennes, achetées
+            chez deux scieurs de la région. L’essence se choisit avec vous,
+            selon l’usage, la lumière de la pièce et le budget.
+          </p>
+
+          <dl class="essences">
+            {
+              essences.map(([nom, note]) => (
+                <div>
+                  <dt>{nom}</dt>
+                  <dd>{note}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+
+        <div class="duo-img">
+          <Image
+            src={detail}
+            alt="Assemblage à queue d’aronde dans du chêne clair"
+            widths={[500, 900]}
+            sizes="(max-width: 900px) 100vw, 50vw"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="methode" class="fond-papier">
+      <div class="wrap">
+        <p class="surtitre">Comment ça se passe</p>
+        <h2 class="titre">De la visite à la pose</h2>
+        <ol class="frise">
+          {
+            etapes.map((e) => (
+              <li>
+                <h3>{e.titre}</h3>
+                <p>{e.texte}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="fond-noir">
+      <div class="wrap">
+        <p class="surtitre">Parlons de votre projet</p>
+        <h2 class="titre">Décrivez ce que vous cherchez</h2>
+        <p class="intro">
+          Un meuble, une cuisine, un escalier ? Dites-nous en quelques lignes ce
+          que vous avez en tête. Nous répondons sous 48 h.
+        </p>
+
+        <div class="contact-grille">
+          <dl class="coord">
+            <div>
+              <dt>Atelier</dt>
+              <dd>12 route de Sadirac<br />33670 Créon</dd>
+            </div>
+            <div>
+              <dt>Téléphone</dt>
+              <dd>05 00 00 00 00</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd>contact@atelier-lascaze.example</dd>
+            </div>
+            <div>
+              <dt>Visite de l’atelier</dt>
+              <dd>Du mardi au samedi, sur rendez-vous</dd>
+            </div>
+          </dl>
+
+          {/* La soumission est interceptée par DemoLayout. */}
+          <form>
+            <div class="duo-champ">
+              <p class="champ">
+                <label for="nom">Nom</label>
+                <input id="nom" type="text" required />
+              </p>
+              <p class="champ">
+                <label for="tel">Téléphone</label>
+                <input id="tel" type="tel" required />
+              </p>
+            </div>
+            <p class="champ">
+              <label for="type">Nature du projet</label>
+              <select id="type" required>
+                <option value="">À préciser</option>
+                <option>Agencement intérieur</option>
+                <option>Escalier ou garde-corps</option>
+                <option>Menuiserie extérieure</option>
+                <option>Verrière ou cloison</option>
+                <option>Autre</option>
+              </select>
+            </p>
+            <p class="champ">
+              <label for="projet">Votre projet</label>
+              <textarea id="projet" rows="4" required></textarea>
+            </p>
+            <button type="submit">Envoyer ma demande</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</DemoLayout>

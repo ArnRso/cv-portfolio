@@ -17,7 +17,7 @@ import { serveDist } from './serve-dist.mjs';
 
 const OUT = 'src/assets/demos/captures';
 
-const DEMOS = ['couvreur', 'electricien'];
+const DEMOS = ['couvreur', 'electricien', 'menuisier'];
 
 /* Deux formats par démo : le desktop sert de visuel principal, le mobile
    montre que le site suit sur téléphone — l'argument compte pour un artisan. */
