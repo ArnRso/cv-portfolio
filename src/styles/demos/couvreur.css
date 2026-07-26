@@ -27,19 +27,6 @@
   padding: 0;
 }
 
-/* La modale du gabarit emprunte l'identité de la démo. */
-.demo-modale {
-  --modale-accent: #9b3a12;
-  --modale-sur-accent: #fff;
-  --modale-encre: #3a4046;
-  --modale-rayon: 0;
-}
-
-.demo-modale h2 {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-weight: 400;
-}
-
 .dm-couvreur img {
   display: block;
   max-width: 100%;
