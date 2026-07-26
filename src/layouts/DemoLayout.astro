@@ -86,6 +86,29 @@ const retour = `/realisations#${slug}`;
     </footer>
 
     <style is:global>
+      /* Ces pages n'utilisent pas base.css : sans cette remise à zéro, la
+         marge par défaut du navigateur cerne la démo d'un liseré blanc. */
+      body {
+        margin: 0;
+      }
+
+      /* Les démos naviguent entièrement par ancres. */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Le bandeau est collant : sans cette marge, la cible d'une ancre
+         arrive dessous et sa première ligne est masquée. */
+      :target {
+        scroll-margin-top: var(--demo-bandeau-h, 40px);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
       /* Styles du bandeau et du pied de page, communs à toutes les démos.
          Volontairement neutres : ils ne doivent pas se confondre avec
          l'identité de la démo qu'ils encadrent. */
