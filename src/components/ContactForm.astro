@@ -115,12 +115,16 @@ const projectTypes = [
       submit.disabled = true;
       setStatus('Envoi en cours…', '');
 
-      // Le template EmailJS n'expose que name/email/message/title : métier et
-      // type de projet sont repliés dans le corps du message.
+      // Le template EmailJS n'affiche que name/message/title : l'email, le
+      // métier et le type de projet sont repliés dans le corps du message.
+      // L'adresse y figure même si elle sert déjà de Reply-To : sur mobile ou
+      // après un transfert, l'en-tête n'est pas visible.
       const data = new FormData(form);
+      const email = String(data.get('email') ?? '').trim();
       const metier = String(data.get('metier') ?? '').trim();
       const projet = String(data.get('projet') ?? '');
       const message = [
+        `Email : ${email}`,
         `Type de projet : ${projet}`,
         metier ? `Métier : ${metier}` : null,
         '',
