@@ -217,6 +217,12 @@ p {
   }
 }
 
+/* Sur un aplat marine, l'encre par défaut des entrées est invisible : seules
+   les puces jaunes apparaissaient. */
+.inverse .taglist li {
+  color: var(--color-on-inverse);
+}
+
 /* Le 1px est ici une constante de la technique de masquage accessible
    (un 0 retirerait l'élément des lecteurs d'écran), pas un choix de design. */
 .visually-hidden {
