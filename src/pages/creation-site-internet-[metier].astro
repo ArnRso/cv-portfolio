@@ -356,7 +356,7 @@ const autres = METIERS.filter((m) => m.slug !== metier.slug);
     width: 100%;
     height: auto;
     /* La capture est une page entière : on n'en montre que le haut. */
-    max-height: 34rem;
+    max-height: var(--capture-height);
     object-fit: cover;
     object-position: top;
   }

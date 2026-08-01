@@ -193,6 +193,9 @@
   --field-width: 8rem;
   /* Pastille numérotée des étapes */
   --bullet-size: 2rem;
+  /* Aperçu de démo : une capture de page entière est trop haute pour être
+     montrée telle quelle, on n'en laisse voir que le haut. */
+  --capture-height: 34rem;
 
   --radius-sm: 0.375rem;
   --radius-md: 0.625rem;
