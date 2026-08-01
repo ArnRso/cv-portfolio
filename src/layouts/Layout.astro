@@ -2,9 +2,14 @@
 import '@fontsource-variable/archivo';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/bricolage-grotesque';
-import '@fontsource-variable/caveat';
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/700.css';
+/* Woff2 critiques (préchargés) ou déclarés à la main (Caveat). L'import
+   `?url` donne l'URL hashée du build : elle reste synchrone avec le CSS. */
+import archivoWoff2 from '@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2?url';
+import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import caveatWoff2 from '@fontsource-variable/caveat/files/caveat-latin-wght-normal.woff2?url';
+import caveatExtWoff2 from '@fontsource-variable/caveat/files/caveat-latin-ext-wght-normal.woff2?url';
 import '../styles/tokens.css';
 import '../styles/base.css';
 import Header from '../components/Header.astro';
@@ -23,6 +28,14 @@ const { title, description, schema = [] } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE.url).href;
 const ogImage = new URL('/og.png', Astro.site ?? SITE.url).href;
+
+/* Caveat est purement décorative (ticket en pied de page) : déclarée ici en
+   font-display: optional — si elle n'est pas prête à temps, le repli ajusté
+   reste affiché et rien ne saute. Remplace l'import fontsource (qui impose
+   swap). Ranges unicode copiées de @fontsource-variable/caveat. */
+const caveatFontFace = `
+@font-face{font-family:'Caveat Variable';font-style:normal;font-display:optional;font-weight:400 700;src:url(${caveatExtWoff2}) format('woff2-variations');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Caveat Variable';font-style:normal;font-display:optional;font-weight:400 700;src:url(${caveatWoff2}) format('woff2-variations');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}`;
 
 const business = {
   '@context': 'https://schema.org',
@@ -69,6 +82,27 @@ const business = {
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content={SITE.themeColor} />
+
+    {
+      /* Préchargement des deux polices critiques (titres + corps) : elles
+        partent avec le HTML au lieu d'attendre la lecture du CSS. Les autres
+        (ticket, main, mono) sont sous la ligne de flottaison. */
+    }
+    <link
+      rel="preload"
+      href={archivoWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={interWoff2}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style set:html={caveatFontFace} is:inline></style>
 
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
