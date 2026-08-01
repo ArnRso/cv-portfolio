@@ -90,6 +90,7 @@ const projectTypes = [
 
 <script>
   import emailjs from '@emailjs/browser';
+  import { track } from '../scripts/analytics';
 
   const form = document.querySelector<HTMLFormElement>('#contact-form');
   const { publicKey, serviceId, templateId } = form?.dataset ?? {};
@@ -144,11 +145,15 @@ const projectTypes = [
         });
         form.reset();
         setStatus('Message envoyé. Je vous réponds rapidement, merci !', 'ok');
+        // La conversion clé du site. Le type de projet suffit à qualifier
+        // le lead ; aucune donnée personnelle ne part dans l'événement.
+        track('generate_lead', { projet });
       } catch {
         setStatus(
           "L'envoi a échoué. Écrivez-moi directement à hello@adrienrusso.fr.",
           'ko',
         );
+        track('form_error');
       } finally {
         submit.disabled = false;
       }
