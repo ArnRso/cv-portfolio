@@ -6,6 +6,7 @@ import Hero from '../components/Hero.astro';
 import Marquee from '../components/Marquee.astro';
 import Section from '../components/Section.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { METIERS } from '../data/metiers';
 
 const services = [
   {
@@ -106,6 +107,21 @@ const faqSchema = {
       votre savoir-faire en avant et vous amène de nouveaux clients partout en
       Gironde.
     </p>
+    {
+      /* Les pages métier détaillent les enjeux propres à chaque activité.
+        Elles sont aussi les portes d'entrée du site depuis Google. */
+    }
+    <ul class="liens-metiers">
+      {
+        METIERS.map((m) => (
+          <li>
+            <a href={`/creation-site-internet-${m.slug}`}>
+              Site internet pour {m.nom}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </Section>
 
   <Section headingId="services" title="Ce que je peux faire pour vous" raised>
@@ -220,6 +236,14 @@ const faqSchema = {
     font-size: var(--text-md);
     max-width: 62ch;
     color: var(--color-muted);
+  }
+
+  .liens-metiers {
+    margin-top: var(--space-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-md);
+    font-weight: var(--weight-semibold);
   }
 
   /* Le portrait donne un visage à la promesse « un interlocuteur unique ». */
